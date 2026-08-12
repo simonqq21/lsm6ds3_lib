@@ -1,0 +1,17 @@
+Command: cmake -G Ninja -B /home/simonque/Documents/code/esp-idf-projects/components_testing/lsm6ds3_lib/build -DPYTHON_DEPS_CHECKED=1 -DPYTHON=/home/simonque/.espressif/python_env/idf6.1_py3.12_env/bin/python -DESP_PLATFORM=1 -DCCACHE_ENABLE=False /home/simonque/Documents/code/esp-idf-projects/components_testing/lsm6ds3_lib
+Configuration Report               
+ ───────────────────────────────── 
+   Parser Version: 1               
+   Verbosity: default              
+   Defaults policy: sdkconfig      
+   Status: Finished successfully   
+                                   
+ ───────────────────────────────── 
+CMake Warning (dev) at /usr/share/cmake-3.28/Modules/GNUInstallDirs.cmake:243 (message):
+  Unable to determine default CMAKE_INSTALL_LIBDIR directory because no
+  target architecture is known.  Please enable at least one language before
+  including GNUInstallDirs.
+Call Stack (most recent call first):
+  /home/simonque/Documents/code/esp-idf/components/mbedtls/mbedtls/CMakeLists.txt:59 (include)
+This warning is for project developers.  Use -Wno-dev to suppress it.
+

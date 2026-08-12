@@ -1,0 +1,5 @@
+Command: cmake -G Ninja -B /home/simonque/Documents/code/esp-idf-projects/components_testing/lsm6ds3_lib/build -DPYTHON_DEPS_CHECKED=1 -DPYTHON=/home/simonque/.espressif/python_env/idf6.1_py3.12_env/bin/python -DESP_PLATFORM=1 -DCCACHE_ENABLE=False /home/simonque/Documents/code/esp-idf-projects/components_testing/lsm6ds3_lib
+-- IDF_TARGET not set, using default target: esp32
+-- Found Git: /usr/bin/git (found version "2.43.0") 
+-- Component directory /home/simonque/Documents/code/esp-idf/components/idf_test does not contain a CMakeLists.txt file. No component will be added
+-- Component directory /home/simonque/Documents/code/esp-idf/components/mqtt does not contain a CMakeLists.txt file. No component will be added
