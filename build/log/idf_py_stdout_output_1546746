@@ -1,0 +1,523 @@
+Command: /home/simonque/.espressif/python_env/idf6.1_py3.12_env/bin/python /home/simonque/Documents/code/esp-idf/tools/idf_monitor.py -p /dev/ttyUSB0 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 /home/simonque/Documents/code/esp-idf-projects/components_testing/lsm6ds3_lib/build/i2c-basic.elf /home/simonque/Documents/code/esp-idf-projects/components_testing/lsm6ds3_lib/build/bootloader/bootloader.elf -m '/home/simonque/.espressif/python_env/idf6.1_py3.12_env/bin/python' '/home/simonque/Documents/code/esp-idf/tools/idf.py'
+ app
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x17 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0040,len:6272
+load:0x40078000,len:15848
+load:0x40080400,len:3920
+entry 0x40080644
+[0;32mI (27) boot: ESP-IDF v6.1-dev-2310-g44e2fa6d9c5-dirt 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Aug 12 2026 10:57:35[0m
+[0;32mI (28) boot: Multicore bootloader[0m
+[0;32mI (31) boot: chip revision: v3.1[0m
+[0;32mI (34) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (37) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (41) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (49) boot: Partition Table:[0m
+[0;32mI (52) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (58) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (71) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (78) boot: End of partition table[0m
+[0;32mI (81) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0890ch ( 35084) map[0m
+[0;32mI (101) esp_image: segment 1: paddr=00018934 vaddr=3ffb0000 size=027bch ( 10172) load[0m
+[0;32mI (105) esp_image: segment 2: paddr=0001b0f8 vaddr=40080000 size=04f20h ( 20256) load[0m
+[0;32mI (114) esp_image: segment 3: paddr=00020020 vaddr=400d0020 size=0e688h ( 59016) map[0m
+[0;32mI (135) esp_image: segment 4: paddr=0002e6b0 vaddr=40084f20 size=05888h ( 22664) load[0m
+[0;32mI (145) esp_image: segment 5: paddr=00033f40 vaddr=50000000 size=00028h (    40) load[0m
+[0;32mI (150) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (150) boot: Disabling RNG early entropy source...[0m
+[0;32mI (163) cpu_start: Multicore app[0m
+[0;32mI (171) cpu_start: GPIO 3 and 1 are used as console UART I/O pins[0m
+[0;32mI (172) cpu_start: Pro cpu start user code[0m
+[0;32mI (172) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (173) app_init: Application information:[0m
+[0;32mI (177) app_init: Project name:     i2c-basic[0m
+[0;32mI (181) app_init: App version:      1[0m
+[0;32mI (185) app_init: Compile time:     Aug 12 2026 10:54:20[0m
+[0;32mI (190) app_init: ELF file SHA256:  2a0680027...[0m
+[0;32mI (194) app_init: ESP-IDF:          v6.1-dev-2310-g44e2fa6d9c5-dirt[0m
+[0;32mI (200) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (204) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (208) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (212) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (218) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (223) heap_init: At 3FFB3128 len 0002CED8 (179 KiB): DRAM[0m
+[0;32mI (228) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (234) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (239) heap_init: At 4008A7A8 len 00015858 (86 KiB): IRAM[0m
+[0;33mW (245) spi_flash: Detected boya flash chip but using generic driver. For optimal functionality, enable `SPI_FLASH_SUPPORT_BOYA_CHIP` in menuconfig[0m
+[0;32mI (258) spi_flash: detected chip: generic[0m
+[0;32mI (261) spi_flash: flash io: dio[0m
+[0;33mW (264) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (277) main_task: Started on CPU0[0m
+[0;32mI (287) main_task: Calling app_main()[0m
+[0;32mI (287) LSM6DS3_EXAMPLE: I2C initialized successfully[0m
+[0;32mI (287) LSM6DS3: WHO_AM_I = 69[0m
+[0;32mI (287) LSM6DS3: CTRL1_XL = 48[0m
+[0;32mI (287) LSM6DS3: CTRL1_XL = 48[0m
+[0;32mI (287) LSM6DS3: CTRL1_XL = 48[0m
+[0;32mI (297) LSM6DS3: CTRL1_G = 44[0m
+[0;32mI (297) LSM6DS3: CTRL2_G = 44[0m
+[0;32mI (297) LSM6DS3: CTRL2_G = 44[0m
+[0;32mI (307) LSM6DS3: FIFO_CTRL1_REG_ADDR = FF[0m
+[0;32mI (307) LSM6DS3: FIFO_CTRL2_REG_ADDR = F[0m
+[0;32mI (317) LSM6DS3: num_fifo_samples = 0[0m
+[0;32mI (317) LSM6DS3: num_fifo_samples = 0[0m
+[0;32mI (317) LSM6DS3: num_fifo_samples = 12[0m
+[0;32mI (317) LSM6DS3: num_fifo_samples = 12[0m
+[0;32mI (327) LSM6DS3: num_fifo_samples = 12[0m
+[0;32mI (327) LSM6DS3: num_fifo_samples = 24[0m
+[0;32mI (327) LSM6DS3: num_fifo_samples = 24[0m
+[0;32mI (337) LSM6DS3: num_fifo_samples = 36[0m
+[0;32mI (337) LSM6DS3: num_fifo_samples = 36[0m
+[0;32mI (337) LSM6DS3: num_fifo_samples = 36[0m
+[0;32mI (347) LSM6DS3: num_fifo_samples = 48[0m
+[0;32mI (347) LSM6DS3: num_fifo_samples = 48[0m
+[0;32mI (347) LSM6DS3: num_fifo_samples = 48[0m
+[0;32mI (357) LSM6DS3: num_fifo_samples = 60[0m
+[0;32mI (357) LSM6DS3: num_fifo_samples = 60[0m
+[0;32mI (357) LSM6DS3: num_fifo_samples = 60[0m
+[0;32mI (367) LSM6DS3: num_fifo_samples = 72[0m
+[0;32mI (367) LSM6DS3: num_fifo_samples = 72[0m
+[0;32mI (377) LSM6DS3: num_fifo_samples = 84[0m
+[0;32mI (377) LSM6DS3: num_fifo_samples = 84[0m
+[0;32mI (377) LSM6DS3: num_fifo_samples = 84[0m
+[0;32mI (387) LSM6DS3: num_fifo_samples = 96[0m
+[0;32mI (387) LSM6DS3: num_fifo_samples = 96[0m
+[0;32mI (387) LSM6DS3: num_fifo_samples = 96[0m
+[0;32mI (397) LSM6DS3: num_fifo_samples = 108[0m
+[0;32mI (397) LSM6DS3: num_fifo_samples = 108[0m
+[0;32mI (397) LSM6DS3: num_fifo_samples = 108[0m
+[0;32mI (407) LSM6DS3: num_fifo_samples = 120[0m
+[0;32mI (407) LSM6DS3: num_fifo_samples = 120[0m
+[0;32mI (407) LSM6DS3: num_fifo_samples = 132[0m
+[0;32mI (417) LSM6DS3: num_fifo_samples = 132[0m
+[0;32mI (417) LSM6DS3: num_fifo_samples = 132[0m
+[0;32mI (417) LSM6DS3: num_fifo_samples = 144[0m
+[0;32mI (427) LSM6DS3: num_fifo_samples = 144[0m
+[0;32mI (427) LSM6DS3: num_fifo_samples = 144[0m
+[0;32mI (437) LSM6DS3: num_fifo_samples = 156[0m
+[0;32mI (437) LSM6DS3: num_fifo_samples = 156[0m
+[0;32mI (437) LSM6DS3: num_fifo_samples = 168[0m
+[0;32mI (447) LSM6DS3: num_fifo_samples = 168[0m
+[0;32mI (447) LSM6DS3: num_fifo_samples = 168[0m
+[0;32mI (447) LSM6DS3: num_fifo_samples = 180[0m
+[0;32mI (457) LSM6DS3: num_fifo_samples = 180[0m
+[0;32mI (457) LSM6DS3: num_fifo_samples = 180[0m
+[0;32mI (457) LSM6DS3: num_fifo_samples = 192[0m
+[0;32mI (467) LSM6DS3: num_fifo_samples = 192[0m
+[0;32mI (467) LSM6DS3: num_fifo_samples = 204[0m
+[0;32mI (467) LSM6DS3: fifo_pattern 0 0[0m
+[0;32mI (477) LSM6DS3: fifo_data = 81[0m
+[0;32mI (477) LSM6DS3: fifo_pattern 1 0[0m
+[0;32mI (477) LSM6DS3: fifo_data = FE41[0m
+[0;32mI (487) LSM6DS3: fifo_pattern 2 0[0m
+[0;32mI (487) LSM6DS3: fifo_data = FF98[0m
+[0;32mI (487) LSM6DS3: fifo_pattern 3 0[0m
+[0;32mI (497) LSM6DS3: fifo_data = 113[0m
+[0;32mI (497) LSM6DS3: fifo_pattern 4 0[0m
+[0;32mI (497) LSM6DS3: fifo_data = 7A2[0m
+[0;32mI (497) LSM6DS3: fifo_pattern 5 0[0m
+[0;32mI (507) LSM6DS3: fifo_data = 1F11[0m
+[0;32mI (507) LSM6DS3: fifo_pattern 6 0[0m
+[0;32mI (507) LSM6DS3: fifo_data = 0[0m
+[0;32mI (517) LSM6DS3: fifo_pattern 7 0[0m
+[0;32mI (517) LSM6DS3: fifo_data = 0[0m
+[0;32mI (517) LSM6DS3: fifo_pattern 8 0[0m
+[0;32mI (527) LSM6DS3: fifo_data = 0[0m
+[0;32mI (527) LSM6DS3: fifo_pattern 9 0[0m
+[0;32mI (527) LSM6DS3: fifo_data = 0[0m
+[0;32mI (527) LSM6DS3: fifo_pattern A 0[0m
+[0;32mI (537) LSM6DS3: fifo_data = 0[0m
+[0;32mI (537) LSM6DS3: fifo_pattern B 0[0m
+[0;32mI (537) LSM6DS3: fifo_data = 0[0m
+[0;32mI (547) LSM6DS3: fifo_pattern 0 0[0m
+[0;32mI (547) LSM6DS3: fifo_data = 6F[0m
+[0;32mI (547) LSM6DS3: fifo_pattern 1 0[0m
+[0;32mI (547) LSM6DS3: fifo_data = FE3D[0m
+[0;32mI (557) LSM6DS3: fifo_pattern 2 0[0m
+[0;32mI (557) LSM6DS3: fifo_data = FF9C[0m
+[0;32mI (557) LSM6DS3: fifo_pattern 3 0[0m
+[0;32mI (567) LSM6DS3: fifo_data = 109[0m
+[0;32mI (567) LSM6DS3: fifo_pattern 4 0[0m
+[0;32mI (567) LSM6DS3: fifo_data = 7AB[0m
+[0;32mI (577) LSM6DS3: fifo_pattern 5 0[0m
+[0;32mI (577) LSM6DS3: fifo_data = 1F26[0m
+[0;32mI (577) LSM6DS3: fifo_pattern 6 0[0m
+[0;32mI (577) LSM6DS3: fifo_data = 0[0m
+[0;32mI (587) LSM6DS3: fifo_pattern 7 0[0m
+[0;32mI (587) LSM6DS3: fifo_data = 0[0m
+[0;32mI (587) LSM6DS3: fifo_pattern 8 0[0m
+[0;32mI (597) LSM6DS3: fifo_data = 0[0m
+[0;32mI (597) LSM6DS3: fifo_pattern 9 0[0m
+[0;32mI (597) LSM6DS3: fifo_data = 0[0m
+[0;32mI (597) LSM6DS3: fifo_pattern A 0[0m
+[0;32mI (607) LSM6DS3: fifo_data = 0[0m
+[0;32mI (607) LSM6DS3: fifo_pattern B 0[0m
+[0;32mI (607) LSM6DS3: fifo_data = 0[0m
+[0;32mI (617) LSM6DS3: fifo_pattern 0 0[0m
+[0;32mI (617) LSM6DS3: fifo_data = 88[0m
+[0;32mI (617) LSM6DS3: fifo_pattern 1 0[0m
+[0;32mI (627) LSM6DS3: fifo_data = FE31[0m
+[0;32mI (627) LSM6DS3: fifo_pattern 2 0[0m
+[0;32mI (627) LSM6DS3: fifo_data = FF91[0m
+[0;32mI (627) LSM6DS3: fifo_pattern 3 0[0m
+[0;32mI (637) LSM6DS3: fifo_data = 11B[0m
+[0;32mI (637) LSM6DS3: fifo_pattern 4 0[0m
+[0;32mI (637) LSM6DS3: fifo_data = 7B9[0m
+[0;32mI (647) LSM6DS3: fifo_pattern 5 0[0m
+[0;32mI (647) LSM6DS3: fifo_data = 1F3F[0m
+[0;32mI (647) LSM6DS3: fifo_pattern 6 0[0m
+[0;32mI (657) LSM6DS3: fifo_data = 0[0m
+[0;32mI (657) LSM6DS3: fifo_pattern 7 0[0m
+[0;32mI (657) LSM6DS3: fifo_data = 0[0m
+[0;32mI (657) LSM6DS3: fifo_pattern 8 0[0m
+[0;32mI (667) LSM6DS3: fifo_data = 0[0m
+[0;32mI (667) LSM6DS3: fifo_pattern 9 0[0m
+[0;32mI (667) LSM6DS3: fifo_data = 0[0m
+[0;32mI (677) LSM6DS3: fifo_pattern A 0[0m
+[0;32mI (677) LSM6DS3: fifo_data = 0[0m
+[0;32mI (677) LSM6DS3: fifo_pattern B 0[0m
+[0;32mI (677) LSM6DS3: fifo_data = 0[0m
+[0;32mI (687) LSM6DS3: fifo_pattern 0 0[0m
+[0;32mI (687) LSM6DS3: fifo_data = 6D[0m
+[0;32mI (687) LSM6DS3: fifo_pattern 1 0[0m
+[0;32mI (697) LSM6DS3: fifo_data = FE39[0m
+[0;32mI (697) LSM6DS3: fifo_pattern 2 0[0m
+[0;32mI (697) LSM6DS3: fifo_data = FF9E[0m
+[0;32mI (707) LSM6DS3: fifo_pattern 3 0[0m
+[0;32mI (707) LSM6DS3: fifo_data = 119[0m
+[0;32mI (707) LSM6DS3: fifo_pattern 4 0[0m
+[0;32mI (707) LSM6DS3: fifo_data = 7B4[0m
+[0;32mI (717) LSM6DS3: fifo_pattern 5 0[0m
+[0;32mI (717) LSM6DS3: fifo_data = 1F2F[0m
+[0;32mI (717) LSM6DS3: fifo_pattern 6 0[0m
+[0;32mI (727) LSM6DS3: fifo_data = 0[0m
+[0;32mI (727) LSM6DS3: fifo_pattern 7 0[0m
+[0;32mI (727) LSM6DS3: fifo_data = 0[0m
+[0;32mI (737) LSM6DS3: fifo_pattern 8 0[0m
+[0;32mI (737) LSM6DS3: fifo_data = 0[0m
+[0;32mI (737) LSM6DS3: fifo_pattern 9 0[0m
+[0;32mI (737) LSM6DS3: fifo_data = 0[0m
+[0;32mI (747) LSM6DS3: fifo_pattern A 0[0m
+[0;32mI (747) LSM6DS3: fifo_data = 0[0m
+[0;32mI (747) LSM6DS3: fifo_pattern B 0[0m
+[0;32mI (757) LSM6DS3: fifo_data = 0[0m
+[0;32mI (757) LSM6DS3: fifo_pattern 0 0[0m
+[0;32mI (757) LSM6DS3: fifo_data = 8B[0m
+[0;32mI (757) LSM6DS3: fifo_pattern 1 0[0m
+[0;32mI (767) LSM6DS3: fifo_data = FE3B[0m
+[0;32mI (767) LSM6DS3: fifo_pattern 2 0[0m
+[0;32mI (767) LSM6DS3: fifo_data = FF8C[0m
+[0;32mI (777) LSM6DS3: fifo_pattern 3 0[0m
+[0;32mI (777) LSM6DS3: fifo_data = 11B[0m
+[0;32mI (777) LSM6DS3: fifo_pattern 4 0[0m
+[0;32mI (787) LSM6DS3: fifo_data = 7B5[0m
+[0;32mI (787) LSM6DS3: fifo_pattern 5 0[0m
+[0;32mI (787) LSM6DS3: fifo_data = 1F1D[0m
+[0;32mI (787) LSM6DS3: fifo_pattern 6 0[0m
+[0;32mI (797) LSM6DS3: fifo_data = 0[0m
+[0;32mI (797) LSM6DS3: fifo_pattern 7 0[0m
+[0;32mI (797) LSM6DS3: fifo_data = 0[0m
+[0;32mI (807) LSM6DS3: fifo_pattern 8 0[0m
+[0;32mI (807) LSM6DS3: fifo_data = 0[0m
+[0;32mI (807) LSM6DS3: fifo_pattern 9 0[0m
+[0;32mI (817) LSM6DS3: fifo_data = 0[0m
+[0;32mI (817) LSM6DS3: fifo_pattern A 0[0m
+[0;32mI (817) LSM6DS3: fifo_data = 0[0m
+[0;32mI (817) LSM6DS3: fifo_pattern B 0[0m
+[0;32mI (827) LSM6DS3: fifo_data = 0[0m
+[0;32mI (827) LSM6DS3: fifo_pattern 0 0[0m
+[0;32mI (827) LSM6DS3: fifo_data = 76[0m
+[0;32mI (837) LSM6DS3: fifo_pattern 1 0[0m
+[0;32mI (837) LSM6DS3: fifo_data = FE34[0m
+[0;32mI (837) LSM6DS3: fifo_pattern 2 0[0m
+[0;32mI (837) LSM6DS3: fifo_data = FF9B[0m
+[0;32mI (847) LSM6DS3: fifo_pattern 3 0[0m
+[0;32mI (847) LSM6DS3: fifo_data = 117[0m
+[0;32mI (847) LSM6DS3: fifo_pattern 4 0[0m
+[0;32mI (857) LSM6DS3: fifo_data = 7AB[0m
+[0;32mI (857) LSM6DS3: fifo_pattern 5 0[0m
+[0;32mI (857) LSM6DS3: fifo_data = 1F0B[0m
+[0;32mI (867) LSM6DS3: fifo_pattern 6 0[0m
+[0;32mI (867) LSM6DS3: fifo_data = 0[0m
+[0;32mI (867) LSM6DS3: fifo_pattern 7 0[0m
+[0;32mI (867) LSM6DS3: fifo_data = 0[0m
+[0;32mI (877) LSM6DS3: fifo_pattern 8 0[0m
+[0;32mI (877) LSM6DS3: fifo_data = 0[0m
+[0;32mI (877) LSM6DS3: fifo_pattern 9 0[0m
+[0;32mI (887) LSM6DS3: fifo_data = 0[0m
+[0;32mI (887) LSM6DS3: fifo_pattern A 0[0m
+[0;32mI (887) LSM6DS3: fifo_data = 0[0m
+[0;32mI (887) LSM6DS3: fifo_pattern B 0[0m
+[0;32mI (897) LSM6DS3: fifo_data = 0[0m
+[0;32mI (897) LSM6DS3: fifo_pattern 0 0[0m
+[0;32mI (897) LSM6DS3: fifo_data = 72[0m
+[0;32mI (907) LSM6DS3: fifo_pattern 1 0[0m
+[0;32mI (907) LSM6DS3: fifo_data = FE36[0m
+[0;32mI (907) LSM6DS3: fifo_pattern 2 0[0m
+[0;32mI (917) LSM6DS3: fifo_data = FF9A[0m
+[0;32mI (917) LSM6DS3: fifo_pattern 3 0[0m
+[0;32mI (917) LSM6DS3: fifo_data = 10E[0m
+[0;32mI (917) LSM6DS3: fifo_pattern 4 0[0m
+[0;32mI (927) LSM6DS3: fifo_data = 7A2[0m
+[0;32mI (927) LSM6DS3: fifo_pattern 5 0[0m
+[0;32mI (927) LSM6DS3: fifo_data = 1F04[0m
+[0;32mI (937) LSM6DS3: fifo_pattern 6 0[0m
+[0;32mI (937) LSM6DS3: fifo_data = 0[0m
+[0;32mI (937) LSM6DS3: fifo_pattern 7 0[0m
+[0;32mI (947) LSM6DS3: fifo_data = 0[0m
+[0;32mI (947) LSM6DS3: fifo_pattern 8 0[0m
+[0;32mI (947) LSM6DS3: fifo_data = 0[0m
+[0;32mI (947) LSM6DS3: fifo_pattern 9 0[0m
+[0;32mI (957) LSM6DS3: fifo_data = 0[0m
+[0;32mI (957) LSM6DS3: fifo_pattern A 0[0m
+[0;32mI (957) LSM6DS3: fifo_data = 0[0m
+[0;32mI (967) LSM6DS3: fifo_pattern B 0[0m
+[0;32mI (967) LSM6DS3: fifo_data = 0[0m
+[0;32mI (967) LSM6DS3: fifo_pattern 0 0[0m
+[0;32mI (967) LSM6DS3: fifo_data = 87[0m
+[0;32mI (977) LSM6DS3: fifo_pattern 1 0[0m
+[0;32mI (977) LSM6DS3: fifo_data = FE38[0m
+[0;32mI (977) LSM6DS3: fifo_pattern 2 0[0m
+[0;32mI (987) LSM6DS3: fifo_data = FF95[0m
+[0;32mI (987) LSM6DS3: fifo_pattern 3 0[0m
+[0;32mI (987) LSM6DS3: fifo_data = 118[0m
+[0;32mI (997) LSM6DS3: fifo_pattern 4 0[0m
+[0;32mI (997) LSM6DS3: fifo_data = 7AE[0m
+[0;32mI (997) LSM6DS3: fifo_pattern 5 0[0m
+[0;32mI (997) LSM6DS3: fifo_data = 1F0D[0m
+[0;32mI (1007) LSM6DS3: fifo_pattern 6 0[0m
+[0;32mI (1007) LSM6DS3: fifo_data = 0[0m
+[0;32mI (1007) LSM6DS3: fifo_pattern 7 0[0m
+[0;32mI (1017) LSM6DS3: fifo_data = 0[0m
+[0;32mI (1017) LSM6DS3: fifo_pattern 8 0[0m
+[0;32mI (1017) LSM6DS3: fifo_data = 0[0m
+[0;32mI (1027) LSM6DS3: fifo_pattern 9 0[0m
+[0;32mI (1027) LSM6DS3: fifo_data = 0[0m
+[0;32mI (1027) LSM6DS3: fifo_pattern A 0[0m
+[0;32mI (1027) LSM6DS3: fifo_data = 0[0m
+[0;32mI (1037) LSM6DS3: fifo_pattern B 0[0m
+[0;32mI (1037) LSM6DS3: fifo_data = 0[0m
+[0;32mI (1037) LSM6DS3: fifo_pattern 0 0[0m
+[0;32mI (1047) LSM6DS3: fifo_data = 6D[0m
+[0;32mI (1047) LSM6DS3: fifo_pattern 1 0[0m
+[0;32mI (1047) LSM6DS3: fifo_data = FE3B[0m
+[0;32mI (1057) LSM6DS3: fifo_pattern 2 0[0m
+[0;32mI (1057) LSM6DS3: fifo_data = FFA5[0m
+[0;32mI (1057) LSM6DS3: fifo_pattern 3 0[0m
+[0;32mI (1067) LSM6DS3: fifo_data = 10C[0m
+[0;32mI (1067) LSM6DS3: fifo_pattern 4 0[0m
+[0;32mI (1067) LSM6DS3: fifo_data = 7AD[0m
+[0;32mI (1067) LSM6DS3: fifo_pattern 5 0[0m
+[0;32mI (1077) LSM6DS3: fifo_data = 1F2A[0m
+[0;32mI (1077) LSM6DS3: fifo_pattern 6 0[0m
+[0;32mI (1077) LSM6DS3: fifo_data = 0[0m
+[0;32mI (1087) LSM6DS3: fifo_pattern 7 0[0m
+[0;32mI (1087) LSM6DS3: fifo_data = 0[0m
+[0;32mI (1087) LSM6DS3: fifo_pattern 8 0[0m
+[0;32mI (1097) LSM6DS3: fifo_data = 0[0m
+[0;32mI (1097) LSM6DS3: fifo_pattern 9 0[0m
+[0;32mI (1097) LSM6DS3: fifo_data = 0[0m
+[0;32mI (1097) LSM6DS3: fifo_pattern A 0[0m
+[0;32mI (1107) LSM6DS3: fifo_data = 0[0m
+[0;32mI (1107) LSM6DS3: fifo_pattern B 0[0m
+[0;32mI (1107) LSM6DS3: fifo_data = 0[0m
+[0;32mI (1117) LSM6DS3: fifo_pattern 0 0[0m
+[0;32mI (1117) LSM6DS3: fifo_data = 83[0m
+[0;32mI (1117) LSM6DS3: fifo_pattern 1 0[0m
+[0;32mI (1127) LSM6DS3: fifo_data = FE3F[0m
+[0;32mI (1127) LSM6DS3: fifo_pattern 2 0[0m
+[0;32mI (1127) LSM6DS3: fifo_data = FF97[0m
+[0;32mI (1137) LSM6DS3: fifo_pattern 3 0[0m
+[0;32mI (1137) LSM6DS3: fifo_data = 10F[0m
+[0;32mI (1137) LSM6DS3: fifo_pattern 4 0[0m
+[0;32mI (1137) LSM6DS3: fifo_data = 7AF[0m
+[0;32mI (1147) LSM6DS3: fifo_pattern 5 0[0m
+[0;32mI (1147) LSM6DS3: fifo_data = 1F2A[0m
+[0;32mI (1147) LSM6DS3: fifo_pattern 6 0[0m
+[0;32mI (1157) LSM6DS3: fifo_data = 0[0m
+[0;32mI (1157) LSM6DS3: fifo_pattern 7 0[0m
+[0;32mI (1157) LSM6DS3: fifo_data = 0[0m
+[0;32mI (1167) LSM6DS3: fifo_pattern 8 0[0m
+[0;32mI (1167) LSM6DS3: fifo_data = 0[0m
+[0;32mI (1167) LSM6DS3: fifo_pattern 9 0[0m
+[0;32mI (1167) LSM6DS3: fifo_data = 0[0m
+[0;32mI (1177) LSM6DS3: fifo_pattern A 0[0m
+[0;32mI (1177) LSM6DS3: fifo_data = 0[0m
+[0;32mI (1177) LSM6DS3: fifo_pattern B 0[0m
+[0;32mI (1187) LSM6DS3: fifo_data = 0[0m
+[0;32mI (1187) LSM6DS3: fifo_pattern 0 0[0m
+[0;32mI (1187) LSM6DS3: fifo_data = 7E[0m
+[0;32mI (1197) LSM6DS3: fifo_pattern 1 0[0m
+[0;32mI (1197) LSM6DS3: fifo_data = FE35[0m
+[0;32mI (1197) LSM6DS3: fifo_pattern 2 0[0m
+[0;32mI (1207) LSM6DS3: fifo_data = FF95[0m
+[0;32mI (1207) LSM6DS3: fifo_pattern 3 0[0m
+[0;32mI (1207) LSM6DS3: fifo_data = 11F[0m
+[0;32mI (1207) LSM6DS3: fifo_pattern 4 0[0m
+[0;32mI (1217) LSM6DS3: fifo_data = 7B6[0m
+[0;32mI (1217) LSM6DS3: fifo_pattern 5 0[0m
+[0;32mI (1217) LSM6DS3: fifo_data = 1F36[0m
+[0;32mI (1227) LSM6DS3: fifo_pattern 6 0[0m
+[0;32mI (1227) LSM6DS3: fifo_data = 0[0m
+[0;32mI (1227) LSM6DS3: fifo_pattern 7 0[0m
+[0;32mI (1237) LSM6DS3: fifo_data = 0[0m
+[0;32mI (1237) LSM6DS3: fifo_pattern 8 0[0m
+[0;32mI (1237) LSM6DS3: fifo_data = 0[0m
+[0;32mI (1237) LSM6DS3: fifo_pattern 9 0[0m
+[0;32mI (1247) LSM6DS3: fifo_data = 0[0m
+[0;32mI (1247) LSM6DS3: fifo_pattern A 0[0m
+[0;32mI (1247) LSM6DS3: fifo_data = 0[0m
+[0;32mI (1257) LSM6DS3: fifo_pattern B 0[0m
+[0;32mI (1257) LSM6DS3: fifo_data = 0[0m
+[0;32mI (1257) LSM6DS3: fifo_pattern 0 0[0m
+[0;32mI (1267) LSM6DS3: fifo_data = 67[0m
+[0;32mI (1267) LSM6DS3: fifo_pattern 1 0[0m
+[0;32mI (1267) LSM6DS3: fifo_data = FE3B[0m
+[0;32mI (1277) LSM6DS3: fifo_pattern 2 0[0m
+[0;32mI (1277) LSM6DS3: fifo_data = FFA8[0m
+[0;32mI (1277) LSM6DS3: fifo_pattern 3 0[0m
+[0;32mI (1277) LSM6DS3: fifo_data = 11D[0m
+[0;32mI (1287) LSM6DS3: fifo_pattern 4 0[0m
+[0;32mI (1287) LSM6DS3: fifo_data = 7B8[0m
+[0;32mI (1287) LSM6DS3: fifo_pattern 5 0[0m
+[0;32mI (1297) LSM6DS3: fifo_data = 1F30[0m
+[0;32mI (1297) LSM6DS3: fifo_pattern 6 0[0m
+[0;32mI (1297) LSM6DS3: fifo_data = 0[0m
+[0;32mI (1307) LSM6DS3: fifo_pattern 7 0[0m
+[0;32mI (1307) LSM6DS3: fifo_data = 0[0m
+[0;32mI (1307) LSM6DS3: fifo_pattern 8 0[0m
+[0;32mI (1317) LSM6DS3: fifo_data = 0[0m
+[0;32mI (1317) LSM6DS3: fifo_pattern 9 0[0m
+[0;32mI (1317) LSM6DS3: fifo_data = 0[0m
+[0;32mI (1317) LSM6DS3: fifo_pattern A 0[0m
+[0;32mI (1327) LSM6DS3: fifo_data = 0[0m
+[0;32mI (1327) LSM6DS3: fifo_pattern B 0[0m
+[0;32mI (1327) LSM6DS3: fifo_data = 0[0m
+[0;32mI (1337) LSM6DS3: fifo_pattern 0 0[0m
+[0;32mI (1337) LSM6DS3: fifo_data = 8F[0m
+[0;32mI (1337) LSM6DS3: fifo_pattern 1 0[0m
+[0;32mI (1347) LSM6DS3: fifo_data = FE30[0m
+[0;32mI (1347) LSM6DS3: fifo_pattern 2 0[0m
+[0;32mI (1347) LSM6DS3: fifo_data = FF89[0m
+[0;32mI (1347) LSM6DS3: fifo_pattern 3 0[0m
+[0;32mI (1357) LSM6DS3: fifo_data = 104[0m
+[0;32mI (1357) LSM6DS3: fifo_pattern 4 0[0m
+[0;32mI (1357) LSM6DS3: fifo_data = 7AF[0m
+[0;32mI (1367) LSM6DS3: fifo_pattern 5 0[0m
+[0;32mI (1367) LSM6DS3: fifo_data = 1F25[0m
+[0;32mI (1367) LSM6DS3: fifo_pattern 6 0[0m
+[0;32mI (1377) LSM6DS3: fifo_data = 0[0m
+[0;32mI (1377) LSM6DS3: fifo_pattern 7 0[0m
+[0;32mI (1377) LSM6DS3: fifo_data = 0[0m
+[0;32mI (1377) LSM6DS3: fifo_pattern 8 0[0m
+[0;32mI (1387) LSM6DS3: fifo_data = 0[0m
+[0;32mI (1387) LSM6DS3: fifo_pattern 9 0[0m
+[0;32mI (1387) LSM6DS3: fifo_data = 0[0m
+[0;32mI (1397) LSM6DS3: fifo_pattern A 0[0m
+[0;32mI (1397) LSM6DS3: fifo_data = 0[0m
+[0;32mI (1397) LSM6DS3: fifo_pattern B 0[0m
+[0;32mI (1407) LSM6DS3: fifo_data = 0[0m
+[0;32mI (1407) LSM6DS3: fifo_pattern 0 0[0m
+[0;32mI (1407) LSM6DS3: fifo_data = 61[0m
+[0;32mI (1417) LSM6DS3: fifo_pattern 1 0[0m
+[0;32mI (1417) LSM6DS3: fifo_data = FE46[0m
+[0;32mI (1417) LSM6DS3: fifo_pattern 2 0[0m
+[0;32mI (1417) LSM6DS3: fifo_data = FFA3[0m
+[0;32mI (1427) LSM6DS3: fifo_pattern 3 0[0m
+[0;32mI (1427) LSM6DS3: fifo_data = 10A[0m
+[0;32mI (1427) LSM6DS3: fifo_pattern 4 0[0m
+[0;32mI (1437) LSM6DS3: fifo_data = 7A5[0m
+[0;32mI (1437) LSM6DS3: fifo_pattern 5 0[0m
+[0;32mI (1437) LSM6DS3: fifo_data = 1EFD[0m
+[0;32mI (1447) LSM6DS3: fifo_pattern 6 0[0m
+[0;32mI (1447) LSM6DS3: fifo_data = 0[0m
+[0;32mI (1447) LSM6DS3: fifo_pattern 7 0[0m
+[0;32mI (1457) LSM6DS3: fifo_data = 0[0m
+[0;32mI (1457) LSM6DS3: fifo_pattern 8 0[0m
+[0;32mI (1457) LSM6DS3: fifo_data = 0[0m
+[0;32mI (1457) LSM6DS3: fifo_pattern 9 0[0m
+[0;32mI (1467) LSM6DS3: fifo_data = 0[0m
+[0;32mI (1467) LSM6DS3: fifo_pattern A 0[0m
+[0;32mI (1467) LSM6DS3: fifo_data = 0[0m
+[0;32mI (1477) LSM6DS3: fifo_pattern B 0[0m
+[0;32mI (1477) LSM6DS3: fifo_data = 0[0m
+[0;32mI (1477) LSM6DS3: fifo_pattern 0 0[0m
+[0;32mI (1487) LSM6DS3: fifo_data = 84[0m
+[0;32mI (1487) LSM6DS3: fifo_pattern 1 0[0m
+[0;32mI (1487) LSM6DS3: fifo_data = FE2D[0m
+[0;32mI (1487) LSM6DS3: fifo_pattern 2 0[0m
+[0;32mI (1497) LSM6DS3: fifo_data = FF91[0m
+[0;32mI (1497) LSM6DS3: fifo_pattern 3 0[0m
+[0;32mI (1497) LSM6DS3: fifo_data = 10A[0m
+[0;32mI (1507) LSM6DS3: fifo_pattern 4 0[0m
+[0;32mI (1507) LSM6DS3: fifo_data = 7AA[0m
+[0;32mI (1507) LSM6DS3: fifo_pattern 5 0[0m
+[0;32mI (1517) LSM6DS3: fifo_data = 1F32[0m
+[0;32mI (1517) LSM6DS3: fifo_pattern 6 0[0m
+[0;32mI (1517) LSM6DS3: fifo_data = 0[0m
+[0;32mI (1527) LSM6DS3: fifo_pattern 7 0[0m
+[0;32mI (1527) LSM6DS3: fifo_data = 0[0m
+[0;32mI (1527) LSM6DS3: fifo_pattern 8 0[0m
+[0;32mI (1527) LSM6DS3: fifo_data = 0[0m
+[0;32mI (1537) LSM6DS3: fifo_pattern 9 0[0m
+[0;32mI (1537) LSM6DS3: fifo_data = 0[0m
+[0;32mI (1537) LSM6DS3: fifo_pattern A 0[0m
+[0;32mI (1547) LSM6DS3: fifo_data = 0[0m
+[0;32mI (1547) LSM6DS3: fifo_pattern B 0[0m
+[0;32mI (1547) LSM6DS3: fifo_data = 0[0m
+[0;32mI (1557) LSM6DS3: fifo_pattern 0 0[0m
+[0;32mI (1557) LSM6DS3: fifo_data = 79[0m
+[0;32mI (1557) LSM6DS3: fifo_pattern 1 0[0m
+[0;32mI (1557) LSM6DS3: fifo_data = FE31[0m
+[0;32mI (1567) LSM6DS3: fifo_pattern 2 0[0m
+[0;32mI (1567) LSM6DS3: fifo_data = FF9A[0m
+[0;32mI (1567) LSM6DS3: fifo_pattern 3 0[0m
+[0;32mI (1577) LSM6DS3: fifo_data = 10D[0m
+[0;32mI (1577) LSM6DS3: fifo_pattern 4 0[0m
+[0;32mI (1577) LSM6DS3: fifo_data = 7A6[0m
+[0;32mI (1587) LSM6DS3: fifo_pattern 5 0[0m
+[0;32mI (1587) LSM6DS3: fifo_data = 1F1A[0m
+[0;32mI (1587) LSM6DS3: fifo_pattern 6 0[0m
+[0;32mI (1597) LSM6DS3: fifo_data = 0[0m
+[0;32mI (1597) LSM6DS3: fifo_pattern 7 0[0m
+[0;32mI (1597) LSM6DS3: fifo_data = 0[0m
+[0;32mI (1597) LSM6DS3: fifo_pattern 8 0[0m
+[0;32mI (1607) LSM6DS3: fifo_data = 0[0m
+[0;32mI (1607) LSM6DS3: fifo_pattern 9 0[0m
+[0;32mI (1607) LSM6DS3: fifo_data = 0[0m
+[0;32mI (1617) LSM6DS3: fifo_pattern A 0[0m
+[0;32mI (1617) LSM6DS3: fifo_data = 0[0m
+[0;32mI (1617) LSM6DS3: fifo_pattern B 0[0m
+[0;32mI (1627) LSM6DS3: fifo_data = 0[0m
+[0;32mI (1627) LSM6DS3: fifo_pattern 0 0[0m
+[0;32mI (1627) LSM6DS3: fifo_data = 6F[0m
+[0;32mI (1627) LSM6DS3: fifo_pattern 1 0[0m
+[0;32mI (1637) LSM6DS3: fifo_data = FE3A[0m
+[0;32mI (1637) LSM6DS3: fifo_pattern 2 0[0m
+[0;32mI (1637) LSM6DS3: fifo_data = FFA1[0m
+[0;32mI (1647) LSM6DS3: fifo_pattern 3 0[0m
+[0;32mI (1647) LSM6DS3: fifo_data = 10F[0m
+[0;32mI (1647) LSM6DS3: fifo_pattern 4 0[0m
+[0;32mI (1657) LSM6DS3: fifo_data = 7AB[0m
+[0;32mI (1657) LSM6DS3: fifo_pattern 5 0[0m
+[0;32mI (1657) LSM6DS3: fifo_data = 1F2B[0m
+[0;32mI (1667) LSM6DS3: fifo_pattern 6 0[0m
+[0;32mI (1667) LSM6DS3: fifo_data = 0[0m
+[0;32mI (1667) LSM6DS3: fifo_pattern 7 0[0m
+[0;32mI (1667) LSM6DS3: fifo_data = 0[0m
+[0;32mI (1677) LSM6DS3: fifo_pattern 8 0[0m
+[0;32mI (1677) LSM6DS3: fifo_data = 0[0m
+[0;32mI (1677) LSM6DS3: fifo_pattern 9 0[0m
+[0;32mI (1687) LSM6DS3: fifo_data = 0[0m
+[0;32mI (1687) LSM6DS3: fifo_pattern A 0[0m
+[0;32mI (1687) LSM6DS3: fifo_data = 0[0m
+[0;32mI (1697) LSM6DS3: fifo_pattern B 0[0m
+[0;32mI (1697) LSM6DS3: fifo_data = 0[0m

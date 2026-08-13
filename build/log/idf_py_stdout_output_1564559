@@ -1,0 +1,3251 @@
+Command: /home/simonque/.espressif/python_env/idf6.1_py3.12_env/bin/python /home/simonque/Documents/code/esp-idf/tools/idf_monitor.py -p /dev/ttyUSB0 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 /home/simonque/Documents/code/esp-idf-projects/components_testing/lsm6ds3_lib/build/i2c-basic.elf /home/simonque/Documents/code/esp-idf-projects/components_testing/lsm6ds3_lib/build/bootloader/bootloader.elf -m '/home/simonque/.espressif/python_env/idf6.1_py3.12_env/bin/python' '/home/simonque/Documents/code/esp-idf/tools/idf.py'
+: paddr�ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x17 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0040,len:6272
+load:0x40078000,len:15848
+load:0x40080400,len:3920
+entry 0x40080644
+[0;32mI (27) boot: ESP-IDF v6.1-dev-2310-g44e2fa6d9c5-dirt 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Aug 12 2026 10:57:35[0m
+[0;32mI (28) boot: Multicore bootloader[0m
+[0;32mI (31) boot: chip revision: v3.1[0m
+[0;32mI (34) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (37) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (41) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (49) boot: Partition Table:[0m
+[0;32mI (52) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (58) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (71) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (78) boot: End of partition table[0m
+[0;32mI (81) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0896ch ( 35180) map[0m
+[0;32mI (101) esp_image: segment 1: paddr=00018994 vaddr=3ffb0000 size=027bch ( 10172) load[0m
+[0;32mI (105) esp_image: segment 2: paddr=0001b158 vaddr=40080000 size=04ec0h ( 20160) load[0m
+[0;32mI (114) esp_image: segment 3: paddr=00020020 vaddr=400d0020 size=0e6f8h ( 59128) map[0m
+[0;32mI (135) esp_image: segment 4: paddr=0002e720 vaddr=40084ec0 size=058e8h ( 22760) load[0m
+[0;32mI (145) esp_image: segment 5: paddr=00034010 vaddr=50000000 size=00028h (    40) load[0m
+[0;32mI (150) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (150) boot: Disabling RNG early entropy source...[0m
+[0;32mI (163) cpu_start: Multicore app[0m
+[0;32mI (171) cpu_start: GPIO 3 and 1 are used as console UART I/O pins[0m
+[0;32mI (171) cpu_start: Pro cpu start user code[0m
+[0;32mI (171) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (173) app_init: Application information:[0m
+[0;32mI (177) app_init: Project name:     i2c-basic[0m
+[0;32mI (181) app_init: App version:      1[0m
+[0;32mI (185) app_init: Compile time:     Aug 12 2026 10:54:20[0m
+[0;32mI (190) app_init: ELF file SHA256:  210478b0c...[0m
+[0;32mI (194) app_init: ESP-IDF:          v6.1-dev-2310-g44e2fa6d9c5-dirt[0m
+[0;32mI (200) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (204) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (208) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (212) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (218) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (223) heap_init: At 3FFB3128 len 0002CED8 (179 KiB): DRAM[0m
+[0;32mI (228) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (234) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (239) heap_init: At 4008A7A8 len 00015858 (86 KiB): IRAM[0m
+[0;33mW (245) spi_flash: Detected boya flash chip but using generic driver. For optimal functionality, enable `SPI_FLASH_SUPPORT_BOYA_CHIP` in menuconfig[0m
+[0;32mI (258) spi_flash: detected chip: generic[0m
+[0;32mI (261) spi_flash: flash io: dio[0m
+[0;33mW (264) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (277) main_task: Started on CPU0[0m
+[0;32mI (287) main_task: Calling app_main()[0m
+[0;32mI (287) LSM6DS3_EXAMPLE: I2C initialized successfully[0m
+[0;32mI (287) LSM6DS3: WHO_AM_I = 69[0m
+[0;32mI (287) LSM6DS3: CTRL1_XL = 48[0m
+[0;32mI (287) LSM6DS3: CTRL1_XL = 48[0m
+[0;32mI (287) LSM6DS3: CTRL1_XL = 48[0m
+[0;32mI (297) LSM6DS3: CTRL1_G = 44[0m
+[0;32mI (297) LSM6DS3: CTRL2_G = 44[0m
+[0;32mI (297) LSM6DS3: CTRL2_G = 44[0m
+[0;32mI (307) LSM6DS3: FIFO_CTRL1_REG_ADDR = FF[0m
+[0;32mI (307) LSM6DS3: FIFO_CTRL2_REG_ADDR = F[0m
+[0;32mI (317) LSM6DS3: FIFO_CTRL1_REG_ADDR again = FF[0m
+[0;32mI (317) LSM6DS3: FIFO_CTRL2_REG_ADDR again = F[0m
+[0;32mI (317) LSM6DS3: num_fifo_samples = 9[0m
+[0;32mI (317) LSM6DS3: num_fifo_samples = 9[0m
+[0;32mI (327) LSM6DS3: num_fifo_samples = 18[0m
+[0;32mI (327) LSM6DS3: num_fifo_samples = 18[0m
+[0;32mI (337) LSM6DS3: num_fifo_samples = 18[0m
+[0;32mI (337) LSM6DS3: num_fifo_samples = 27[0m
+[0;32mI (337) LSM6DS3: num_fifo_samples = 27[0m
+[0;32mI (347) LSM6DS3: num_fifo_samples = 36[0m
+[0;32mI (347) LSM6DS3: num_fifo_samples = 36[0m
+[0;32mI (347) LSM6DS3: num_fifo_samples = 36[0m
+[0;32mI (357) LSM6DS3: num_fifo_samples = 45[0m
+[0;32mI (357) LSM6DS3: fifo_pattern 0 0[0m
+[0;32mI (357) LSM6DS3: fifo_data = 69[0m
+[0;32mI (367) LSM6DS3: fifo_pattern 1 0[0m
+[0;32mI (367) LSM6DS3: fifo_data = FE35[0m
+[0;32mI (367) LSM6DS3: fifo_pattern 2 0[0m
+[0;32mI (367) LSM6DS3: fifo_data = FFA0[0m
+[0;32mI (377) LSM6DS3: fifo_pattern 3 0[0m
+[0;32mI (377) LSM6DS3: fifo_data = 16E[0m
+[0;32mI (377) LSM6DS3: fifo_pattern 4 0[0m
+[0;32mI (387) LSM6DS3: fifo_data = 72D[0m
+[0;32mI (387) LSM6DS3: fifo_pattern 5 0[0m
+[0;32mI (387) LSM6DS3: fifo_data = 1F55[0m
+[0;32mI (397) LSM6DS3: fifo_pattern 6 0[0m
+[0;32mI (397) LSM6DS3: fifo_data = 0[0m
+[0;32mI (397) LSM6DS3: fifo_pattern 7 0[0m
+[0;32mI (397) LSM6DS3: fifo_data = 0[0m
+[0;32mI (407) LSM6DS3: fifo_pattern 8 0[0m
+[0;32mI (407) LSM6DS3: fifo_data = 0[0m
+[0;32mI (407) LSM6DS3: fifo_pattern 0 0[0m
+[0;32mI (417) LSM6DS3: fifo_data = 84[0m
+[0;32mI (417) LSM6DS3: fifo_pattern 1 0[0m
+[0;32mI (417) LSM6DS3: fifo_data = FE36[0m
+[0;32mI (427) LSM6DS3: fifo_pattern 2 0[0m
+[0;32mI (427) LSM6DS3: fifo_data = FF8F[0m
+[0;32mI (427) LSM6DS3: fifo_pattern 3 0[0m
+[0;32mI (427) LSM6DS3: fifo_data = 170[0m
+[0;32mI (437) LSM6DS3: fifo_pattern 4 0[0m
+[0;32mI (437) LSM6DS3: fifo_data = 731[0m
+[0;32mI (437) LSM6DS3: fifo_pattern 5 0[0m
+[0;32mI (447) LSM6DS3: fifo_data = 1F60[0m
+[0;32mI (447) LSM6DS3: fifo_pattern 6 0[0m
+[0;32mI (447) LSM6DS3: fifo_data = 0[0m
+[0;32mI (447) LSM6DS3: fifo_pattern 7 0[0m
+[0;32mI (457) LSM6DS3: fifo_data = 0[0m
+[0;32mI (457) LSM6DS3: fifo_pattern 8 0[0m
+[0;32mI (457) LSM6DS3: fifo_data = 0[0m
+[0;32mI (467) LSM6DS3: fifo_pattern 0 0[0m
+[0;32mI (467) LSM6DS3: fifo_data = 7E[0m
+[0;32mI (467) LSM6DS3: fifo_pattern 1 0[0m
+[0;32mI (477) LSM6DS3: fifo_data = FE37[0m
+[0;32mI (477) LSM6DS3: fifo_pattern 2 0[0m
+[0;32mI (477) LSM6DS3: fifo_data = FF8D[0m
+[0;32mI (477) LSM6DS3: fifo_pattern 3 0[0m
+[0;32mI (487) LSM6DS3: fifo_data = 15F[0m
+[0;32mI (487) LSM6DS3: fifo_pattern 4 0[0m
+[0;32mI (487) LSM6DS3: fifo_data = 721[0m
+[0;32mI (497) LSM6DS3: fifo_pattern 5 0[0m
+[0;32mI (497) LSM6DS3: fifo_data = 1F3F[0m
+[0;32mI (497) LSM6DS3: fifo_pattern 6 0[0m
+[0;32mI (507) LSM6DS3: fifo_data = 0[0m
+[0;32mI (507) LSM6DS3: fifo_pattern 7 0[0m
+[0;32mI (507) LSM6DS3: fifo_data = 0[0m
+[0;32mI (507) LSM6DS3: fifo_pattern 8 0[0m
+[0;32mI (517) LSM6DS3: fifo_data = 0[0m
+[0;32mI (517) LSM6DS3: fifo_pattern 0 0[0m
+[0;32mI (517) LSM6DS3: fifo_data = 74[0m
+[0;32mI (527) LSM6DS3: fifo_pattern 1 0[0m
+[0;32mI (527) LSM6DS3: fifo_data = FE3B[0m
+[0;32mI (527) LSM6DS3: fifo_pattern 2 0[0m
+[0;32mI (537) LSM6DS3: fifo_data = FF9E[0m
+[0;32mI (537) LSM6DS3: fifo_pattern 3 0[0m
+[0;32mI (537) LSM6DS3: fifo_data = 171[0m
+[0;32mI (537) LSM6DS3: fifo_pattern 4 0[0m
+[0;32mI (547) LSM6DS3: fifo_data = 71E[0m
+[0;32mI (547) LSM6DS3: fifo_pattern 5 0[0m
+[0;32mI (547) LSM6DS3: fifo_data = 1F54[0m
+[0;32mI (557) LSM6DS3: fifo_pattern 6 0[0m
+[0;32mI (557) LSM6DS3: fifo_data = 0[0m
+[0;32mI (557) LSM6DS3: fifo_pattern 7 0[0m
+[0;32mI (567) LSM6DS3: fifo_data = 0[0m
+[0;32mI (567) LSM6DS3: fifo_pattern 8 0[0m
+[0;32mI (567) LSM6DS3: fifo_data = 0[0m
+[0;32mI (567) LSM6DS3: fifo_pattern 0 0[0m
+[0;32mI (577) LSM6DS3: fifo_data = 90[0m
+[0;32mI (577) LSM6DS3: fifo_pattern 1 0[0m
+[0;32mI (577) LSM6DS3: fifo_data = FE30[0m
+[0;32mI (587) LSM6DS3: fifo_pattern 2 0[0m
+[0;32mI (587) LSM6DS3: fifo_data = FF8F[0m
+[0;32mI (587) LSM6DS3: fifo_pattern 3 0[0m
+[0;32mI (587) LSM6DS3: fifo_data = 17A[0m
+[0;32mI (597) LSM6DS3: fifo_pattern 4 0[0m
+[0;32mI (597) LSM6DS3: fifo_data = 721[0m
+[0;32mI (597) LSM6DS3: fifo_pattern 5 0[0m
+[0;32mI (607) LSM6DS3: fifo_data = 1F63[0m
+[0;32mI (607) LSM6DS3: fifo_pattern 6 0[0m
+[0;32mI (607) LSM6DS3: fifo_data = 0[0m
+[0;32mI (617) LSM6DS3: fifo_pattern 7 0[0m
+[0;32mI (617) LSM6DS3: fifo_data = 0[0m
+[0;32mI (617) LSM6DS3: fifo_pattern 8 0[0m
+[0;32mI (617) LSM6DS3: fifo_data = 0[0m
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x17 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0040,len:6272
+load:0x40078000,len:15848
+load:0x40080400,len:3920
+entry 0x40080644
+[0;32mI (27) boot: ESP-IDF v6.1-dev-2310-g44e2fa6d9c5-dirt 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Aug 12 2026 10:57:35[0m
+[0;32mI (28) boot: Multicore bootloader[0m
+[0;32mI (31) boot: chip revision: v3.1[0m
+[0;32mI (34) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (37) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (41) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (49) boot: Partition Table:[0m
+[0;32mI (52) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (58) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (71) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (78) boot: End of partition table[0m
+[0;32mI (81) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0896ch ( 35180) map[0m
+[0;32mI (101) esp_image: segment 1: paddr=00018994 vaddr=3ffb0000 size=027bch ( 10172) load[0m
+[0;32mI (105) esp_image: segment 2: paddr=0001b158 vaddr=40080000 size=04ec0h ( 20160) load[0m
+[0;32mI (114) esp_image: segment 3: paddr=00020020 vaddr=400d0020 size=0e6f8h ( 59128) map[0m
+[0;32mI (135) esp_image: segment 4: paddr=0002e720 vaddr=40084ec0 size=058e8h ( 22760) load[0m
+[0;32mI (145) esp_image: segment 5: paddr=00034010 vaddr=50000000 size=00028h (    40) load[0m
+[0;32mI (150) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (150) boot: Disabling RNG early entropy source...[0m
+[0;32mI (163) cpu_start: Multicore app[0m
+[0;32mI (171) cpu_start: GPIO 3 and 1 are used as console UART I/O pins[0m
+[0;32mI (171) cpu_start: Pro cpu start user code[0m
+[0;32mI (171) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (173) app_init: Application information:[0m
+[0;32mI (177) app_init: Project name:     i2c-basic[0m
+[0;32mI (181) app_init: App version:      1[0m
+[0;32mI (185) app_init: Compile time:     Aug 12 2026 10:54:20[0m
+[0;32mI (190) app_init: ELF file SHA256:  210478b0c...[0m
+[0;32mI (194) app_init: ESP-IDF:          v6.1-dev-2310-g44e2fa6d9c5-dirt[0m
+[0;32mI (200) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (204) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (208) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (212) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (218) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (223) heap_init: At 3FFB3128 len 0002CED8 (179 KiB): DRAM[0m
+[0;32mI (228) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (234) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (239) heap_init: At 4008A7A8 len 00015858 (86 KiB): IRAM[0m
+[0;33mW (245) spi_flash: Detected boya flash chip but using generic driver. For optimal functionality, enable `SPI_FLASH_SUPPORT_BOYA_CHIP` in menuconfig[0m
+[0;32mI (258) spi_flash: detected chip: generic[0m
+[0;32mI (261) spi_flash: flash io: dio[0m
+[0;33mW (264) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (277) main_task: Started on CPU0[0m
+[0;32mI (287) main_task: Calling app_main()[0m
+[0;32mI (287) LSM6DS3_EXAMPLE: I2C initialized successfully[0m
+[0;32mI (287) LSM6DS3: WHO_AM_I = 69[0m
+[0;32mI (287) LSM6DS3: CTRL1_XL = 48[0m
+[0;32mI (287) LSM6DS3: CTRL1_XL = 48[0m
+[0;32mI (287) LSM6DS3: CTRL1_XL = 48[0m
+[0;32mI (297) LSM6DS3: CTRL1_G = 44[0m
+[0;32mI (297) LSM6DS3: CTRL2_G = 44[0m
+[0;32mI (297) LSM6DS3: CTRL2_G = 44[0m
+[0;32mI (307) LSM6DS3: FIFO_CTRL1_REG_ADDR = FF[0m
+[0;32mI (307) LSM6DS3: FIFO_CTRL2_REG_ADDR = F[0m
+[0;32mI (317) LSM6DS3: FIFO_CTRL1_REG_ADDR again = FF[0m
+[0;32mI (317) LSM6DS3: FIFO_CTRL2_REG_ADDR again = F[0m
+[0;32mI (317) LSM6DS3: num_fifo_samples = 9[0m
+[0;32mI (317) LSM6DS3: num_fifo_samples = 9[0m
+[0;32mI (327) LSM6DS3: num_fifo_samples = 18[0m
+[0;32mI (327) LSM6DS3: num_fifo_samples = 18[0m
+[0;32mI (337) LSM6DS3: num_fifo_samples = 18[0m
+[0;32mI (337) LSM6DS3: num_fifo_samples = 27[0m
+[0;32mI (337) LSM6DS3: num_fifo_samples = 27[0m
+[0;32mI (347) LSM6DS3: num_fifo_samples = 27[0m
+[0;32mI (347) LSM6DS3: num_fifo_samples = 36[0m
+[0;32mI (347) LSM6DS3: num_fifo_samples = 36[0m
+[0;32mI (357) LSM6DS3: num_fifo_samples = 36[0m
+[0;32mI (357) LSM6DS3: num_fifo_samples = 45[0m
+[0;32mI (357) LSM6DS3: fifo_pattern 0 0[0m
+[0;32mI (367) LSM6DS3: fifo_data = A1[0m
+[0;32mI (367) LSM6DS3: fifo_pattern 1 0[0m
+[0;32mI (367) LSM6DS3: fifo_data = FE7C[0m
+[0;32mI (367) LSM6DS3: fifo_pattern 2 0[0m
+[0;32mI (377) LSM6DS3: fifo_data = FF5D[0m
+[0;32mI (377) LSM6DS3: fifo_pattern 3 0[0m
+[0;32mI (377) LSM6DS3: fifo_data = 1E98[0m
+[0;32mI (387) LSM6DS3: fifo_pattern 4 0[0m
+[0;32mI (387) LSM6DS3: fifo_data = 8D[0m
+[0;32mI (387) LSM6DS3: fifo_pattern 5 0[0m
+[0;32mI (397) LSM6DS3: fifo_data = F7DB[0m
+[0;32mI (397) LSM6DS3: fifo_pattern 6 0[0m
+[0;32mI (397) LSM6DS3: fifo_data = 0[0m
+[0;32mI (397) LSM6DS3: fifo_pattern 7 0[0m
+[0;32mI (407) LSM6DS3: fifo_data = 0[0m
+[0;32mI (407) LSM6DS3: fifo_pattern 8 0[0m
+[0;32mI (407) LSM6DS3: fifo_data = 0[0m
+[0;32mI (417) LSM6DS3: fifo_pattern 0 0[0m
+[0;32mI (417) LSM6DS3: fifo_data = 5E[0m
+[0;32mI (417) LSM6DS3: fifo_pattern 1 0[0m
+[0;32mI (427) LSM6DS3: fifo_data = FE2B[0m
+[0;32mI (427) LSM6DS3: fifo_pattern 2 0[0m
+[0;32mI (427) LSM6DS3: fifo_data = FF97[0m
+[0;32mI (427) LSM6DS3: fifo_pattern 3 0[0m
+[0;32mI (437) LSM6DS3: fifo_data = 1ECB[0m
+[0;32mI (437) LSM6DS3: fifo_pattern 4 0[0m
+[0;32mI (437) LSM6DS3: fifo_data = 179[0m
+[0;32mI (447) LSM6DS3: fifo_pattern 5 0[0m
+[0;32mI (447) LSM6DS3: fifo_data = F7DB[0m
+[0;32mI (447) LSM6DS3: fifo_pattern 6 0[0m
+[0;32mI (457) LSM6DS3: fifo_data = 0[0m
+[0;32mI (457) LSM6DS3: fifo_pattern 7 0[0m
+[0;32mI (457) LSM6DS3: fifo_data = 0[0m
+[0;32mI (457) LSM6DS3: fifo_pattern 8 0[0m
+[0;32mI (467) LSM6DS3: fifo_data = 0[0m
+[0;32mI (467) LSM6DS3: fifo_pattern 0 0[0m
+[0;32mI (467) LSM6DS3: fifo_data = FF55[0m
+[0;32mI (477) LSM6DS3: fifo_pattern 1 0[0m
+[0;32mI (477) LSM6DS3: fifo_data = FE3F[0m
+[0;32mI (477) LSM6DS3: fifo_pattern 2 0[0m
+[0;32mI (487) LSM6DS3: fifo_data = 1[0m
+[0;32mI (487) LSM6DS3: fifo_pattern 3 0[0m
+[0;32mI (487) LSM6DS3: fifo_data = 1E8D[0m
+[0;32mI (487) LSM6DS3: fifo_pattern 4 0[0m
+[0;32mI (497) LSM6DS3: fifo_data = 103[0m
+[0;32mI (497) LSM6DS3: fifo_pattern 5 0[0m
+[0;32mI (497) LSM6DS3: fifo_data = F82F[0m
+[0;32mI (507) LSM6DS3: fifo_pattern 6 0[0m
+[0;32mI (507) LSM6DS3: fifo_data = 0[0m
+[0;32mI (507) LSM6DS3: fifo_pattern 7 0[0m
+[0;32mI (517) LSM6DS3: fifo_data = 0[0m
+[0;32mI (517) LSM6DS3: fifo_pattern 8 0[0m
+[0;32mI (517) LSM6DS3: fifo_data = 0[0m
+[0;32mI (517) LSM6DS3: fifo_pattern 0 0[0m
+[0;32mI (527) LSM6DS3: fifo_data = FE40[0m
+[0;32mI (527) LSM6DS3: fifo_pattern 1 0[0m
+[0;32mI (527) LSM6DS3: fifo_data = FE5A[0m
+[0;32mI (537) LSM6DS3: fifo_pattern 2 0[0m
+[0;32mI (537) LSM6DS3: fifo_data = 6D[0m
+[0;32mI (537) LSM6DS3: fifo_pattern 3 0[0m
+[0;32mI (537) LSM6DS3: fifo_data = 1EA7[0m
+[0;32mI (547) LSM6DS3: fifo_pattern 4 0[0m
+[0;32mI (547) LSM6DS3: fifo_data = 41[0m
+[0;32mI (547) LSM6DS3: fifo_pattern 5 0[0m
+[0;32mI (557) LSM6DS3: fifo_data = F85F[0m
+[0;32mI (557) LSM6DS3: fifo_pattern 6 0[0m
+[0;32mI (557) LSM6DS3: fifo_data = 0[0m
+[0;32mI (567) LSM6DS3: fifo_pattern 7 0[0m
+[0;32mI (567) LSM6DS3: fifo_data = 0[0m
+[0;32mI (567) LSM6DS3: fifo_pattern 8 0[0m
+[0;32mI (567) LSM6DS3: fifo_data = 0[0m
+[0;32mI (577) LSM6DS3: fifo_pattern 0 0[0m
+[0;32mI (577) LSM6DS3: fifo_data = FE7D[0m
+[0;32mI (577) LSM6DS3: fifo_pattern 1 0[0m
+[0;32mI (587) LSM6DS3: fifo_data = FE07[0m
+[0;32mI (587) LSM6DS3: fifo_pattern 2 0[0m
+[0;32mI (587) LSM6DS3: fifo_data = 5C[0m
+[0;32mI (597) LSM6DS3: fifo_pattern 3 0[0m
+[0;32mI (597) LSM6DS3: fifo_data = 1E78[0m
+[0;32mI (597) LSM6DS3: fifo_pattern 4 0[0m
+[0;32mI (597) LSM6DS3: fifo_data = FEAA[0m
+[0;32mI (607) LSM6DS3: fifo_pattern 5 0[0m
+[0;32mI (607) LSM6DS3: fifo_data = F6DF[0m
+[0;32mI (607) LSM6DS3: fifo_pattern 6 0[0m
+[0;32mI (617) LSM6DS3: fifo_data = 0[0m
+[0;32mI (617) LSM6DS3: fifo_pattern 7 0[0m
+[0;32mI (617) LSM6DS3: fifo_data = 0[0m
+[0;32mI (627) LSM6DS3: fifo_pattern 8 0[0m
+[0;32mI (627) LSM6DS3: fifo_data = 0[0m
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x17 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0040,len:6272
+load:0x40078000,len:15848
+load:0x40080400,len:3920
+entry 0x40080644
+[0;32mI (27) boot: ESP-IDF v6.1-dev-2310-g44e2fa6d9c5-dirt 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Aug 12 2026 10:57:35[0m
+[0;32mI (28) boot: Multicore bootloader[0m
+[0;32mI (31) boot: chip revision: v3.1[0m
+[0;32mI (34) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (37) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (41) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (49) boot: Partition Table:[0m
+[0;32mI (52) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (58) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (71) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (78) boot: End of partition table[0m
+[0;32mI (81) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0896ch ( 35180) map[0m
+[0;32mI (101) esp_image: segment 1: paddr=00018994 vaddr=3ffb0000 size=027bch ( 10172) load[0m
+[0;32mI (105) esp_image: segment 2: paddr=0001b158 vaddr=40080000 size=04ec0h ( 20160) load[0m
+[0;32mI (114) esp_image: segment 3: paddr=00020020 vaddr=400d0020 size=0e6f8h ( 59128) map[0m
+[0;32mI (135) esp_image: segment 4: paddr=0002e720 vaddr=40084ec0 size=058e8h ( 22760) load[0m
+[0;32mI (145) esp_image: segment 5: paddr=00034010 vaddr=50000000 size=00028h (    40) load[0m
+[0;32mI (150) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (150) boot: Disabling RNG early entropy source...[0m
+[0;32mI (163) cpu_start: Multicore app[0m
+[0;32mI (171) cpu_start: GPIO 3 and 1 are used as console UART I/O pins[0m
+[0;32mI (171) cpu_start: Pro cpu start user code[0m
+[0;32mI (171) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (173) app_init: Application information:[0m
+[0;32mI (177) app_init: Project name:     i2c-basic[0m
+[0;32mI (181) app_init: App version:      1[0m
+[0;32mI (185) app_init: Compile time:     Aug 12 2026 10:54:20[0m
+[0;32mI (190) app_init: ELF file SHA256:  210478b0c...[0m
+[0;32mI (194) app_init: ESP-IDF:          v6.1-dev-2310-g44e2fa6d9c5-dirt[0m
+[0;32mI (200) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (204) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (208) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (212) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (218) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (223) heap_init: At 3FFB3128 len 0002CED8 (179 KiB): DRAM[0m
+[0;32mI (228) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (234) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (239) heap_init: At 4008A7A8 len 00015858 (86 KiB): IRAM[0m
+[0;33mW (245) spi_flash: Detected boya flash chip but using generic driver. For optimal functionality, enable `SPI_FLASH_SUPPORT_BOYA_CHIP` in menuconfig[0m
+[0;32mI (258) spi_flash: detected chip: generic[0m
+[0;32mI (261) spi_flash: flash io: dio[0m
+[0;33mW (264) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (277) main_task: Started on CPU0[0m
+[0;32mI (287) main_task: Calling app_main()[0m
+[0;32mI (287) LSM6DS3_EXAMPLE: I2C initialized successfully[0m
+[0;32mI (287) LSM6DS3: WHO_AM_I = 69[0m
+[0;32mI (287) LSM6DS3: CTRL1_XL = 48[0m
+[0;32mI (287) LSM6DS3: CTRL1_XL = 48[0m
+[0;32mI (287) LSM6DS3: CTRL1_XL = 48[0m
+[0;32mI (297) LSM6DS3: CTRL1_G = 44[0m
+[0;32mI (297) LSM6DS3: CTRL2_G = 44[0m
+[0;32mI (297) LSM6DS3: CTRL2_G = 44[0m
+[0;32mI (307) LSM6DS3: FIFO_CTRL1_REG_ADDR = FF[0m
+[0;32mI (307) LSM6DS3: FIFO_CTRL2_REG_ADDR = F[0m
+[0;32mI (317) LSM6DS3: FIFO_CTRL1_REG_ADDR again = FF[0m
+[0;32mI (317) LSM6DS3: FIFO_CTRL2_REG_ADDR again = F[0m
+[0;32mI (317) LSM6DS3: num_fifo_samples = 9[0m
+[0;32mI (317) LSM6DS3: num_fifo_samples = 9[0m
+[0;32mI (327) LSM6DS3: num_fifo_samples = 9[0m
+[0;32mI (327) LSM6DS3: num_fifo_samples = 18[0m
+[0;32mI (337) LSM6DS3: num_fifo_samples = 18[0m
+[0;32mI (337) LSM6DS3: num_fifo_samples = 18[0m
+[0;32mI (337) LSM6DS3: num_fifo_samples = 27[0m
+[0;32mI (347) LSM6DS3: num_fifo_samples = 27[0m
+[0;32mI (347) LSM6DS3: num_fifo_samples = 36[0m
+[0;32mI (347) LSM6DS3: num_fifo_samples = 36[0m
+[0;32mI (357) LSM6DS3: num_fifo_samples = 36[0m
+[0;32mI (357) LSM6DS3: num_fifo_samples = 45[0m
+[0;32mI (357) LSM6DS3: fifo_pattern 0 0[0m
+[0;32mI (367) LSM6DS3: fifo_data = FF9D[0m
+[0;32mI (367) LSM6DS3: fifo_pattern 1 0[0m
+[0;32mI (367) LSM6DS3: fifo_data = FD87[0m
+[0;32mI (377) LSM6DS3: fifo_pattern 2 0[0m
+[0;32mI (377) LSM6DS3: fifo_data = FF6D[0m
+[0;32mI (377) LSM6DS3: fifo_pattern 3 0[0m
+[0;32mI (377) LSM6DS3: fifo_data = 1E97[0m
+[0;32mI (387) LSM6DS3: fifo_pattern 4 0[0m
+[0;32mI (387) LSM6DS3: fifo_data = FFF4[0m
+[0;32mI (387) LSM6DS3: fifo_pattern 5 0[0m
+[0;32mI (397) LSM6DS3: fifo_data = F6AA[0m
+[0;32mI (397) LSM6DS3: fifo_pattern 6 0[0m
+[0;32mI (397) LSM6DS3: fifo_data = 0[0m
+[0;32mI (407) LSM6DS3: fifo_pattern 7 0[0m
+[0;32mI (407) LSM6DS3: fifo_data = 0[0m
+[0;32mI (407) LSM6DS3: fifo_pattern 8 0[0m
+[0;32mI (407) LSM6DS3: fifo_data = 0[0m
+[0;32mI (417) LSM6DS3: fifo_pattern 0 0[0m
+[0;32mI (417) LSM6DS3: fifo_data = 3C[0m
+[0;32mI (417) LSM6DS3: fifo_pattern 1 0[0m
+[0;32mI (427) LSM6DS3: fifo_data = FD97[0m
+[0;32mI (427) LSM6DS3: fifo_pattern 2 0[0m
+[0;32mI (427) LSM6DS3: fifo_data = FF50[0m
+[0;32mI (427) LSM6DS3: fifo_pattern 3 0[0m
+[0;32mI (437) LSM6DS3: fifo_data = 1E92[0m
+[0;32mI (437) LSM6DS3: fifo_pattern 4 0[0m
+[0;32mI (437) LSM6DS3: fifo_data = FFE0[0m
+[0;32mI (447) LSM6DS3: fifo_pattern 5 0[0m
+[0;32mI (447) LSM6DS3: fifo_data = F703[0m
+[0;32mI (447) LSM6DS3: fifo_pattern 6 0[0m
+[0;32mI (457) LSM6DS3: fifo_data = 0[0m
+[0;32mI (457) LSM6DS3: fifo_pattern 7 0[0m
+[0;32mI (457) LSM6DS3: fifo_data = 0[0m
+[0;32mI (457) LSM6DS3: fifo_pattern 8 0[0m
+[0;32mI (467) LSM6DS3: fifo_data = 0[0m
+[0;32mI (467) LSM6DS3: fifo_pattern 0 0[0m
+[0;32mI (467) LSM6DS3: fifo_data = 28E[0m
+[0;32mI (477) LSM6DS3: fifo_pattern 1 0[0m
+[0;32mI (477) LSM6DS3: fifo_data = FD96[0m
+[0;32mI (477) LSM6DS3: fifo_pattern 2 0[0m
+[0;32mI (487) LSM6DS3: fifo_data = FF10[0m
+[0;32mI (487) LSM6DS3: fifo_pattern 3 0[0m
+[0;32mI (487) LSM6DS3: fifo_data = 1E89[0m
+[0;32mI (487) LSM6DS3: fifo_pattern 4 0[0m
+[0;32mI (497) LSM6DS3: fifo_data = 7[0m
+[0;32mI (497) LSM6DS3: fifo_pattern 5 0[0m
+[0;32mI (497) LSM6DS3: fifo_data = F6B7[0m
+[0;32mI (507) LSM6DS3: fifo_pattern 6 0[0m
+[0;32mI (507) LSM6DS3: fifo_data = 0[0m
+[0;32mI (507) LSM6DS3: fifo_pattern 7 0[0m
+[0;32mI (517) LSM6DS3: fifo_data = 0[0m
+[0;32mI (517) LSM6DS3: fifo_pattern 8 0[0m
+[0;32mI (517) LSM6DS3: fifo_data = 0[0m
+[0;32mI (517) LSM6DS3: fifo_pattern 0 0[0m
+[0;32mI (527) LSM6DS3: fifo_data = 3D6[0m
+[0;32mI (527) LSM6DS3: fifo_pattern 1 0[0m
+[0;32mI (527) LSM6DS3: fifo_data = FDA7[0m
+[0;32mI (537) LSM6DS3: fifo_pattern 2 0[0m
+[0;32mI (537) LSM6DS3: fifo_data = FF13[0m
+[0;32mI (537) LSM6DS3: fifo_pattern 3 0[0m
+[0;32mI (547) LSM6DS3: fifo_data = 1E83[0m
+[0;32mI (547) LSM6DS3: fifo_pattern 4 0[0m
+[0;32mI (547) LSM6DS3: fifo_data = FFF2[0m
+[0;32mI (547) LSM6DS3: fifo_pattern 5 0[0m
+[0;32mI (557) LSM6DS3: fifo_data = F6CE[0m
+[0;32mI (557) LSM6DS3: fifo_pattern 6 0[0m
+[0;32mI (557) LSM6DS3: fifo_data = 0[0m
+[0;32mI (567) LSM6DS3: fifo_pattern 7 0[0m
+[0;32mI (567) LSM6DS3: fifo_data = 0[0m
+[0;32mI (567) LSM6DS3: fifo_pattern 8 0[0m
+[0;32mI (577) LSM6DS3: fifo_data = 0[0m
+[0;32mI (577) LSM6DS3: fifo_pattern 0 0[0m
+[0;32mI (577) LSM6DS3: fifo_data = 450[0m
+[0;32mI (577) LSM6DS3: fifo_pattern 1 0[0m
+[0;32mI (587) LSM6DS3: fifo_data = FD8F[0m
+[0;32mI (587) LSM6DS3: fifo_pattern 2 0[0m
+[0;32mI (587) LSM6DS3: fifo_data = FF1F[0m
+[0;32mI (597) LSM6DS3: fifo_pattern 3 0[0m
+[0;32mI (597) LSM6DS3: fifo_data = 1E7B[0m
+[0;32mI (597) LSM6DS3: fifo_pattern 4 0[0m
+[0;32mI (607) LSM6DS3: fifo_data = 3D[0m
+[0;32mI (607) LSM6DS3: fifo_pattern 5 0[0m
+[0;32mI (607) LSM6DS3: fifo_data = F61D[0m
+[0;32mI (607) LSM6DS3: fifo_pattern 6 0[0m
+[0;32mI (617) LSM6DS3: fifo_data = 0[0m
+[0;32mI (617) LSM6DS3: fifo_pattern 7 0[0m
+[0;32mI (617) LSM6DS3: fifo_data = 0[0m
+[0;32mI (627) LSM6DS3: fifo_pattern 8 0[0m
+[0;32mI (627) LSM6DS3: fifo_data = 0[0m
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x17 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0040,len:6272
+load:0x40078000,len:15848
+load:0x40080400,len:3920
+entry 0x40080644
+[0;32mI (27) boot: ESP-IDF v6.1-dev-2310-g44e2fa6d9c5-dirt 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Aug 12 2026 10:57:35[0m
+[0;32mI (28) boot: Multicore bootloader[0m
+[0;32mI (31) boot: chip revision: v3.1[0m
+[0;32mI (34) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (37) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (41) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (49) boot: Partition Table:[0m
+[0;32mI (52) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (58) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (71) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (78) boot: End of partition table[0m
+[0;32mI (81) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0896ch ( 35180) map[0m
+[0;32mI (101) esp_image: segment 1: paddr=00018994 vaddr=3ffb0000 size=027bch ( 10172) load[0m
+[0;32mI (105) esp_image: segment 2: paddr=0001b158 vaddr=40080000 size=04ec0h ( 20160) load[0m
+[0;32mI (114) esp_image: segment 3: paddr=00020020 vaddr=400d0020 size=0e6f8h ( 59128) map[0m
+[0;32mI (135) esp_image: segment 4: paddr=0002e720 vaddr=40084ec0 size=058e8h ( 22760) load[0m
+[0;32mI (145) esp_image: segment 5: paddr=00034010 vaddr=50000000 size=00028h (    40) load[0m
+[0;32mI (150) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (150) boot: Disabling RNG early entropy source...[0m
+[0;32mI (163) cpu_start: Multicore app[0m
+[0;32mI (171) cpu_start: GPIO 3 and 1 are used as console UART I/O pins[0m
+[0;32mI (171) cpu_start: Pro cpu start user code[0m
+[0;32mI (171) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (173) app_init: Application information:[0m
+[0;32mI (177) app_init: Project name:     i2c-basic[0m
+[0;32mI (181) app_init: App version:      1[0m
+[0;32mI (185) app_init: Compile time:     Aug 12 2026 10:54:20[0m
+[0;32mI (190) app_init: ELF file SHA256:  210478b0c...[0m
+[0;32mI (194) app_init: ESP-IDF:          v6.1-dev-2310-g44e2fa6d9c5-dirt[0m
+[0;32mI (200) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (204) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (208) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (212) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (218) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (223) heap_init: At 3FFB3128 len 0002CED8 (179 KiB): DRAM[0m
+[0;32mI (228) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (234) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (239) heap_init: At 4008A7A8 len 00015858 (86 KiB): IRAM[0m
+[0;33mW (245) spi_flash: Detected boya flash chip but using generic driver. For optimal functionality, enable `SPI_FLASH_SUPPORT_BOYA_CHIP` in menuconfig[0m
+[0;32mI (258) spi_flash: detected chip: generic[0m
+[0;32mI (261) spi_flash: flash io: dio[0m
+[0;33mW (264) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (277) main_task: Started on CPU0[0m
+[0;32mI (287) main_task: Calling app_main()[0m
+[0;32mI (287) LSM6DS3_EXAMPLE: I2C initialized successfully[0m
+[0;32mI (287) LSM6DS3: WHO_AM_I = 69[0m
+[0;32mI (287) LSM6DS3: CTRL1_XL = 48[0m
+[0;32mI (287) LSM6DS3: CTRL1_XL = 48[0m
+[0;32mI (287) LSM6DS3: CTRL1_XL = 48[0m
+[0;32mI (297) LSM6DS3: CTRL1_G = 44[0m
+[0;32mI (297) LSM6DS3: CTRL2_G = 44[0m
+[0;32mI (297) LSM6DS3: CTRL2_G = 44[0m
+[0;32mI (307) LSM6DS3: FIFO_CTRL1_REG_ADDR = FF[0m
+[0;32mI (307) LSM6DS3: FIFO_CTRL2_REG_ADDR = F[0m
+[0;32mI (317) LSM6DS3: FIFO_CTRL1_REG_ADDR again = FF[0m
+[0;32mI (317) LSM6DS3: FIFO_CTRL2_REG_ADDR again = F[0m
+[0;32mI (317) LSM6DS3: num_fifo_samples = 9[0m
+[0;32mI (317) LSM6DS3: num_fifo_samples = 9[0m
+[0;32mI (327) LSM6DS3: num_fifo_samples = 9[0m
+[0;32mI (327) LSM6DS3: num_fifo_samples = 18[0m
+[0;32mI (337) LSM6DS3: num_fifo_samples = 18[0m
+[0;32mI (337) LSM6DS3: num_fifo_samples = 27[0m
+[0;32mI (337) LSM6DS3: num_fifo_samples = 27[0m
+[0;32mI (347) LSM6DS3: num_fifo_samples = 27[0m
+[0;32mI (347) LSM6DS3: num_fifo_samples = 36[0m
+[0;32mI (347) LSM6DS3: num_fifo_samples = 36[0m
+[0;32mI (357) LSM6DS3: num_fifo_samples = 36[0m
+[0;32mI (357) LSM6DS3: num_fifo_samples = 45[0m
+[0;32mI (357) LSM6DS3: fifo_pattern 0 0[0m
+[0;32mI (367) LSM6DS3: fifo_data = 190[0m
+[0;32mI (367) LSM6DS3: fifo_pattern 1 0[0m
+[0;32mI (367) LSM6DS3: fifo_data = FDA3[0m
+[0;32mI (367) LSM6DS3: fifo_pattern 2 0[0m
+[0;32mI (377) LSM6DS3: fifo_data = FF1C[0m
+[0;32mI (377) LSM6DS3: fifo_pattern 3 0[0m
+[0;32mI (377) LSM6DS3: fifo_data = 1E52[0m
+[0;32mI (387) LSM6DS3: fifo_pattern 4 0[0m
+[0;32mI (387) LSM6DS3: fifo_data = 3F[0m
+[0;32mI (387) LSM6DS3: fifo_pattern 5 0[0m
+[0;32mI (397) LSM6DS3: fifo_data = F65E[0m
+[0;32mI (397) LSM6DS3: fifo_pattern 6 0[0m
+[0;32mI (397) LSM6DS3: fifo_data = 0[0m
+[0;32mI (397) LSM6DS3: fifo_pattern 7 0[0m
+[0;32mI (407) LSM6DS3: fifo_data = 0[0m
+[0;32mI (407) LSM6DS3: fifo_pattern 8 0[0m
+[0;32mI (407) LSM6DS3: fifo_data = 0[0m
+[0;32mI (417) LSM6DS3: fifo_pattern 0 0[0m
+[0;32mI (417) LSM6DS3: fifo_data = EB[0m
+[0;32mI (417) LSM6DS3: fifo_pattern 1 0[0m
+[0;32mI (427) LSM6DS3: fifo_data = FE2E[0m
+[0;32mI (427) LSM6DS3: fifo_pattern 2 0[0m
+[0;32mI (427) LSM6DS3: fifo_data = FF3F[0m
+[0;32mI (427) LSM6DS3: fifo_pattern 3 0[0m
+[0;32mI (437) LSM6DS3: fifo_data = 1EBD[0m
+[0;32mI (437) LSM6DS3: fifo_pattern 4 0[0m
+[0;32mI (437) LSM6DS3: fifo_data = FFD5[0m
+[0;32mI (447) LSM6DS3: fifo_pattern 5 0[0m
+[0;32mI (447) LSM6DS3: fifo_data = F617[0m
+[0;32mI (447) LSM6DS3: fifo_pattern 6 0[0m
+[0;32mI (457) LSM6DS3: fifo_data = 0[0m
+[0;32mI (457) LSM6DS3: fifo_pattern 7 0[0m
+[0;32mI (457) LSM6DS3: fifo_data = 0[0m
+[0;32mI (457) LSM6DS3: fifo_pattern 8 0[0m
+[0;32mI (467) LSM6DS3: fifo_data = 0[0m
+[0;32mI (467) LSM6DS3: fifo_pattern 0 0[0m
+[0;32mI (467) LSM6DS3: fifo_data = C1[0m
+[0;32mI (477) LSM6DS3: fifo_pattern 1 0[0m
+[0;32mI (477) LSM6DS3: fifo_data = FE63[0m
+[0;32mI (477) LSM6DS3: fifo_pattern 2 0[0m
+[0;32mI (487) LSM6DS3: fifo_data = FF68[0m
+[0;32mI (487) LSM6DS3: fifo_pattern 3 0[0m
+[0;32mI (487) LSM6DS3: fifo_data = 1E61[0m
+[0;32mI (487) LSM6DS3: fifo_pattern 4 0[0m
+[0;32mI (497) LSM6DS3: fifo_data = FF6F[0m
+[0;32mI (497) LSM6DS3: fifo_pattern 5 0[0m
+[0;32mI (497) LSM6DS3: fifo_data = F5C6[0m
+[0;32mI (507) LSM6DS3: fifo_pattern 6 0[0m
+[0;32mI (507) LSM6DS3: fifo_data = 0[0m
+[0;32mI (507) LSM6DS3: fifo_pattern 7 0[0m
+[0;32mI (517) LSM6DS3: fifo_data = 0[0m
+[0;32mI (517) LSM6DS3: fifo_pattern 8 0[0m
+[0;32mI (517) LSM6DS3: fifo_data = 0[0m
+[0;32mI (517) LSM6DS3: fifo_pattern 0 0[0m
+[0;32mI (527) LSM6DS3: fifo_data = B2[0m
+[0;32mI (527) LSM6DS3: fifo_pattern 1 0[0m
+[0;32mI (527) LSM6DS3: fifo_data = FE48[0m
+[0;32mI (537) LSM6DS3: fifo_pattern 2 0[0m
+[0;32mI (537) LSM6DS3: fifo_data = FFA9[0m
+[0;32mI (537) LSM6DS3: fifo_pattern 3 0[0m
+[0;32mI (547) LSM6DS3: fifo_data = 1E9D[0m
+[0;32mI (547) LSM6DS3: fifo_pattern 4 0[0m
+[0;32mI (547) LSM6DS3: fifo_data = FFC9[0m
+[0;32mI (547) LSM6DS3: fifo_pattern 5 0[0m
+[0;32mI (557) LSM6DS3: fifo_data = F618[0m
+[0;32mI (557) LSM6DS3: fifo_pattern 6 0[0m
+[0;32mI (557) LSM6DS3: fifo_data = 0[0m
+[0;32mI (567) LSM6DS3: fifo_pattern 7 0[0m
+[0;32mI (567) LSM6DS3: fifo_data = 0[0m
+[0;32mI (567) LSM6DS3: fifo_pattern 8 0[0m
+[0;32mI (567) LSM6DS3: fifo_data = 0[0m
+[0;32mI (577) LSM6DS3: fifo_pattern 0 0[0m
+[0;32mI (577) LSM6DS3: fifo_data = 2F[0m
+[0;32mI (577) LSM6DS3: fifo_pattern 1 0[0m
+[0;32mI (587) LSM6DS3: fifo_data = FE8C[0m
+[0;32mI (587) LSM6DS3: fifo_pattern 2 0[0m
+[0;32mI (587) LSM6DS3: fifo_data = FFDE[0m
+[0;32mI (597) LSM6DS3: fifo_pattern 3 0[0m
+[0;32mI (597) LSM6DS3: fifo_data = 1E8E[0m
+[0;32mI (597) LSM6DS3: fifo_pattern 4 0[0m
+[0;32mI (597) LSM6DS3: fifo_data = 65[0m
+[0;32mI (607) LSM6DS3: fifo_pattern 5 0[0m
+[0;32mI (607) LSM6DS3: fifo_data = F6B7[0m
+[0;32mI (607) LSM6DS3: fifo_pattern 6 0[0m
+[0;32mI (617) LSM6DS3: fifo_data = 0[0m
+[0;32mI (617) LSM6DS3: fifo_pattern 7 0[0m
+[0;32mI (617) LSM6DS3: fifo_data = 0[0m
+[0;32mI (627) LSM6DS3: fifo_pattern 8 0[0m
+[0;32mI (627) LSM6DS3: fifo_data = 0[0m
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x17 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0040,len:6272
+load:0x40078000,len:15848
+load:0x40080400,len:3920
+entry 0x40080644
+[0;32mI (27) boot: ESP-IDF v6.1-dev-2310-g44e2fa6d9c5-dirt 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Aug 12 2026 10:57:35[0m
+[0;32mI (28) boot: Multicore bootloader[0m
+[0;32mI (31) boot: chip revision: v3.1[0m
+[0;32mI (34) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (37) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (41) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (49) boot: Partition Table:[0m
+[0;32mI (52) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (58) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (71) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (78) boot: End of partition table[0m
+[0;32mI (81) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0896ch ( 35180) map[0m
+[0;32mI (101) esp_image: segment 1: paddr=00018994 vaddr=3ffb0000 size=027bch ( 10172) load[0m
+[0;32mI (105) esp_image: segment 2: paddr=0001b158 vaddr=40080000 size=04ec0h ( 20160) load[0m
+[0;32mI (114) esp_image: segment 3: paddr=00020020 vaddr=400d0020 size=0e6f8h ( 59128) map[0m
+[0;32mI (135) esp_image: segment 4: paddr=0002e720 vaddr=40084ec0 size=058e8h ( 22760) load[0m
+[0;32mI (145) esp_image: segment 5: paddr=00034010 vaddr=50000000 size=00028h (    40) load[0m
+[0;32mI (150) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (150) boot: Disabling RNG early entropy source...[0m
+[0;32mI (163) cpu_start: Multicore app[0m
+[0;32mI (171) cpu_start: GPIO 3 and 1 are used as console UART I/O pins[0m
+[0;32mI (171) cpu_start: Pro cpu start user code[0m
+[0;32mI (171) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (173) app_init: Application information:[0m
+[0;32mI (177) app_init: Project name:     i2c-basic[0m
+[0;32mI (181) app_init: App version:      1[0m
+[0;32mI (185) app_init: Compile time:     Aug 12 2026 10:54:20[0m
+[0;32mI (190) app_init: ELF file SHA256:  210478b0c...[0m
+[0;32mI (194) app_init: ESP-IDF:          v6.1-dev-2310-g44e2fa6d9c5-dirt[0m
+[0;32mI (200) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (204) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (208) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (212) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (218) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (223) heap_init: At 3FFB3128 len 0002CED8 (179 KiB): DRAM[0m
+[0;32mI (228) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (234) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (239) heap_init: At 4008A7A8 len 00015858 (86 KiB): IRAM[0m
+[0;33mW (245) spi_flash: Detected boya flash chip but using generic driver. For optimal functionality, enable `SPI_FLASH_SUPPORT_BOYA_CHIP` in menuconfig[0m
+[0;32mI (258) spi_flash: detected chip: generic[0m
+[0;32mI (261) spi_flash: flash io: dio[0m
+[0;33mW (264) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (277) main_task: Started on CPU0[0m
+[0;32mI (287) main_task: Calling app_main()[0m
+[0;32mI (287) LSM6DS3_EXAMPLE: I2C initialized successfully[0m
+[0;32mI (287) LSM6DS3: WHO_AM_I = 69[0m
+[0;32mI (287) LSM6DS3: CTRL1_XL = 48[0m
+[0;32mI (287) LSM6DS3: CTRL1_XL = 48[0m
+[0;32mI (287) LSM6DS3: CTRL1_XL = 48[0m
+[0;32mI (297) LSM6DS3: CTRL1_G = 44[0m
+[0;32mI (297) LSM6DS3: CTRL2_G = 44[0m
+[0;32mI (297) LSM6DS3: CTRL2_G = 44[0m
+[0;32mI (307) LSM6DS3: FIFO_CTRL1_REG_ADDR = FF[0m
+[0;32mI (307) LSM6DS3: FIFO_CTRL2_REG_ADDR = F[0m
+[0;32mI (317) LSM6DS3: FIFO_CTRL1_REG_ADDR again = FF[0m
+[0;32mI (317) LSM6DS3: FIFO_CTRL2_REG_ADDR again = F[0m
+[0;32mI (317) LSM6DS3: num_fifo_samples = 9[0m
+[0;32mI (317) LSM6DS3: num_fifo_samples = 9[0m
+[0;32mI (327) LSM6DS3: num_fifo_samples = 18[0m
+[0;32mI (327) LSM6DS3: num_fifo_samples = 18[0m
+[0;32mI (337) LSM6DS3: num_fifo_samples = 18[0m
+[0;32mI (337) LSM6DS3: num_fifo_samples = 27[0m
+[0;32mI (337) LSM6DS3: num_fifo_samples = 27[0m
+[0;32mI (347) LSM6DS3: num_fifo_samples = 36[0m
+[0;32mI (347) LSM6DS3: num_fifo_samples = 36[0m
+[0;32mI (347) LSM6DS3: num_fifo_samples = 36[0m
+[0;32mI (357) LSM6DS3: num_fifo_samples = 45[0m
+[0;32mI (357) LSM6DS3: fifo_pattern 0 0[0m
+[0;32mI (357) LSM6DS3: fifo_data = FCAA[0m
+[0;32mI (367) LSM6DS3: fifo_pattern 1 0[0m
+[0;32mI (367) LSM6DS3: fifo_data = 9E[0m
+[0;32mI (367) LSM6DS3: fifo_pattern 2 0[0m
+[0;32mI (367) LSM6DS3: fifo_data = FC96[0m
+[0;32mI (377) LSM6DS3: fifo_pattern 3 0[0m
+[0;32mI (377) LSM6DS3: fifo_data = 1EE9[0m
+[0;32mI (377) LSM6DS3: fifo_pattern 4 0[0m
+[0;32mI (387) LSM6DS3: fifo_data = FD13[0m
+[0;32mI (387) LSM6DS3: fifo_pattern 5 0[0m
+[0;32mI (387) LSM6DS3: fifo_data = FB93[0m
+[0;32mI (397) LSM6DS3: fifo_pattern 6 0[0m
+[0;32mI (397) LSM6DS3: fifo_data = 0[0m
+[0;32mI (397) LSM6DS3: fifo_pattern 7 0[0m
+[0;32mI (397) LSM6DS3: fifo_data = 0[0m
+[0;32mI (407) LSM6DS3: fifo_pattern 8 0[0m
+[0;32mI (407) LSM6DS3: fifo_data = 0[0m
+[0;32mI (407) LSM6DS3: fifo_pattern 0 0[0m
+[0;32mI (417) LSM6DS3: fifo_data = FF9D[0m
+[0;32mI (417) LSM6DS3: fifo_pattern 1 0[0m
+[0;32mI (417) LSM6DS3: fifo_data = 69[0m
+[0;32mI (427) LSM6DS3: fifo_pattern 2 0[0m
+[0;32mI (427) LSM6DS3: fifo_data = FDEF[0m
+[0;32mI (427) LSM6DS3: fifo_pattern 3 0[0m
+[0;32mI (427) LSM6DS3: fifo_data = 1EEE[0m
+[0;32mI (437) LSM6DS3: fifo_pattern 4 0[0m
+[0;32mI (437) LSM6DS3: fifo_data = FD58[0m
+[0;32mI (437) LSM6DS3: fifo_pattern 5 0[0m
+[0;32mI (447) LSM6DS3: fifo_data = FAD3[0m
+[0;32mI (447) LSM6DS3: fifo_pattern 6 0[0m
+[0;32mI (447) LSM6DS3: fifo_data = 0[0m
+[0;32mI (457) LSM6DS3: fifo_pattern 7 0[0m
+[0;32mI (457) LSM6DS3: fifo_data = 0[0m
+[0;32mI (457) LSM6DS3: fifo_pattern 8 0[0m
+[0;32mI (457) LSM6DS3: fifo_data = 0[0m
+[0;32mI (467) LSM6DS3: fifo_pattern 0 0[0m
+[0;32mI (467) LSM6DS3: fifo_data = 187[0m
+[0;32mI (467) LSM6DS3: fifo_pattern 1 0[0m
+[0;32mI (477) LSM6DS3: fifo_data = 0[0m
+[0;32mI (477) LSM6DS3: fifo_pattern 2 0[0m
+[0;32mI (477) LSM6DS3: fifo_data = FF5B[0m
+[0;32mI (477) LSM6DS3: fifo_pattern 3 0[0m
+[0;32mI (487) LSM6DS3: fifo_data = 1F0E[0m
+[0;32mI (487) LSM6DS3: fifo_pattern 4 0[0m
+[0;32mI (487) LSM6DS3: fifo_data = FE27[0m
+[0;32mI (497) LSM6DS3: fifo_pattern 5 0[0m
+[0;32mI (497) LSM6DS3: fifo_data = FA3E[0m
+[0;32mI (497) LSM6DS3: fifo_pattern 6 0[0m
+[0;32mI (507) LSM6DS3: fifo_data = 0[0m
+[0;32mI (507) LSM6DS3: fifo_pattern 7 0[0m
+[0;32mI (507) LSM6DS3: fifo_data = 0[0m
+[0;32mI (507) LSM6DS3: fifo_pattern 8 0[0m
+[0;32mI (517) LSM6DS3: fifo_data = 0[0m
+[0;32mI (517) LSM6DS3: fifo_pattern 0 0[0m
+[0;32mI (517) LSM6DS3: fifo_data = 1E8[0m
+[0;32mI (527) LSM6DS3: fifo_pattern 1 0[0m
+[0;32mI (527) LSM6DS3: fifo_data = FF88[0m
+[0;32mI (527) LSM6DS3: fifo_pattern 2 0[0m
+[0;32mI (537) LSM6DS3: fifo_data = 9D[0m
+[0;32mI (537) LSM6DS3: fifo_pattern 3 0[0m
+[0;32mI (537) LSM6DS3: fifo_data = 1F3F[0m
+[0;32mI (537) LSM6DS3: fifo_pattern 4 0[0m
+[0;32mI (547) LSM6DS3: fifo_data = FF4E[0m
+[0;32mI (547) LSM6DS3: fifo_pattern 5 0[0m
+[0;32mI (547) LSM6DS3: fifo_data = FA36[0m
+[0;32mI (557) LSM6DS3: fifo_pattern 6 0[0m
+[0;32mI (557) LSM6DS3: fifo_data = 0[0m
+[0;32mI (557) LSM6DS3: fifo_pattern 7 0[0m
+[0;32mI (567) LSM6DS3: fifo_data = 0[0m
+[0;32mI (567) LSM6DS3: fifo_pattern 8 0[0m
+[0;32mI (567) LSM6DS3: fifo_data = 0[0m
+[0;32mI (567) LSM6DS3: fifo_pattern 0 0[0m
+[0;32mI (577) LSM6DS3: fifo_data = 106[0m
+[0;32mI (577) LSM6DS3: fifo_pattern 1 0[0m
+[0;32mI (577) LSM6DS3: fifo_data = FF25[0m
+[0;32mI (587) LSM6DS3: fifo_pattern 2 0[0m
+[0;32mI (587) LSM6DS3: fifo_data = 13E[0m
+[0;32mI (587) LSM6DS3: fifo_pattern 3 0[0m
+[0;32mI (597) LSM6DS3: fifo_data = 1F4D[0m
+[0;32mI (597) LSM6DS3: fifo_pattern 4 0[0m
+[0;32mI (597) LSM6DS3: fifo_data = 15[0m
+[0;32mI (597) LSM6DS3: fifo_pattern 5 0[0m
+[0;32mI (607) LSM6DS3: fifo_data = FA73[0m
+[0;32mI (607) LSM6DS3: fifo_pattern 6 0[0m
+[0;32mI (607) LSM6DS3: fifo_data = 0[0m
+[0;32mI (617) LSM6DS3: fifo_pattern 7 0[0m
+[0;32mI (617) LSM6DS3: fifo_data = 0[0m
+[0;32mI (617) LSM6DS3: fifo_pattern 8 0[0m
+[0;32mI (617) LSM6DS3: fifo_data = 0[0m
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x17 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0040,len:6272
+load:0x40078000,len:15848
+load:0x40080400,len:3920
+entry 0x40080644
+[0;32mI (27) boot: ESP-IDF v6.1-dev-2310-g44e2fa6d9c5-dirt 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Aug 12 2026 10:57:35[0m
+[0;32mI (28) boot: Multicore bootloader[0m
+[0;32mI (31) boot: chip revision: v3.1[0m
+[0;32mI (34) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (37) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (41) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (49) boot: Partition Table:[0m
+[0;32mI (52) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (58) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (71) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (78) boot: End of partition table[0m
+[0;32mI (81) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0896ch ( 35180) map[0m
+[0;32mI (101) esp_image: segment 1: paddr=00018994 vaddr=3ffb0000 size=027bch ( 10172) load[0m
+[0;32mI (105) esp_image: segment 2: paddr=0001b158 vaddr=40080000 size=04ec0h ( 20160) load[0m
+[0;32mI (114) esp_image: segment 3: paddr=00020020 vaddr=400d0020 size=0e6f8h ( 59128) map[0m
+[0;32mI (135) esp_image: segment 4: paddr=0002e720 vaddr=40084ec0 size=058e8h ( 22760) load[0m
+[0;32mI (145) esp_image: segment 5: paddr=00034010 vaddr=50000000 size=00028h (    40) load[0m
+[0;32mI (150) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (150) boot: Disabling RNG early entropy source...[0m
+[0;32mI (163) cpu_start: Multicore app[0m
+[0;32mI (171) cpu_start: GPIO 3 and 1 are used as console UART I/O pins[0m
+[0;32mI (171) cpu_start: Pro cpu start user code[0m
+[0;32mI (171) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (173) app_init: Application information:[0m
+[0;32mI (177) app_init: Project name:     i2c-basic[0m
+[0;32mI (181) app_init: App version:      1[0m
+[0;32mI (185) app_init: Compile time:     Aug 12 2026 10:54:20[0m
+[0;32mI (190) app_init: ELF file SHA256:  210478b0c...[0m
+[0;32mI (194) app_init: ESP-IDF:          v6.1-dev-2310-g44e2fa6d9c5-dirt[0m
+[0;32mI (200) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (204) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (208) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (212) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (218) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (223) heap_init: At 3FFB3128 len 0002CED8 (179 KiB): DRAM[0m
+[0;32mI (228) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (234) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (239) heap_init: At 4008A7A8 len 00015858 (86 KiB): IRAM[0m
+[0;33mW (245) spi_flash: Detected boya flash chip but using generic driver. For optimal functionality, enable `SPI_FLASH_SUPPORT_BOYA_CHIP` in menuconfig[0m
+[0;32mI (258) spi_flash: detected chip: generic[0m
+[0;32mI (261) spi_flash: flash io: dio[0m
+[0;33mW (264) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (277) main_task: Started on CPU0[0m
+[0;32mI (287) main_task: Calling app_main()[0m
+[0;32mI (287) LSM6DS3_EXAMPLE: I2C initialized successfully[0m
+[0;32mI (287) LSM6DS3: WHO_AM_I = 69[0m
+[0;32mI (287) LSM6DS3: CTRL1_XL = 48[0m
+[0;32mI (287) LSM6DS3: CTRL1_XL = 48[0m
+[0;32mI (287) LSM6DS3: CTRL1_XL = 48[0m
+[0;32mI (297) LSM6DS3: CTRL1_G = 44[0m
+[0;32mI (297) LSM6DS3: CTRL2_G = 44[0m
+[0;32mI (297) LSM6DS3: CTRL2_G = 44[0m
+[0;32mI (307) LSM6DS3: FIFO_CTRL1_REG_ADDR = FF[0m
+[0;32mI (307) LSM6DS3: FIFO_CTRL2_REG_ADDR = F[0m
+[0;32mI (317) LSM6DS3: FIFO_CTRL1_REG_ADDR again = FF[0m
+[0;32mI (317) LSM6DS3: FIFO_CTRL2_REG_ADDR again = F[0m
+[0;32mI (317) LSM6DS3: num_fifo_samples = 9[0m
+[0;32mI (317) LSM6DS3: num_fifo_samples = 9[0m
+[0;32mI (327) LSM6DS3: num_fifo_samples = 9[0m
+[0;32mI (327) LSM6DS3: num_fifo_samples = 18[0m
+[0;32mI (337) LSM6DS3: num_fifo_samples = 18[0m
+[0;32mI (337) LSM6DS3: num_fifo_samples = 18[0m
+[0;32mI (337) LSM6DS3: num_fifo_samples = 27[0m
+[0;32mI (347) LSM6DS3: num_fifo_samples = 27[0m
+[0;32mI (347) LSM6DS3: num_fifo_samples = 36[0m
+[0;32mI (347) LSM6DS3: num_fifo_samples = 36[0m
+[0;32mI (357) LSM6DS3: num_fifo_samples = 36[0m
+[0;32mI (357) LSM6DS3: num_fifo_samples = 45[0m
+[0;32mI (357) LSM6DS3: fifo_pattern 0 0[0m
+[0;32mI (367) LSM6DS3: fifo_data = 18B[0m
+[0;32mI (367) LSM6DS3: fifo_pattern 1 0[0m
+[0;32mI (367) LSM6DS3: fifo_data = FCC2[0m
+[0;32mI (367) LSM6DS3: fifo_pattern 2 0[0m
+[0;32mI (377) LSM6DS3: fifo_data = 373[0m
+[0;32mI (377) LSM6DS3: fifo_pattern 3 0[0m
+[0;32mI (377) LSM6DS3: fifo_data = 1EC[0m
+[0;32mI (387) LSM6DS3: fifo_pattern 4 0[0m
+[0;32mI (387) LSM6DS3: fifo_data = FEA6[0m
+[0;32mI (387) LSM6DS3: fifo_pattern 5 0[0m
+[0;32mI (397) LSM6DS3: fifo_data = 1F83[0m
+[0;32mI (397) LSM6DS3: fifo_pattern 6 0[0m
+[0;32mI (397) LSM6DS3: fifo_data = 0[0m
+[0;32mI (397) LSM6DS3: fifo_pattern 7 0[0m
+[0;32mI (407) LSM6DS3: fifo_data = 0[0m
+[0;32mI (407) LSM6DS3: fifo_pattern 8 0[0m
+[0;32mI (407) LSM6DS3: fifo_data = 0[0m
+[0;32mI (417) LSM6DS3: fifo_pattern 0 0[0m
+[0;32mI (417) LSM6DS3: fifo_data = 50[0m
+[0;32mI (417) LSM6DS3: fifo_pattern 1 0[0m
+[0;32mI (427) LSM6DS3: fifo_data = FCF4[0m
+[0;32mI (427) LSM6DS3: fifo_pattern 2 0[0m
+[0;32mI (427) LSM6DS3: fifo_data = 412[0m
+[0;32mI (427) LSM6DS3: fifo_pattern 3 0[0m
+[0;32mI (437) LSM6DS3: fifo_data = 1E9[0m
+[0;32mI (437) LSM6DS3: fifo_pattern 4 0[0m
+[0;32mI (437) LSM6DS3: fifo_data = FF8F[0m
+[0;32mI (447) LSM6DS3: fifo_pattern 5 0[0m
+[0;32mI (447) LSM6DS3: fifo_data = 1FA0[0m
+[0;32mI (447) LSM6DS3: fifo_pattern 6 0[0m
+[0;32mI (457) LSM6DS3: fifo_data = 0[0m
+[0;32mI (457) LSM6DS3: fifo_pattern 7 0[0m
+[0;32mI (457) LSM6DS3: fifo_data = 0[0m
+[0;32mI (457) LSM6DS3: fifo_pattern 8 0[0m
+[0;32mI (467) LSM6DS3: fifo_data = 0[0m
+[0;32mI (467) LSM6DS3: fifo_pattern 0 0[0m
+[0;32mI (467) LSM6DS3: fifo_data = 45[0m
+[0;32mI (477) LSM6DS3: fifo_pattern 1 0[0m
+[0;32mI (477) LSM6DS3: fifo_data = FD8E[0m
+[0;32mI (477) LSM6DS3: fifo_pattern 2 0[0m
+[0;32mI (487) LSM6DS3: fifo_data = 449[0m
+[0;32mI (487) LSM6DS3: fifo_pattern 3 0[0m
+[0;32mI (487) LSM6DS3: fifo_data = 274[0m
+[0;32mI (487) LSM6DS3: fifo_pattern 4 0[0m
+[0;32mI (497) LSM6DS3: fifo_data = 161[0m
+[0;32mI (497) LSM6DS3: fifo_pattern 5 0[0m
+[0;32mI (497) LSM6DS3: fifo_data = 1F81[0m
+[0;32mI (507) LSM6DS3: fifo_pattern 6 0[0m
+[0;32mI (507) LSM6DS3: fifo_data = 0[0m
+[0;32mI (507) LSM6DS3: fifo_pattern 7 0[0m
+[0;32mI (507) LSM6DS3: fifo_data = 0[0m
+[0;32mI (517) LSM6DS3: fifo_pattern 8 0[0m
+[0;32mI (517) LSM6DS3: fifo_data = 0[0m
+[0;32mI (517) LSM6DS3: fifo_pattern 0 0[0m
+[0;32mI (527) LSM6DS3: fifo_data = 56[0m
+[0;32mI (527) LSM6DS3: fifo_pattern 1 0[0m
+[0;32mI (527) LSM6DS3: fifo_data = FE07[0m
+[0;32mI (537) LSM6DS3: fifo_pattern 2 0[0m
+[0;32mI (537) LSM6DS3: fifo_data = 415[0m
+[0;32mI (537) LSM6DS3: fifo_pattern 3 0[0m
+[0;32mI (537) LSM6DS3: fifo_data = 1E4[0m
+[0;32mI (547) LSM6DS3: fifo_pattern 4 0[0m
+[0;32mI (547) LSM6DS3: fifo_data = 322[0m
+[0;32mI (547) LSM6DS3: fifo_pattern 5 0[0m
+[0;32mI (557) LSM6DS3: fifo_data = 1EFD[0m
+[0;32mI (557) LSM6DS3: fifo_pattern 6 0[0m
+[0;32mI (557) LSM6DS3: fifo_data = 0[0m
+[0;32mI (567) LSM6DS3: fifo_pattern 7 0[0m
+[0;32mI (567) LSM6DS3: fifo_data = 0[0m
+[0;32mI (567) LSM6DS3: fifo_pattern 8 0[0m
+[0;32mI (567) LSM6DS3: fifo_data = 0[0m
+[0;32mI (577) LSM6DS3: fifo_pattern 0 0[0m
+[0;32mI (577) LSM6DS3: fifo_data = 54[0m
+[0;32mI (577) LSM6DS3: fifo_pattern 1 0[0m
+[0;32mI (587) LSM6DS3: fifo_data = FDDD[0m
+[0;32mI (587) LSM6DS3: fifo_pattern 2 0[0m
+[0;32mI (587) LSM6DS3: fifo_data = 321[0m
+[0;32mI (587) LSM6DS3: fifo_pattern 3 0[0m
+[0;32mI (597) LSM6DS3: fifo_data = 256[0m
+[0;32mI (597) LSM6DS3: fifo_pattern 4 0[0m
+[0;32mI (597) LSM6DS3: fifo_data = 395[0m
+[0;32mI (607) LSM6DS3: fifo_pattern 5 0[0m
+[0;32mI (607) LSM6DS3: fifo_data = 2009[0m
+[0;32mI (607) LSM6DS3: fifo_pattern 6 0[0m
+[0;32mI (617) LSM6DS3: fifo_data = 0[0m
+[0;32mI (617) LSM6DS3: fifo_pattern 7 0[0m
+[0;32mI (617) LSM6DS3: fifo_data = 0[0m
+[0;32mI (617) LSM6DS3: fifo_pattern 8 0[0m
+[0;32mI (627) LSM6DS3: fifo_data = 0[0m
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x17 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0040,len:6272
+load:0x40078000,len:15848
+load:0x40080400,len:3920
+entry 0x40080644
+[0;32mI (27) boot: ESP-IDF v6.1-dev-2310-g44e2fa6d9c5-dirt 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Aug 12 2026 10:57:35[0m
+[0;32mI (28) boot: Multicore bootloader[0m
+[0;32mI (31) boot: chip revision: v3.1[0m
+[0;32mI (34) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (37) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (41) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (49) boot: Partition Table:[0m
+[0;32mI (52) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (58) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (71) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (78) boot: End of partition table[0m
+[0;32mI (81) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0896ch ( 35180) map[0m
+[0;32mI (101) esp_image: segment 1: paddr=00018994 vaddr=3ffb0000 size=027bch ( 10172) load[0m
+[0;32mI (105) esp_image: segment 2: paddr=0001b158 vaddr=40080000 size=04ec0h ( 20160) load[0m
+[0;32mI (114) esp_image: segment 3: paddr=00020020 vaddr=400d0020 size=0e6f8h ( 59128) map[0m
+[0;32mI (135) esp_image: segment 4: paddr=0002e720 vaddr=40084ec0 size=058e8h ( 22760) load[0m
+[0;32mI (145) esp_image: segment 5: paddr=00034010 vaddr=50000000 size=00028h (    40) load[0m
+[0;32mI (150) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (150) boot: Disabling RNG early entropy source...[0m
+[0;32mI (163) cpu_start: Multicore app[0m
+[0;32mI (171) cpu_start: GPIO 3 and 1 are used as console UART I/O pins[0m
+[0;32mI (171) cpu_start: Pro cpu start user code[0m
+[0;32mI (171) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (173) app_init: Application information:[0m
+[0;32mI (177) app_init: Project name:     i2c-basic[0m
+[0;32mI (181) app_init: App version:      1[0m
+[0;32mI (185) app_init: Compile time:     Aug 12 2026 10:54:20[0m
+[0;32mI (190) app_init: ELF file SHA256:  210478b0c...[0m
+[0;32mI (194) app_init: ESP-IDF:          v6.1-dev-2310-g44e2fa6d9c5-dirt[0m
+[0;32mI (200) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (204) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (208) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (212) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (218) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (223) heap_init: At 3FFB3128 len 0002CED8 (179 KiB): DRAM[0m
+[0;32mI (228) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (234) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (239) heap_init: At 4008A7A8 len 00015858 (86 KiB): IRAM[0m
+[0;33mW (245) spi_flash: Detected boya flash chip but using generic driver. For optimal functionality, enable `SPI_FLASH_SUPPORT_BOYA_CHIP` in menuconfig[0m
+[0;32mI (258) spi_flash: detected chip: generic[0m
+[0;32mI (261) spi_flash: flash io: dio[0m
+[0;33mW (264) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (277) main_task: Started on CPU0[0m
+[0;32mI (287) main_task: Calling app_main()[0m
+[0;32mI (287) LSM6DS3_EXAMPLE: I2C initialized successfully[0m
+[0;32mI (287) LSM6DS3: WHO_AM_I = 69[0m
+[0;32mI (287) LSM6DS3: CTRL1_XL = 48[0m
+[0;32mI (287) LSM6DS3: CTRL1_XL = 48[0m
+[0;32mI (287) LSM6DS3: CTRL1_XL = 48[0m
+[0;32mI (297) LSM6DS3: CTRL1_G = 44[0m
+[0;32mI (297) LSM6DS3: CTRL2_G = 44[0m
+[0;32mI (297) LSM6DS3: CTRL2_G = 44[0m
+[0;32mI (307) LSM6DS3: FIFO_CTRL1_REG_ADDR = FF[0m
+[0;32mI (307) LSM6DS3: FIFO_CTRL2_REG_ADDR = F[0m
+[0;32mI (317) LSM6DS3: FIFO_CTRL1_REG_ADDR again = FF[0m
+[0;32mI (317) LSM6DS3: FIFO_CTRL2_REG_ADDR again = F[0m
+[0;32mI (317) LSM6DS3: num_fifo_samples = 9[0m
+[0;32mI (317) LSM6DS3: num_fifo_samples = 9[0m
+[0;32mI (327) LSM6DS3: num_fifo_samples = 9[0m
+[0;32mI (327) LSM6DS3: num_fifo_samples = 18[0m
+[0;32mI (337) LSM6DS3: num_fifo_samples = 18[0m
+[0;32mI (337) LSM6DS3: num_fifo_samples = 18[0m
+[0;32mI (337) LSM6DS3: num_fifo_samples = 27[0m
+[0;32mI (347) LSM6DS3: num_fifo_samples = 27[0m
+[0;32mI (347) LSM6DS3: num_fifo_samples = 27[0m
+[0;32mI (347) LSM6DS3: num_fifo_samples = 36[0m
+[0;32mI (357) LSM6DS3: num_fifo_samples = 36[0m
+[0;32mI (357) LSM6DS3: num_fifo_samples = 45[0m
+[0;32mI (357) LSM6DS3: fifo_pattern 0 0[0m
+[0;32mI (367) LSM6DS3: fifo_data = FF52[0m
+[0;32mI (367) LSM6DS3: fifo_pattern 1 0[0m
+[0;32mI (367) LSM6DS3: fifo_data = FDDE[0m
+[0;32mI (377) LSM6DS3: fifo_pattern 2 0[0m
+[0;32mI (377) LSM6DS3: fifo_data = FEB5[0m
+[0;32mI (377) LSM6DS3: fifo_pattern 3 0[0m
+[0;32mI (377) LSM6DS3: fifo_data = 175[0m
+[0;32mI (387) LSM6DS3: fifo_pattern 4 0[0m
+[0;32mI (387) LSM6DS3: fifo_data = FF1E[0m
+[0;32mI (387) LSM6DS3: fifo_pattern 5 0[0m
+[0;32mI (397) LSM6DS3: fifo_data = E0DF[0m
+[0;32mI (397) LSM6DS3: fifo_pattern 6 0[0m
+[0;32mI (397) LSM6DS3: fifo_data = 0[0m
+[0;32mI (407) LSM6DS3: fifo_pattern 7 0[0m
+[0;32mI (407) LSM6DS3: fifo_data = 0[0m
+[0;32mI (407) LSM6DS3: fifo_pattern 8 0[0m
+[0;32mI (407) LSM6DS3: fifo_data = 0[0m
+[0;32mI (417) LSM6DS3: fifo_pattern 0 0[0m
+[0;32mI (417) LSM6DS3: fifo_data = 49[0m
+[0;32mI (417) LSM6DS3: fifo_pattern 1 0[0m
+[0;32mI (427) LSM6DS3: fifo_data = FDF4[0m
+[0;32mI (427) LSM6DS3: fifo_pattern 2 0[0m
+[0;32mI (427) LSM6DS3: fifo_data = FEAB[0m
+[0;32mI (427) LSM6DS3: fifo_pattern 3 0[0m
+[0;32mI (437) LSM6DS3: fifo_data = 17E[0m
+[0;32mI (437) LSM6DS3: fifo_pattern 4 0[0m
+[0;32mI (437) LSM6DS3: fifo_data = FEAD[0m
+[0;32mI (447) LSM6DS3: fifo_pattern 5 0[0m
+[0;32mI (447) LSM6DS3: fifo_data = E0D2[0m
+[0;32mI (447) LSM6DS3: fifo_pattern 6 0[0m
+[0;32mI (457) LSM6DS3: fifo_data = 0[0m
+[0;32mI (457) LSM6DS3: fifo_pattern 7 0[0m
+[0;32mI (457) LSM6DS3: fifo_data = 0[0m
+[0;32mI (457) LSM6DS3: fifo_pattern 8 0[0m
+[0;32mI (467) LSM6DS3: fifo_data = 0[0m
+[0;32mI (467) LSM6DS3: fifo_pattern 0 0[0m
+[0;32mI (467) LSM6DS3: fifo_data = 126[0m
+[0;32mI (477) LSM6DS3: fifo_pattern 1 0[0m
+[0;32mI (477) LSM6DS3: fifo_data = FE39[0m
+[0;32mI (477) LSM6DS3: fifo_pattern 2 0[0m
+[0;32mI (487) LSM6DS3: fifo_data = FECE[0m
+[0;32mI (487) LSM6DS3: fifo_pattern 3 0[0m
+[0;32mI (487) LSM6DS3: fifo_data = 189[0m
+[0;32mI (487) LSM6DS3: fifo_pattern 4 0[0m
+[0;32mI (497) LSM6DS3: fifo_data = FE75[0m
+[0;32mI (497) LSM6DS3: fifo_pattern 5 0[0m
+[0;32mI (497) LSM6DS3: fifo_data = E057[0m
+[0;32mI (507) LSM6DS3: fifo_pattern 6 0[0m
+[0;32mI (507) LSM6DS3: fifo_data = 0[0m
+[0;32mI (507) LSM6DS3: fifo_pattern 7 0[0m
+[0;32mI (517) LSM6DS3: fifo_data = 0[0m
+[0;32mI (517) LSM6DS3: fifo_pattern 8 0[0m
+[0;32mI (517) LSM6DS3: fifo_data = 0[0m
+[0;32mI (517) LSM6DS3: fifo_pattern 0 0[0m
+[0;32mI (527) LSM6DS3: fifo_data = 16F[0m
+[0;32mI (527) LSM6DS3: fifo_pattern 1 0[0m
+[0;32mI (527) LSM6DS3: fifo_data = FE63[0m
+[0;32mI (537) LSM6DS3: fifo_pattern 2 0[0m
+[0;32mI (537) LSM6DS3: fifo_data = FF0C[0m
+[0;32mI (537) LSM6DS3: fifo_pattern 3 0[0m
+[0;32mI (547) LSM6DS3: fifo_data = 160[0m
+[0;32mI (547) LSM6DS3: fifo_pattern 4 0[0m
+[0;32mI (547) LSM6DS3: fifo_data = FE7A[0m
+[0;32mI (547) LSM6DS3: fifo_pattern 5 0[0m
+[0;32mI (557) LSM6DS3: fifo_data = E033[0m
+[0;32mI (557) LSM6DS3: fifo_pattern 6 0[0m
+[0;32mI (557) LSM6DS3: fifo_data = 0[0m
+[0;32mI (567) LSM6DS3: fifo_pattern 7 0[0m
+[0;32mI (567) LSM6DS3: fifo_data = 0[0m
+[0;32mI (567) LSM6DS3: fifo_pattern 8 0[0m
+[0;32mI (577) LSM6DS3: fifo_data = 0[0m
+[0;32mI (577) LSM6DS3: fifo_pattern 0 0[0m
+[0;32mI (577) LSM6DS3: fifo_data = 122[0m
+[0;32mI (577) LSM6DS3: fifo_pattern 1 0[0m
+[0;32mI (587) LSM6DS3: fifo_data = FE97[0m
+[0;32mI (587) LSM6DS3: fifo_pattern 2 0[0m
+[0;32mI (587) LSM6DS3: fifo_data = FF3E[0m
+[0;32mI (597) LSM6DS3: fifo_pattern 3 0[0m
+[0;32mI (597) LSM6DS3: fifo_data = 16D[0m
+[0;32mI (597) LSM6DS3: fifo_pattern 4 0[0m
+[0;32mI (597) LSM6DS3: fifo_data = FE2D[0m
+[0;32mI (607) LSM6DS3: fifo_pattern 5 0[0m
+[0;32mI (607) LSM6DS3: fifo_data = E013[0m
+[0;32mI (607) LSM6DS3: fifo_pattern 6 0[0m
+[0;32mI (617) LSM6DS3: fifo_data = 0[0m
+[0;32mI (617) LSM6DS3: fifo_pattern 7 0[0m
+[0;32mI (617) LSM6DS3: fifo_data = 0[0m
+[0;32mI (627) LSM6DS3: fifo_pattern 8 0[0m
+[0;32mI (627) LSM6DS3: fifo_data = 0[0m
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x17 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0040,len:6272
+load:0x40078000,len:15848
+load:0x40080400,len:3920
+entry 0x40080644
+[0;32mI (27) boot: ESP-IDF v6.1-dev-2310-g44e2fa6d9c5-dirt 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Aug 12 2026 10:57:35[0m
+[0;32mI (28) boot: Multicore bootloader[0m
+[0;32mI (31) boot: chip revision: v3.1[0m
+[0;32mI (34) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (37) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (41) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (49) boot: Partition Table:[0m
+[0;32mI (52) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (58) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (71) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (78) boot: End of partition table[0m
+[0;32mI (81) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0896ch ( 35180) map[0m
+[0;32mI (101) esp_image: segment 1: paddr=00018994 vaddr=3ffb0000 size=027bch ( 10172) load[0m
+[0;32mI (105) esp_image: segment 2: paddr=0001b158 vaddr=40080000 size=04ec0h ( 20160) load[0m
+[0;32mI (114) esp_image: segment 3: paddr=00020020 vaddr=400d0020 size=0e6f8h ( 59128) map[0m
+[0;32mI (135) esp_image: segment 4: paddr=0002e720 vaddr=40084ec0 size=058e8h ( 22760) load[0m
+[0;32mI (145) esp_image: segment 5: paddr=00034010 vaddr=50000000 size=00028h (    40) load[0m
+[0;32mI (150) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (150) boot: Disabling RNG early entropy source...[0m
+[0;32mI (163) cpu_start: Multicore app[0m
+[0;32mI (171) cpu_start: GPIO 3 and 1 are used as console UART I/O pins[0m
+[0;32mI (171) cpu_start: Pro cpu start user code[0m
+[0;32mI (171) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (173) app_init: Application information:[0m
+[0;32mI (177) app_init: Project name:     i2c-basic[0m
+[0;32mI (181) app_init: App version:      1[0m
+[0;32mI (185) app_init: Compile time:     Aug 12 2026 10:54:20[0m
+[0;32mI (190) app_init: ELF file SHA256:  210478b0c...[0m
+[0;32mI (194) app_init: ESP-IDF:          v6.1-dev-2310-g44e2fa6d9c5-dirt[0m
+[0;32mI (200) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (204) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (208) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (212) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (218) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (223) heap_init: At 3FFB3128 len 0002CED8 (179 KiB): DRAM[0m
+[0;32mI (228) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (234) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (239) heap_init: At 4008A7A8 len 00015858 (86 KiB): IRAM[0m
+[0;33mW (245) spi_flash: Detected boya flash chip but using generic driver. For optimal functionality, enable `SPI_FLASH_SUPPORT_BOYA_CHIP` in menuconfig[0m
+[0;32mI (258) spi_flash: detected chip: generic[0m
+[0;32mI (261) spi_flash: flash io: dio[0m
+[0;33mW (264) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (277) main_task: Started on CPU0[0m
+[0;32mI (287) main_task: Calling app_main()[0m
+[0;32mI (287) LSM6DS3_EXAMPLE: I2C initialized successfully[0m
+[0;32mI (287) LSM6DS3: WHO_AM_I = 69[0m
+[0;32mI (287) LSM6DS3: CTRL1_XL = 48[0m
+[0;32mI (287) LSM6DS3: CTRL1_XL = 48[0m
+[0;32mI (287) LSM6DS3: CTRL1_XL = 48[0m
+[0;32mI (297) LSM6DS3: CTRL1_G = 44[0m
+[0;32mI (297) LSM6DS3: CTRL2_G = 44[0m
+[0;32mI (297) LSM6DS3: CTRL2_G = 44[0m
+[0;32mI (307) LSM6DS3: FIFO_CTRL1_REG_ADDR = FF[0m
+[0;32mI (307) LSM6DS3: FIFO_CTRL2_REG_ADDR = F[0m
+[0;32mI (317) LSM6DS3: FIFO_CTRL1_REG_ADDR again = FF[0m
+[0;32mI (317) LSM6DS3: FIFO_CTRL2_REG_ADDR again = F[0m
+[0;32mI (317) LSM6DS3: num_fifo_samples = 9[0m
+[0;32mI (317) LSM6DS3: num_fifo_samples = 9[0m
+[0;32mI (327) LSM6DS3: num_fifo_samples = 18[0m
+[0;32mI (327) LSM6DS3: num_fifo_samples = 18[0m
+[0;32mI (337) LSM6DS3: num_fifo_samples = 18[0m
+[0;32mI (337) LSM6DS3: num_fifo_samples = 27[0m
+[0;32mI (337) LSM6DS3: num_fifo_samples = 27[0m
+[0;32mI (347) LSM6DS3: num_fifo_samples = 27[0m
+[0;32mI (347) LSM6DS3: num_fifo_samples = 36[0m
+[0;32mI (347) LSM6DS3: num_fifo_samples = 36[0m
+[0;32mI (357) LSM6DS3: num_fifo_samples = 36[0m
+[0;32mI (357) LSM6DS3: num_fifo_samples = 45[0m
+[0;32mI (357) LSM6DS3: fifo_pattern 0 0[0m
+[0;32mI (367) LSM6DS3: fifo_data = FFAD[0m
+[0;32mI (367) LSM6DS3: fifo_pattern 1 0[0m
+[0;32mI (367) LSM6DS3: fifo_data = FBDB[0m
+[0;32mI (377) LSM6DS3: fifo_pattern 2 0[0m
+[0;32mI (377) LSM6DS3: fifo_data = FD9B[0m
+[0;32mI (377) LSM6DS3: fifo_pattern 3 0[0m
+[0;32mI (377) LSM6DS3: fifo_data = 4F[0m
+[0;32mI (387) LSM6DS3: fifo_pattern 4 0[0m
+[0;32mI (387) LSM6DS3: fifo_data = FCD4[0m
+[0;32mI (387) LSM6DS3: fifo_pattern 5 0[0m
+[0;32mI (397) LSM6DS3: fifo_data = E1D0[0m
+[0;32mI (397) LSM6DS3: fifo_pattern 6 0[0m
+[0;32mI (397) LSM6DS3: fifo_data = 0[0m
+[0;32mI (407) LSM6DS3: fifo_pattern 7 0[0m
+[0;32mI (407) LSM6DS3: fifo_data = 0[0m
+[0;32mI (407) LSM6DS3: fifo_pattern 8 0[0m
+[0;32mI (407) LSM6DS3: fifo_data = 0[0m
+[0;32mI (417) LSM6DS3: fifo_pattern 0 0[0m
+[0;32mI (417) LSM6DS3: fifo_data = 7B[0m
+[0;32mI (417) LSM6DS3: fifo_pattern 1 0[0m
+[0;32mI (427) LSM6DS3: fifo_data = FC9E[0m
+[0;32mI (427) LSM6DS3: fifo_pattern 2 0[0m
+[0;32mI (427) LSM6DS3: fifo_data = FF1C[0m
+[0;32mI (427) LSM6DS3: fifo_pattern 3 0[0m
+[0;32mI (437) LSM6DS3: fifo_data = 88[0m
+[0;32mI (437) LSM6DS3: fifo_pattern 4 0[0m
+[0;32mI (437) LSM6DS3: fifo_data = FD5D[0m
+[0;32mI (447) LSM6DS3: fifo_pattern 5 0[0m
+[0;32mI (447) LSM6DS3: fifo_data = E20C[0m
+[0;32mI (447) LSM6DS3: fifo_pattern 6 0[0m
+[0;32mI (457) LSM6DS3: fifo_data = 0[0m
+[0;32mI (457) LSM6DS3: fifo_pattern 7 0[0m
+[0;32mI (457) LSM6DS3: fifo_data = 0[0m
+[0;32mI (457) LSM6DS3: fifo_pattern 8 0[0m
+[0;32mI (467) LSM6DS3: fifo_data = 0[0m
+[0;32mI (467) LSM6DS3: fifo_pattern 0 0[0m
+[0;32mI (467) LSM6DS3: fifo_data = E1[0m
+[0;32mI (477) LSM6DS3: fifo_pattern 1 0[0m
+[0;32mI (477) LSM6DS3: fifo_data = FDA4[0m
+[0;32mI (477) LSM6DS3: fifo_pattern 2 0[0m
+[0;32mI (487) LSM6DS3: fifo_data = E0[0m
+[0;32mI (487) LSM6DS3: fifo_pattern 3 0[0m
+[0;32mI (487) LSM6DS3: fifo_data = C9[0m
+[0;32mI (487) LSM6DS3: fifo_pattern 4 0[0m
+[0;32mI (497) LSM6DS3: fifo_data = FF41[0m
+[0;32mI (497) LSM6DS3: fifo_pattern 5 0[0m
+[0;32mI (497) LSM6DS3: fifo_data = E18C[0m
+[0;32mI (507) LSM6DS3: fifo_pattern 6 0[0m
+[0;32mI (507) LSM6DS3: fifo_data = 0[0m
+[0;32mI (507) LSM6DS3: fifo_pattern 7 0[0m
+[0;32mI (517) LSM6DS3: fifo_data = 0[0m
+[0;32mI (517) LSM6DS3: fifo_pattern 8 0[0m
+[0;32mI (517) LSM6DS3: fifo_data = 0[0m
+[0;32mI (517) LSM6DS3: fifo_pattern 0 0[0m
+[0;32mI (527) LSM6DS3: fifo_data = B7[0m
+[0;32mI (527) LSM6DS3: fifo_pattern 1 0[0m
+[0;32mI (527) LSM6DS3: fifo_data = FE9C[0m
+[0;32mI (537) LSM6DS3: fifo_pattern 2 0[0m
+[0;32mI (537) LSM6DS3: fifo_data = 21B[0m
+[0;32mI (537) LSM6DS3: fifo_pattern 3 0[0m
+[0;32mI (537) LSM6DS3: fifo_data = 14E[0m
+[0;32mI (547) LSM6DS3: fifo_pattern 4 0[0m
+[0;32mI (547) LSM6DS3: fifo_data = 171[0m
+[0;32mI (547) LSM6DS3: fifo_pattern 5 0[0m
+[0;32mI (557) LSM6DS3: fifo_data = E0C8[0m
+[0;32mI (557) LSM6DS3: fifo_pattern 6 0[0m
+[0;32mI (557) LSM6DS3: fifo_data = 0[0m
+[0;32mI (567) LSM6DS3: fifo_pattern 7 0[0m
+[0;32mI (567) LSM6DS3: fifo_data = 0[0m
+[0;32mI (567) LSM6DS3: fifo_pattern 8 0[0m
+[0;32mI (567) LSM6DS3: fifo_data = 0[0m
+[0;32mI (577) LSM6DS3: fifo_pattern 0 0[0m
+[0;32mI (577) LSM6DS3: fifo_data = E[0m
+[0;32mI (577) LSM6DS3: fifo_pattern 1 0[0m
+[0;32mI (587) LSM6DS3: fifo_data = FF2E[0m
+[0;32mI (587) LSM6DS3: fifo_pattern 2 0[0m
+[0;32mI (587) LSM6DS3: fifo_data = 249[0m
+[0;32mI (587) LSM6DS3: fifo_pattern 3 0[0m
+[0;32mI (597) LSM6DS3: fifo_data = 1A5[0m
+[0;32mI (597) LSM6DS3: fifo_pattern 4 0[0m
+[0;32mI (597) LSM6DS3: fifo_data = 301[0m
+[0;32mI (607) LSM6DS3: fifo_pattern 5 0[0m
+[0;32mI (607) LSM6DS3: fifo_data = DF9F[0m
+[0;32mI (607) LSM6DS3: fifo_pattern 6 0[0m
+[0;32mI (617) LSM6DS3: fifo_data = 0[0m
+[0;32mI (617) LSM6DS3: fifo_pattern 7 0[0m
+[0;32mI (617) LSM6DS3: fifo_data = 0[0m
+[0;32mI (617) LSM6DS3: fifo_pattern 8 0[0m
+[0;32mI (627) LSM6DS3: fifo_data = 0[0m
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x17 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0040,len:6272
+load:0x40078000,len:15848
+load:0x40080400,len:3920
+entry 0x40080644
+[0;32mI (27) boot: ESP-IDF v6.1-dev-2310-g44e2fa6d9c5-dirt 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Aug 12 2026 10:57:35[0m
+[0;32mI (28) boot: Multicore bootloader[0m
+[0;32mI (31) boot: chip revision: v3.1[0m
+[0;32mI (34) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (37) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (41) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (49) boot: Partition Table:[0m
+[0;32mI (52) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (58) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (71) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (78) boot: End of partition table[0m
+[0;32mI (81) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0896ch ( 35180) map[0m
+[0;32mI (101) esp_image: segment 1: paddr=00018994 vaddr=3ffb0000 size=027bch ( 10172) load[0m
+[0;32mI (105) esp_image: segment 2: paddr=0001b158 vaddr=40080000 size=04ec0h ( 20160) load[0m
+[0;32mI (114) esp_image: segment 3: paddr=00020020 vaddr=400d0020 size=0e6f8h ( 59128) map[0m
+[0;32mI (135) esp_image: segment 4: paddr=0002e720 vaddr=40084ec0 size=058e8h ( 22760) load[0m
+[0;32mI (145) esp_image: segment 5: paddr=00034010 vaddr=50000000 size=00028h (    40) load[0m
+[0;32mI (150) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (150) boot: Disabling RNG early entropy source...[0m
+[0;32mI (163) cpu_start: Multicore app[0m
+[0;32mI (171) cpu_start: GPIO 3 and 1 are used as console UART I/O pins[0m
+[0;32mI (171) cpu_start: Pro cpu start user code[0m
+[0;32mI (171) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (173) app_init: Application information:[0m
+[0;32mI (177) app_init: Project name:     i2c-basic[0m
+[0;32mI (181) app_init: App version:      1[0m
+[0;32mI (185) app_init: Compile time:     Aug 12 2026 10:54:20[0m
+[0;32mI (190) app_init: ELF file SHA256:  210478b0c...[0m
+[0;32mI (194) app_init: ESP-IDF:          v6.1-dev-2310-g44e2fa6d9c5-dirt[0m
+[0;32mI (200) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (204) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (208) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (212) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (218) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (223) heap_init: At 3FFB3128 len 0002CED8 (179 KiB): DRAM[0m
+[0;32mI (228) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (234) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (239) heap_init: At 4008A7A8 len 00015858 (86 KiB): IRAM[0m
+[0;33mW (245) spi_flash: Detected boya flash chip but using generic driver. For optimal functionality, enable `SPI_FLASH_SUPPORT_BOYA_CHIP` in menuconfig[0m
+[0;32mI (258) spi_flash: detected chip: generic[0m
+[0;32mI (261) spi_flash: flash io: dio[0m
+[0;33mW (264) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (277) main_task: Started on CPU0[0m
+[0;32mI (287) main_task: Calling app_main()[0m
+[0;32mI (287) LSM6DS3_EXAMPLE: I2C initialized successfully[0m
+[0;32mI (287) LSM6DS3: WHO_AM_I = 69[0m
+[0;32mI (287) LSM6DS3: CTRL1_XL = 48[0m
+[0;32mI (287) LSM6DS3: CTRL1_XL = 48[0m
+[0;32mI (287) LSM6DS3: CTRL1_XL = 48[0m
+[0;32mI (297) LSM6DS3: CTRL1_G = 44[0m
+[0;32mI (297) LSM6DS3: CTRL2_G = 44[0m
+[0;32mI (297) LSM6DS3: CTRL2_G = 44[0m
+[0;32mI (307) LSM6DS3: FIFO_CTRL1_REG_ADDR = FF[0m
+[0;32mI (307) LSM6DS3: FIFO_CTRL2_REG_ADDR = F[0m
+[0;32mI (317) LSM6DS3: FIFO_CTRL1_REG_ADDR again = FF[0m
+[0;32mI (317) LSM6DS3: FIFO_CTRL2_REG_ADDR again = F[0m
+[0;32mI (317) LSM6DS3: num_fifo_samples = 9[0m
+[0;32mI (317) LSM6DS3: num_fifo_samples = 9[0m
+[0;32mI (327) LSM6DS3: num_fifo_samples = 18[0m
+[0;32mI (327) LSM6DS3: num_fifo_samples = 18[0m
+[0;32mI (337) LSM6DS3: num_fifo_samples = 18[0m
+[0;32mI (337) LSM6DS3: num_fifo_samples = 27[0m
+[0;32mI (337) LSM6DS3: num_fifo_samples = 27[0m
+[0;32mI (347) LSM6DS3: num_fifo_samples = 27[0m
+[0;32mI (347) LSM6DS3: num_fifo_samples = 36[0m
+[0;32mI (347) LSM6DS3: num_fifo_samples = 36[0m
+[0;32mI (357) LSM6DS3: num_fifo_samples = 36[0m
+[0;32mI (357) LSM6DS3: num_fifo_samples = 45[0m
+[0;32mI (357) LSM6DS3: fifo_pattern 0 0[0m
+[0;32mI (367) LSM6DS3: fifo_data = 22C[0m
+[0;32mI (367) LSM6DS3: fifo_pattern 1 0[0m
+[0;32mI (367) LSM6DS3: fifo_data = FF96[0m
+[0;32mI (377) LSM6DS3: fifo_pattern 2 0[0m
+[0;32mI (377) LSM6DS3: fifo_data = 191[0m
+[0;32mI (377) LSM6DS3: fifo_pattern 3 0[0m
+[0;32mI (377) LSM6DS3: fifo_data = E1C7[0m
+[0;32mI (387) LSM6DS3: fifo_pattern 4 0[0m
+[0;32mI (387) LSM6DS3: fifo_data = 210[0m
+[0;32mI (387) LSM6DS3: fifo_pattern 5 0[0m
+[0;32mI (397) LSM6DS3: fifo_data = FD2B[0m
+[0;32mI (397) LSM6DS3: fifo_pattern 6 0[0m
+[0;32mI (397) LSM6DS3: fifo_data = 0[0m
+[0;32mI (397) LSM6DS3: fifo_pattern 7 0[0m
+[0;32mI (407) LSM6DS3: fifo_data = 0[0m
+[0;32mI (407) LSM6DS3: fifo_pattern 8 0[0m
+[0;32mI (407) LSM6DS3: fifo_data = 0[0m
+[0;32mI (417) LSM6DS3: fifo_pattern 0 0[0m
+[0;32mI (417) LSM6DS3: fifo_data = 1C7[0m
+[0;32mI (417) LSM6DS3: fifo_pattern 1 0[0m
+[0;32mI (427) LSM6DS3: fifo_data = FFE5[0m
+[0;32mI (427) LSM6DS3: fifo_pattern 2 0[0m
+[0;32mI (427) LSM6DS3: fifo_data = 15E[0m
+[0;32mI (427) LSM6DS3: fifo_pattern 3 0[0m
+[0;32mI (437) LSM6DS3: fifo_data = E236[0m
+[0;32mI (437) LSM6DS3: fifo_pattern 4 0[0m
+[0;32mI (437) LSM6DS3: fifo_data = 283[0m
+[0;32mI (447) LSM6DS3: fifo_pattern 5 0[0m
+[0;32mI (447) LSM6DS3: fifo_data = FC71[0m
+[0;32mI (447) LSM6DS3: fifo_pattern 6 0[0m
+[0;32mI (457) LSM6DS3: fifo_data = 0[0m
+[0;32mI (457) LSM6DS3: fifo_pattern 7 0[0m
+[0;32mI (457) LSM6DS3: fifo_data = 0[0m
+[0;32mI (457) LSM6DS3: fifo_pattern 8 0[0m
+[0;32mI (467) LSM6DS3: fifo_data = 0[0m
+[0;32mI (467) LSM6DS3: fifo_pattern 0 0[0m
+[0;32mI (467) LSM6DS3: fifo_data = 1A1[0m
+[0;32mI (477) LSM6DS3: fifo_pattern 1 0[0m
+[0;32mI (477) LSM6DS3: fifo_data = FFCD[0m
+[0;32mI (477) LSM6DS3: fifo_pattern 2 0[0m
+[0;32mI (487) LSM6DS3: fifo_data = D4[0m
+[0;32mI (487) LSM6DS3: fifo_pattern 3 0[0m
+[0;32mI (487) LSM6DS3: fifo_data = E1AB[0m
+[0;32mI (487) LSM6DS3: fifo_pattern 4 0[0m
+[0;32mI (497) LSM6DS3: fifo_data = 2B8[0m
+[0;32mI (497) LSM6DS3: fifo_pattern 5 0[0m
+[0;32mI (497) LSM6DS3: fifo_data = FAE1[0m
+[0;32mI (507) LSM6DS3: fifo_pattern 6 0[0m
+[0;32mI (507) LSM6DS3: fifo_data = 0[0m
+[0;32mI (507) LSM6DS3: fifo_pattern 7 0[0m
+[0;32mI (517) LSM6DS3: fifo_data = 0[0m
+[0;32mI (517) LSM6DS3: fifo_pattern 8 0[0m
+[0;32mI (517) LSM6DS3: fifo_data = 0[0m
+[0;32mI (517) LSM6DS3: fifo_pattern 0 0[0m
+[0;32mI (527) LSM6DS3: fifo_data = 1AF[0m
+[0;32mI (527) LSM6DS3: fifo_pattern 1 0[0m
+[0;32mI (527) LSM6DS3: fifo_data = FF2B[0m
+[0;32mI (537) LSM6DS3: fifo_pattern 2 0[0m
+[0;32mI (537) LSM6DS3: fifo_data = 21[0m
+[0;32mI (537) LSM6DS3: fifo_pattern 3 0[0m
+[0;32mI (537) LSM6DS3: fifo_data = E1C7[0m
+[0;32mI (547) LSM6DS3: fifo_pattern 4 0[0m
+[0;32mI (547) LSM6DS3: fifo_data = 271[0m
+[0;32mI (547) LSM6DS3: fifo_pattern 5 0[0m
+[0;32mI (557) LSM6DS3: fifo_data = FAD4[0m
+[0;32mI (557) LSM6DS3: fifo_pattern 6 0[0m
+[0;32mI (557) LSM6DS3: fifo_data = 0[0m
+[0;32mI (567) LSM6DS3: fifo_pattern 7 0[0m
+[0;32mI (567) LSM6DS3: fifo_data = 0[0m
+[0;32mI (567) LSM6DS3: fifo_pattern 8 0[0m
+[0;32mI (567) LSM6DS3: fifo_data = 0[0m
+[0;32mI (577) LSM6DS3: fifo_pattern 0 0[0m
+[0;32mI (577) LSM6DS3: fifo_data = 1EB[0m
+[0;32mI (577) LSM6DS3: fifo_pattern 1 0[0m
+[0;32mI (587) LSM6DS3: fifo_data = FE5A[0m
+[0;32mI (587) LSM6DS3: fifo_pattern 2 0[0m
+[0;32mI (587) LSM6DS3: fifo_data = FF6C[0m
+[0;32mI (597) LSM6DS3: fifo_pattern 3 0[0m
+[0;32mI (597) LSM6DS3: fifo_data = E13E[0m
+[0;32mI (597) LSM6DS3: fifo_pattern 4 0[0m
+[0;32mI (597) LSM6DS3: fifo_data = 1A6[0m
+[0;32mI (607) LSM6DS3: fifo_pattern 5 0[0m
+[0;32mI (607) LSM6DS3: fifo_data = FB3A[0m
+[0;32mI (607) LSM6DS3: fifo_pattern 6 0[0m
+[0;32mI (617) LSM6DS3: fifo_data = 0[0m
+[0;32mI (617) LSM6DS3: fifo_pattern 7 0[0m
+[0;32mI (617) LSM6DS3: fifo_data = 0[0m
+[0;32mI (627) LSM6DS3: fifo_pattern 8 0[0m
+[0;32mI (627) LSM6DS3: fifo_data = 0[0m
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x17 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0040,len:6272
+load:0x40078000,len:15848
+load:0x40080400,len:3920
+entry 0x40080644
+[0;32mI (27) boot: ESP-IDF v6.1-dev-2310-g44e2fa6d9c5-dirt 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Aug 12 2026 10:57:35[0m
+[0;32mI (28) boot: Multicore bootloader[0m
+[0;32mI (31) boot: chip revision: v3.1[0m
+[0;32mI (34) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (37) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (41) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (49) boot: Partition Table:[0m
+[0;32mI (52) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (58) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (71) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (78) boot: End of partition table[0m
+[0;32mI (81) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0896ch ( 35180) map[0m
+[0;32mI (101) esp_image: segment 1: paddr=00018994 vaddr=3ffb0000 size=027bch ( 10172) load[0m
+[0;32mI (105) esp_image: segment 2: paddr=0001b158 vaddr=40080000 size=04ec0h ( 20160) load[0m
+[0;32mI (114) esp_image: segment 3: paddr=00020020 vaddr=400d0020 size=0e6f8h ( 59128) map[0m
+[0;32mI (135) esp_image: segment 4: paddr=0002e720 vaddr=40084ec0 size=058e8h ( 22760) load[0m
+[0;32mI (145) esp_image: segment 5: paddr=00034010 vaddr=50000000 size=00028h (    40) load[0m
+[0;32mI (150) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (150) boot: Disabling RNG early entropy source...[0m
+[0;32mI (163) cpu_start: Multicore app[0m
+[0;32mI (171) cpu_start: GPIO 3 and 1 are used as console UART I/O pins[0m
+[0;32mI (171) cpu_start: Pro cpu start user code[0m
+[0;32mI (171) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (173) app_init: Application information:[0m
+[0;32mI (177) app_init: Project name:     i2c-basic[0m
+[0;32mI (181) app_init: App version:      1[0m
+[0;32mI (185) app_init: Compile time:     Aug 12 2026 10:54:20[0m
+[0;32mI (190) app_init: ELF file SHA256:  210478b0c...[0m
+[0;32mI (194) app_init: ESP-IDF:          v6.1-dev-2310-g44e2fa6d9c5-dirt[0m
+[0;32mI (200) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (204) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (208) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (212) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (218) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (223) heap_init: At 3FFB3128 len 0002CED8 (179 KiB): DRAM[0m
+[0;32mI (228) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (234) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (239) heap_init: At 4008A7A8 len 00015858 (86 KiB): IRAM[0m
+[0;33mW (245) spi_flash: Detected boya flash chip but using generic driver. For optimal functionality, enable `SPI_FLASH_SUPPORT_BOYA_CHIP` in menuconfig[0m
+[0;32mI (258) spi_flash: detected chip: generic[0m
+[0;32mI (261) spi_flash: flash io: dio[0m
+[0;33mW (264) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (277) main_task: Started on CPU0[0m
+[0;32mI (287) main_task: Calling app_main()[0m
+[0;32mI (287) LSM6DS3_EXAMPLE: I2C initialized successfully[0m
+[0;32mI (287) LSM6DS3: WHO_AM_I = 69[0m
+[0;32mI (287) LSM6DS3: CTRL1_XL = 48[0m
+[0;32mI (287) LSM6DS3: CTRL1_XL = 48[0m
+[0;32mI (287) LSM6DS3: CTRL1_XL = 48[0m
+[0;32mI (297) LSM6DS3: CTRL1_G = 44[0m
+[0;32mI (297) LSM6DS3: CTRL2_G = 44[0m
+[0;32mI (297) LSM6DS3: CTRL2_G = 44[0m
+[0;32mI (307) LSM6DS3: FIFO_CTRL1_REG_ADDR = FF[0m
+[0;32mI (307) LSM6DS3: FIFO_CTRL2_REG_ADDR = F[0m
+[0;32mI (317) LSM6DS3: FIFO_CTRL1_REG_ADDR again = FF[0m
+[0;32mI (317) LSM6DS3: FIFO_CTRL2_REG_ADDR again = F[0m
+[0;32mI (317) LSM6DS3: num_fifo_samples = 9[0m
+[0;32mI (317) LSM6DS3: num_fifo_samples = 9[0m
+[0;32mI (327) LSM6DS3: num_fifo_samples = 18[0m
+[0;32mI (327) LSM6DS3: num_fifo_samples = 18[0m
+[0;32mI (337) LSM6DS3: num_fifo_samples = 18[0m
+[0;32mI (337) LSM6DS3: num_fifo_samples = 27[0m
+[0;32mI (337) LSM6DS3: num_fifo_samples = 27[0m
+[0;32mI (347) LSM6DS3: num_fifo_samples = 27[0m
+[0;32mI (347) LSM6DS3: num_fifo_samples = 36[0m
+[0;32mI (347) LSM6DS3: num_fifo_samples = 36[0m
+[0;32mI (357) LSM6DS3: num_fifo_samples = 36[0m
+[0;32mI (357) LSM6DS3: num_fifo_samples = 45[0m
+[0;32mI (357) LSM6DS3: fifo_pattern 0 0[0m
+[0;32mI (367) LSM6DS3: fifo_data = FD87[0m
+[0;32mI (367) LSM6DS3: fifo_pattern 1 0[0m
+[0;32mI (367) LSM6DS3: fifo_data = F995[0m
+[0;32mI (377) LSM6DS3: fifo_pattern 2 0[0m
+[0;32mI (377) LSM6DS3: fifo_data = FFBD[0m
+[0;32mI (377) LSM6DS3: fifo_pattern 3 0[0m
+[0;32mI (377) LSM6DS3: fifo_data = 2058[0m
+[0;32mI (387) LSM6DS3: fifo_pattern 4 0[0m
+[0;32mI (387) LSM6DS3: fifo_data = 2A6[0m
+[0;32mI (387) LSM6DS3: fifo_pattern 5 0[0m
+[0;32mI (397) LSM6DS3: fifo_data = 461[0m
+[0;32mI (397) LSM6DS3: fifo_pattern 6 0[0m
+[0;32mI (397) LSM6DS3: fifo_data = 0[0m
+[0;32mI (407) LSM6DS3: fifo_pattern 7 0[0m
+[0;32mI (407) LSM6DS3: fifo_data = 0[0m
+[0;32mI (407) LSM6DS3: fifo_pattern 8 0[0m
+[0;32mI (407) LSM6DS3: fifo_data = 0[0m
+[0;32mI (417) LSM6DS3: fifo_pattern 0 0[0m
+[0;32mI (417) LSM6DS3: fifo_data = FEE1[0m
+[0;32mI (417) LSM6DS3: fifo_pattern 1 0[0m
+[0;32mI (427) LSM6DS3: fifo_data = FB45[0m
+[0;32mI (427) LSM6DS3: fifo_pattern 2 0[0m
+[0;32mI (427) LSM6DS3: fifo_data = FF83[0m
+[0;32mI (427) LSM6DS3: fifo_pattern 3 0[0m
+[0;32mI (437) LSM6DS3: fifo_data = 1FB0[0m
+[0;32mI (437) LSM6DS3: fifo_pattern 4 0[0m
+[0;32mI (437) LSM6DS3: fifo_data = 2B2[0m
+[0;32mI (447) LSM6DS3: fifo_pattern 5 0[0m
+[0;32mI (447) LSM6DS3: fifo_data = 577[0m
+[0;32mI (447) LSM6DS3: fifo_pattern 6 0[0m
+[0;32mI (457) LSM6DS3: fifo_data = 0[0m
+[0;32mI (457) LSM6DS3: fifo_pattern 7 0[0m
+[0;32mI (457) LSM6DS3: fifo_data = 0[0m
+[0;32mI (457) LSM6DS3: fifo_pattern 8 0[0m
+[0;32mI (467) LSM6DS3: fifo_data = 0[0m
+[0;32mI (467) LSM6DS3: fifo_pattern 0 0[0m
+[0;32mI (467) LSM6DS3: fifo_data = 80[0m
+[0;32mI (477) LSM6DS3: fifo_pattern 1 0[0m
+[0;32mI (477) LSM6DS3: fifo_data = FD48[0m
+[0;32mI (477) LSM6DS3: fifo_pattern 2 0[0m
+[0;32mI (487) LSM6DS3: fifo_data = FF23[0m
+[0;32mI (487) LSM6DS3: fifo_pattern 3 0[0m
+[0;32mI (487) LSM6DS3: fifo_data = 1EF2[0m
+[0;32mI (487) LSM6DS3: fifo_pattern 4 0[0m
+[0;32mI (497) LSM6DS3: fifo_data = 1CE[0m
+[0;32mI (497) LSM6DS3: fifo_pattern 5 0[0m
+[0;32mI (497) LSM6DS3: fifo_data = 4A3[0m
+[0;32mI (507) LSM6DS3: fifo_pattern 6 0[0m
+[0;32mI (507) LSM6DS3: fifo_data = 0[0m
+[0;32mI (507) LSM6DS3: fifo_pattern 7 0[0m
+[0;32mI (517) LSM6DS3: fifo_data = 0[0m
+[0;32mI (517) LSM6DS3: fifo_pattern 8 0[0m
+[0;32mI (517) LSM6DS3: fifo_data = 0[0m
+[0;32mI (517) LSM6DS3: fifo_pattern 0 0[0m
+[0;32mI (527) LSM6DS3: fifo_data = 21E[0m
+[0;32mI (527) LSM6DS3: fifo_pattern 1 0[0m
+[0;32mI (527) LSM6DS3: fifo_data = FECA[0m
+[0;32mI (537) LSM6DS3: fifo_pattern 2 0[0m
+[0;32mI (537) LSM6DS3: fifo_data = FEFA[0m
+[0;32mI (537) LSM6DS3: fifo_pattern 3 0[0m
+[0;32mI (547) LSM6DS3: fifo_data = 1E5B[0m
+[0;32mI (547) LSM6DS3: fifo_pattern 4 0[0m
+[0;32mI (547) LSM6DS3: fifo_data = 9A[0m
+[0;32mI (547) LSM6DS3: fifo_pattern 5 0[0m
+[0;32mI (557) LSM6DS3: fifo_data = 37F[0m
+[0;32mI (557) LSM6DS3: fifo_pattern 6 0[0m
+[0;32mI (557) LSM6DS3: fifo_data = 0[0m
+[0;32mI (567) LSM6DS3: fifo_pattern 7 0[0m
+[0;32mI (567) LSM6DS3: fifo_data = 0[0m
+[0;32mI (567) LSM6DS3: fifo_pattern 8 0[0m
+[0;32mI (567) LSM6DS3: fifo_data = 0[0m
+[0;32mI (577) LSM6DS3: fifo_pattern 0 0[0m
+[0;32mI (577) LSM6DS3: fifo_data = 377[0m
+[0;32mI (577) LSM6DS3: fifo_pattern 1 0[0m
+[0;32mI (587) LSM6DS3: fifo_data = FFB4[0m
+[0;32mI (587) LSM6DS3: fifo_pattern 2 0[0m
+[0;32mI (587) LSM6DS3: fifo_data = FF48[0m
+[0;32mI (597) LSM6DS3: fifo_pattern 3 0[0m
+[0;32mI (597) LSM6DS3: fifo_data = 1DF7[0m
+[0;32mI (597) LSM6DS3: fifo_pattern 4 0[0m
+[0;32mI (597) LSM6DS3: fifo_data = FF8B[0m
+[0;32mI (607) LSM6DS3: fifo_pattern 5 0[0m
+[0;32mI (607) LSM6DS3: fifo_data = 241[0m
+[0;32mI (607) LSM6DS3: fifo_pattern 6 0[0m
+[0;32mI (617) LSM6DS3: fifo_data = 0[0m
+[0;32mI (617) LSM6DS3: fifo_pattern 7 0[0m
+[0;32mI (617) LSM6DS3: fifo_data = 0[0m
+[0;32mI (627) LSM6DS3: fifo_pattern 8 0[0m
+[0;32mI (627) LSM6DS3: fifo_data = 0[0m
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x17 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0040,len:6272
+load:0x40078000,len:15848
+load:0x40080400,len:3920
+entry 0x40080644
+[0;32mI (27) boot: ESP-IDF v6.1-dev-2310-g44e2fa6d9c5-dirt 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Aug 12 2026 10:57:35[0m
+[0;32mI (28) boot: Multicore bootloader[0m
+[0;32mI (31) boot: chip revision: v3.1[0m
+[0;32mI (34) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (37) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (41) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (49) boot: Partition Table:[0m
+[0;32mI (52) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (58) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (71) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (78) boot: End of partition table[0m
+[0;32mI (81) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0896ch ( 35180) map[0m
+[0;32mI (101) esp_image: segment 1: paddr=00018994 vaddr=3ffb0000 size=027bch ( 10172) load[0m
+[0;32mI (105) esp_image: segment 2: paddr=0001b158 vaddr=40080000 size=04ec0h ( 20160) load[0m
+[0;32mI (114) esp_image: segment 3: paddr=00020020 vaddr=400d0020 size=0e6f8h ( 59128) map[0m
+[0;32mI (135) esp_image: segment 4: paddr=0002e720 vaddr=40084ec0 size=058e8h ( 22760) load[0m
+[0;32mI (145) esp_image: segment 5: paddr=00034010 vaddr=50000000 size=00028h (    40) load[0m
+[0;32mI (150) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (150) boot: Disabling RNG early entropy source...[0m
+[0;32mI (163) cpu_start: Multicore app[0m
+[0;32mI (171) cpu_start: GPIO 3 and 1 are used as console UART I/O pins[0m
+[0;32mI (171) cpu_start: Pro cpu start user code[0m
+[0;32mI (171) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (173) app_init: Application information:[0m
+[0;32mI (177) app_init: Project name:     i2c-basic[0m
+[0;32mI (181) app_init: App version:      1[0m
+[0;32mI (185) app_init: Compile time:     Aug 12 2026 10:54:20[0m
+[0;32mI (190) app_init: ELF file SHA256:  210478b0c...[0m
+[0;32mI (194) app_init: ESP-IDF:          v6.1-dev-2310-g44e2fa6d9c5-dirt[0m
+[0;32mI (200) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (204) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (208) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (212) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (218) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (223) heap_init: At 3FFB3128 len 0002CED8 (179 KiB): DRAM[0m
+[0;32mI (228) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (234) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (239) heap_init: At 4008A7A8 len 00015858 (86 KiB): IRAM[0m
+[0;33mW (245) spi_flash: Detected boya flash chip but using generic driver. For optimal functionality, enable `SPI_FLASH_SUPPORT_BOYA_CHIP` in menuconfig[0m
+[0;32mI (258) spi_flash: detected chip: generic[0m
+[0;32mI (261) spi_flash: flash io: dio[0m
+[0;33mW (264) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (277) main_task: Started on CPU0[0m
+[0;32mI (287) main_task: Calling app_main()[0m
+[0;32mI (287) LSM6DS3_EXAMPLE: I2C initialized successfully[0m
+[0;32mI (287) LSM6DS3: WHO_AM_I = 69[0m
+[0;32mI (287) LSM6DS3: CTRL1_XL = 48[0m
+[0;32mI (287) LSM6DS3: CTRL1_XL = 48[0m
+[0;32mI (287) LSM6DS3: CTRL1_XL = 48[0m
+[0;32mI (297) LSM6DS3: CTRL1_G = 44[0m
+[0;32mI (297) LSM6DS3: CTRL2_G = 44[0m
+[0;32mI (297) LSM6DS3: CTRL2_G = 44[0m
+[0;32mI (307) LSM6DS3: FIFO_CTRL1_REG_ADDR = FF[0m
+[0;32mI (307) LSM6DS3: FIFO_CTRL2_REG_ADDR = F[0m
+[0;32mI (317) LSM6DS3: FIFO_CTRL1_REG_ADDR again = FF[0m
+[0;32mI (317) LSM6DS3: FIFO_CTRL2_REG_ADDR again = F[0m
+[0;32mI (317) LSM6DS3: num_fifo_samples = 9[0m
+[0;32mI (317) LSM6DS3: num_fifo_samples = 9[0m
+[0;32mI (327) LSM6DS3: num_fifo_samples = 9[0m
+[0;32mI (327) LSM6DS3: num_fifo_samples = 18[0m
+[0;32mI (337) LSM6DS3: num_fifo_samples = 18[0m
+[0;32mI (337) LSM6DS3: num_fifo_samples = 18[0m
+[0;32mI (337) LSM6DS3: num_fifo_samples = 27[0m
+[0;32mI (347) LSM6DS3: num_fifo_samples = 27[0m
+[0;32mI (347) LSM6DS3: num_fifo_samples = 27[0m
+[0;32mI (347) LSM6DS3: num_fifo_samples = 36[0m
+[0;32mI (357) LSM6DS3: num_fifo_samples = 36[0m
+[0;32mI (357) LSM6DS3: num_fifo_samples = 45[0m
+[0;32mI (357) LSM6DS3: fifo_pattern 0 0[0m
+[0;32mI (367) LSM6DS3: fifo_data = FFEB[0m
+[0;32mI (367) LSM6DS3: fifo_pattern 1 0[0m
+[0;32mI (367) LSM6DS3: fifo_data = FFCB[0m
+[0;32mI (377) LSM6DS3: fifo_pattern 2 0[0m
+[0;32mI (377) LSM6DS3: fifo_data = FC54[0m
+[0;32mI (377) LSM6DS3: fifo_pattern 3 0[0m
+[0;32mI (377) LSM6DS3: fifo_data = FE48[0m
+[0;32mI (387) LSM6DS3: fifo_pattern 4 0[0m
+[0;32mI (387) LSM6DS3: fifo_data = DFAF[0m
+[0;32mI (387) LSM6DS3: fifo_pattern 5 0[0m
+[0;32mI (397) LSM6DS3: fifo_data = EB[0m
+[0;32mI (397) LSM6DS3: fifo_pattern 6 0[0m
+[0;32mI (397) LSM6DS3: fifo_data = 0[0m
+[0;32mI (397) LSM6DS3: fifo_pattern 7 0[0m
+[0;32mI (407) LSM6DS3: fifo_data = 0[0m
+[0;32mI (407) LSM6DS3: fifo_pattern 8 0[0m
+[0;32mI (407) LSM6DS3: fifo_data = 0[0m
+[0;32mI (417) LSM6DS3: fifo_pattern 0 0[0m
+[0;32mI (417) LSM6DS3: fifo_data = 6A[0m
+[0;32mI (417) LSM6DS3: fifo_pattern 1 0[0m
+[0;32mI (427) LSM6DS3: fifo_data = FFAF[0m
+[0;32mI (427) LSM6DS3: fifo_pattern 2 0[0m
+[0;32mI (427) LSM6DS3: fifo_data = FC3D[0m
+[0;32mI (427) LSM6DS3: fifo_pattern 3 0[0m
+[0;32mI (437) LSM6DS3: fifo_data = FE77[0m
+[0;32mI (437) LSM6DS3: fifo_pattern 4 0[0m
+[0;32mI (437) LSM6DS3: fifo_data = DE77[0m
+[0;32mI (447) LSM6DS3: fifo_pattern 5 0[0m
+[0;32mI (447) LSM6DS3: fifo_data = F0[0m
+[0;32mI (447) LSM6DS3: fifo_pattern 6 0[0m
+[0;32mI (457) LSM6DS3: fifo_data = 0[0m
+[0;32mI (457) LSM6DS3: fifo_pattern 7 0[0m
+[0;32mI (457) LSM6DS3: fifo_data = 0[0m
+[0;32mI (457) LSM6DS3: fifo_pattern 8 0[0m
+[0;32mI (467) LSM6DS3: fifo_data = 0[0m
+[0;32mI (467) LSM6DS3: fifo_pattern 0 0[0m
+[0;32mI (467) LSM6DS3: fifo_data = 109[0m
+[0;32mI (477) LSM6DS3: fifo_pattern 1 0[0m
+[0;32mI (477) LSM6DS3: fifo_data = FFC2[0m
+[0;32mI (477) LSM6DS3: fifo_pattern 2 0[0m
+[0;32mI (487) LSM6DS3: fifo_data = FC8F[0m
+[0;32mI (487) LSM6DS3: fifo_pattern 3 0[0m
+[0;32mI (487) LSM6DS3: fifo_data = FE61[0m
+[0;32mI (487) LSM6DS3: fifo_pattern 4 0[0m
+[0;32mI (497) LSM6DS3: fifo_data = DDA0[0m
+[0;32mI (497) LSM6DS3: fifo_pattern 5 0[0m
+[0;32mI (497) LSM6DS3: fifo_data = 2A[0m
+[0;32mI (507) LSM6DS3: fifo_pattern 6 0[0m
+[0;32mI (507) LSM6DS3: fifo_data = 0[0m
+[0;32mI (507) LSM6DS3: fifo_pattern 7 0[0m
+[0;32mI (517) LSM6DS3: fifo_data = 0[0m
+[0;32mI (517) LSM6DS3: fifo_pattern 8 0[0m
+[0;32mI (517) LSM6DS3: fifo_data = 0[0m
+[0;32mI (517) LSM6DS3: fifo_pattern 0 0[0m
+[0;32mI (527) LSM6DS3: fifo_data = 18C[0m
+[0;32mI (527) LSM6DS3: fifo_pattern 1 0[0m
+[0;32mI (527) LSM6DS3: fifo_data = FF84[0m
+[0;32mI (537) LSM6DS3: fifo_pattern 2 0[0m
+[0;32mI (537) LSM6DS3: fifo_data = FD3F[0m
+[0;32mI (537) LSM6DS3: fifo_pattern 3 0[0m
+[0;32mI (537) LSM6DS3: fifo_data = FE17[0m
+[0;32mI (547) LSM6DS3: fifo_pattern 4 0[0m
+[0;32mI (547) LSM6DS3: fifo_data = DD71[0m
+[0;32mI (547) LSM6DS3: fifo_pattern 5 0[0m
+[0;32mI (557) LSM6DS3: fifo_data = FFB3[0m
+[0;32mI (557) LSM6DS3: fifo_pattern 6 0[0m
+[0;32mI (557) LSM6DS3: fifo_data = 0[0m
+[0;32mI (567) LSM6DS3: fifo_pattern 7 0[0m
+[0;32mI (567) LSM6DS3: fifo_data = 0[0m
+[0;32mI (567) LSM6DS3: fifo_pattern 8 0[0m
+[0;32mI (567) LSM6DS3: fifo_data = 0[0m
+[0;32mI (577) LSM6DS3: fifo_pattern 0 0[0m
+[0;32mI (577) LSM6DS3: fifo_data = 191[0m
+[0;32mI (577) LSM6DS3: fifo_pattern 1 0[0m
+[0;32mI (587) LSM6DS3: fifo_data = FEEB[0m
+[0;32mI (587) LSM6DS3: fifo_pattern 2 0[0m
+[0;32mI (587) LSM6DS3: fifo_data = FDF8[0m
+[0;32mI (597) LSM6DS3: fifo_pattern 3 0[0m
+[0;32mI (597) LSM6DS3: fifo_data = FDFF[0m
+[0;32mI (597) LSM6DS3: fifo_pattern 4 0[0m
+[0;32mI (597) LSM6DS3: fifo_data = DD39[0m
+[0;32mI (607) LSM6DS3: fifo_pattern 5 0[0m
+[0;32mI (607) LSM6DS3: fifo_data = FFC8[0m
+[0;32mI (607) LSM6DS3: fifo_pattern 6 0[0m
+[0;32mI (617) LSM6DS3: fifo_data = 0[0m
+[0;32mI (617) LSM6DS3: fifo_pattern 7 0[0m
+[0;32mI (617) LSM6DS3: fifo_data = 0[0m
+[0;32mI (627) LSM6DS3: fifo_pattern 8 0[0m
+[0;32mI (627) LSM6DS3: fifo_data = 0[0m
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x17 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0040,len:6272
+load:0x40078000,len:15848
+load:0x40080400,len:3920
+entry 0x40080644
+[0;32mI (27) boot: ESP-IDF v6.1-dev-2310-g44e2fa6d9c5-dirt 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Aug 12 2026 10:57:35[0m
+[0;32mI (28) boot: Multicore bootloader[0m
+[0;32mI (31) boot: chip revision: v3.1[0m
+[0;32mI (34) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (37) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (41) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (49) boot: Partition Table:[0m
+[0;32mI (52) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (58) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (71) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (78) boot: End of partition table[0m
+[0;32mI (81) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0896ch ( 35180) map[0m
+[0;32mI (101) esp_image: segment 1: paddr=00018994 vaddr=3ffb0000 size=027bch ( 10172) load[0m
+[0;32mI (105) esp_image: segment 2: paddr=0001b158 vaddr=40080000 size=04ec0h ( 20160) load[0m
+[0;32mI (114) esp_image: segment 3: paddr=00020020 vaddr=400d0020 size=0e6f8h ( 59128) map[0m
+[0;32mI (135) esp_image: segment 4: paddr=0002e720 vaddr=40084ec0 size=058e8h ( 22760) load[0m
+[0;32mI (145) esp_image: segment 5: paddr=00034010 vaddr=50000000 size=00028h (    40) load[0m
+[0;32mI (150) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (150) boot: Disabling RNG early entropy source...[0m
+[0;32mI (163) cpu_start: Multicore app[0m
+[0;32mI (171) cpu_start: GPIO 3 and 1 are used as console UART I/O pins[0m
+[0;32mI (171) cpu_start: Pro cpu start user code[0m
+[0;32mI (171) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (173) app_init: Application information:[0m
+[0;32mI (177) app_init: Project name:     i2c-basic[0m
+[0;32mI (181) app_init: App version:      1[0m
+[0;32mI (185) app_init: Compile time:     Aug 12 2026 10:54:20[0m
+[0;32mI (190) app_init: ELF file SHA256:  210478b0c...[0m
+[0;32mI (194) app_init: ESP-IDF:          v6.1-dev-2310-g44e2fa6d9c5-dirt[0m
+[0;32mI (200) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (204) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (208) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (212) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (218) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (223) heap_init: At 3FFB3128 len 0002CED8 (179 KiB): DRAM[0m
+[0;32mI (228) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (234) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (239) heap_init: At 4008A7A8 len 00015858 (86 KiB): IRAM[0m
+[0;33mW (245) spi_flash: Detected boya flash chip but using generic driver. For optimal functionality, enable `SPI_FLASH_SUPPORT_BOYA_CHIP` in menuconfig[0m
+[0;32mI (258) spi_flash: detected chip: generic[0m
+[0;32mI (261) spi_flash: flash io: dio[0m
+[0;33mW (264) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (277) main_task: Started on CPU0[0m
+[0;32mI (287) main_task: Calling app_main()[0m
+[0;32mI (287) LSM6DS3_EXAMPLE: I2C initialized successfully[0m
+[0;32mI (287) LSM6DS3: WHO_AM_I = 69[0m
+[0;32mI (287) LSM6DS3: CTRL1_XL = 48[0m
+[0;32mI (287) LSM6DS3: CTRL1_XL = 48[0m
+[0;32mI (287) LSM6DS3: CTRL1_XL = 48[0m
+[0;32mI (297) LSM6DS3: CTRL1_G = 44[0m
+[0;32mI (297) LSM6DS3: CTRL2_G = 44[0m
+[0;32mI (297) LSM6DS3: CTRL2_G = 44[0m
+[0;32mI (307) LSM6DS3: FIFO_CTRL1_REG_ADDR = FF[0m
+[0;32mI (307) LSM6DS3: FIFO_CTRL2_REG_ADDR = F[0m
+[0;32mI (317) LSM6DS3: FIFO_CTRL1_REG_ADDR again = FF[0m
+[0;32mI (317) LSM6DS3: FIFO_CTRL2_REG_ADDR again = F[0m
+[0;32mI (317) LSM6DS3: num_fifo_samples = 9[0m
+[0;32mI (317) LSM6DS3: num_fifo_samples = 9[0m
+[0;32mI (327) LSM6DS3: num_fifo_samples = 9[0m
+[0;32mI (327) LSM6DS3: num_fifo_samples = 18[0m
+[0;32mI (337) LSM6DS3: num_fifo_samples = 18[0m
+[0;32mI (337) LSM6DS3: num_fifo_samples = 18[0m
+[0;32mI (337) LSM6DS3: num_fifo_samples = 27[0m
+[0;32mI (347) LSM6DS3: num_fifo_samples = 27[0m
+[0;32mI (347) LSM6DS3: num_fifo_samples = 36[0m
+[0;32mI (347) LSM6DS3: num_fifo_samples = 36[0m
+[0;32mI (357) LSM6DS3: num_fifo_samples = 36[0m
+[0;32mI (357) LSM6DS3: num_fifo_samples = 45[0m
+[0;32mI (357) LSM6DS3: fifo_pattern 0 0[0m
+[0;32mI (367) LSM6DS3: fifo_data = FE6B[0m
+[0;32mI (367) LSM6DS3: fifo_pattern 1 0[0m
+[0;32mI (367) LSM6DS3: fifo_data = FEA0[0m
+[0;32mI (377) LSM6DS3: fifo_pattern 2 0[0m
+[0;32mI (377) LSM6DS3: fifo_data = FDA4[0m
+[0;32mI (377) LSM6DS3: fifo_pattern 3 0[0m
+[0;32mI (377) LSM6DS3: fifo_data = FFFC[0m
+[0;32mI (387) LSM6DS3: fifo_pattern 4 0[0m
+[0;32mI (387) LSM6DS3: fifo_data = 20B9[0m
+[0;32mI (387) LSM6DS3: fifo_pattern 5 0[0m
+[0;32mI (397) LSM6DS3: fifo_data = FD16[0m
+[0;32mI (397) LSM6DS3: fifo_pattern 6 0[0m
+[0;32mI (397) LSM6DS3: fifo_data = 0[0m
+[0;32mI (407) LSM6DS3: fifo_pattern 7 0[0m
+[0;32mI (407) LSM6DS3: fifo_data = 0[0m
+[0;32mI (407) LSM6DS3: fifo_pattern 8 0[0m
+[0;32mI (407) LSM6DS3: fifo_data = 0[0m
+[0;32mI (417) LSM6DS3: fifo_pattern 0 0[0m
+[0;32mI (417) LSM6DS3: fifo_data = FEB1[0m
+[0;32mI (417) LSM6DS3: fifo_pattern 1 0[0m
+[0;32mI (427) LSM6DS3: fifo_data = FE33[0m
+[0;32mI (427) LSM6DS3: fifo_pattern 2 0[0m
+[0;32mI (427) LSM6DS3: fifo_data = FD2A[0m
+[0;32mI (437) LSM6DS3: fifo_pattern 3 0[0m
+[0;32mI (437) LSM6DS3: fifo_data = FF5D[0m
+[0;32mI (437) LSM6DS3: fifo_pattern 4 0[0m
+[0;32mI (437) LSM6DS3: fifo_data = 1F94[0m
+[0;32mI (447) LSM6DS3: fifo_pattern 5 0[0m
+[0;32mI (447) LSM6DS3: fifo_data = FD3E[0m
+[0;32mI (447) LSM6DS3: fifo_pattern 6 0[0m
+[0;32mI (457) LSM6DS3: fifo_data = 0[0m
+[0;32mI (457) LSM6DS3: fifo_pattern 7 0[0m
+[0;32mI (457) LSM6DS3: fifo_data = 0[0m
+[0;32mI (457) LSM6DS3: fifo_pattern 8 0[0m
+[0;32mI (467) LSM6DS3: fifo_data = 0[0m
+[0;32mI (467) LSM6DS3: fifo_pattern 0 0[0m
+[0;32mI (467) LSM6DS3: fifo_data = FF8F[0m
+[0;32mI (477) LSM6DS3: fifo_pattern 1 0[0m
+[0;32mI (477) LSM6DS3: fifo_data = FDB0[0m
+[0;32mI (477) LSM6DS3: fifo_pattern 2 0[0m
+[0;32mI (487) LSM6DS3: fifo_data = FD0B[0m
+[0;32mI (487) LSM6DS3: fifo_pattern 3 0[0m
+[0;32mI (487) LSM6DS3: fifo_data = FF96[0m
+[0;32mI (487) LSM6DS3: fifo_pattern 4 0[0m
+[0;32mI (497) LSM6DS3: fifo_data = 1E4F[0m
+[0;32mI (497) LSM6DS3: fifo_pattern 5 0[0m
+[0;32mI (497) LSM6DS3: fifo_data = FDC3[0m
+[0;32mI (507) LSM6DS3: fifo_pattern 6 0[0m
+[0;32mI (507) LSM6DS3: fifo_data = 0[0m
+[0;32mI (507) LSM6DS3: fifo_pattern 7 0[0m
+[0;32mI (517) LSM6DS3: fifo_data = 0[0m
+[0;32mI (517) LSM6DS3: fifo_pattern 8 0[0m
+[0;32mI (517) LSM6DS3: fifo_data = 0[0m
+[0;32mI (517) LSM6DS3: fifo_pattern 0 0[0m
+[0;32mI (527) LSM6DS3: fifo_data = 63[0m
+[0;32mI (527) LSM6DS3: fifo_pattern 1 0[0m
+[0;32mI (527) LSM6DS3: fifo_data = FD6E[0m
+[0;32mI (537) LSM6DS3: fifo_pattern 2 0[0m
+[0;32mI (537) LSM6DS3: fifo_data = FDC9[0m
+[0;32mI (537) LSM6DS3: fifo_pattern 3 0[0m
+[0;32mI (547) LSM6DS3: fifo_data = FF48[0m
+[0;32mI (547) LSM6DS3: fifo_pattern 4 0[0m
+[0;32mI (547) LSM6DS3: fifo_data = 1E50[0m
+[0;32mI (547) LSM6DS3: fifo_pattern 5 0[0m
+[0;32mI (557) LSM6DS3: fifo_data = FDC8[0m
+[0;32mI (557) LSM6DS3: fifo_pattern 6 0[0m
+[0;32mI (557) LSM6DS3: fifo_data = 0[0m
+[0;32mI (567) LSM6DS3: fifo_pattern 7 0[0m
+[0;32mI (567) LSM6DS3: fifo_data = 0[0m
+[0;32mI (567) LSM6DS3: fifo_pattern 8 0[0m
+[0;32mI (577) LSM6DS3: fifo_data = 0[0m
+[0;32mI (577) LSM6DS3: fifo_pattern 0 0[0m
+[0;32mI (577) LSM6DS3: fifo_data = 8E[0m
+[0;32mI (577) LSM6DS3: fifo_pattern 1 0[0m
+[0;32mI (587) LSM6DS3: fifo_data = FD28[0m
+[0;32mI (587) LSM6DS3: fifo_pattern 2 0[0m
+[0;32mI (587) LSM6DS3: fifo_data = FEE1[0m
+[0;32mI (597) LSM6DS3: fifo_pattern 3 0[0m
+[0;32mI (597) LSM6DS3: fifo_data = FF06[0m
+[0;32mI (597) LSM6DS3: fifo_pattern 4 0[0m
+[0;32mI (607) LSM6DS3: fifo_data = 1F3F[0m
+[0;32mI (607) LSM6DS3: fifo_pattern 5 0[0m
+[0;32mI (607) LSM6DS3: fifo_data = FE69[0m
+[0;32mI (607) LSM6DS3: fifo_pattern 6 0[0m
+[0;32mI (617) LSM6DS3: fifo_data = 0[0m
+[0;32mI (617) LSM6DS3: fifo_pattern 7 0[0m
+[0;32mI (617) LSM6DS3: fifo_data = 0[0m
+[0;32mI (627) LSM6DS3: fifo_pattern 8 0[0m
+[0;32mI (627) LSM6DS3: fifo_data = 0[0m
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x17 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0040,len:6272
+load:0x40078000,len:15848
+load:0x40080400,len:3920
+entry 0x40080644
+[0;32mI (27) boot: ESP-IDF v6.1-dev-2310-g44e2fa6d9c5-dirt 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Aug 12 2026 10:57:35[0m
+[0;32mI (28) boot: Multicore bootloader[0m
+[0;32mI (31) boot: chip revision: v3.1[0m
+[0;32mI (34) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (37) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (41) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (49) boot: Partition Table:[0m
+[0;32mI (52) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (58) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (71) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (78) boot: End of partition table[0m
+[0;32mI (81) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0896ch ( 35180) map[0m
+[0;32mI (101) esp_image: segment 1: paddr=00018994 vaddr=3ffb0000 size=027bch ( 10172) load[0m
+[0;32mI (105) esp_image: segment 2: paddr=0001b158 vaddr=40080000 size=04ec0h ( 20160) load[0m
+[0;32mI (114) esp_image: segment 3: paddr=00020020 vaddr=400d0020 size=0e6f8h ( 59128) map[0m
+[0;32mI (135) esp_image: segment 4: paddr=0002e720 vaddr=40084ec0 size=058e8h ( 22760) load[0m
+[0;32mI (145) esp_image: segment 5: paddr=00034010 vaddr=50000000 size=00028h (    40) load[0m
+[0;32mI (150) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (150) boot: Disabling RNG early entropy source...[0m
+[0;32mI (163) cpu_start: Multicore app[0m
+[0;32mI (171) cpu_start: GPIO 3 and 1 are used as console UART I/O pins[0m
+[0;32mI (171) cpu_start: Pro cpu start user code[0m
+[0;32mI (171) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (173) app_init: Application information:[0m
+[0;32mI (177) app_init: Project name:     i2c-basic[0m
+[0;32mI (181) app_init: App version:      1[0m
+[0;32mI (185) app_init: Compile time:     Aug 12 2026 10:54:20[0m
+[0;32mI (190) app_init: ELF file SHA256:  210478b0c...[0m
+[0;32mI (194) app_init: ESP-IDF:          v6.1-dev-2310-g44e2fa6d9c5-dirt[0m
+[0;32mI (200) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (204) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (208) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (212) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (218) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (223) heap_init: At 3FFB3128 len 0002CED8 (179 KiB): DRAM[0m
+[0;32mI (228) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (234) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (239) heap_init: At 4008A7A8 len 00015858 (86 KiB): IRAM[0m
+[0;33mW (245) spi_flash: Detected boya flash chip but using generic driver. For optimal functionality, enable `SPI_FLASH_SUPPORT_BOYA_CHIP` in menuconfig[0m
+[0;32mI (258) spi_flash: detected chip: generic[0m
+[0;32mI (261) spi_flash: flash io: dio[0m
+[0;33mW (264) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (277) main_task: Started on CPU0[0m
+[0;32mI (287) main_task: Calling app_main()[0m
+[0;32mI (287) LSM6DS3_EXAMPLE: I2C initialized successfully[0m
+[0;32mI (287) LSM6DS3: WHO_AM_I = 69[0m
+[0;32mI (287) LSM6DS3: CTRL1_XL = 48[0m
+[0;32mI (287) LSM6DS3: CTRL1_XL = 48[0m
+[0;32mI (287) LSM6DS3: CTRL1_XL = 48[0m
+[0;32mI (297) LSM6DS3: CTRL1_G = 44[0m
+[0;32mI (297) LSM6DS3: CTRL2_G = 44[0m
+[0;32mI (297) LSM6DS3: CTRL2_G = 44[0m
+[0;32mI (307) LSM6DS3: FIFO_CTRL1_REG_ADDR = FF[0m
+[0;32mI (307) LSM6DS3: FIFO_CTRL2_REG_ADDR = F[0m
+[0;32mI (317) LSM6DS3: FIFO_CTRL1_REG_ADDR again = FF[0m
+[0;32mI (317) LSM6DS3: FIFO_CTRL2_REG_ADDR again = F[0m
+[0;32mI (317) LSM6DS3: num_fifo_samples = 9[0m
+[0;32mI (317) LSM6DS3: num_fifo_samples = 9[0m
+[0;32mI (327) LSM6DS3: num_fifo_samples = 18[0m
+[0;32mI (327) LSM6DS3: num_fifo_samples = 18[0m
+[0;32mI (337) LSM6DS3: num_fifo_samples = 18[0m
+[0;32mI (337) LSM6DS3: num_fifo_samples = 27[0m
+[0;32mI (337) LSM6DS3: num_fifo_samples = 27[0m
+[0;32mI (347) LSM6DS3: num_fifo_samples = 27[0m
+[0;32mI (347) LSM6DS3: num_fifo_samples = 36[0m
+[0;32mI (347) LSM6DS3: num_fifo_samples = 36[0m
+[0;32mI (357) LSM6DS3: num_fifo_samples = 36[0m
+[0;32mI (357) LSM6DS3: num_fifo_samples = 45[0m
+[0;32mI (357) LSM6DS3: fifo_pattern 0 0[0m
+[0;32mI (367) LSM6DS3: fifo_data = 14[0m
+[0;32mI (367) LSM6DS3: fifo_pattern 1 0[0m
+[0;32mI (367) LSM6DS3: fifo_data = FCD2[0m
+[0;32mI (367) LSM6DS3: fifo_pattern 2 0[0m
+[0;32mI (377) LSM6DS3: fifo_data = FF36[0m
+[0;32mI (377) LSM6DS3: fifo_pattern 3 0[0m
+[0;32mI (377) LSM6DS3: fifo_data = 66[0m
+[0;32mI (387) LSM6DS3: fifo_pattern 4 0[0m
+[0;32mI (387) LSM6DS3: fifo_data = 213A[0m
+[0;32mI (387) LSM6DS3: fifo_pattern 5 0[0m
+[0;32mI (397) LSM6DS3: fifo_data = FFBF[0m
+[0;32mI (397) LSM6DS3: fifo_pattern 6 0[0m
+[0;32mI (397) LSM6DS3: fifo_data = 0[0m
+[0;32mI (397) LSM6DS3: fifo_pattern 7 0[0m
+[0;32mI (407) LSM6DS3: fifo_data = 0[0m
+[0;32mI (407) LSM6DS3: fifo_pattern 8 0[0m
+[0;32mI (407) LSM6DS3: fifo_data = 0[0m
+[0;32mI (417) LSM6DS3: fifo_pattern 0 0[0m
+[0;32mI (417) LSM6DS3: fifo_data = 7[0m
+[0;32mI (417) LSM6DS3: fifo_pattern 1 0[0m
+[0;32mI (427) LSM6DS3: fifo_data = FCEF[0m
+[0;32mI (427) LSM6DS3: fifo_pattern 2 0[0m
+[0;32mI (427) LSM6DS3: fifo_data = FEC3[0m
+[0;32mI (427) LSM6DS3: fifo_pattern 3 0[0m
+[0;32mI (437) LSM6DS3: fifo_data = B[0m
+[0;32mI (437) LSM6DS3: fifo_pattern 4 0[0m
+[0;32mI (437) LSM6DS3: fifo_data = 2082[0m
+[0;32mI (447) LSM6DS3: fifo_pattern 5 0[0m
+[0;32mI (447) LSM6DS3: fifo_data = F[0m
+[0;32mI (447) LSM6DS3: fifo_pattern 6 0[0m
+[0;32mI (457) LSM6DS3: fifo_data = 0[0m
+[0;32mI (457) LSM6DS3: fifo_pattern 7 0[0m
+[0;32mI (457) LSM6DS3: fifo_data = 0[0m
+[0;32mI (457) LSM6DS3: fifo_pattern 8 0[0m
+[0;32mI (467) LSM6DS3: fifo_data = 0[0m
+[0;32mI (467) LSM6DS3: fifo_pattern 0 0[0m
+[0;32mI (467) LSM6DS3: fifo_data = 4F[0m
+[0;32mI (477) LSM6DS3: fifo_pattern 1 0[0m
+[0;32mI (477) LSM6DS3: fifo_data = FD67[0m
+[0;32mI (477) LSM6DS3: fifo_pattern 2 0[0m
+[0;32mI (477) LSM6DS3: fifo_data = FEC5[0m
+[0;32mI (487) LSM6DS3: fifo_pattern 3 0[0m
+[0;32mI (487) LSM6DS3: fifo_data = FFC2[0m
+[0;32mI (487) LSM6DS3: fifo_pattern 4 0[0m
+[0;32mI (497) LSM6DS3: fifo_data = 2013[0m
+[0;32mI (497) LSM6DS3: fifo_pattern 5 0[0m
+[0;32mI (497) LSM6DS3: fifo_data = A[0m
+[0;32mI (507) LSM6DS3: fifo_pattern 6 0[0m
+[0;32mI (507) LSM6DS3: fifo_data = 0[0m
+[0;32mI (507) LSM6DS3: fifo_pattern 7 0[0m
+[0;32mI (507) LSM6DS3: fifo_data = 0[0m
+[0;32mI (517) LSM6DS3: fifo_pattern 8 0[0m
+[0;32mI (517) LSM6DS3: fifo_data = 0[0m
+[0;32mI (517) LSM6DS3: fifo_pattern 0 0[0m
+[0;32mI (527) LSM6DS3: fifo_data = 79[0m
+[0;32mI (527) LSM6DS3: fifo_pattern 1 0[0m
+[0;32mI (527) LSM6DS3: fifo_data = FE08[0m
+[0;32mI (537) LSM6DS3: fifo_pattern 2 0[0m
+[0;32mI (537) LSM6DS3: fifo_data = FF0E[0m
+[0;32mI (537) LSM6DS3: fifo_pattern 3 0[0m
+[0;32mI (537) LSM6DS3: fifo_data = FF7B[0m
+[0;32mI (547) LSM6DS3: fifo_pattern 4 0[0m
+[0;32mI (547) LSM6DS3: fifo_data = 1FFD[0m
+[0;32mI (547) LSM6DS3: fifo_pattern 5 0[0m
+[0;32mI (557) LSM6DS3: fifo_data = FF63[0m
+[0;32mI (557) LSM6DS3: fifo_pattern 6 0[0m
+[0;32mI (557) LSM6DS3: fifo_data = 0[0m
+[0;32mI (567) LSM6DS3: fifo_pattern 7 0[0m
+[0;32mI (567) LSM6DS3: fifo_data = 0[0m
+[0;32mI (567) LSM6DS3: fifo_pattern 8 0[0m
+[0;32mI (567) LSM6DS3: fifo_data = 0[0m
+[0;32mI (577) LSM6DS3: fifo_pattern 0 0[0m
+[0;32mI (577) LSM6DS3: fifo_data = 64[0m
+[0;32mI (577) LSM6DS3: fifo_pattern 1 0[0m
+[0;32mI (587) LSM6DS3: fifo_data = FE6E[0m
+[0;32mI (587) LSM6DS3: fifo_pattern 2 0[0m
+[0;32mI (587) LSM6DS3: fifo_data = FF5E[0m
+[0;32mI (587) LSM6DS3: fifo_pattern 3 0[0m
+[0;32mI (597) LSM6DS3: fifo_data = FE9A[0m
+[0;32mI (597) LSM6DS3: fifo_pattern 4 0[0m
+[0;32mI (597) LSM6DS3: fifo_data = 2009[0m
+[0;32mI (607) LSM6DS3: fifo_pattern 5 0[0m
+[0;32mI (607) LSM6DS3: fifo_data = FE65[0m
+[0;32mI (607) LSM6DS3: fifo_pattern 6 0[0m
+[0;32mI (617) LSM6DS3: fifo_data = 0[0m
+[0;32mI (617) LSM6DS3: fifo_pattern 7 0[0m
+[0;32mI (617) LSM6DS3: fifo_data = 0[0m
+[0;32mI (617) LSM6DS3: fifo_pattern 8 0[0m
+[0;32mI (627) LSM6DS3: fifo_data = 0[0m
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x17 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0040,len:6272
+load:0x40078000,len:15848
+load:0x40080400,len:3920
+entry 0x40080644
+[0;32mI (27) boot: ESP-IDF v6.1-dev-2310-g44e2fa6d9c5-dirt 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Aug 12 2026 10:57:35[0m
+[0;32mI (28) boot: Multicore bootloader[0m
+[0;32mI (31) boot: chip revision: v3.1[0m
+[0;32mI (34) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (37) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (41) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (49) boot: Partition Table:[0m
+[0;32mI (52) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (58) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (71) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (78) boot: End of partition table[0m
+[0;32mI (81) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0896ch ( 35180) map[0m
+[0;32mI (101) esp_image: segment 1: paddr=00018994 vaddr=3ffb0000 size=027bch ( 10172) load[0m
+[0;32mI (105) esp_image: segment 2: paddr=0001b158 vaddr=40080000 size=04ec0h ( 20160) load[0m
+[0;32mI (114) esp_image: segment 3: paddr=00020020 vaddr=400d0020 size=0e6f8h ( 59128) map[0m
+[0;32mI (135) esp_image: segment 4: paddr=0002e720 vaddr=40084ec0 size=058e8h ( 22760) load[0m
+[0;32mI (145) esp_image: segment 5: paddr=00034010 vaddr=50000000 size=00028h (    40) load[0m
+[0;32mI (150) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (150) boot: Disabling RNG early entropy source...[0m
+[0;32mI (163) cpu_start: Multicore app[0m
+[0;32mI (171) cpu_start: GPIO 3 and 1 are used as console UART I/O pins[0m
+[0;32mI (171) cpu_start: Pro cpu start user code[0m
+[0;32mI (171) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (173) app_init: Application information:[0m
+[0;32mI (177) app_init: Project name:     i2c-basic[0m
+[0;32mI (181) app_init: App version:      1[0m
+[0;32mI (185) app_init: Compile time:     Aug 12 2026 10:54:20[0m
+[0;32mI (190) app_init: ELF file SHA256:  210478b0c...[0m
+[0;32mI (194) app_init: ESP-IDF:          v6.1-dev-2310-g44e2fa6d9c5-dirt[0m
+[0;32mI (200) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (204) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (208) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (212) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (218) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (223) heap_init: At 3FFB3128 len 0002CED8 (179 KiB): DRAM[0m
+[0;32mI (228) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (234) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (239) heap_init: At 4008A7A8 len 00015858 (86 KiB): IRAM[0m
+[0;33mW (245) spi_flash: Detected boya flash chip but using generic driver. For optimal functionality, enable `SPI_FLASH_SUPPORT_BOYA_CHIP` in menuconfig[0m
+[0;32mI (258) spi_flash: detected chip: generic[0m
+[0;32mI (261) spi_flash: flash io: dio[0m
+[0;33mW (264) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (277) main_task: Started on CPU0[0m
+[0;32mI (287) main_task: Calling app_main()[0m
+[0;32mI (287) LSM6DS3_EXAMPLE: I2C initialized successfully[0m
+[0;32mI (287) LSM6DS3: WHO_AM_I = 69[0m
+[0;32mI (287) LSM6DS3: CTRL1_XL = 48[0m
+[0;32mI (287) LSM6DS3: CTRL1_XL = 48[0m
+[0;32mI (287) LSM6DS3: CTRL1_XL = 48[0m
+[0;32mI (297) LSM6DS3: CTRL1_G = 44[0m
+[0;32mI (297) LSM6DS3: CTRL2_G = 44[0m
+[0;32mI (297) LSM6DS3: CTRL2_G = 44[0m
+[0;32mI (307) LSM6DS3: FIFO_CTRL1_REG_ADDR = FF[0m
+[0;32mI (307) LSM6DS3: FIFO_CTRL2_REG_ADDR = F[0m
+[0;32mI (317) LSM6DS3: FIFO_CTRL1_REG_ADDR again = FF[0m
+[0;32mI (317) LSM6DS3: FIFO_CTRL2_REG_ADDR again = F[0m
+[0;32mI (317) LSM6DS3: num_fifo_samples = 0[0m
+[0;32mI (317) LSM6DS3: num_fifo_samples = 9[0m
+[0;32mI (327) LSM6DS3: num_fifo_samples = 9[0m
+[0;32mI (327) LSM6DS3: num_fifo_samples = 18[0m
+[0;32mI (337) LSM6DS3: num_fifo_samples = 18[0m
+[0;32mI (337) LSM6DS3: num_fifo_samples = 18[0m
+[0;32mI (337) LSM6DS3: num_fifo_samples = 27[0m
+[0;32mI (347) LSM6DS3: num_fifo_samples = 27[0m
+[0;32mI (347) LSM6DS3: num_fifo_samples = 27[0m
+[0;32mI (347) LSM6DS3: num_fifo_samples = 36[0m
+[0;32mI (357) LSM6DS3: num_fifo_samples = 36[0m
+[0;32mI (357) LSM6DS3: num_fifo_samples = 36[0m
+[0;32mI (357) LSM6DS3: num_fifo_samples = 45[0m
+[0;32mI (367) LSM6DS3: fifo_pattern 0 0[0m
+[0;32mI (367) LSM6DS3: fifo_data = FF9B[0m
+[0;32mI (367) LSM6DS3: fifo_pattern 1 0[0m
+[0;32mI (377) LSM6DS3: fifo_data = FD88[0m
+[0;32mI (377) LSM6DS3: fifo_pattern 2 0[0m
+[0;32mI (377) LSM6DS3: fifo_data = 136[0m
+[0;32mI (377) LSM6DS3: fifo_pattern 3 0[0m
+[0;32mI (387) LSM6DS3: fifo_data = 1F2B[0m
+[0;32mI (387) LSM6DS3: fifo_pattern 4 0[0m
+[0;32mI (387) LSM6DS3: fifo_data = FE51[0m
+[0;32mI (397) LSM6DS3: fifo_pattern 5 0[0m
+[0;32mI (397) LSM6DS3: fifo_data = 25D[0m
+[0;32mI (397) LSM6DS3: fifo_pattern 6 0[0m
+[0;32mI (407) LSM6DS3: fifo_data = 0[0m
+[0;32mI (407) LSM6DS3: fifo_pattern 7 0[0m
+[0;32mI (407) LSM6DS3: fifo_data = 0[0m
+[0;32mI (407) LSM6DS3: fifo_pattern 8 0[0m
+[0;32mI (417) LSM6DS3: fifo_data = 0[0m
+[0;32mI (417) LSM6DS3: fifo_pattern 0 0[0m
+[0;32mI (417) LSM6DS3: fifo_data = FFF8[0m
+[0;32mI (427) LSM6DS3: fifo_pattern 1 0[0m
+[0;32mI (427) LSM6DS3: fifo_data = FDFD[0m
+[0;32mI (427) LSM6DS3: fifo_pattern 2 0[0m
+[0;32mI (437) LSM6DS3: fifo_data = 17D[0m
+[0;32mI (437) LSM6DS3: fifo_pattern 3 0[0m
+[0;32mI (437) LSM6DS3: fifo_data = 1F5D[0m
+[0;32mI (437) LSM6DS3: fifo_pattern 4 0[0m
+[0;32mI (447) LSM6DS3: fifo_data = FDD3[0m
+[0;32mI (447) LSM6DS3: fifo_pattern 5 0[0m
+[0;32mI (447) LSM6DS3: fifo_data = 2E3[0m
+[0;32mI (457) LSM6DS3: fifo_pattern 6 0[0m
+[0;32mI (457) LSM6DS3: fifo_data = 0[0m
+[0;32mI (457) LSM6DS3: fifo_pattern 7 0[0m
+[0;32mI (467) LSM6DS3: fifo_data = 0[0m
+[0;32mI (467) LSM6DS3: fifo_pattern 8 0[0m
+[0;32mI (467) LSM6DS3: fifo_data = 0[0m
+[0;32mI (467) LSM6DS3: fifo_pattern 0 0[0m
+[0;32mI (477) LSM6DS3: fifo_data = D9[0m
+[0;32mI (477) LSM6DS3: fifo_pattern 1 0[0m
+[0;32mI (477) LSM6DS3: fifo_data = FEBA[0m
+[0;32mI (487) LSM6DS3: fifo_pattern 2 0[0m
+[0;32mI (487) LSM6DS3: fifo_data = 1D6[0m
+[0;32mI (487) LSM6DS3: fifo_pattern 3 0[0m
+[0;32mI (487) LSM6DS3: fifo_data = 1F43[0m
+[0;32mI (497) LSM6DS3: fifo_pattern 4 0[0m
+[0;32mI (497) LSM6DS3: fifo_data = FDA5[0m
+[0;32mI (497) LSM6DS3: fifo_pattern 5 0[0m
+[0;32mI (507) LSM6DS3: fifo_data = 29F[0m
+[0;32mI (507) LSM6DS3: fifo_pattern 6 0[0m
+[0;32mI (507) LSM6DS3: fifo_data = 0[0m
+[0;32mI (517) LSM6DS3: fifo_pattern 7 0[0m
+[0;32mI (517) LSM6DS3: fifo_data = 0[0m
+[0;32mI (517) LSM6DS3: fifo_pattern 8 0[0m
+[0;32mI (517) LSM6DS3: fifo_data = 0[0m
+[0;32mI (527) LSM6DS3: fifo_pattern 0 0[0m
+[0;32mI (527) LSM6DS3: fifo_data = 1CD[0m
+[0;32mI (527) LSM6DS3: fifo_pattern 1 0[0m
+[0;32mI (537) LSM6DS3: fifo_data = FF8A[0m
+[0;32mI (537) LSM6DS3: fifo_pattern 2 0[0m
+[0;32mI (537) LSM6DS3: fifo_data = 25A[0m
+[0;32mI (547) LSM6DS3: fifo_pattern 3 0[0m
+[0;32mI (547) LSM6DS3: fifo_data = 1F3F[0m
+[0;32mI (547) LSM6DS3: fifo_pattern 4 0[0m
+[0;32mI (547) LSM6DS3: fifo_data = FDF8[0m
+[0;32mI (557) LSM6DS3: fifo_pattern 5 0[0m
+[0;32mI (557) LSM6DS3: fifo_data = 1DC[0m
+[0;32mI (557) LSM6DS3: fifo_pattern 6 0[0m
+[0;32mI (567) LSM6DS3: fifo_data = 0[0m
+[0;32mI (567) LSM6DS3: fifo_pattern 7 0[0m
+[0;32mI (567) LSM6DS3: fifo_data = 0[0m
+[0;32mI (577) LSM6DS3: fifo_pattern 8 0[0m
+[0;32mI (577) LSM6DS3: fifo_data = 0[0m
+[0;32mI (577) LSM6DS3: fifo_pattern 0 0[0m
+[0;32mI (577) LSM6DS3: fifo_data = 264[0m
+[0;32mI (587) LSM6DS3: fifo_pattern 1 0[0m
+[0;32mI (587) LSM6DS3: fifo_data = FFF9[0m
+[0;32mI (587) LSM6DS3: fifo_pattern 2 0[0m
+[0;32mI (597) LSM6DS3: fifo_data = 2C7[0m
+[0;32mI (597) LSM6DS3: fifo_pattern 3 0[0m
+[0;32mI (597) LSM6DS3: fifo_data = 1FBA[0m
+[0;32mI (607) LSM6DS3: fifo_pattern 4 0[0m
+[0;32mI (607) LSM6DS3: fifo_data = FED1[0m
+[0;32mI (607) LSM6DS3: fifo_pattern 5 0[0m
+[0;32mI (607) LSM6DS3: fifo_data = 1C9[0m
+[0;32mI (617) LSM6DS3: fifo_pattern 6 0[0m
+[0;32mI (617) LSM6DS3: fifo_data = 0[0m
+[0;32mI (617) LSM6DS3: fifo_pattern 7 0[0m
+[0;32mI (627) LSM6DS3: fifo_data = 0[0m
+[0;32mI (627) LSM6DS3: fifo_pattern 8 0[0m
+[0;32mI (627) LSM6DS3: fifo_data = 0[0m
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x17 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0040,len:6272
+load:0x40078000,len:15848
+load:0x40080400,len:3920
+entry 0x40080644
+[0;32mI (27) boot: ESP-IDF v6.1-dev-2310-g44e2fa6d9c5-dirt 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Aug 12 2026 10:57:35[0m
+[0;32mI (28) boot: Multicore bootloader[0m
+[0;32mI (31) boot: chip revision: v3.1[0m
+[0;32mI (34) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (37) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (41) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (49) boot: Partition Table:[0m
+[0;32mI (52) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (58) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (71) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (78) boot: End of partition table[0m
+[0;32mI (81) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0896ch ( 35180) map[0m
+[0;32mI (101) esp_image: segment 1: paddr=00018994 vaddr=3ffb0000 size=027bch ( 10172) load[0m
+[0;32mI (105) esp_image: segment 2: paddr=0001b158 vaddr=40080000 size=04ec0h ( 20160) load[0m
+[0;32mI (114) esp_image: segment 3: paddr=00020020 vaddr=400d0020 size=0e6f8h ( 59128) map[0m
+[0;32mI (135) esp_image: segment 4: paddr=0002e720 vaddr=40084ec0 size=058e8h ( 22760) load[0m
+[0;32mI (145) esp_image: segment 5: paddr=00034010 vaddr=50000000 size=00028h (    40) load[0m
+[0;32mI (150) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (150) boot: Disabling RNG early entropy source...[0m
+[0;32mI (163) cpu_start: Multicore app[0m
+[0;32mI (171) cpu_start: GPIO 3 and 1 are used as console UART I/O pins[0m
+[0;32mI (171) cpu_start: Pro cpu start user code[0m
+[0;32mI (171) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (173) app_init: Application information:[0m
+[0;32mI (177) app_init: Project name:     i2c-basic[0m
+[0;32mI (181) app_init: App version:      1[0m
+[0;32mI (185) app_init: Compile time:     Aug 12 2026 10:54:20[0m
+[0;32mI (190) app_init: ELF file SHA256:  210478b0c...[0m
+[0;32mI (194) app_init: ESP-IDF:          v6.1-dev-2310-g44e2fa6d9c5-dirt[0m
+[0;32mI (200) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (204) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (208) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (212) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (218) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (223) heap_init: At 3FFB3128 len 0002CED8 (179 KiB): DRAM[0m
+[0;32mI (228) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (234) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (239) heap_init: At 4008A7A8 len 00015858 (86 KiB): IRAM[0m
+[0;33mW (245) spi_flash: Detected boya flash chip but using generic driver. For optimal functionality, enable `SPI_FLASH_SUPPORT_BOYA_CHIP` in menuconfig[0m
+[0;32mI (258) spi_flash: detected chip: generic[0m
+[0;32mI (261) spi_flash: flash io: dio[0m
+[0;33mW (264) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (277) main_task: Started on CPU0[0m
+[0;32mI (287) main_task: Calling app_main()[0m
+[0;32mI (287) LSM6DS3_EXAMPLE: I2C initialized successfully[0m
+[0;32mI (287) LSM6DS3: WHO_AM_I = 69[0m
+[0;32mI (287) LSM6DS3: CTRL1_XL = 48[0m
+[0;32mI (287) LSM6DS3: CTRL1_XL = 48[0m
+[0;32mI (287) LSM6DS3: CTRL1_XL = 48[0m
+[0;32mI (297) LSM6DS3: CTRL1_G = 44[0m
+[0;32mI (297) LSM6DS3: CTRL2_G = 44[0m
+[0;32mI (297) LSM6DS3: CTRL2_G = 44[0m
+[0;32mI (307) LSM6DS3: FIFO_CTRL1_REG_ADDR = FF[0m
+[0;32mI (307) LSM6DS3: FIFO_CTRL2_REG_ADDR = F[0m
+[0;32mI (317) LSM6DS3: FIFO_CTRL1_REG_ADDR again = FF[0m
+[0;32mI (317) LSM6DS3: FIFO_CTRL2_REG_ADDR again = F[0m
+[0;32mI (317) LSM6DS3: num_fifo_samples = 0[0m
+[0;32mI (317) LSM6DS3: num_fifo_samples = 9[0m
+[0;32mI (327) LSM6DS3: num_fifo_samples = 9[0m
+[0;32mI (327) LSM6DS3: num_fifo_samples = 9[0m
+[0;32mI (337) LSM6DS3: num_fifo_samples = 18[0m
+[0;32mI (337) LSM6DS3: num_fifo_samples = 18[0m
+[0;32mI (337) LSM6DS3: num_fifo_samples = 18[0m
+[0;32mI (347) LSM6DS3: num_fifo_samples = 27[0m
+[0;32mI (347) LSM6DS3: num_fifo_samples = 27[0m
+[0;32mI (347) LSM6DS3: num_fifo_samples = 27[0m
+[0;32mI (357) LSM6DS3: num_fifo_samples = 36[0m
+[0;32mI (357) LSM6DS3: num_fifo_samples = 36[0m
+[0;32mI (357) LSM6DS3: num_fifo_samples = 45[0m
+[0;32mI (367) LSM6DS3: fifo_pattern 0 0[0m
+[0;32mI (367) LSM6DS3: fifo_data = FE78[0m
+[0;32mI (367) LSM6DS3: fifo_pattern 1 0[0m
+[0;32mI (377) LSM6DS3: fifo_data = FE3C[0m
+[0;32mI (377) LSM6DS3: fifo_pattern 2 0[0m
+[0;32mI (377) LSM6DS3: fifo_data = FCF1[0m
+[0;32mI (377) LSM6DS3: fifo_pattern 3 0[0m
+[0;32mI (387) LSM6DS3: fifo_data = E3CB[0m
+[0;32mI (387) LSM6DS3: fifo_pattern 4 0[0m
+[0;32mI (387) LSM6DS3: fifo_data = DEE[0m
+[0;32mI (397) LSM6DS3: fifo_pattern 5 0[0m
+[0;32mI (397) LSM6DS3: fifo_data = FB61[0m
+[0;32mI (397) LSM6DS3: fifo_pattern 6 0[0m
+[0;32mI (407) LSM6DS3: fifo_data = 0[0m
+[0;32mI (407) LSM6DS3: fifo_pattern 7 0[0m
+[0;32mI (407) LSM6DS3: fifo_data = 0[0m
+[0;32mI (407) LSM6DS3: fifo_pattern 8 0[0m
+[0;32mI (417) LSM6DS3: fifo_data = 0[0m
+[0;32mI (417) LSM6DS3: fifo_pattern 0 0[0m
+[0;32mI (417) LSM6DS3: fifo_data = FCCF[0m
+[0;32mI (427) LSM6DS3: fifo_pattern 1 0[0m
+[0;32mI (427) LSM6DS3: fifo_data = FEA3[0m
+[0;32mI (427) LSM6DS3: fifo_pattern 2 0[0m
+[0;32mI (437) LSM6DS3: fifo_data = F6C9[0m
+[0;32mI (437) LSM6DS3: fifo_pattern 3 0[0m
+[0;32mI (437) LSM6DS3: fifo_data = E231[0m
+[0;32mI (437) LSM6DS3: fifo_pattern 4 0[0m
+[0;32mI (447) LSM6DS3: fifo_data = 662[0m
+[0;32mI (447) LSM6DS3: fifo_pattern 5 0[0m
+[0;32mI (447) LSM6DS3: fifo_data = FB08[0m
+[0;32mI (457) LSM6DS3: fifo_pattern 6 0[0m
+[0;32mI (457) LSM6DS3: fifo_data = 0[0m
+[0;32mI (457) LSM6DS3: fifo_pattern 7 0[0m
+[0;32mI (467) LSM6DS3: fifo_data = 0[0m
+[0;32mI (467) LSM6DS3: fifo_pattern 8 0[0m
+[0;32mI (467) LSM6DS3: fifo_data = 0[0m
+[0;32mI (467) LSM6DS3: fifo_pattern 0 0[0m
+[0;32mI (477) LSM6DS3: fifo_data = FCA4[0m
+[0;32mI (477) LSM6DS3: fifo_pattern 1 0[0m
+[0;32mI (477) LSM6DS3: fifo_data = FED1[0m
+[0;32mI (487) LSM6DS3: fifo_pattern 2 0[0m
+[0;32mI (487) LSM6DS3: fifo_data = F3F9[0m
+[0;32mI (487) LSM6DS3: fifo_pattern 3 0[0m
+[0;32mI (497) LSM6DS3: fifo_data = E135[0m
+[0;32mI (497) LSM6DS3: fifo_pattern 4 0[0m
+[0;32mI (497) LSM6DS3: fifo_data = FF4F[0m
+[0;32mI (497) LSM6DS3: fifo_pattern 5 0[0m
+[0;32mI (507) LSM6DS3: fifo_data = FAA2[0m
+[0;32mI (507) LSM6DS3: fifo_pattern 6 0[0m
+[0;32mI (507) LSM6DS3: fifo_data = 0[0m
+[0;32mI (517) LSM6DS3: fifo_pattern 7 0[0m
+[0;32mI (517) LSM6DS3: fifo_data = 0[0m
+[0;32mI (517) LSM6DS3: fifo_pattern 8 0[0m
+[0;32mI (527) LSM6DS3: fifo_data = 0[0m
+[0;32mI (527) LSM6DS3: fifo_pattern 0 0[0m
+[0;32mI (527) LSM6DS3: fifo_data = FE21[0m
+[0;32mI (527) LSM6DS3: fifo_pattern 1 0[0m
+[0;32mI (537) LSM6DS3: fifo_data = FEAC[0m
+[0;32mI (537) LSM6DS3: fifo_pattern 2 0[0m
+[0;32mI (537) LSM6DS3: fifo_data = F494[0m
+[0;32mI (547) LSM6DS3: fifo_pattern 3 0[0m
+[0;32mI (547) LSM6DS3: fifo_data = DFDD[0m
+[0;32mI (547) LSM6DS3: fifo_pattern 4 0[0m
+[0;32mI (557) LSM6DS3: fifo_data = FA95[0m
+[0;32mI (557) LSM6DS3: fifo_pattern 5 0[0m
+[0;32mI (557) LSM6DS3: fifo_data = F967[0m
+[0;32mI (557) LSM6DS3: fifo_pattern 6 0[0m
+[0;32mI (567) LSM6DS3: fifo_data = 0[0m
+[0;32mI (567) LSM6DS3: fifo_pattern 7 0[0m
+[0;32mI (567) LSM6DS3: fifo_data = 0[0m
+[0;32mI (577) LSM6DS3: fifo_pattern 8 0[0m
+[0;32mI (577) LSM6DS3: fifo_data = 0[0m
+[0;32mI (577) LSM6DS3: fifo_pattern 0 0[0m
+[0;32mI (577) LSM6DS3: fifo_data = FFC0[0m
+[0;32mI (587) LSM6DS3: fifo_pattern 1 0[0m
+[0;32mI (587) LSM6DS3: fifo_data = FDBE[0m
+[0;32mI (587) LSM6DS3: fifo_pattern 2 0[0m
+[0;32mI (597) LSM6DS3: fifo_data = F788[0m
+[0;32mI (597) LSM6DS3: fifo_pattern 3 0[0m
+[0;32mI (597) LSM6DS3: fifo_data = DEA7[0m
+[0;32mI (607) LSM6DS3: fifo_pattern 4 0[0m
+[0;32mI (607) LSM6DS3: fifo_data = F8B0[0m
+[0;32mI (607) LSM6DS3: fifo_pattern 5 0[0m
+[0;32mI (617) LSM6DS3: fifo_data = F8DF[0m
+[0;32mI (617) LSM6DS3: fifo_pattern 6 0[0m
+[0;32mI (617) LSM6DS3: fifo_data = 0[0m
+[0;32mI (617) LSM6DS3: fifo_pattern 7 0[0m
+[0;32mI (627) LSM6DS3: fifo_data = 0[0m
+[0;32mI (627) LSM6DS3: fifo_pattern 8 0[0m
+[0;32mI (627) LSM6DS3: fifo_data = 0[0m
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x17 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0040,len:6272
+load:0x40078000,len:15848
+load:0x40080400,len:3920
+entry 0x40080644
+[0;32mI (27) boot: ESP-IDF v6.1-dev-2310-g44e2fa6d9c5-dirt 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Aug 12 2026 10:57:35[0m
+[0;32mI (28) boot: Multicore bootloader[0m
+[0;32mI (31) boot: chip revision: v3.1[0m
+[0;32mI (34) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (37) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (41) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (49) boot: Partition Table:[0m
+[0;32mI (52) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (58) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (71) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (78) boot: End of partition table[0m
+[0;32mI (81) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0896ch ( 35180) map[0m
+[0;32mI (101) esp_image: segment 1: paddr=00018994 vaddr=3ffb0000 size=027bch ( 10172) load[0m
+[0;32mI (105) esp_image: segment 2: paddr=0001b158 vaddr=40080000 size=04ec0h ( 20160) load[0m
+[0;32mI (114) esp_image: segment 3: paddr=00020020 vaddr=400d0020 size=0e6f8h ( 59128) map[0m
+[0;32mI (135) esp_image: segment 4: paddr=0002e720 vaddr=40084ec0 size=058e8h ( 22760) load[0m
+[0;32mI (145) esp_image: segment 5: paddr=00034010 vaddr=50000000 size=00028h (    40) load[0m
+[0;32mI (150) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (150) boot: Disabling RNG early entropy source...[0m
+[0;32mI (163) cpu_start: Multicore app[0m
+[0;32mI (171) cpu_start: GPIO 3 and 1 are used as console UART I/O pins[0m
+[0;32mI (171) cpu_start: Pro cpu start user code[0m
+[0;32mI (171) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (173) app_init: Application information:[0m
+[0;32mI (177) app_init: Project name:     i2c-basic[0m
+[0;32mI (181) app_init: App version:      1[0m
+[0;32mI (185) app_init: Compile time:     Aug 12 2026 10:54:20[0m
+[0;32mI (190) app_init: ELF file SHA256:  210478b0c...[0m
+[0;32mI (194) app_init: ESP-IDF:          v6.1-dev-2310-g44e2fa6d9c5-dirt[0m
+[0;32mI (200) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (204) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (208) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (212) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (218) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (223) heap_init: At 3FFB3128 len 0002CED8 (179 KiB): DRAM[0m
+[0;32mI (228) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (234) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (239) heap_init: At 4008A7A8 len 00015858 (86 KiB): IRAM[0m
+[0;33mW (245) spi_flash: Detected boya flash chip but using generic driver. For optimal functionality, enable `SPI_FLASH_SUPPORT_BOYA_CHIP` in menuconfig[0m
+[0;32mI (258) spi_flash: detected chip: generic[0m
+[0;32mI (261) spi_flash: flash io: dio[0m
+[0;33mW (264) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (277) main_task: Started on CPU0[0m
+[0;32mI (287) main_task: Calling app_main()[0m
+[0;32mI (287) LSM6DS3_EXAMPLE: I2C initialized successfully[0m
+[0;32mI (287) LSM6DS3: WHO_AM_I = 69[0m
+[0;32mI (287) LSM6DS3: CTRL1_XL = 48[0m
+[0;32mI (287) LSM6DS3: CTRL1_XL = 48[0m
+[0;32mI (287) LSM6DS3: CTRL1_XL = 48[0m
+[0;32mI (297) LSM6DS3: CTRL1_G = 44[0m
+[0;32mI (297) LSM6DS3: CTRL2_G = 44[0m
+[0;32mI (297) LSM6DS3: CTRL2_G = 44[0m
+[0;32mI (307) LSM6DS3: FIFO_CTRL1_REG_ADDR = FF[0m
+[0;32mI (307) LSM6DS3: FIFO_CTRL2_REG_ADDR = F[0m
+[0;32mI (317) LSM6DS3: FIFO_CTRL1_REG_ADDR again = FF[0m
+[0;32mI (317) LSM6DS3: FIFO_CTRL2_REG_ADDR again = F[0m
+[0;32mI (317) LSM6DS3: num_fifo_samples = 9[0m
+[0;32mI (317) LSM6DS3: num_fifo_samples = 9[0m
+[0;32mI (327) LSM6DS3: num_fifo_samples = 18[0m
+[0;32mI (327) LSM6DS3: num_fifo_samples = 18[0m
+[0;32mI (337) LSM6DS3: num_fifo_samples = 18[0m
+[0;32mI (337) LSM6DS3: num_fifo_samples = 27[0m
+[0;32mI (337) LSM6DS3: num_fifo_samples = 27[0m
+[0;32mI (347) LSM6DS3: num_fifo_samples = 27[0m
+[0;32mI (347) LSM6DS3: num_fifo_samples = 36[0m
+[0;32mI (347) LSM6DS3: num_fifo_samples = 36[0m
+[0;32mI (357) LSM6DS3: num_fifo_samples = 36[0m
+[0;32mI (357) LSM6DS3: num_fifo_samples = 45[0m
+[0;32mI (357) LSM6DS3: fifo_pattern 0 0[0m
+[0;32mI (367) LSM6DS3: fifo_data = 1FD[0m
+[0;32mI (367) LSM6DS3: fifo_pattern 1 0[0m
+[0;32mI (367) LSM6DS3: fifo_data = FE2C[0m
+[0;32mI (377) LSM6DS3: fifo_pattern 2 0[0m
+[0;32mI (377) LSM6DS3: fifo_data = FE96[0m
+[0;32mI (377) LSM6DS3: fifo_pattern 3 0[0m
+[0;32mI (377) LSM6DS3: fifo_data = E9[0m
+[0;32mI (387) LSM6DS3: fifo_pattern 4 0[0m
+[0;32mI (387) LSM6DS3: fifo_data = DEE5[0m
+[0;32mI (387) LSM6DS3: fifo_pattern 5 0[0m
+[0;32mI (397) LSM6DS3: fifo_data = FFD9[0m
+[0;32mI (397) LSM6DS3: fifo_pattern 6 0[0m
+[0;32mI (397) LSM6DS3: fifo_data = 0[0m
+[0;32mI (397) LSM6DS3: fifo_pattern 7 0[0m
+[0;32mI (407) LSM6DS3: fifo_data = 0[0m
+[0;32mI (407) LSM6DS3: fifo_pattern 8 0[0m
+[0;32mI (407) LSM6DS3: fifo_data = 0[0m
+[0;32mI (417) LSM6DS3: fifo_pattern 0 0[0m
+[0;32mI (417) LSM6DS3: fifo_data = 213[0m
+[0;32mI (417) LSM6DS3: fifo_pattern 1 0[0m
+[0;32mI (427) LSM6DS3: fifo_data = FE1F[0m
+[0;32mI (427) LSM6DS3: fifo_pattern 2 0[0m
+[0;32mI (427) LSM6DS3: fifo_data = FF24[0m
+[0;32mI (427) LSM6DS3: fifo_pattern 3 0[0m
+[0;32mI (437) LSM6DS3: fifo_data = A2[0m
+[0;32mI (437) LSM6DS3: fifo_pattern 4 0[0m
+[0;32mI (437) LSM6DS3: fifo_data = DEAC[0m
+[0;32mI (447) LSM6DS3: fifo_pattern 5 0[0m
+[0;32mI (447) LSM6DS3: fifo_data = FF8D[0m
+[0;32mI (447) LSM6DS3: fifo_pattern 6 0[0m
+[0;32mI (457) LSM6DS3: fifo_data = 0[0m
+[0;32mI (457) LSM6DS3: fifo_pattern 7 0[0m
+[0;32mI (457) LSM6DS3: fifo_data = 0[0m
+[0;32mI (457) LSM6DS3: fifo_pattern 8 0[0m
+[0;32mI (467) LSM6DS3: fifo_data = 0[0m
+[0;32mI (467) LSM6DS3: fifo_pattern 0 0[0m
+[0;32mI (467) LSM6DS3: fifo_data = 1AA[0m
+[0;32mI (477) LSM6DS3: fifo_pattern 1 0[0m
+[0;32mI (477) LSM6DS3: fifo_data = FDEA[0m
+[0;32mI (477) LSM6DS3: fifo_pattern 2 0[0m
+[0;32mI (487) LSM6DS3: fifo_data = FFD1[0m
+[0;32mI (487) LSM6DS3: fifo_pattern 3 0[0m
+[0;32mI (487) LSM6DS3: fifo_data = 7F[0m
+[0;32mI (487) LSM6DS3: fifo_pattern 4 0[0m
+[0;32mI (497) LSM6DS3: fifo_data = DEAF[0m
+[0;32mI (497) LSM6DS3: fifo_pattern 5 0[0m
+[0;32mI (497) LSM6DS3: fifo_data = FFC0[0m
+[0;32mI (507) LSM6DS3: fifo_pattern 6 0[0m
+[0;32mI (507) LSM6DS3: fifo_data = 0[0m
+[0;32mI (507) LSM6DS3: fifo_pattern 7 0[0m
+[0;32mI (517) LSM6DS3: fifo_data = 0[0m
+[0;32mI (517) LSM6DS3: fifo_pattern 8 0[0m
+[0;32mI (517) LSM6DS3: fifo_data = 0[0m
+[0;32mI (517) LSM6DS3: fifo_pattern 0 0[0m
+[0;32mI (527) LSM6DS3: fifo_data = 13E[0m
+[0;32mI (527) LSM6DS3: fifo_pattern 1 0[0m
+[0;32mI (527) LSM6DS3: fifo_data = FDC3[0m
+[0;32mI (537) LSM6DS3: fifo_pattern 2 0[0m
+[0;32mI (537) LSM6DS3: fifo_data = 9D[0m
+[0;32mI (537) LSM6DS3: fifo_pattern 3 0[0m
+[0;32mI (537) LSM6DS3: fifo_data = 7F[0m
+[0;32mI (547) LSM6DS3: fifo_pattern 4 0[0m
+[0;32mI (547) LSM6DS3: fifo_data = DEDF[0m
+[0;32mI (547) LSM6DS3: fifo_pattern 5 0[0m
+[0;32mI (557) LSM6DS3: fifo_data = 67[0m
+[0;32mI (557) LSM6DS3: fifo_pattern 6 0[0m
+[0;32mI (557) LSM6DS3: fifo_data = 0[0m
+[0;32mI (567) LSM6DS3: fifo_pattern 7 0[0m
+[0;32mI (567) LSM6DS3: fifo_data = 0[0m
+[0;32mI (567) LSM6DS3: fifo_pattern 8 0[0m
+[0;32mI (567) LSM6DS3: fifo_data = 0[0m
+[0;32mI (577) LSM6DS3: fifo_pattern 0 0[0m
+[0;32mI (577) LSM6DS3: fifo_data = 131[0m
+[0;32mI (577) LSM6DS3: fifo_pattern 1 0[0m
+[0;32mI (587) LSM6DS3: fifo_data = FDEB[0m
+[0;32mI (587) LSM6DS3: fifo_pattern 2 0[0m
+[0;32mI (587) LSM6DS3: fifo_data = 121[0m
+[0;32mI (597) LSM6DS3: fifo_pattern 3 0[0m
+[0;32mI (597) LSM6DS3: fifo_data = B9[0m
+[0;32mI (597) LSM6DS3: fifo_pattern 4 0[0m
+[0;32mI (597) LSM6DS3: fifo_data = DF4E[0m
+[0;32mI (607) LSM6DS3: fifo_pattern 5 0[0m
+[0;32mI (607) LSM6DS3: fifo_data = F7[0m
+[0;32mI (607) LSM6DS3: fifo_pattern 6 0[0m
+[0;32mI (617) LSM6DS3: fifo_data = 0[0m
+[0;32mI (617) LSM6DS3: fifo_pattern 7 0[0m
+[0;32mI (617) LSM6DS3: fifo_data = 0[0m
+[0;32mI (617) LSM6DS3: fifo_pattern 8 0[0m
+[0;32mI (627) LSM6DS3: fifo_data = 0[0m
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x17 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0040,len:6272
+load:0x40078000,len:15848
+load:0x40080400,len:3920
+entry 0x40080644
+[0;32mI (27) boot: ESP-IDF v6.1-dev-2310-g44e2fa6d9c5-dirt 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Aug 12 2026 10:57:35[0m
+[0;32mI (28) boot: Multicore bootloader[0m
+[0;32mI (31) boot: chip revision: v3.1[0m
+[0;32mI (34) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (37) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (41) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (49) boot: Partition Table:[0m
+[0;32mI (52) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (58) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (71) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (78) boot: End of partition table[0m
+[0;32mI (81) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0896ch ( 35180) map[0m
+[0;32mI (101) esp_image: segment 1: paddr=00018994 vaddr=3ffb0000 size=027bch ( 10172) load[0m
+[0;32mI (105) esp_image: segment 2: paddr=0001b158 vaddr=40080000 size=04ec0h ( 20160) load[0m
+[0;32mI (114) esp_image: segment 3: paddr=00020020 vaddr=400d0020 size=0e6f8h ( 59128) map[0m
+[0;32mI (135) esp_image: segment 4: paddr=0002e720 vaddr=40084ec0 size=058e8h ( 22760) load[0m
+[0;32mI (145) esp_image: segment 5: paddr=00034010 vaddr=50000000 size=00028h (    40) load[0m
+[0;32mI (150) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (150) boot: Disabling RNG early entropy source...[0m
+[0;32mI (163) cpu_start: Multicore app[0m
+[0;32mI (171) cpu_start: GPIO 3 and 1 are used as console UART I/O pins[0m
+[0;32mI (171) cpu_start: Pro cpu start user code[0m
+[0;32mI (171) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (173) app_init: Application information:[0m
+[0;32mI (177) app_init: Project name:     i2c-basic[0m
+[0;32mI (181) app_init: App version:      1[0m
+[0;32mI (185) app_init: Compile time:     Aug 12 2026 10:54:20[0m
+[0;32mI (190) app_init: ELF file SHA256:  210478b0c...[0m
+[0;32mI (194) app_init: ESP-IDF:          v6.1-dev-2310-g44e2fa6d9c5-dirt[0m
+[0;32mI (200) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (204) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (208) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (212) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (218) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (223) heap_init: At 3FFB3128 len 0002CED8 (179 KiB): DRAM[0m
+[0;32mI (228) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (234) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (239) heap_init: At 4008A7A8 len 00015858 (86 KiB): IRAM[0m
+[0;33mW (245) spi_flash: Detected boya flash chip but using generic driver. For optimal functionality, enable `SPI_FLASH_SUPPORT_BOYA_CHIP` in menuconfig[0m
+[0;32mI (258) spi_flash: detected chip: generic[0m
+[0;32mI (261) spi_flash: flash io: dio[0m
+[0;33mW (264) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (277) main_task: Started on CPU0[0m
+[0;32mI (287) main_task: Calling app_main()[0m
+[0;32mI (287) LSM6DS3_EXAMPLE: I2C initialized successfully[0m
+[0;32mI (287) LSM6DS3: WHO_AM_I = 69[0m
+[0;32mI (287) LSM6DS3: CTRL1_XL = 48[0m
+[0;32mI (287) LSM6DS3: CTRL1_XL = 48[0m
+[0;32mI (287) LSM6DS3: CTRL1_XL = 48[0m
+[0;32mI (297) LSM6DS3: CTRL1_G = 44[0m
+[0;32mI (297) LSM6DS3: CTRL2_G = 44[0m
+[0;32mI (297) LSM6DS3: CTRL2_G = 44[0m
+[0;32mI (307) LSM6DS3: FIFO_CTRL1_REG_ADDR = FF[0m
+[0;32mI (307) LSM6DS3: FIFO_CTRL2_REG_ADDR = F[0m
+[0;32mI (317) LSM6DS3: FIFO_CTRL1_REG_ADDR again = FF[0m
+[0;32mI (317) LSM6DS3: FIFO_CTRL2_REG_ADDR again = F[0m
+[0;32mI (317) LSM6DS3: num_fifo_samples = 0[0m
+[0;32mI (317) LSM6DS3: num_fifo_samples = 9[0m
+[0;32mI (327) LSM6DS3: num_fifo_samples = 9[0m
+[0;32mI (327) LSM6DS3: num_fifo_samples = 9[0m
+[0;32mI (337) LSM6DS3: num_fifo_samples = 18[0m
+[0;32mI (337) LSM6DS3: num_fifo_samples = 18[0m
+[0;32mI (337) LSM6DS3: num_fifo_samples = 18[0m
+[0;32mI (347) LSM6DS3: num_fifo_samples = 27[0m
+[0;32mI (347) LSM6DS3: num_fifo_samples = 27[0m
+[0;32mI (347) LSM6DS3: num_fifo_samples = 36[0m
+[0;32mI (357) LSM6DS3: num_fifo_samples = 36[0m
+[0;32mI (357) LSM6DS3: num_fifo_samples = 36[0m
+[0;32mI (357) LSM6DS3: num_fifo_samples = 45[0m
+[0;32mI (367) LSM6DS3: fifo_pattern 0 0[0m
+[0;32mI (367) LSM6DS3: fifo_data = CC[0m
+[0;32mI (367) LSM6DS3: fifo_pattern 1 0[0m
+[0;32mI (377) LSM6DS3: fifo_data = FDCE[0m
+[0;32mI (377) LSM6DS3: fifo_pattern 2 0[0m
+[0;32mI (377) LSM6DS3: fifo_data = 10B[0m
+[0;32mI (377) LSM6DS3: fifo_pattern 3 0[0m
+[0;32mI (387) LSM6DS3: fifo_data = 4A[0m
+[0;32mI (387) LSM6DS3: fifo_pattern 4 0[0m
+[0;32mI (387) LSM6DS3: fifo_data = 1BF0[0m
+[0;32mI (397) LSM6DS3: fifo_pattern 5 0[0m
+[0;32mI (397) LSM6DS3: fifo_data = FCE0[0m
+[0;32mI (397) LSM6DS3: fifo_pattern 6 0[0m
+[0;32mI (407) LSM6DS3: fifo_data = 0[0m
+[0;32mI (407) LSM6DS3: fifo_pattern 7 0[0m
+[0;32mI (407) LSM6DS3: fifo_data = 0[0m
+[0;32mI (407) LSM6DS3: fifo_pattern 8 0[0m
+[0;32mI (417) LSM6DS3: fifo_data = 0[0m
+[0;32mI (417) LSM6DS3: fifo_pattern 0 0[0m
+[0;32mI (417) LSM6DS3: fifo_data = 18E[0m
+[0;32mI (427) LSM6DS3: fifo_pattern 1 0[0m
+[0;32mI (427) LSM6DS3: fifo_data = FE51[0m
+[0;32mI (427) LSM6DS3: fifo_pattern 2 0[0m
+[0;32mI (427) LSM6DS3: fifo_data = 2D4[0m
+[0;32mI (437) LSM6DS3: fifo_pattern 3 0[0m
+[0;32mI (437) LSM6DS3: fifo_data = 2B[0m
+[0;32mI (437) LSM6DS3: fifo_pattern 4 0[0m
+[0;32mI (447) LSM6DS3: fifo_data = 1E41[0m
+[0;32mI (447) LSM6DS3: fifo_pattern 5 0[0m
+[0;32mI (447) LSM6DS3: fifo_data = FD5E[0m
+[0;32mI (457) LSM6DS3: fifo_pattern 6 0[0m
+[0;32mI (457) LSM6DS3: fifo_data = 0[0m
+[0;32mI (457) LSM6DS3: fifo_pattern 7 0[0m
+[0;32mI (457) LSM6DS3: fifo_data = 0[0m
+[0;32mI (467) LSM6DS3: fifo_pattern 8 0[0m
+[0;32mI (467) LSM6DS3: fifo_data = 0[0m
+[0;32mI (467) LSM6DS3: fifo_pattern 0 0[0m
+[0;32mI (477) LSM6DS3: fifo_data = 248[0m
+[0;32mI (477) LSM6DS3: fifo_pattern 1 0[0m
+[0;32mI (477) LSM6DS3: fifo_data = FEE7[0m
+[0;32mI (487) LSM6DS3: fifo_pattern 2 0[0m
+[0;32mI (487) LSM6DS3: fifo_data = 3E1[0m
+[0;32mI (487) LSM6DS3: fifo_pattern 3 0[0m
+[0;32mI (487) LSM6DS3: fifo_data = FFD1[0m
+[0;32mI (497) LSM6DS3: fifo_pattern 4 0[0m
+[0;32mI (497) LSM6DS3: fifo_data = 2092[0m
+[0;32mI (497) LSM6DS3: fifo_pattern 5 0[0m
+[0;32mI (507) LSM6DS3: fifo_data = FD9C[0m
+[0;32mI (507) LSM6DS3: fifo_pattern 6 0[0m
+[0;32mI (507) LSM6DS3: fifo_data = 0[0m
+[0;32mI (517) LSM6DS3: fifo_pattern 7 0[0m
+[0;32mI (517) LSM6DS3: fifo_data = 0[0m
+[0;32mI (517) LSM6DS3: fifo_pattern 8 0[0m
+[0;32mI (517) LSM6DS3: fifo_data = 0[0m
+[0;32mI (527) LSM6DS3: fifo_pattern 0 0[0m
+[0;32mI (527) LSM6DS3: fifo_data = 315[0m
+[0;32mI (527) LSM6DS3: fifo_pattern 1 0[0m
+[0;32mI (537) LSM6DS3: fifo_data = FF92[0m
+[0;32mI (537) LSM6DS3: fifo_pattern 2 0[0m
+[0;32mI (537) LSM6DS3: fifo_data = 3AA[0m
+[0;32mI (547) LSM6DS3: fifo_pattern 3 0[0m
+[0;32mI (547) LSM6DS3: fifo_data = 16[0m
+[0;32mI (547) LSM6DS3: fifo_pattern 4 0[0m
+[0;32mI (547) LSM6DS3: fifo_data = 2202[0m
+[0;32mI (557) LSM6DS3: fifo_pattern 5 0[0m
+[0;32mI (557) LSM6DS3: fifo_data = FDA9[0m
+[0;32mI (557) LSM6DS3: fifo_pattern 6 0[0m
+[0;32mI (567) LSM6DS3: fifo_data = 0[0m
+[0;32mI (567) LSM6DS3: fifo_pattern 7 0[0m
+[0;32mI (567) LSM6DS3: fifo_data = 0[0m
+[0;32mI (567) LSM6DS3: fifo_pattern 8 0[0m
+[0;32mI (577) LSM6DS3: fifo_data = 0[0m
+[0;32mI (577) LSM6DS3: fifo_pattern 0 0[0m
+[0;32mI (577) LSM6DS3: fifo_data = 350[0m
+[0;32mI (587) LSM6DS3: fifo_pattern 1 0[0m
+[0;32mI (587) LSM6DS3: fifo_data = 67[0m
+[0;32mI (587) LSM6DS3: fifo_pattern 2 0[0m
+[0;32mI (597) LSM6DS3: fifo_data = 297[0m
+[0;32mI (597) LSM6DS3: fifo_pattern 3 0[0m
+[0;32mI (597) LSM6DS3: fifo_data = 28[0m
+[0;32mI (597) LSM6DS3: fifo_pattern 4 0[0m
+[0;32mI (607) LSM6DS3: fifo_data = 2268[0m
+[0;32mI (607) LSM6DS3: fifo_pattern 5 0[0m
+[0;32mI (607) LSM6DS3: fifo_data = FCD8[0m
+[0;32mI (617) LSM6DS3: fifo_pattern 6 0[0m
+[0;32mI (617) LSM6DS3: fifo_data = 0[0m
+[0;32mI (617) LSM6DS3: fifo_pattern 7 0[0m
+[0;32mI (627) LSM6DS3: fifo_data = 0[0m
+[0;32mI (627) LSM6DS3: fifo_pattern 8 0[0m
+[0;32mI (627) LSM6DS3: fifo_data = 0[0m
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x17 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0040,len:6272
+load:0x40078000,len:15848
+load:0x40080400,len:3920
+entry 0x40080644
+[0;32mI (27) boot: ESP-IDF v6.1-dev-2310-g44e2fa6d9c5-dirt 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Aug 12 2026 10:57:35[0m
+[0;32mI (28) boot: Multicore bootloader[0m
+[0;32mI (31) boot: chip revision: v3.1[0m
+[0;32mI (34) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (37) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (41) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (49) boot: Partition Table:[0m
+[0;32mI (52) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (58) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (71) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (78) boot: End of partition table[0m
+[0;32mI (81) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0896ch ( 35180) map[0m
+[0;32mI (101) esp_image: segment 1: paddr=00018994 vaddr=3ffb0000 size=027bch ( 10172) load[0m
+[0;32mI (105) esp_image: segment 2: paddr=0001b158 vaddr=40080000 size=04ec0h ( 20160) load[0m
+[0;32mI (114) esp_image: segment 3: paddr=00020020 vaddr=400d0020 size=0e6f8h ( 59128) map[0m
+[0;32mI (135) esp_image: segment 4: paddr=0002e720 vaddr=40084ec0 size=058e8h ( 22760) load[0m
+[0;32mI (145) esp_image: segment 5: paddr=00034010 vaddr=50000000 size=00028h (    40) load[0m
+[0;32mI (150) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (150) boot: Disabling RNG early entropy source...[0m
+[0;32mI (163) cpu_start: Multicore app[0m
+[0;32mI (171) cpu_start: GPIO 3 and 1 are used as console UART I/O pins[0m
+[0;32mI (171) cpu_start: Pro cpu start user code[0m
+[0;32mI (171) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (173) app_init: Application information:[0m
+[0;32mI (177) app_init: Project name:     i2c-basic[0m
+[0;32mI (181) app_init: App version:      1[0m
+[0;32mI (185) app_init: Compile time:     Aug 12 2026 10:54:20[0m
+[0;32mI (190) app_init: ELF file SHA256:  210478b0c...[0m
+[0;32mI (194) app_init: ESP-IDF:          v6.1-dev-2310-g44e2fa6d9c5-dirt[0m
+[0;32mI (200) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (204) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (208) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (212) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (218) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (223) heap_init: At 3FFB3128 len 0002CED8 (179 KiB): DRAM[0m
+[0;32mI (228) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (234) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (239) heap_init: At 4008A7A8 len 00015858 (86 KiB): IRAM[0m
+[0;33mW (245) spi_flash: Detected boya flash chip but using generic driver. For optimal functionality, enable `SPI_FLASH_SUPPORT_BOYA_CHIP` in menuconfig[0m
+[0;32mI (258) spi_flash: detected chip: generic[0m
+[0;32mI (261) spi_flash: flash io: dio[0m
+[0;33mW (264) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (277) main_task: Started on CPU0[0m
+[0;32mI (287) main_task: Calling app_main()[0m
+[0;32mI (287) LSM6DS3_EXAMPLE: I2C initialized successfully[0m
+[0;32mI (287) LSM6DS3: WHO_AM_I = 69[0m
+[0;32mI (287) LSM6DS3: CTRL1_XL = 48[0m
+[0;32mI (287) LSM6DS3: CTRL1_XL = 48[0m
+[0;32mI (287) LSM6DS3: CTRL1_XL = 48[0m
+[0;32mI (297) LSM6DS3: CTRL1_G = 44[0m
+[0;32mI (297) LSM6DS3: CTRL2_G = 44[0m
+[0;32mI (297) LSM6DS3: CTRL2_G = 44[0m
+[0;32mI (307) LSM6DS3: FIFO_CTRL1_REG_ADDR = FF[0m
+[0;32mI (307) LSM6DS3: FIFO_CTRL2_REG_ADDR = F[0m
+[0;32mI (317) LSM6DS3: FIFO_CTRL1_REG_ADDR again = FF[0m
+[0;32mI (317) LSM6DS3: FIFO_CTRL2_REG_ADDR again = F[0m
+[0;32mI (317) LSM6DS3: num_fifo_samples = 9[0m
+[0;32mI (317) LSM6DS3: num_fifo_samples = 9[0m
+[0;32mI (327) LSM6DS3: num_fifo_samples = 9[0m
+[0;32mI (327) LSM6DS3: num_fifo_samples = 18[0m
+[0;32mI (337) LSM6DS3: num_fifo_samples = 18[0m
+[0;32mI (337) LSM6DS3: num_fifo_samples = 18[0m
+[0;32mI (337) LSM6DS3: num_fifo_samples = 27[0m
+[0;32mI (347) LSM6DS3: num_fifo_samples = 27[0m
+[0;32mI (347) LSM6DS3: num_fifo_samples = 36[0m
+[0;32mI (347) LSM6DS3: num_fifo_samples = 36[0m
+[0;32mI (357) LSM6DS3: num_fifo_samples = 36[0m
+[0;32mI (357) LSM6DS3: num_fifo_samples = 45[0m
+[0;32mI (357) LSM6DS3: fifo_pattern 0 0[0m
+[0;32mI (367) LSM6DS3: fifo_data = FCCA[0m
+[0;32mI (367) LSM6DS3: fifo_pattern 1 0[0m
+[0;32mI (367) LSM6DS3: fifo_data = FD4E[0m
+[0;32mI (377) LSM6DS3: fifo_pattern 2 0[0m
+[0;32mI (377) LSM6DS3: fifo_data = 371[0m
+[0;32mI (377) LSM6DS3: fifo_pattern 3 0[0m
+[0;32mI (377) LSM6DS3: fifo_data = FF5D[0m
+[0;32mI (387) LSM6DS3: fifo_pattern 4 0[0m
+[0;32mI (387) LSM6DS3: fifo_data = 457[0m
+[0;32mI (387) LSM6DS3: fifo_pattern 5 0[0m
+[0;32mI (397) LSM6DS3: fifo_data = 1C35[0m
+[0;32mI (397) LSM6DS3: fifo_pattern 6 0[0m
+[0;32mI (397) LSM6DS3: fifo_data = 0[0m
+[0;32mI (397) LSM6DS3: fifo_pattern 7 0[0m
+[0;32mI (407) LSM6DS3: fifo_data = 0[0m
+[0;32mI (407) LSM6DS3: fifo_pattern 8 0[0m
+[0;32mI (407) LSM6DS3: fifo_data = 0[0m
+[0;32mI (417) LSM6DS3: fifo_pattern 0 0[0m
+[0;32mI (417) LSM6DS3: fifo_data = FDAC[0m
+[0;32mI (417) LSM6DS3: fifo_pattern 1 0[0m
+[0;32mI (427) LSM6DS3: fifo_data = FB66[0m
+[0;32mI (427) LSM6DS3: fifo_pattern 2 0[0m
+[0;32mI (427) LSM6DS3: fifo_data = 8D[0m
+[0;32mI (427) LSM6DS3: fifo_pattern 3 0[0m
+[0;32mI (437) LSM6DS3: fifo_data = FEE7[0m
+[0;32mI (437) LSM6DS3: fifo_pattern 4 0[0m
+[0;32mI (437) LSM6DS3: fifo_data = 3ED[0m
+[0;32mI (447) LSM6DS3: fifo_pattern 5 0[0m
+[0;32mI (447) LSM6DS3: fifo_data = 1DE2[0m
+[0;32mI (447) LSM6DS3: fifo_pattern 6 0[0m
+[0;32mI (457) LSM6DS3: fifo_data = 0[0m
+[0;32mI (457) LSM6DS3: fifo_pattern 7 0[0m
+[0;32mI (457) LSM6DS3: fifo_data = 0[0m
+[0;32mI (457) LSM6DS3: fifo_pattern 8 0[0m
+[0;32mI (467) LSM6DS3: fifo_data = 0[0m
+[0;32mI (467) LSM6DS3: fifo_pattern 0 0[0m
+[0;32mI (467) LSM6DS3: fifo_data = FF94[0m
+[0;32mI (477) LSM6DS3: fifo_pattern 1 0[0m
+[0;32mI (477) LSM6DS3: fifo_data = F983[0m
+[0;32mI (477) LSM6DS3: fifo_pattern 2 0[0m
+[0;32mI (487) LSM6DS3: fifo_data = FD34[0m
+[0;32mI (487) LSM6DS3: fifo_pattern 3 0[0m
+[0;32mI (487) LSM6DS3: fifo_data = FE82[0m
+[0;32mI (487) LSM6DS3: fifo_pattern 4 0[0m
+[0;32mI (497) LSM6DS3: fifo_data = 15C[0m
+[0;32mI (497) LSM6DS3: fifo_pattern 5 0[0m
+[0;32mI (497) LSM6DS3: fifo_data = 20AC[0m
+[0;32mI (507) LSM6DS3: fifo_pattern 6 0[0m
+[0;32mI (507) LSM6DS3: fifo_data = 0[0m
+[0;32mI (507) LSM6DS3: fifo_pattern 7 0[0m
+[0;32mI (517) LSM6DS3: fifo_data = 0[0m
+[0;32mI (517) LSM6DS3: fifo_pattern 8 0[0m
+[0;32mI (517) LSM6DS3: fifo_data = 0[0m
+[0;32mI (517) LSM6DS3: fifo_pattern 0 0[0m
+[0;32mI (527) LSM6DS3: fifo_data = 1C4[0m
+[0;32mI (527) LSM6DS3: fifo_pattern 1 0[0m
+[0;32mI (527) LSM6DS3: fifo_data = F89D[0m
+[0;32mI (537) LSM6DS3: fifo_pattern 2 0[0m
+[0;32mI (537) LSM6DS3: fifo_data = FAE3[0m
+[0;32mI (537) LSM6DS3: fifo_pattern 3 0[0m
+[0;32mI (547) LSM6DS3: fifo_data = FDD9[0m
+[0;32mI (547) LSM6DS3: fifo_pattern 4 0[0m
+[0;32mI (547) LSM6DS3: fifo_data = FD53[0m
+[0;32mI (547) LSM6DS3: fifo_pattern 5 0[0m
+[0;32mI (557) LSM6DS3: fifo_data = 22BC[0m
+[0;32mI (557) LSM6DS3: fifo_pattern 6 0[0m
+[0;32mI (557) LSM6DS3: fifo_data = 0[0m
+[0;32mI (567) LSM6DS3: fifo_pattern 7 0[0m
+[0;32mI (567) LSM6DS3: fifo_data = 0[0m
+[0;32mI (567) LSM6DS3: fifo_pattern 8 0[0m
+[0;32mI (577) LSM6DS3: fifo_data = 0[0m
+[0;32mI (577) LSM6DS3: fifo_pattern 0 0[0m
+[0;32mI (577) LSM6DS3: fifo_data = 3AB[0m
+[0;32mI (577) LSM6DS3: fifo_pattern 1 0[0m
+[0;32mI (587) LSM6DS3: fifo_data = F913[0m
+[0;32mI (587) LSM6DS3: fifo_pattern 2 0[0m
+[0;32mI (587) LSM6DS3: fifo_data = FA4E[0m
+[0;32mI (597) LSM6DS3: fifo_pattern 3 0[0m
+[0;32mI (597) LSM6DS3: fifo_data = FD51[0m
+[0;32mI (597) LSM6DS3: fifo_pattern 4 0[0m
+[0;32mI (607) LSM6DS3: fifo_data = F9DF[0m
+[0;32mI (607) LSM6DS3: fifo_pattern 5 0[0m
+[0;32mI (607) LSM6DS3: fifo_data = 233F[0m
+[0;32mI (607) LSM6DS3: fifo_pattern 6 0[0m
+[0;32mI (617) LSM6DS3: fifo_data = 0[0m
+[0;32mI (617) LSM6DS3: fifo_pattern 7 0[0m
+[0;32mI (617) LSM6DS3: fifo_data = 0[0m
+[0;32mI (627) LSM6DS3: fifo_pattern 8 0[0m
+[0;32mI (627) LSM6DS3: fifo_data = 0[0m
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x17 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0040,len:6272
+load:0x40078000,len:15848
+load:0x40080400,len:3920
+entry 0x40080644
+[0;32mI (27) boot: ESP-IDF v6.1-dev-2310-g44e2fa6d9c5-dirt 2nd stage bootloader[0m
+[0;32mI (28) boot: compile time Aug 12 2026 10:57:35[0m
+[0;32mI (28) boot: Multicore bootloader[0m
+[0;32mI (31) boot: chip revision: v3.1[0m
+[0;32mI (34) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (37) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (41) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (49) boot: Partition Table:[0m
+[0;32mI (52) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (58) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (71) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (78) boot: End of partition table[0m
+[0;32mI (81) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0896ch ( 35180) map[0m
+[0;32mI (101) esp_image: segment 1: paddr=00018994 vaddr=3ffb0000 size=027bch ( 10172) load[0m
+[0;32mI (105) esp_image: segment 2: paddr=0001b158 vaddr=40080000 size=04ec0h ( 20160) load[0m
+[0;32mI (114) esp_image: segment 3: paddr=00020020 vaddr=400d0020 size=0e6f8h ( 59128) map[0m
+[0;32mI (135) esp_image: segment 4: paddr=0002e720 vaddr=40084ec0 size=058e8h ( 22760) load[0m
+[0;32mI (145) esp_image: segment 5: paddr=00034010 vaddr=50000000 size=00028h (    40) load[0m
+[0;32mI (150) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (150) boot: Disabling RNG early entropy source...[0m
+[0;32mI (163) cpu_start: Multicore app[0m
+[0;32mI (171) cpu_start: GPIO 3 and 1 are used as console UART I/O pins[0m
+[0;32mI (171) cpu_start: Pro cpu start user code[0m
+[0;32mI (171) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (173) app_init: Application information:[0m
+[0;32mI (177) app_init: Project name:     i2c-basic[0m
+[0;32mI (181) app_init: App version:      1[0m
+[0;32mI (185) app_init: Compile time:     Aug 12 2026 10:54:20[0m
+[0;32mI (190) app_init: ELF file SHA256:  210478b0c...[0m
+[0;32mI (194) app_init: ESP-IDF:          v6.1-dev-2310-g44e2fa6d9c5-dirt[0m
+[0;32mI (200) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (204) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (208) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (212) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (218) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (223) heap_init: At 3FFB3128 len 0002CED8 (179 KiB): DRAM[0m
+[0;32mI (228) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (234) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (239) heap_init: At 4008A7A8 len 00015858 (86 KiB): IRAM[0m
+[0;33mW (245) spi_flash: Detected boya flash chip but using generic driver. For optimal functionality, enable `SPI_FLASH_SUPPORT_BOYA_CHIP` in menuconfig[0m
+[0;32mI (258) spi_flash: detected chip: generic[0m
+[0;32mI (261) spi_flash: flash io: dio[0m
+[0;33mW (264) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (277) main_task: Started on CPU0[0m
+[0;32mI (287) main_task: Calling app_main()[0m
+[0;32mI (287) LSM6DS3_EXAMPLE: I2C initialized successfully[0m
+[0;32mI (287) LSM6DS3: WHO_AM_I = 69[0m
+[0;32mI (287) LSM6DS3: CTRL1_XL = 48[0m
+[0;32mI (287) LSM6DS3: CTRL1_XL = 48[0m
+[0;32mI (287) LSM6DS3: CTRL1_XL = 48[0m
+[0;32mI (297) LSM6DS3: CTRL1_G = 44[0m
+[0;32mI (297) LSM6DS3: CTRL2_G = 44[0m
+[0;32mI (297) LSM6DS3: CTRL2_G = 44[0m
+[0;32mI (307) LSM6DS3: FIFO_CTRL1_REG_ADDR = FF[0m
+[0;32mI (307) LSM6DS3: FIFO_CTRL2_REG_ADDR = F[0m
+[0;32mI (317) LSM6DS3: FIFO_CTRL1_REG_ADDR again = FF[0m
+[0;32mI (317) LSM6DS3: FIFO_CTRL2_REG_ADDR again = F[0m
+[0;32mI (317) LSM6DS3: num_fifo_samples = 9[0m
+[0;32mI (317) LSM6DS3: num_fifo_samples = 9[0m
+[0;32mI (327) LSM6DS3: num_fifo_samples = 9[0m
+[0;32mI (327) LSM6DS3: num_fifo_samples = 18[0m
+[0;32mI (337) LSM6DS3: num_fifo_samples = 18[0m
+[0;32mI (337) LSM6DS3: num_fifo_samples = 27[0m
+[0;32mI (337) LSM6DS3: num_fifo_samples = 27[0m
+[0;32mI (347) LSM6DS3: num_fifo_samples = 27[0m
+[0;32mI (347) LSM6DS3: num_fifo_samples = 36[0m
+[0;32mI (347) LSM6DS3: num_fifo_samples = 36[0m
+[0;32mI (357) LSM6DS3: num_fifo_samples = 36[0m
+[0;32mI (357) LSM6DS3: num_fifo_samples = 45[0m
+[0;32mI (357) LSM6DS3: fifo_pattern 0 0[0m
+[0;32mI (367) LSM6DS3: fifo_data = 43[0m
+[0;32mI (367) LSM6DS3: fifo_pattern 1 0[0m
+[0;32mI (367) LSM6DS3: fifo_data = F844[0m
+[0;32mI (367) LSM6DS3: fifo_pattern 2 0[0m
+[0;32mI (377) LSM6DS3: fifo_data = 99[0m
+[0;32mI (377) LSM6DS3: fifo_pattern 3 0[0m
+[0;32mI (377) LSM6DS3: fifo_data = 280[0m
+[0;32mI (387) LSM6DS3: fifo_pattern 4 0[0m
+[0;32mI (387) LSM6DS3: fifo_data = FC3F[0m
+[0;32mI (387) LSM6DS3: fifo_pattern 5 0[0m
+[0;32mI (397) LSM6DS3: fifo_data = DED7[0m
+[0;32mI (397) LSM6DS3: fifo_pattern 6 0[0m
+[0;32mI (397) LSM6DS3: fifo_data = 0[0m
+[0;32mI (397) LSM6DS3: fifo_pattern 7 0[0m
+[0;32mI (407) LSM6DS3: fifo_data = 0[0m
+[0;32mI (407) LSM6DS3: fifo_pattern 8 0[0m
+[0;32mI (407) LSM6DS3: fifo_data = 0[0m
+[0;32mI (417) LSM6DS3: fifo_pattern 0 0[0m
+[0;32mI (417) LSM6DS3: fifo_data = 6A[0m
+[0;32mI (417) LSM6DS3: fifo_pattern 1 0[0m
+[0;32mI (427) LSM6DS3: fifo_data = F765[0m
+[0;32mI (427) LSM6DS3: fifo_pattern 2 0[0m
+[0;32mI (427) LSM6DS3: fifo_data = FFCF[0m
+[0;32mI (427) LSM6DS3: fifo_pattern 3 0[0m
+[0;32mI (437) LSM6DS3: fifo_data = 194[0m
+[0;32mI (437) LSM6DS3: fifo_pattern 4 0[0m
+[0;32mI (437) LSM6DS3: fifo_data = FBFD[0m
+[0;32mI (447) LSM6DS3: fifo_pattern 5 0[0m
+[0;32mI (447) LSM6DS3: fifo_data = E052[0m
+[0;32mI (447) LSM6DS3: fifo_pattern 6 0[0m
+[0;32mI (457) LSM6DS3: fifo_data = 0[0m
+[0;32mI (457) LSM6DS3: fifo_pattern 7 0[0m
+[0;32mI (457) LSM6DS3: fifo_data = 0[0m
+[0;32mI (457) LSM6DS3: fifo_pattern 8 0[0m
+[0;32mI (467) LSM6DS3: fifo_data = 0[0m
+[0;32mI (467) LSM6DS3: fifo_pattern 0 0[0m
+[0;32mI (467) LSM6DS3: fifo_data = 62[0m
+[0;32mI (477) LSM6DS3: fifo_pattern 1 0[0m
+[0;32mI (477) LSM6DS3: fifo_data = F717[0m
+[0;32mI (477) LSM6DS3: fifo_pattern 2 0[0m
+[0;32mI (487) LSM6DS3: fifo_data = FF76[0m
+[0;32mI (487) LSM6DS3: fifo_pattern 3 0[0m
+[0;32mI (487) LSM6DS3: fifo_data = 172[0m
+[0;32mI (487) LSM6DS3: fifo_pattern 4 0[0m
+[0;32mI (497) LSM6DS3: fifo_data = FB35[0m
+[0;32mI (497) LSM6DS3: fifo_pattern 5 0[0m
+[0;32mI (497) LSM6DS3: fifo_data = E28D[0m
+[0;32mI (507) LSM6DS3: fifo_pattern 6 0[0m
+[0;32mI (507) LSM6DS3: fifo_data = 0[0m
+[0;32mI (507) LSM6DS3: fifo_pattern 7 0[0m
+[0;32mI (517) LSM6DS3: fifo_data = 0[0m
+[0;32mI (517) LSM6DS3: fifo_pattern 8 0[0m
+[0;32mI (517) LSM6DS3: fifo_data = 0[0m
+[0;32mI (517) LSM6DS3: fifo_pattern 0 0[0m
+[0;32mI (527) LSM6DS3: fifo_data = 95[0m
+[0;32mI (527) LSM6DS3: fifo_pattern 1 0[0m
+[0;32mI (527) LSM6DS3: fifo_data = F7C7[0m
+[0;32mI (537) LSM6DS3: fifo_pattern 2 0[0m
+[0;32mI (537) LSM6DS3: fifo_data = FF57[0m
+[0;32mI (537) LSM6DS3: fifo_pattern 3 0[0m
+[0;32mI (537) LSM6DS3: fifo_data = 10D[0m
+[0;32mI (547) LSM6DS3: fifo_pattern 4 0[0m
+[0;32mI (547) LSM6DS3: fifo_data = FA3F[0m
+[0;32mI (547) LSM6DS3: fifo_pattern 5 0[0m
+[0;32mI (557) LSM6DS3: fifo_data = E3A6[0m
+[0;32mI (557) LSM6DS3: fifo_pattern 6 0[0m
+[0;32mI (557) LSM6DS3: fifo_data = 0[0m
+[0;32mI (567) LSM6DS3: fifo_pattern 7 0[0m
+[0;32mI (567) LSM6DS3: fifo_data = 0[0m
+[0;32mI (567) LSM6DS3: fifo_pattern 8 0[0m
+[0;32mI (567) LSM6DS3: fifo_data = 0[0m
+[0;32mI (577) LSM6DS3: fifo_pattern 0 0[0m
+[0;32mI (577) LSM6DS3: fifo_data = 5F[0m
+[0;32mI (577) LSM6DS3: fifo_pattern 1 0[0m
+[0;32mI (587) LSM6DS3: fifo_data = F8F9[0m
+[0;32mI (587) LSM6DS3: fifo_pattern 2 0[0m
+[0;32mI (587) LSM6DS3: fifo_data = FFCB[0m
+[0;32mI (597) LSM6DS3: fifo_pattern 3 0[0m
+[0;32mI (597) LSM6DS3: fifo_data = C4[0m
+[0;32mI (597) LSM6DS3: fifo_pattern 4 0[0m
+[0;32mI (597) LSM6DS3: fifo_data = FA30[0m
+[0;32mI (607) LSM6DS3: fifo_pattern 5 0[0m
+[0;32mI (607) LSM6DS3: fifo_data = E3DD[0m
+[0;32mI (607) LSM6DS3: fifo_pattern 6 0[0m
+[0;32mI (617) LSM6DS3: fifo_data = 0[0m
+[0;32mI (617) LSM6DS3: fifo_pattern 7 0[0m
+[0;32mI (617) LSM6DS3: fifo_data = 0[0m
+[0;32mI (627) LSM6DS3: fifo_pattern 8 0[0m
+[0;32mI (627) LSM6DS3: fifo_data = 0[0m

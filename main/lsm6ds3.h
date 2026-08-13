@@ -3,6 +3,7 @@
 
 #include "esp_log.h"
 #include "driver/i2c_master.h"
+#include "freertos/FreeRTOS.h"
 
 #define I2C_MASTER_TIMEOUT_MS 1000
 
@@ -98,6 +99,15 @@
 #define CTRL1_XL_LPF1_BW_SEL (1)
 #define CTRL1_XL_BW0_XL (0)
 
+/* accelerometer sampling rates */
+#define CTRL1_XL_FS_2G 0x0
+#define CTRL1_XL_FS_16G 0x1
+#define CTRL1_XL_FS_4G 0x2
+#define CTRL1_XL_FS_8G 0x3
+
+#define CTRL1_XL_ODR_104HZ 0x4
+#define CTRL1_XL_ODR_208HZ 0x5
+
 /**
  * CTRL2_G bits
  */
@@ -108,6 +118,15 @@
 #define CTRL2_G_FS_G1 (3)
 #define CTRL2_G_FS_G0 (2)
 #define CTRL2_G_FS_125 (1)
+
+/* gyroscope sampling rates */
+#define CTRL2_G_FS_245DPS 0x0
+#define CTRL2_G_FS_500DPS 0x1
+#define CTRL2_G_FS_2000DPS 0x3
+#define CTRL2_G_FS_1000DPS 0x2
+
+#define CTRL2_G_ODR_104HZ 0x4
+#define CTRL2_G_ODR_208HZ 0x5
 
 /**
  * CTRL3_C bits
@@ -151,6 +170,79 @@
  */
 
 /**
+ * FIFO_CTRL1 bits
+ */
+#define FIFO_CTRL1_FTH_7 (7)
+#define FIFO_CTRL1_FTH_0 (0)
+
+/**
+ * FIFO_CTRL2 bits
+ */
+#define FIFO_CTRL2_TEMP_EN (3)
+#define FIFO_CTRL2_FTH_10 (2)
+#define FIFO_CTRL2_FTH_8 (0)
+
+/**
+ * FIFO_CTRL3 bits
+ */
+#define FIFO_CTRL3_DEC_GYRO2 (5)
+#define FIFO_CTRL3_DEC_GYRO0 (3)
+#define FIFO_CTRL3_DEC_ACCEL2 (2)
+#define FIFO_CTRL3_DEC_ACCEL0 (0)
+
+/**
+ * FIFO_CTRL4 bits
+ */
+#define FIFO_CTRL4_STOP_ON_FTH (7)
+#define FIFO_CTRL4_DEC_DS4_FIFO2 (5)
+#define FIFO_CTRL4_DEC_DS4_FIFO0 (3)
+#define FIFO_CTRL4_DEC_DS3_FIFO2 (2)
+#define FIFO_CTRL4_DEC_DS3_FIFO0 (0)
+
+/**
+ * FIFO_CTRL5 bits
+ */
+#define FIFO_CTRL5_ODR_3 (6)
+#define FIFO_CTRL5_ODR_0 (3)
+#define FIFO_CTRL5_MODE_2 (2)
+#define FIFO_CTRL5_MODE_0 (0)
+
+#define FIFO_CTRL5_ODR_FIFO_104HZ 0x4
+#define FIFO_CTRL5_ODR_FIFO_208HZ 0x5
+
+#define FIFO_CTRL5_MODE_BYPASS 0x0
+#define FIFO_CTRL5_MODE_FIFO 0x1
+#define FIFO_CTRL5_MODE_CONTINUOUS 0x6
+
+/**
+ * FIFO_STATUS1 bits
+ */
+#define FIFO_STATUS1_DIFF_FIFO_7 (7)
+#define FIFO_STATUS1_DIFF_FIFO_0 (0)
+
+/**
+ * FIFO_STATUS2 bits
+ */
+#define FIFO_STATUS2_WATERM (7)
+#define FIFO_STATUS2_OVER_RUN (6)
+#define FIFO_STATUS2_FIFO_FULL_SMART (5)
+#define FIFO_STATUS2_FIFO_EMPTY (4)
+#define FIFO_STATUS2_DIFF_FIFO_10 (2)
+#define FIFO_STATUS2_DIFF_FIFO_8 (0)
+
+/**
+ * FIFO_STATUS3 bits
+ */
+#define FIFO_STATUS3_FIFO_PATTERN_7 (7)
+#define FIFO_STATUS3_FIFO_PATTERN_0 (0)
+
+/**
+ * FIFO_STATUS4 bits
+ */
+#define FIFO_STATUS4_FIFO_PATTERN_9 (1)
+#define FIFO_STATUS4_FIFO_PATTERN_8 (0)
+
+/**
  * STATUS_REG bits
  */
 #define STATUS_REG_TDA (2)
@@ -184,5 +276,10 @@ void read_modify_write(uint8_t bit_start,
                        uint8_t *reg);
 uint8_t read_bit(uint8_t reg, uint8_t bit_pos);
 void write_bit(uint8_t *reg, uint8_t bit_pos, uint8_t value);
+
+void lsm6ds3_fifo_init(i2c_master_dev_handle_t dev_handle);
+void lsm6ds3_fifo_stop(i2c_master_dev_handle_t dev_handle);
+void lsm6ds3_fifo_reset_start(i2c_master_dev_handle_t dev_handle);
+void lsm6ds3_fifo_read(i2c_master_dev_handle_t dev_handle, lsm6ds3_data_t *lsm6ds3_fifo_buffer, uint16_t num_samples);
 
 #endif

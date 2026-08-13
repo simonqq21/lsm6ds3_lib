@@ -19,14 +19,16 @@
 
 #include "lsm6ds3.h"
 
+#define NUM_FIFO_TIMESTAMPS 320
+
 static const char *TAG = "LSM6DS3_EXAMPLE";
 
-static lsm6ds3_data_t lsm6ds3_data;
+static lsm6ds3_data_t lsm6ds3_data[NUM_FIFO_TIMESTAMPS];
 
 #define I2C_MASTER_SCL_IO 22        /*!< GPIO number used for I2C master clock */
 #define I2C_MASTER_SDA_IO 21        /*!< GPIO number used for I2C master data  */
 #define I2C_MASTER_NUM I2C_NUM_0    /*!< I2C port number for master dev */
-#define I2C_MASTER_FREQ_HZ 100000   /*!< I2C master clock frequency */
+#define I2C_MASTER_FREQ_HZ 400000   /*!< I2C master clock frequency */
 #define I2C_MASTER_TX_BUF_DISABLE 0 /*!< I2C master doesn't need buffer */
 #define I2C_MASTER_RX_BUF_DISABLE 0 /*!< I2C master doesn't need buffer */
 
@@ -128,15 +130,24 @@ void app_main(void)
     /* initialize the lsm6ds0 */
     lsm6ds3_init_all(dev_handle);
 
+    /* initialize LSM6DS3 FIFO */
+    lsm6ds3_fifo_init(dev_handle);
+
+    /* start recording data samples to the FIFO */
+    lsm6ds3_fifo_reset_start(dev_handle);
+
     while (1)
     {
-        /* read 6-axis data */
-        lsm6ds3_read_raw_data(dev_handle, &lsm6ds3_data);
-        ESP_LOGI(TAG, "temperature = %f\n", lsm6ds3_data.temp);
-        ESP_LOGI(TAG, "gyro = %f %f %f\n", lsm6ds3_data.gyro[0], lsm6ds3_data.gyro[1], lsm6ds3_data.gyro[2]);
-        ESP_LOGI(TAG, "accel = %f %f %f\n", lsm6ds3_data.accel[0], lsm6ds3_data.accel[1], lsm6ds3_data.accel[2]);
+        // /* read 6-axis data */
+        // lsm6ds3_read_raw_data(dev_handle, &lsm6ds3_data);
+        // ESP_LOGI(TAG, "temperature = %f\n", lsm6ds3_data.temp);
+        // ESP_LOGI(TAG, "gyro = %f %f %f\n", lsm6ds3_data.gyro[0], lsm6ds3_data.gyro[1], lsm6ds3_data.gyro[2]);
+        // ESP_LOGI(TAG, "accel = %f %f %f\n", lsm6ds3_data.accel[0], lsm6ds3_data.accel[1], lsm6ds3_data.accel[2]);
 
-        vTaskDelay(500 / portTICK_PERIOD_MS);
+        /* read data from the FIFO */
+        lsm6ds3_fifo_read(dev_handle, lsm6ds3_data, NUM_FIFO_TIMESTAMPS);
+
+        // vTaskDelay(500 / portTICK_PERIOD_MS);
     }
 
     /* deinitialize i2c bus */
