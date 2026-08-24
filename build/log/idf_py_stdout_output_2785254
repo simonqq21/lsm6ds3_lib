@@ -1,0 +1,1864 @@
+Command: /home/simonque/.espressif/python_env/idf6.1_py3.12_env/bin/python /home/simonque/Documents/code/esp-idf/tools/idf_monitor.py -p /dev/ttyUSB0 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 /home/simonque/Documents/code/esp-idf-projects/components_testing/lsm6ds3_lib/build/i2c-basic.elf /home/simonque/Documents/code/esp-idf-projects/components_testing/lsm6ds3_lib/build/bootloader/bootloader.elf -m '/home/simonque/.espressif/python_env/idf6.1_py3.12_env/bin/python' '/home/simonque/Documents/code/esp-idf/tools/idf.py'
+'2%=}QI1�ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x17 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0040,len:6272
+load:0x40078000,len:15848
+load:0x40080400,len:3920
+entry 0x40080644
+[0;32mI (27) boot: ESP-IDF v6.1-dev-2310-g44e2fa6d9c5-dirt 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Aug 12 2026 10:57:35[0m
+[0;32mI (28) boot: Multicore bootloader[0m
+[0;32mI (31) boot: chip revision: v3.1[0m
+[0;32mI (34) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (37) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (41) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (49) boot: Partition Table:[0m
+[0;32mI (52) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (58) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (71) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (78) boot: End of partition table[0m
+[0;32mI (81) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=089dch ( 35292) map[0m
+[0;32mI (101) esp_image: segment 1: paddr=00018a04 vaddr=3ffb0000 size=027bch ( 10172) load[0m
+[0;32mI (105) esp_image: segment 2: paddr=0001b1c8 vaddr=40080000 size=04e50h ( 20048) load[0m
+[0;32mI (114) esp_image: segment 3: paddr=00020020 vaddr=400d0020 size=0eaech ( 60140) map[0m
+[0;32mI (135) esp_image: segment 4: paddr=0002eb14 vaddr=40084e50 size=05958h ( 22872) load[0m
+[0;32mI (145) esp_image: segment 5: paddr=00034474 vaddr=50000000 size=00028h (    40) load[0m
+[0;32mI (151) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (151) boot: Disabling RNG early entropy source...[0m
+[0;32mI (163) cpu_start: Multicore app[0m
+[0;32mI (172) cpu_start: GPIO 3 and 1 are used as console UART I/O pins[0m
+[0;32mI (172) cpu_start: Pro cpu start user code[0m
+[0;32mI (172) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (174) app_init: Application information:[0m
+[0;32mI (177) app_init: Project name:     i2c-basic[0m
+[0;32mI (182) app_init: App version:      1[0m
+[0;32mI (185) app_init: Compile time:     Aug 12 2026 10:54:20[0m
+[0;32mI (190) app_init: ELF file SHA256:  82ec381b2...[0m
+[0;32mI (194) app_init: ESP-IDF:          v6.1-dev-2310-g44e2fa6d9c5-dirt[0m
+[0;32mI (200) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (204) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (208) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (212) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (218) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (223) heap_init: At 3FFB5200 len 0002AE00 (171 KiB): DRAM[0m
+[0;32mI (229) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (234) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (240) heap_init: At 4008A7A8 len 00015858 (86 KiB): IRAM[0m
+[0;33mW (246) spi_flash: Detected boya flash chip but using generic driver. For optimal functionality, enable `SPI_FLASH_SUPPORT_BOYA_CHIP` in menuconfig[0m
+[0;32mI (258) spi_flash: detected chip: generic[0m
+[0;32mI (261) spi_flash: flash io: dio[0m
+[0;33mW (264) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (278) main_task: Started on CPU0[0m
+[0;32mI (288) main_task: Calling app_main()[0m
+[0;32mI (288) LSM6DS3_EXAMPLE: I2C initialized successfully[0m
+[0;32mI (288) LSM6DS3: WHO_AM_I = 69[0m
+[0;32mI (288) LSM6DS3: FIFO_CTRL1_REG_ADDR = E8[0m
+[0;32mI (288) LSM6DS3: FIFO_CTRL2_REG_ADDR = B[0m
+[0;32mI (298) LSM6DS3: num_fifo_samples = 0[0m
+[0;32mI (358) LSM6DS3: num_fifo_samples = 66[0m
+[0;32mI (418) LSM6DS3: num_fifo_samples = 144[0m
+[0;32mI (478) LSM6DS3: num_fifo_samples = 216[0m
+[0;32mI (538) LSM6DS3: num_fifo_samples = 294[0m
+[0;32mI (598) LSM6DS3: num_fifo_samples = 366[0m
+[0;32mI (658) LSM6DS3: num_fifo_samples = 444[0m
+[0;32mI (718) LSM6DS3: num_fifo_samples = 516[0m
+[0;32mI (778) LSM6DS3: num_fifo_samples = 594[0m
+[0;32mI (838) LSM6DS3: num_fifo_samples = 672[0m
+[0;32mI (898) LSM6DS3: num_fifo_samples = 744[0m
+[0;32mI (958) LSM6DS3: num_fifo_samples = 822[0m
+[0;32mI (1018) LSM6DS3: num_fifo_samples = 894[0m
+[0;32mI (1078) LSM6DS3: num_fifo_samples = 972[0m
+[0;32mI (1138) LSM6DS3: num_fifo_samples = 1044[0m
+[0;32mI (1198) LSM6DS3: num_fifo_samples = 1122[0m
+[0;32mI (1258) LSM6DS3: num_fifo_samples = 1200[0m
+[0;32mI (1318) LSM6DS3: num_fifo_samples = 1272[0m
+[0;32mI (1378) LSM6DS3: num_fifo_samples = 1350[0m
+[0;32mI (1438) LSM6DS3: num_fifo_samples = 1422[0m
+[0;32mI (1498) LSM6DS3: num_fifo_samples = 1500[0m
+[0;32mI (1558) LSM6DS3: num_fifo_samples = 1572[0m
+[0;32mI (1618) LSM6DS3: num_fifo_samples = 1650[0m
+[0;32mI (1678) LSM6DS3: num_fifo_samples = 1728[0m
+[0;32mI (1738) LSM6DS3: num_fifo_samples = 1800[0m
+[0;32mI (1798) LSM6DS3: num_fifo_samples = 1878[0m
+[0;32mI (2288) LSM6DS3: [0m
+[0;32mI (2288) LSM6DS3: gyro = 1.373291 -6.713867 -1.220703[0m
+[0;32mI (2288) LSM6DS3: accel = 0.053467 -0.041138 1.003662[0m
+[0;32mI (2288) LSM6DS3: num_fifo_samples = 1878[0m
+
+[0;32mI (2348) LSM6DS3: num_fifo_samples = 768[0m
+[0;32mI (2408) LSM6DS3: num_fifo_samples = 840[0m
+[0;32mI (2468) LSM6DS3: num_fifo_samples = 918[0m
+[0;32mI (2528) LSM6DS3: num_fifo_samples = 996[0m
+[0;32mI (2588) LSM6DS3: num_fifo_samples = 1068[0m
+[0;32mI (2648) LSM6DS3: num_fifo_samples = 1146[0m
+[0;32mI (2708) LSM6DS3: num_fifo_samples = 1218[0m
+[0;32mI (2768) LSM6DS3: num_fifo_samples = 1296[0m
+[0;32mI (2828) LSM6DS3: num_fifo_samples = 1368[0m
+[0;32mI (2888) LSM6DS3: num_fifo_samples = 1446[0m
+[0;32mI (2948) LSM6DS3: num_fifo_samples = 1524[0m
+[0;32mI (3008) LSM6DS3: num_fifo_samples = 1596[0m
+[0;32mI (3068) LSM6DS3: num_fifo_samples = 1674[0m
+[0;32mI (3128) LSM6DS3: num_fifo_samples = 1746[0m
+[0;32mI (3188) LSM6DS3: num_fifo_samples = 1824[0m
+[0;32mI (3678) LSM6DS3: [0m
+[0;32mI (3678) LSM6DS3: gyro = 1.281738 -6.652832 -1.190186[0m
+[0;32mI (3678) LSM6DS3: accel = 0.054199 -0.042480 1.002686[0m
+[0;32mI (3678) LSM6DS3: num_fifo_samples = 1824[0m
+
+[0;32mI (3738) LSM6DS3: num_fifo_samples = 714[0m
+[0;32mI (3798) LSM6DS3: num_fifo_samples = 792[0m
+[0;32mI (3858) LSM6DS3: num_fifo_samples = 864[0m
+[0;32mI (3918) LSM6DS3: num_fifo_samples = 942[0m
+[0;32mI (3978) LSM6DS3: num_fifo_samples = 1014[0m
+[0;32mI (4038) LSM6DS3: num_fifo_samples = 1092[0m
+[0;32mI (4098) LSM6DS3: num_fifo_samples = 1164[0m
+[0;32mI (4158) LSM6DS3: num_fifo_samples = 1242[0m
+[0;32mI (4218) LSM6DS3: num_fifo_samples = 1314[0m
+[0;32mI (4278) LSM6DS3: num_fifo_samples = 1392[0m
+[0;32mI (4338) LSM6DS3: num_fifo_samples = 1470[0m
+[0;32mI (4398) LSM6DS3: num_fifo_samples = 1542[0m
+[0;32mI (4458) LSM6DS3: num_fifo_samples = 1620[0m
+[0;32mI (4518) LSM6DS3: num_fifo_samples = 1692[0m
+[0;32mI (4578) LSM6DS3: num_fifo_samples = 1770[0m
+[0;32mI (4638) LSM6DS3: num_fifo_samples = 1842[0m
+[0;32mI (5128) LSM6DS3: [0m
+[0;32mI (5128) LSM6DS3: gyro = 1.129150 -6.652832 -1.220703[0m
+[0;32mI (5128) LSM6DS3: accel = 0.057007 -0.042725 1.001587[0m
+[0;32mI (5128) LSM6DS3: num_fifo_samples = 1848[0m
+
+[0;32mI (5188) LSM6DS3: num_fifo_samples = 738[0m
+[0;32mI (5248) LSM6DS3: num_fifo_samples = 810[0m
+[0;32mI (5308) LSM6DS3: num_fifo_samples = 888[0m
+[0;32mI (5368) LSM6DS3: num_fifo_samples = 960[0m
+[0;32mI (5428) LSM6DS3: num_fifo_samples = 1038[0m
+[0;32mI (5488) LSM6DS3: num_fifo_samples = 1110[0m
+[0;32mI (5548) LSM6DS3: num_fifo_samples = 1188[0m
+[0;32mI (5608) LSM6DS3: num_fifo_samples = 1266[0m
+[0;32mI (5668) LSM6DS3: num_fifo_samples = 1338[0m
+[0;32mI (5728) LSM6DS3: num_fifo_samples = 1416[0m
+[0;32mI (5788) LSM6DS3: num_fifo_samples = 1488[0m
+[0;32mI (5848) LSM6DS3: num_fifo_samples = 1566[0m
+[0;32mI (5908) LSM6DS3: num_fifo_samples = 1638[0m
+[0;32mI (5968) LSM6DS3: num_fifo_samples = 1716[0m
+[0;32mI (6028) LSM6DS3: num_fifo_samples = 1794[0m
+[0;32mI (6088) LSM6DS3: num_fifo_samples = 1866[0m
+[0;32mI (6578) LSM6DS3: [0m
+[0;32mI (6578) LSM6DS3: gyro = 1.190186 -7.110596 -1.007080[0m
+[0;32mI (6578) LSM6DS3: accel = 0.055664 -0.053101 1.021362[0m
+[0;32mI (6578) LSM6DS3: num_fifo_samples = 1866[0m
+
+[0;32mI (6638) LSM6DS3: num_fifo_samples = 756[0m
+[0;32mI (6698) LSM6DS3: num_fifo_samples = 834[0m
+[0;32mI (6758) LSM6DS3: num_fifo_samples = 906[0m
+[0;32mI (6818) LSM6DS3: num_fifo_samples = 984[0m
+[0;32mI (6878) LSM6DS3: num_fifo_samples = 1062[0m
+[0;32mI (6938) LSM6DS3: num_fifo_samples = 1134[0m
+[0;32mI (6998) LSM6DS3: num_fifo_samples = 1212[0m
+[0;32mI (7058) LSM6DS3: num_fifo_samples = 1284[0m
+[0;32mI (7118) LSM6DS3: num_fifo_samples = 1362[0m
+[0;32mI (7178) LSM6DS3: num_fifo_samples = 1434[0m
+[0;32mI (7238) LSM6DS3: num_fifo_samples = 1512[0m
+[0;32mI (7298) LSM6DS3: num_fifo_samples = 1590[0m
+[0;32mI (7358) LSM6DS3: num_fifo_samples = 1662[0m
+[0;32mI (7418) LSM6DS3: num_fifo_samples = 1740[0m
+[0;32mI (7478) LSM6DS3: num_fifo_samples = 1812[0m
+[0;32mI (7968) LSM6DS3: [0m
+[0;32mI (7968) LSM6DS3: gyro = 1.220703 -7.476807 -1.281738[0m
+[0;32mI (7968) LSM6DS3: accel = 0.068237 -0.039673 1.024780[0m
+[0;32mI (7968) LSM6DS3: num_fifo_samples = 1812[0m
+
+[0;32mI (8028) LSM6DS3: num_fifo_samples = 702[0m
+[0;32mI (8088) LSM6DS3: num_fifo_samples = 780[0m
+[0;32mI (8148) LSM6DS3: num_fifo_samples = 858[0m
+[0;32mI (8208) LSM6DS3: num_fifo_samples = 930[0m
+[0;32mI (8268) LSM6DS3: num_fifo_samples = 1008[0m
+[0;32mI (8328) LSM6DS3: num_fifo_samples = 1080[0m
+[0;32mI (8388) LSM6DS3: num_fifo_samples = 1158[0m
+[0;32mI (8448) LSM6DS3: num_fifo_samples = 1230[0m
+[0;32mI (8508) LSM6DS3: num_fifo_samples = 1308[0m
+[0;32mI (8568) LSM6DS3: num_fifo_samples = 1386[0m
+[0;32mI (8628) LSM6DS3: num_fifo_samples = 1458[0m
+[0;32mI (8688) LSM6DS3: num_fifo_samples = 1536[0m
+[0;32mI (8748) LSM6DS3: num_fifo_samples = 1608[0m
+[0;32mI (8808) LSM6DS3: num_fifo_samples = 1686[0m
+[0;32mI (8868) LSM6DS3: num_fifo_samples = 1758[0m
+[0;32mI (8928) LSM6DS3: num_fifo_samples = 1836[0m
+[0;32mI (9418) LSM6DS3: [0m
+[0;32mI (9418) LSM6DS3: gyro = 0.152588 -5.310059 -1.251221[0m
+[0;32mI (9418) LSM6DS3: accel = 0.075684 -0.036621 0.962280[0m
+[0;32mI (9418) LSM6DS3: num_fifo_samples = 1836[0m
+
+[0;32mI (9478) LSM6DS3: num_fifo_samples = 726[0m
+[0;32mI (9538) LSM6DS3: num_fifo_samples = 804[0m
+[0;32mI (9598) LSM6DS3: num_fifo_samples = 876[0m
+[0;32mI (9658) LSM6DS3: num_fifo_samples = 954[0m
+[0;32mI (9718) LSM6DS3: num_fifo_samples = 1026[0m
+[0;32mI (9778) LSM6DS3: num_fifo_samples = 1104[0m
+[0;32mI (9838) LSM6DS3: num_fifo_samples = 1182[0m
+[0;32mI (9898) LSM6DS3: num_fifo_samples = 1254[0m
+[0;32mI (9958) LSM6DS3: num_fifo_samples = 1332[0m
+[0;32mI (10018) LSM6DS3: num_fifo_samples = 1404[0m
+[0;32mI (10078) LSM6DS3: num_fifo_samples = 1482[0m
+[0;32mI (10138) LSM6DS3: num_fifo_samples = 1554[0m
+[0;32mI (10198) LSM6DS3: num_fifo_samples = 1632[0m
+[0;32mI (10258) LSM6DS3: num_fifo_samples = 1710[0m
+[0;32mI (10318) LSM6DS3: num_fifo_samples = 1782[0m
+[0;32mI (10378) LSM6DS3: num_fifo_samples = 1860[0m
+[0;32mI (10868) LSM6DS3: [0m
+[0;32mI (10868) LSM6DS3: gyro = 1.525879 -6.744385 -1.159668[0m
+[0;32mI (10868) LSM6DS3: accel = 0.053345 -0.040894 1.002319[0m
+[0;32mI (10868) LSM6DS3: num_fifo_samples = 1860[0m
+
+[0;32mI (10928) LSM6DS3: num_fifo_samples = 750[0m
+[0;32mI (10988) LSM6DS3: num_fifo_samples = 822[0m
+[0;32mI (11048) LSM6DS3: num_fifo_samples = 900[0m
+[0;32mI (11108) LSM6DS3: num_fifo_samples = 978[0m
+[0;32mI (11168) LSM6DS3: num_fifo_samples = 1050[0m
+[0;32mI (11228) LSM6DS3: num_fifo_samples = 1128[0m
+[0;32mI (11288) LSM6DS3: num_fifo_samples = 1200[0m
+[0;32mI (11348) LSM6DS3: num_fifo_samples = 1278[0m
+[0;32mI (11408) LSM6DS3: num_fifo_samples = 1350[0m
+[0;32mI (11468) LSM6DS3: num_fifo_samples = 1428[0m
+[0;32mI (11528) LSM6DS3: num_fifo_samples = 1506[0m
+[0;32mI (11588) LSM6DS3: num_fifo_samples = 1578[0m
+[0;32mI (11648) LSM6DS3: num_fifo_samples = 1656[0m
+[0;32mI (11708) LSM6DS3: num_fifo_samples = 1728[0m
+[0;32mI (11768) LSM6DS3: num_fifo_samples = 1806[0m
+[0;32mI (12258) LSM6DS3: [0m
+[0;32mI (12258) LSM6DS3: gyro = 1.525879 -5.371094 -1.007080[0m
+[0;32mI (12258) LSM6DS3: accel = 0.042358 -0.032104 0.942505[0m
+[0;32mI (12258) LSM6DS3: num_fifo_samples = 1806[0m
+
+[0;32mI (12318) LSM6DS3: num_fifo_samples = 696[0m
+[0;32mI (12378) LSM6DS3: num_fifo_samples = 774[0m
+[0;32mI (12438) LSM6DS3: num_fifo_samples = 846[0m
+[0;32mI (12498) LSM6DS3: num_fifo_samples = 924[0m
+[0;32mI (12558) LSM6DS3: num_fifo_samples = 996[0m
+[0;32mI (12618) LSM6DS3: num_fifo_samples = 1074[0m
+[0;32mI (12678) LSM6DS3: num_fifo_samples = 1146[0m
+[0;32mI (12738) LSM6DS3: num_fifo_samples = 1224[0m
+[0;32mI (12798) LSM6DS3: num_fifo_samples = 1302[0m
+[0;32mI (12858) LSM6DS3: num_fifo_samples = 1374[0m
+[0;32mI (12918) LSM6DS3: num_fifo_samples = 1452[0m
+[0;32mI (12978) LSM6DS3: num_fifo_samples = 1524[0m
+[0;32mI (13038) LSM6DS3: num_fifo_samples = 1602[0m
+[0;32mI (13098) LSM6DS3: num_fifo_samples = 1674[0m
+[0;32mI (13158) LSM6DS3: num_fifo_samples = 1752[0m
+[0;32mI (13218) LSM6DS3: num_fifo_samples = 1830[0m
+[0;32mI (13708) LSM6DS3: [0m
+[0;32mI (13708) LSM6DS3: gyro = 1.678467 -6.835938 -1.586914[0m
+[0;32mI (13708) LSM6DS3: accel = 0.047607 -0.024292 0.994873[0m
+[0;32mI (13708) LSM6DS3: num_fifo_samples = 1830[0m
+
+[0;32mI (13768) LSM6DS3: num_fifo_samples = 720[0m
+[0;32mI (13828) LSM6DS3: num_fifo_samples = 792[0m
+[0;32mI (13888) LSM6DS3: num_fifo_samples = 870[0m
+[0;32mI (13948) LSM6DS3: num_fifo_samples = 942[0m
+[0;32mI (14008) LSM6DS3: num_fifo_samples = 1020[0m
+[0;32mI (14068) LSM6DS3: num_fifo_samples = 1098[0m
+[0;32mI (14128) LSM6DS3: num_fifo_samples = 1170[0m
+[0;32mI (14188) LSM6DS3: num_fifo_samples = 1248[0m
+[0;32mI (14248) LSM6DS3: num_fifo_samples = 1320[0m
+[0;32mI (14308) LSM6DS3: num_fifo_samples = 1398[0m
+[0;32mI (14368) LSM6DS3: num_fifo_samples = 1470[0m
+[0;32mI (14428) LSM6DS3: num_fifo_samples = 1548[0m
+[0;32mI (14488) LSM6DS3: num_fifo_samples = 1626[0m
+[0;32mI (14548) LSM6DS3: num_fifo_samples = 1698[0m
+[0;32mI (14608) LSM6DS3: num_fifo_samples = 1776[0m
+[0;32mI (14668) LSM6DS3: num_fifo_samples = 1848[0m
+[0;32mI (15158) LSM6DS3: [0m
+[0;32mI (15158) LSM6DS3: gyro = 1.434326 -6.561279 -1.037598[0m
+[0;32mI (15158) LSM6DS3: accel = 0.051025 -0.039185 0.997681[0m
+[0;32mI (15158) LSM6DS3: num_fifo_samples = 1848[0m
+
+[0;32mI (15218) LSM6DS3: num_fifo_samples = 738[0m
+[0;32mI (15278) LSM6DS3: num_fifo_samples = 816[0m
+[0;32mI (15338) LSM6DS3: num_fifo_samples = 894[0m
+[0;32mI (15398) LSM6DS3: num_fifo_samples = 966[0m
+[0;32mI (15458) LSM6DS3: num_fifo_samples = 1044[0m
+[0;32mI (15518) LSM6DS3: num_fifo_samples = 1116[0m
+[0;32mI (15578) LSM6DS3: num_fifo_samples = 1194[0m
+[0;32mI (15638) LSM6DS3: num_fifo_samples = 1266[0m
+[0;32mI (15698) LSM6DS3: num_fifo_samples = 1344[0m
+[0;32mI (15758) LSM6DS3: num_fifo_samples = 1422[0m
+[0;32mI (15818) LSM6DS3: num_fifo_samples = 1494[0m
+[0;32mI (15878) LSM6DS3: num_fifo_samples = 1572[0m
+[0;32mI (15938) LSM6DS3: num_fifo_samples = 1644[0m
+[0;32mI (15998) LSM6DS3: num_fifo_samples = 1722[0m
+[0;32mI (16058) LSM6DS3: num_fifo_samples = 1794[0m
+[0;32mI (16118) LSM6DS3: num_fifo_samples = 1872[0m
+[0;32mI (16608) LSM6DS3: [0m
+[0;32mI (16608) LSM6DS3: gyro = 0.823975 -6.225586 -1.281738[0m
+[0;32mI (16608) LSM6DS3: accel = 0.064941 -0.026123 0.995483[0m
+[0;32mI (16608) LSM6DS3: num_fifo_samples = 1872[0m
+
+[0;32mI (16668) LSM6DS3: num_fifo_samples = 762[0m
+[0;32mI (16728) LSM6DS3: num_fifo_samples = 840[0m
+[0;32mI (16788) LSM6DS3: num_fifo_samples = 912[0m
+[0;32mI (16848) LSM6DS3: num_fifo_samples = 990[0m
+[0;32mI (16908) LSM6DS3: num_fifo_samples = 1062[0m
+[0;32mI (16968) LSM6DS3: num_fifo_samples = 1140[0m
+[0;32mI (17028) LSM6DS3: num_fifo_samples = 1218[0m
+[0;32mI (17088) LSM6DS3: num_fifo_samples = 1290[0m
+[0;32mI (17148) LSM6DS3: num_fifo_samples = 1368[0m
+[0;32mI (17208) LSM6DS3: num_fifo_samples = 1440[0m
+[0;32mI (17268) LSM6DS3: num_fifo_samples = 1518[0m
+[0;32mI (17328) LSM6DS3: num_fifo_samples = 1590[0m
+[0;32mI (17388) LSM6DS3: num_fifo_samples = 1668[0m
+[0;32mI (17448) LSM6DS3: num_fifo_samples = 1740[0m
+[0;32mI (17508) LSM6DS3: num_fifo_samples = 1818[0m
+[0;32mI (17998) LSM6DS3: [0m
+[0;32mI (17998) LSM6DS3: gyro = 1.617432 -8.605957 -1.098633[0m
+[0;32mI (17998) LSM6DS3: accel = 0.055176 -0.033325 1.070679[0m
+[0;32mI (17998) LSM6DS3: num_fifo_samples = 1818[0m
+
+[0;32mI (18058) LSM6DS3: num_fifo_samples = 708[0m
+[0;32mI (18118) LSM6DS3: num_fifo_samples = 786[0m
+[0;32mI (18178) LSM6DS3: num_fifo_samples = 858[0m
+[0;32mI (18238) LSM6DS3: num_fifo_samples = 936[0m
+[0;32mI (18298) LSM6DS3: num_fifo_samples = 1014[0m
+[0;32mI (18358) LSM6DS3: num_fifo_samples = 1086[0m
+[0;32mI (18418) LSM6DS3: num_fifo_samples = 1164[0m
+[0;32mI (18478) LSM6DS3: num_fifo_samples = 1236[0m
+[0;32mI (18538) LSM6DS3: num_fifo_samples = 1314[0m
+[0;32mI (18598) LSM6DS3: num_fifo_samples = 1386[0m
+[0;32mI (18658) LSM6DS3: num_fifo_samples = 1464[0m
+[0;32mI (18718) LSM6DS3: num_fifo_samples = 1536[0m
+[0;32mI (18778) LSM6DS3: num_fifo_samples = 1614[0m
+[0;32mI (18838) LSM6DS3: num_fifo_samples = 1692[0m
+[0;32mI (18898) LSM6DS3: num_fifo_samples = 1764[0m
+[0;32mI (18958) LSM6DS3: num_fifo_samples = 1842[0m
+[0;32mI (19448) LSM6DS3: [0m
+[0;32mI (19448) LSM6DS3: gyro = 1.556396 -6.866455 -1.098633[0m
+[0;32mI (19448) LSM6DS3: accel = 0.046509 -0.043701 1.009399[0m
+[0;32mI (19448) LSM6DS3: num_fifo_samples = 1842[0m
+
+[0;32mI (19508) LSM6DS3: num_fifo_samples = 732[0m
+[0;32mI (19568) LSM6DS3: num_fifo_samples = 810[0m
+[0;32mI (19628) LSM6DS3: num_fifo_samples = 882[0m
+[0;32mI (19688) LSM6DS3: num_fifo_samples = 960[0m
+[0;32mI (19748) LSM6DS3: num_fifo_samples = 1032[0m
+[0;32mI (19808) LSM6DS3: num_fifo_samples = 1110[0m
+[0;32mI (19868) LSM6DS3: num_fifo_samples = 1182[0m
+[0;32mI (19928) LSM6DS3: num_fifo_samples = 1260[0m
+[0;32mI (19988) LSM6DS3: num_fifo_samples = 1332[0m
+[0;32mI (20048) LSM6DS3: num_fifo_samples = 1410[0m
+[0;32mI (20108) LSM6DS3: num_fifo_samples = 1488[0m
+[0;32mI (20168) LSM6DS3: num_fifo_samples = 1560[0m
+[0;32mI (20228) LSM6DS3: num_fifo_samples = 1638[0m
+[0;32mI (20288) LSM6DS3: num_fifo_samples = 1710[0m
+[0;32mI (20348) LSM6DS3: num_fifo_samples = 1788[0m
+[0;32mI (20408) LSM6DS3: num_fifo_samples = 1860[0m
+[0;32mI (20898) LSM6DS3: [0m
+[0;32mI (20898) LSM6DS3: gyro = 0.823975 -6.347656 -0.946045[0m
+[0;32mI (20898) LSM6DS3: accel = 0.042847 -0.039185 0.987305[0m
+[0;32mI (20898) LSM6DS3: num_fifo_samples = 1866[0m
+
+[0;32mI (20958) LSM6DS3: num_fifo_samples = 756[0m
+[0;32mI (21018) LSM6DS3: num_fifo_samples = 828[0m
+[0;32mI (21078) LSM6DS3: num_fifo_samples = 906[0m
+[0;32mI (21138) LSM6DS3: num_fifo_samples = 978[0m
+[0;32mI (21198) LSM6DS3: num_fifo_samples = 1056[0m
+[0;32mI (21258) LSM6DS3: num_fifo_samples = 1128[0m
+[0;32mI (21318) LSM6DS3: num_fifo_samples = 1206[0m
+[0;32mI (21378) LSM6DS3: num_fifo_samples = 1284[0m
+[0;32mI (21438) LSM6DS3: num_fifo_samples = 1356[0m
+[0;32mI (21498) LSM6DS3: num_fifo_samples = 1434[0m
+[0;32mI (21558) LSM6DS3: num_fifo_samples = 1506[0m
+[0;32mI (21618) LSM6DS3: num_fifo_samples = 1584[0m
+[0;32mI (21678) LSM6DS3: num_fifo_samples = 1656[0m
+[0;32mI (21738) LSM6DS3: num_fifo_samples = 1734[0m
+[0;32mI (21798) LSM6DS3: num_fifo_samples = 1812[0m
+[0;32mI (22288) LSM6DS3: [0m
+[0;32mI (22288) LSM6DS3: gyro = 1.098633 -7.110596 -0.915527[0m
+[0;32mI (22288) LSM6DS3: accel = 0.049561 -0.038574 1.015747[0m
+[0;32mI (22288) LSM6DS3: num_fifo_samples = 1812[0m
+
+[0;32mI (22348) LSM6DS3: num_fifo_samples = 702[0m
+[0;32mI (22408) LSM6DS3: num_fifo_samples = 774[0m
+[0;32mI (22468) LSM6DS3: num_fifo_samples = 852[0m
+[0;32mI (22528) LSM6DS3: num_fifo_samples = 924[0m
+[0;32mI (22588) LSM6DS3: num_fifo_samples = 1002[0m
+[0;32mI (22648) LSM6DS3: num_fifo_samples = 1080[0m
+[0;32mI (22708) LSM6DS3: num_fifo_samples = 1152[0m
+[0;32mI (22768) LSM6DS3: num_fifo_samples = 1230[0m
+[0;32mI (22828) LSM6DS3: num_fifo_samples = 1302[0m
+[0;32mI (22888) LSM6DS3: num_fifo_samples = 1380[0m
+[0;32mI (22948) LSM6DS3: num_fifo_samples = 1452[0m
+[0;32mI (23008) LSM6DS3: num_fifo_samples = 1530[0m
+[0;32mI (23068) LSM6DS3: num_fifo_samples = 1608[0m
+[0;32mI (23128) LSM6DS3: num_fifo_samples = 1680[0m
+[0;32mI (23188) LSM6DS3: num_fifo_samples = 1758[0m
+[0;32mI (23248) LSM6DS3: num_fifo_samples = 1830[0m
+[0;32mI (23738) LSM6DS3: [0m
+[0;32mI (23738) LSM6DS3: gyro = 1.434326 -6.683350 -1.159668[0m
+[0;32mI (23738) LSM6DS3: accel = 0.050049 -0.039673 1.002808[0m
+[0;32mI (23738) LSM6DS3: num_fifo_samples = 1830[0m
+
+[0;32mI (23798) LSM6DS3: num_fifo_samples = 720[0m
+[0;32mI (23858) LSM6DS3: num_fifo_samples = 798[0m
+[0;32mI (23918) LSM6DS3: num_fifo_samples = 876[0m
+[0;32mI (23978) LSM6DS3: num_fifo_samples = 948[0m
+[0;32mI (24038) LSM6DS3: num_fifo_samples = 1026[0m
+[0;32mI (24098) LSM6DS3: num_fifo_samples = 1098[0m
+[0;32mI (24158) LSM6DS3: num_fifo_samples = 1176[0m
+[0;32mI (24218) LSM6DS3: num_fifo_samples = 1248[0m
+[0;32mI (24278) LSM6DS3: num_fifo_samples = 1326[0m
+[0;32mI (24338) LSM6DS3: num_fifo_samples = 1404[0m
+[0;32mI (24398) LSM6DS3: num_fifo_samples = 1476[0m
+[0;32mI (24458) LSM6DS3: num_fifo_samples = 1554[0m
+[0;32mI (24518) LSM6DS3: num_fifo_samples = 1626[0m
+[0;32mI (24578) LSM6DS3: num_fifo_samples = 1704[0m
+[0;32mI (24638) LSM6DS3: num_fifo_samples = 1776[0m
+[0;32mI (24698) LSM6DS3: num_fifo_samples = 1854[0m
+[0;32mI (25188) LSM6DS3: [0m
+[0;32mI (25188) LSM6DS3: gyro = 1.953125 -7.415771 -1.312256[0m
+[0;32mI (25188) LSM6DS3: accel = 0.043213 -0.057495 1.042480[0m
+[0;32mI (25188) LSM6DS3: num_fifo_samples = 1854[0m
+
+[0;32mI (25248) LSM6DS3: num_fifo_samples = 744[0m
+[0;32mI (25308) LSM6DS3: num_fifo_samples = 822[0m
+[0;32mI (25368) LSM6DS3: num_fifo_samples = 894[0m
+[0;32mI (25428) LSM6DS3: num_fifo_samples = 972[0m
+[0;32mI (25488) LSM6DS3: num_fifo_samples = 1044[0m
+[0;32mI (25548) LSM6DS3: num_fifo_samples = 1122[0m
+[0;32mI (25608) LSM6DS3: num_fifo_samples = 1200[0m
+[0;32mI (25668) LSM6DS3: num_fifo_samples = 1272[0m
+[0;32mI (25728) LSM6DS3: num_fifo_samples = 1350[0m
+[0;32mI (25788) LSM6DS3: num_fifo_samples = 1422[0m
+[0;32mI (25848) LSM6DS3: num_fifo_samples = 1500[0m
+[0;32mI (25908) LSM6DS3: num_fifo_samples = 1572[0m
+[0;32mI (25968) LSM6DS3: num_fifo_samples = 1650[0m
+[0;32mI (26028) LSM6DS3: num_fifo_samples = 1728[0m
+[0;32mI (26088) LSM6DS3: num_fifo_samples = 1800[0m
+[0;32mI (26148) LSM6DS3: num_fifo_samples = 1878[0m
+[0;32mI (26638) LSM6DS3: [0m
+[0;32mI (26638) LSM6DS3: gyro = 0.976562 -6.744385 -1.281738[0m
+[0;32mI (26638) LSM6DS3: accel = 0.048340 -0.047119 1.002441[0m
+[0;32mI (26638) LSM6DS3: num_fifo_samples = 1878[0m
+
+[0;32mI (26698) LSM6DS3: num_fifo_samples = 768[0m
+[0;32mI (26758) LSM6DS3: num_fifo_samples = 840[0m
+[0;32mI (26818) LSM6DS3: num_fifo_samples = 918[0m
+[0;32mI (26878) LSM6DS3: num_fifo_samples = 996[0m
+[0;32mI (26938) LSM6DS3: num_fifo_samples = 1068[0m
+[0;32mI (26998) LSM6DS3: num_fifo_samples = 1146[0m
+[0;32mI (27058) LSM6DS3: num_fifo_samples = 1218[0m
+[0;32mI (27118) LSM6DS3: num_fifo_samples = 1296[0m
+[0;32mI (27178) LSM6DS3: num_fifo_samples = 1368[0m
+[0;32mI (27238) LSM6DS3: num_fifo_samples = 1446[0m
+[0;32mI (27298) LSM6DS3: num_fifo_samples = 1524[0m
+[0;32mI (27358) LSM6DS3: num_fifo_samples = 1596[0m
+[0;32mI (27418) LSM6DS3: num_fifo_samples = 1674[0m
+[0;32mI (27478) LSM6DS3: num_fifo_samples = 1746[0m
+[0;32mI (27538) LSM6DS3: num_fifo_samples = 1824[0m
+[0;32mI (28028) LSM6DS3: [0m
+[0;32mI (28028) LSM6DS3: gyro = 1.434326 -7.263184 -1.373291[0m
+[0;32mI (28028) LSM6DS3: accel = 0.055176 -0.041504 1.022827[0m
+[0;32mI (28028) LSM6DS3: num_fifo_samples = 1824[0m
+
+[0;32mI (28088) LSM6DS3: num_fifo_samples = 714[0m
+[0;32mI (28148) LSM6DS3: num_fifo_samples = 792[0m
+[0;32mI (28208) LSM6DS3: num_fifo_samples = 864[0m
+[0;32mI (28268) LSM6DS3: num_fifo_samples = 942[0m
+[0;32mI (28328) LSM6DS3: num_fifo_samples = 1014[0m
+[0;32mI (28388) LSM6DS3: num_fifo_samples = 1092[0m
+[0;32mI (28448) LSM6DS3: num_fifo_samples = 1164[0m
+[0;32mI (28508) LSM6DS3: num_fifo_samples = 1242[0m
+[0;32mI (28568) LSM6DS3: num_fifo_samples = 1320[0m
+[0;32mI (28628) LSM6DS3: num_fifo_samples = 1392[0m
+[0;32mI (28688) LSM6DS3: num_fifo_samples = 1470[0m
+[0;32mI (28748) LSM6DS3: num_fifo_samples = 1542[0m
+[0;32mI (28808) LSM6DS3: num_fifo_samples = 1620[0m
+[0;32mI (28868) LSM6DS3: num_fifo_samples = 1692[0m
+[0;32mI (28928) LSM6DS3: num_fifo_samples = 1770[0m
+[0;32mI (28988) LSM6DS3: num_fifo_samples = 1842[0m
+[0;32mI (29478) LSM6DS3: [0m
+[0;32mI (29478) LSM6DS3: gyro = 0.427246 -6.134033 -1.220703[0m
+[0;32mI (29478) LSM6DS3: accel = 0.063599 -0.035156 0.978394[0m
+[0;32mI (29478) LSM6DS3: num_fifo_samples = 1848[0m
+
+[0;32mI (29538) LSM6DS3: num_fifo_samples = 738[0m
+[0;32mI (29598) LSM6DS3: num_fifo_samples = 810[0m
+[0;32mI (29658) LSM6DS3: num_fifo_samples = 888[0m
+[0;32mI (29718) LSM6DS3: num_fifo_samples = 960[0m
+[0;32mI (29778) LSM6DS3: num_fifo_samples = 1038[0m
+[0;32mI (29838) LSM6DS3: num_fifo_samples = 1116[0m
+[0;32mI (29898) LSM6DS3: num_fifo_samples = 1188[0m
+[0;32mI (29958) LSM6DS3: num_fifo_samples = 1266[0m
+[0;32mI (30018) LSM6DS3: num_fifo_samples = 1338[0m
+[0;32mI (30078) LSM6DS3: num_fifo_samples = 1416[0m
+[0;32mI (30138) LSM6DS3: num_fifo_samples = 1488[0m
+[0;32mI (30198) LSM6DS3: num_fifo_samples = 1566[0m
+[0;32mI (30258) LSM6DS3: num_fifo_samples = 1638[0m
+[0;32mI (30318) LSM6DS3: num_fifo_samples = 1716[0m
+[0;32mI (30378) LSM6DS3: num_fifo_samples = 1794[0m
+[0;32mI (30438) LSM6DS3: num_fifo_samples = 1866[0m
+[0;32mI (30928) LSM6DS3: [0m
+[0;32mI (30928) LSM6DS3: gyro = 1.403809 -6.317139 -1.098633[0m
+[0;32mI (30928) LSM6DS3: accel = 0.046631 -0.036377 0.988037[0m
+[0;32mI (30928) LSM6DS3: num_fifo_samples = 1866[0m
+
+[0;32mI (30988) LSM6DS3: num_fifo_samples = 756[0m
+[0;32mI (31048) LSM6DS3: num_fifo_samples = 834[0m
+[0;32mI (31108) LSM6DS3: num_fifo_samples = 912[0m
+[0;32mI (31168) LSM6DS3: num_fifo_samples = 984[0m
+[0;32mI (31228) LSM6DS3: num_fifo_samples = 1062[0m
+[0;32mI (31288) LSM6DS3: num_fifo_samples = 1134[0m
+[0;32mI (31348) LSM6DS3: num_fifo_samples = 1212[0m
+[0;32mI (31408) LSM6DS3: num_fifo_samples = 1284[0m
+[0;32mI (31468) LSM6DS3: num_fifo_samples = 1362[0m
+[0;32mI (31528) LSM6DS3: num_fifo_samples = 1434[0m
+[0;32mI (31588) LSM6DS3: num_fifo_samples = 1512[0m
+[0;32mI (31648) LSM6DS3: num_fifo_samples = 1590[0m
+[0;32mI (31708) LSM6DS3: num_fifo_samples = 1662[0m
+[0;32mI (31768) LSM6DS3: num_fifo_samples = 1740[0m
+[0;32mI (31828) LSM6DS3: num_fifo_samples = 1812[0m
+[0;32mI (32318) LSM6DS3: [0m
+[0;32mI (32318) LSM6DS3: gyro = 1.495361 -6.774902 -1.281738[0m
+[0;32mI (32318) LSM6DS3: accel = 0.053955 -0.042847 1.001343[0m
+[0;32mI (32318) LSM6DS3: num_fifo_samples = 1812[0m
+
+[0;32mI (32378) LSM6DS3: num_fifo_samples = 708[0m
+[0;32mI (32438) LSM6DS3: num_fifo_samples = 780[0m
+[0;32mI (32498) LSM6DS3: num_fifo_samples = 858[0m
+[0;32mI (32558) LSM6DS3: num_fifo_samples = 930[0m
+[0;32mI (32618) LSM6DS3: num_fifo_samples = 1008[0m
+[0;32mI (32678) LSM6DS3: num_fifo_samples = 1080[0m
+[0;32mI (32738) LSM6DS3: num_fifo_samples = 1158[0m
+[0;32mI (32798) LSM6DS3: num_fifo_samples = 1230[0m
+[0;32mI (32858) LSM6DS3: num_fifo_samples = 1308[0m
+[0;32mI (32918) LSM6DS3: num_fifo_samples = 1386[0m
+[0;32mI (32978) LSM6DS3: num_fifo_samples = 1458[0m
+[0;32mI (33038) LSM6DS3: num_fifo_samples = 1536[0m
+[0;32mI (33098) LSM6DS3: num_fifo_samples = 1608[0m
+[0;32mI (33158) LSM6DS3: num_fifo_samples = 1686[0m
+[0;32mI (33218) LSM6DS3: num_fifo_samples = 1758[0m
+[0;32mI (33278) LSM6DS3: num_fifo_samples = 1836[0m
+[0;32mI (33768) LSM6DS3: [0m
+[0;32mI (33768) LSM6DS3: gyro = 1.342773 -6.805420 -1.190186[0m
+[0;32mI (33768) LSM6DS3: accel = 0.061401 -0.039917 1.010010[0m
+[0;32mI (33768) LSM6DS3: num_fifo_samples = 1836[0m
+
+[0;32mI (33828) LSM6DS3: num_fifo_samples = 726[0m
+[0;32mI (33888) LSM6DS3: num_fifo_samples = 804[0m
+[0;32mI (33948) LSM6DS3: num_fifo_samples = 876[0m
+[0;32mI (34008) LSM6DS3: num_fifo_samples = 954[0m
+[0;32mI (34068) LSM6DS3: num_fifo_samples = 1026[0m
+[0;32mI (34128) LSM6DS3: num_fifo_samples = 1104[0m
+[0;32mI (34188) LSM6DS3: num_fifo_samples = 1182[0m
+[0;32mI (34248) LSM6DS3: num_fifo_samples = 1254[0m
+[0;32mI (34308) LSM6DS3: num_fifo_samples = 1332[0m
+[0;32mI (34368) LSM6DS3: num_fifo_samples = 1404[0m
+[0;32mI (34428) LSM6DS3: num_fifo_samples = 1482[0m
+[0;32mI (34488) LSM6DS3: num_fifo_samples = 1554[0m
+[0;32mI (34548) LSM6DS3: num_fifo_samples = 1632[0m
+[0;32mI (34608) LSM6DS3: num_fifo_samples = 1710[0m
+[0;32mI (34668) LSM6DS3: num_fifo_samples = 1782[0m
+[0;32mI (34728) LSM6DS3: num_fifo_samples = 1860[0m
+[0;32mI (35218) LSM6DS3: [0m
+[0;32mI (35218) LSM6DS3: gyro = 1.464844 -6.774902 -1.190186[0m
+[0;32mI (35218) LSM6DS3: accel = 0.054321 -0.039185 1.002197[0m
+[0;32mI (35218) LSM6DS3: num_fifo_samples = 1860[0m
+
+[0;32mI (35278) LSM6DS3: num_fifo_samples = 750[0m
+[0;32mI (35338) LSM6DS3: num_fifo_samples = 822[0m
+[0;32mI (35398) LSM6DS3: num_fifo_samples = 900[0m
+[0;32mI (35458) LSM6DS3: num_fifo_samples = 978[0m
+[0;32mI (35518) LSM6DS3: num_fifo_samples = 1050[0m
+[0;32mI (35578) LSM6DS3: num_fifo_samples = 1128[0m
+[0;32mI (35638) LSM6DS3: num_fifo_samples = 1200[0m
+[0;32mI (35698) LSM6DS3: num_fifo_samples = 1278[0m
+[0;32mI (35758) LSM6DS3: num_fifo_samples = 1350[0m
+[0;32mI (35818) LSM6DS3: num_fifo_samples = 1428[0m
+[0;32mI (35878) LSM6DS3: num_fifo_samples = 1506[0m
+[0;32mI (35938) LSM6DS3: num_fifo_samples = 1578[0m
+[0;32mI (35998) LSM6DS3: num_fifo_samples = 1656[0m
+[0;32mI (36058) LSM6DS3: num_fifo_samples = 1728[0m
+[0;32mI (36118) LSM6DS3: num_fifo_samples = 1806[0m
+[0;32mI (36608) LSM6DS3: [0m
+[0;32mI (36608) LSM6DS3: gyro = 1.342773 -6.683350 -1.190186[0m
+[0;32mI (36608) LSM6DS3: accel = 0.055298 -0.041504 1.002563[0m
+[0;32mI (36608) LSM6DS3: num_fifo_samples = 1806[0m
+
+[0;32mI (36668) LSM6DS3: num_fifo_samples = 696[0m
+[0;32mI (36728) LSM6DS3: num_fifo_samples = 774[0m
+[0;32mI (36788) LSM6DS3: num_fifo_samples = 846[0m
+[0;32mI (36848) LSM6DS3: num_fifo_samples = 924[0m
+[0;32mI (36908) LSM6DS3: num_fifo_samples = 996[0m
+[0;32mI (36968) LSM6DS3: num_fifo_samples = 1074[0m
+[0;32mI (37028) LSM6DS3: num_fifo_samples = 1146[0m
+[0;32mI (37088) LSM6DS3: num_fifo_samples = 1224[0m
+[0;32mI (37148) LSM6DS3: num_fifo_samples = 1302[0m
+[0;32mI (37208) LSM6DS3: num_fifo_samples = 1374[0m
+[0;32mI (37268) LSM6DS3: num_fifo_samples = 1452[0m
+[0;32mI (37328) LSM6DS3: num_fifo_samples = 1524[0m
+[0;32mI (37388) LSM6DS3: num_fifo_samples = 1602[0m
+[0;32mI (37448) LSM6DS3: num_fifo_samples = 1674[0m
+[0;32mI (37508) LSM6DS3: num_fifo_samples = 1752[0m
+[0;32mI (37568) LSM6DS3: num_fifo_samples = 1830[0m
+[0;32mI (38058) LSM6DS3: [0m
+[0;32mI (38058) LSM6DS3: gyro = 1.281738 -6.622314 -1.159668[0m
+[0;32mI (38058) LSM6DS3: accel = 0.054321 -0.041260 1.003052[0m
+[0;32mI (38058) LSM6DS3: num_fifo_samples = 1830[0m
+
+[0;32mI (38118) LSM6DS3: num_fifo_samples = 720[0m
+[0;32mI (38178) LSM6DS3: num_fifo_samples = 792[0m
+[0;32mI (38238) LSM6DS3: num_fifo_samples = 870[0m
+[0;32mI (38298) LSM6DS3: num_fifo_samples = 942[0m
+[0;32mI (38358) LSM6DS3: num_fifo_samples = 1020[0m
+[0;32mI (38418) LSM6DS3: num_fifo_samples = 1098[0m
+[0;32mI (38478) LSM6DS3: num_fifo_samples = 1170[0m
+[0;32mI (38538) LSM6DS3: num_fifo_samples = 1248[0m
+[0;32mI (38598) LSM6DS3: num_fifo_samples = 1320[0m
+[0;32mI (38658) LSM6DS3: num_fifo_samples = 1398[0m
+[0;32mI (38718) LSM6DS3: num_fifo_samples = 1470[0m
+[0;32mI (38778) LSM6DS3: num_fifo_samples = 1548[0m
+[0;32mI (38838) LSM6DS3: num_fifo_samples = 1626[0m
+[0;32mI (38898) LSM6DS3: num_fifo_samples = 1698[0m
+[0;32mI (38958) LSM6DS3: num_fifo_samples = 1776[0m
+[0;32mI (39018) LSM6DS3: num_fifo_samples = 1848[0m
+[0;32mI (39508) LSM6DS3: [0m
+[0;32mI (39508) LSM6DS3: gyro = 1.403809 -6.744385 -1.190186[0m
+[0;32mI (39508) LSM6DS3: accel = 0.051392 -0.041260 1.004150[0m
+[0;32mI (39508) LSM6DS3: num_fifo_samples = 1848[0m
+
+[0;32mI (39568) LSM6DS3: num_fifo_samples = 738[0m
+[0;32mI (39628) LSM6DS3: num_fifo_samples = 816[0m
+[0;32mI (39688) LSM6DS3: num_fifo_samples = 894[0m
+[0;32mI (39748) LSM6DS3: num_fifo_samples = 966[0m
+[0;32mI (39808) LSM6DS3: num_fifo_samples = 1044[0m
+[0;32mI (39868) LSM6DS3: num_fifo_samples = 1116[0m
+[0;32mI (39928) LSM6DS3: num_fifo_samples = 1194[0m
+[0;32mI (39988) LSM6DS3: num_fifo_samples = 1266[0m
+[0;32mI (40048) LSM6DS3: num_fifo_samples = 1344[0m
+[0;32mI (40108) LSM6DS3: num_fifo_samples = 1422[0m
+[0;32mI (40168) LSM6DS3: num_fifo_samples = 1494[0m
+[0;32mI (40228) LSM6DS3: num_fifo_samples = 1572[0m
+[0;32mI (40288) LSM6DS3: num_fifo_samples = 1644[0m
+[0;32mI (40348) LSM6DS3: num_fifo_samples = 1722[0m
+[0;32mI (40408) LSM6DS3: num_fifo_samples = 1794[0m
+[0;32mI (40468) LSM6DS3: num_fifo_samples = 1872[0m
+[0;32mI (40958) LSM6DS3: [0m
+[0;32mI (40958) LSM6DS3: gyro = 1.312256 -6.652832 -1.251221[0m
+[0;32mI (40958) LSM6DS3: accel = 0.053345 -0.040161 1.003418[0m
+[0;32mI (40958) LSM6DS3: num_fifo_samples = 1872[0m
+
+[0;32mI (41018) LSM6DS3: num_fifo_samples = 762[0m
+[0;32mI (41078) LSM6DS3: num_fifo_samples = 840[0m
+[0;32mI (41138) LSM6DS3: num_fifo_samples = 912[0m
+[0;32mI (41198) LSM6DS3: num_fifo_samples = 990[0m
+[0;32mI (41258) LSM6DS3: num_fifo_samples = 1062[0m
+[0;32mI (41318) LSM6DS3: num_fifo_samples = 1140[0m
+[0;32mI (41378) LSM6DS3: num_fifo_samples = 1218[0m
+[0;32mI (41438) LSM6DS3: num_fifo_samples = 1290[0m
+[0;32mI (41498) LSM6DS3: num_fifo_samples = 1368[0m
+[0;32mI (41558) LSM6DS3: num_fifo_samples = 1440[0m
+[0;32mI (41618) LSM6DS3: num_fifo_samples = 1518[0m
+[0;32mI (41678) LSM6DS3: num_fifo_samples = 1590[0m
+[0;32mI (41738) LSM6DS3: num_fifo_samples = 1668[0m
+[0;32mI (41798) LSM6DS3: num_fifo_samples = 1746[0m
+[0;32mI (41858) LSM6DS3: num_fifo_samples = 1818[0m
+[0;32mI (42348) LSM6DS3: [0m
+[0;32mI (42348) LSM6DS3: gyro = 1.403809 -6.683350 -1.159668[0m
+[0;32mI (42348) LSM6DS3: accel = 0.051636 -0.041382 1.005127[0m
+[0;32mI (42348) LSM6DS3: num_fifo_samples = 1818[0m
+
+[0;32mI (42408) LSM6DS3: num_fifo_samples = 708[0m
+[0;32mI (42468) LSM6DS3: num_fifo_samples = 786[0m
+[0;32mI (42528) LSM6DS3: num_fifo_samples = 858[0m
+[0;32mI (42588) LSM6DS3: num_fifo_samples = 936[0m
+[0;32mI (42648) LSM6DS3: num_fifo_samples = 1014[0m
+[0;32mI (42708) LSM6DS3: num_fifo_samples = 1086[0m
+[0;32mI (42768) LSM6DS3: num_fifo_samples = 1164[0m
+[0;32mI (42828) LSM6DS3: num_fifo_samples = 1236[0m
+[0;32mI (42888) LSM6DS3: num_fifo_samples = 1314[0m
+[0;32mI (42948) LSM6DS3: num_fifo_samples = 1386[0m
+[0;32mI (43008) LSM6DS3: num_fifo_samples = 1464[0m
+[0;32mI (43068) LSM6DS3: num_fifo_samples = 1536[0m
+[0;32mI (43128) LSM6DS3: num_fifo_samples = 1614[0m
+[0;32mI (43188) LSM6DS3: num_fifo_samples = 1692[0m
+[0;32mI (43248) LSM6DS3: num_fifo_samples = 1764[0m
+[0;32mI (43308) LSM6DS3: num_fifo_samples = 1842[0m
+[0;32mI (43798) LSM6DS3: [0m
+[0;32mI (43798) LSM6DS3: gyro = 1.312256 -6.652832 -1.129150[0m
+[0;32mI (43798) LSM6DS3: accel = 0.054565 -0.040039 1.003906[0m
+[0;32mI (43798) LSM6DS3: num_fifo_samples = 1842[0m
+
+[0;32mI (43858) LSM6DS3: num_fifo_samples = 732[0m
+[0;32mI (43918) LSM6DS3: num_fifo_samples = 810[0m
+[0;32mI (43978) LSM6DS3: num_fifo_samples = 882[0m
+[0;32mI (44038) LSM6DS3: num_fifo_samples = 960[0m
+[0;32mI (44098) LSM6DS3: num_fifo_samples = 1032[0m
+[0;32mI (44158) LSM6DS3: num_fifo_samples = 1110[0m
+[0;32mI (44218) LSM6DS3: num_fifo_samples = 1182[0m
+[0;32mI (44278) LSM6DS3: num_fifo_samples = 1260[0m
+[0;32mI (44338) LSM6DS3: num_fifo_samples = 1332[0m
+[0;32mI (44398) LSM6DS3: num_fifo_samples = 1410[0m
+[0;32mI (44458) LSM6DS3: num_fifo_samples = 1488[0m
+[0;32mI (44518) LSM6DS3: num_fifo_samples = 1560[0m
+[0;32mI (44578) LSM6DS3: num_fifo_samples = 1638[0m
+[0;32mI (44638) LSM6DS3: num_fifo_samples = 1710[0m
+[0;32mI (44698) LSM6DS3: num_fifo_samples = 1788[0m
+[0;32mI (44758) LSM6DS3: num_fifo_samples = 1860[0m
+[0;32mI (45248) LSM6DS3: [0m
+[0;32mI (45248) LSM6DS3: gyro = 4.943848 -22.125244 -7.568359[0m
+[0;32mI (45248) LSM6DS3: accel = 0.006958 0.152710 -0.885376[0m
+[0;32mI (45248) LSM6DS3: num_fifo_samples = 1866[0m
+
+[0;32mI (45308) LSM6DS3: num_fifo_samples = 756[0m
+[0;32mI (45368) LSM6DS3: num_fifo_samples = 828[0m
+[0;32mI (45428) LSM6DS3: num_fifo_samples = 906[0m
+[0;32mI (45488) LSM6DS3: num_fifo_samples = 978[0m
+[0;32mI (45548) LSM6DS3: num_fifo_samples = 1056[0m
+[0;32mI (45608) LSM6DS3: num_fifo_samples = 1128[0m
+[0;32mI (45668) LSM6DS3: num_fifo_samples = 1206[0m
+[0;32mI (45728) LSM6DS3: num_fifo_samples = 1284[0m
+[0;32mI (45788) LSM6DS3: num_fifo_samples = 1356[0m
+[0;32mI (45848) LSM6DS3: num_fifo_samples = 1434[0m
+[0;32mI (45908) LSM6DS3: num_fifo_samples = 1506[0m
+[0;32mI (45968) LSM6DS3: num_fifo_samples = 1584[0m
+[0;32mI (46028) LSM6DS3: num_fifo_samples = 1656[0m
+[0;32mI (46088) LSM6DS3: num_fifo_samples = 1734[0m
+[0;32mI (46148) LSM6DS3: num_fifo_samples = 1812[0m
+[0;32mI (46638) LSM6DS3: [0m
+[0;32mI (46638) LSM6DS3: gyro = 3.692627 -7.293701 -0.732422[0m
+[0;32mI (46638) LSM6DS3: accel = -0.047852 0.075928 -0.987915[0m
+[0;32mI (46638) LSM6DS3: num_fifo_samples = 1812[0m
+
+[0;32mI (46698) LSM6DS3: num_fifo_samples = 702[0m
+[0;32mI (46758) LSM6DS3: num_fifo_samples = 774[0m
+[0;32mI (46818) LSM6DS3: num_fifo_samples = 852[0m
+[0;32mI (46878) LSM6DS3: num_fifo_samples = 924[0m
+[0;32mI (46938) LSM6DS3: num_fifo_samples = 1002[0m
+[0;32mI (46998) LSM6DS3: num_fifo_samples = 1080[0m
+[0;32mI (47058) LSM6DS3: num_fifo_samples = 1152[0m
+[0;32mI (47118) LSM6DS3: num_fifo_samples = 1230[0m
+[0;32mI (47178) LSM6DS3: num_fifo_samples = 1302[0m
+[0;32mI (47238) LSM6DS3: num_fifo_samples = 1380[0m
+[0;32mI (47298) LSM6DS3: num_fifo_samples = 1452[0m
+[0;32mI (47358) LSM6DS3: num_fifo_samples = 1530[0m
+[0;32mI (47418) LSM6DS3: num_fifo_samples = 1608[0m
+[0;32mI (47478) LSM6DS3: num_fifo_samples = 1680[0m
+[0;32mI (47538) LSM6DS3: num_fifo_samples = 1758[0m
+[0;32mI (47598) LSM6DS3: num_fifo_samples = 1830[0m
+[0;32mI (48088) LSM6DS3: [0m
+[0;32mI (48088) LSM6DS3: gyro = 1.342773 -7.232666 -2.227783[0m
+[0;32mI (48088) LSM6DS3: accel = -0.060669 0.059814 -0.975220[0m
+[0;32mI (48088) LSM6DS3: num_fifo_samples = 1830[0m
+
+[0;32mI (48148) LSM6DS3: num_fifo_samples = 720[0m
+[0;32mI (48208) LSM6DS3: num_fifo_samples = 798[0m
+[0;32mI (48268) LSM6DS3: num_fifo_samples = 876[0m
+[0;32mI (48328) LSM6DS3: num_fifo_samples = 948[0m
+[0;32mI (48388) LSM6DS3: num_fifo_samples = 1026[0m
+[0;32mI (48448) LSM6DS3: num_fifo_samples = 1098[0m
+[0;32mI (48508) LSM6DS3: num_fifo_samples = 1176[0m
+[0;32mI (48568) LSM6DS3: num_fifo_samples = 1248[0m
+[0;32mI (48628) LSM6DS3: num_fifo_samples = 1326[0m
+[0;32mI (48688) LSM6DS3: num_fifo_samples = 1404[0m
+[0;32mI (48748) LSM6DS3: num_fifo_samples = 1476[0m
+[0;32mI (48808) LSM6DS3: num_fifo_samples = 1554[0m
+[0;32mI (48868) LSM6DS3: num_fifo_samples = 1626[0m
+[0;32mI (48928) LSM6DS3: num_fifo_samples = 1704[0m
+[0;32mI (48988) LSM6DS3: num_fifo_samples = 1776[0m
+[0;32mI (49048) LSM6DS3: num_fifo_samples = 1854[0m
+[0;32mI (49538) LSM6DS3: [0m
+[0;32mI (49538) LSM6DS3: gyro = -0.518799 -7.110596 -1.434326[0m
+[0;32mI (49538) LSM6DS3: accel = -0.062622 0.058960 -1.020630[0m
+[0;32mI (49538) LSM6DS3: num_fifo_samples = 1854[0m
+
+[0;32mI (49598) LSM6DS3: num_fifo_samples = 744[0m
+[0;32mI (49658) LSM6DS3: num_fifo_samples = 822[0m
+[0;32mI (49718) LSM6DS3: num_fifo_samples = 894[0m
+[0;32mI (49778) LSM6DS3: num_fifo_samples = 972[0m
+[0;32mI (49838) LSM6DS3: num_fifo_samples = 1044[0m
+[0;32mI (49898) LSM6DS3: num_fifo_samples = 1122[0m
+[0;32mI (49958) LSM6DS3: num_fifo_samples = 1200[0m
+[0;32mI (50018) LSM6DS3: num_fifo_samples = 1272[0m
+[0;32mI (50078) LSM6DS3: num_fifo_samples = 1350[0m
+[0;32mI (50138) LSM6DS3: num_fifo_samples = 1422[0m
+[0;32mI (50198) LSM6DS3: num_fifo_samples = 1500[0m
+[0;32mI (50258) LSM6DS3: num_fifo_samples = 1572[0m
+[0;32mI (50318) LSM6DS3: num_fifo_samples = 1650[0m
+[0;32mI (50378) LSM6DS3: num_fifo_samples = 1728[0m
+[0;32mI (50438) LSM6DS3: num_fifo_samples = 1800[0m
+[0;32mI (50498) LSM6DS3: num_fifo_samples = 1878[0m
+[0;32mI (50988) LSM6DS3: [0m
+[0;32mI (50988) LSM6DS3: gyro = 1.373291 -6.958008 -2.197266[0m
+[0;32mI (50988) LSM6DS3: accel = -0.049316 0.054321 -0.996826[0m
+[0;32mI (50988) LSM6DS3: num_fifo_samples = 1878[0m
+
+[0;32mI (51048) LSM6DS3: num_fifo_samples = 768[0m
+[0;32mI (51108) LSM6DS3: num_fifo_samples = 840[0m
+[0;32mI (51168) LSM6DS3: num_fifo_samples = 918[0m
+[0;32mI (51228) LSM6DS3: num_fifo_samples = 996[0m
+[0;32mI (51288) LSM6DS3: num_fifo_samples = 1068[0m
+[0;32mI (51348) LSM6DS3: num_fifo_samples = 1146[0m
+[0;32mI (51408) LSM6DS3: num_fifo_samples = 1218[0m
+[0;32mI (51468) LSM6DS3: num_fifo_samples = 1296[0m
+[0;32mI (51528) LSM6DS3: num_fifo_samples = 1368[0m
+[0;32mI (51588) LSM6DS3: num_fifo_samples = 1446[0m
+[0;32mI (51648) LSM6DS3: num_fifo_samples = 1524[0m
+[0;32mI (51708) LSM6DS3: num_fifo_samples = 1596[0m
+[0;32mI (51768) LSM6DS3: num_fifo_samples = 1674[0m
+[0;32mI (51828) LSM6DS3: num_fifo_samples = 1746[0m
+[0;32mI (51888) LSM6DS3: num_fifo_samples = 1824[0m
+[0;32mI (52378) LSM6DS3: [0m
+[0;32mI (52378) LSM6DS3: gyro = 64.208984 7.629395 -13.031006[0m
+[0;32mI (52378) LSM6DS3: accel = 0.077393 0.130493 1.240723[0m
+[0;32mI (52378) LSM6DS3: num_fifo_samples = 1824[0m
+
+[0;32mI (52438) LSM6DS3: num_fifo_samples = 714[0m
+[0;32mI (52498) LSM6DS3: num_fifo_samples = 792[0m
+[0;32mI (52558) LSM6DS3: num_fifo_samples = 864[0m
+[0;32mI (52618) LSM6DS3: num_fifo_samples = 942[0m
+[0;32mI (52678) LSM6DS3: num_fifo_samples = 1014[0m
+[0;32mI (52738) LSM6DS3: num_fifo_samples = 1092[0m
+[0;32mI (52798) LSM6DS3: num_fifo_samples = 1164[0m
+[0;32mI (52858) LSM6DS3: num_fifo_samples = 1242[0m
+[0;32mI (52918) LSM6DS3: num_fifo_samples = 1320[0m
+[0;32mI (52978) LSM6DS3: num_fifo_samples = 1392[0m
+[0;32mI (53038) LSM6DS3: num_fifo_samples = 1470[0m
+[0;32mI (53098) LSM6DS3: num_fifo_samples = 1542[0m
+[0;32mI (53158) LSM6DS3: num_fifo_samples = 1620[0m
+[0;32mI (53218) LSM6DS3: num_fifo_samples = 1692[0m
+[0;32mI (53278) LSM6DS3: num_fifo_samples = 1770[0m
+[0;32mI (53338) LSM6DS3: num_fifo_samples = 1848[0m
+[0;32mI (53828) LSM6DS3: [0m
+[0;32mI (53828) LSM6DS3: gyro = 2.563477 -6.622314 0.122070[0m
+[0;32mI (53828) LSM6DS3: accel = -0.045288 -0.005493 1.007568[0m
+[0;32mI (53828) LSM6DS3: num_fifo_samples = 1848[0m
+
+[0;32mI (53888) LSM6DS3: num_fifo_samples = 738[0m
+[0;32mI (53948) LSM6DS3: num_fifo_samples = 810[0m
+[0;32mI (54008) LSM6DS3: num_fifo_samples = 888[0m
+[0;32mI (54068) LSM6DS3: num_fifo_samples = 960[0m
+[0;32mI (54128) LSM6DS3: num_fifo_samples = 1038[0m
+[0;32mI (54188) LSM6DS3: num_fifo_samples = 1116[0m
+[0;32mI (54248) LSM6DS3: num_fifo_samples = 1188[0m
+[0;32mI (54308) LSM6DS3: num_fifo_samples = 1266[0m
+[0;32mI (54368) LSM6DS3: num_fifo_samples = 1338[0m
+[0;32mI (54428) LSM6DS3: num_fifo_samples = 1416[0m
+[0;32mI (54488) LSM6DS3: num_fifo_samples = 1488[0m
+[0;32mI (54548) LSM6DS3: num_fifo_samples = 1566[0m
+[0;32mI (54608) LSM6DS3: num_fifo_samples = 1644[0m
+[0;32mI (54668) LSM6DS3: num_fifo_samples = 1716[0m
+[0;32mI (54728) LSM6DS3: num_fifo_samples = 1794[0m
+[0;32mI (54788) LSM6DS3: num_fifo_samples = 1866[0m
+[0;32mI (55278) LSM6DS3: [0m
+[0;32mI (55278) LSM6DS3: gyro = 4.058838 -7.446289 -1.037598[0m
+[0;32mI (55278) LSM6DS3: accel = -0.041992 -0.019165 1.011963[0m
+[0;32mI (55278) LSM6DS3: num_fifo_samples = 1866[0m
+
+[0;32mI (55338) LSM6DS3: num_fifo_samples = 756[0m
+[0;32mI (55398) LSM6DS3: num_fifo_samples = 834[0m
+[0;32mI (55458) LSM6DS3: num_fifo_samples = 912[0m
+[0;32mI (55518) LSM6DS3: num_fifo_samples = 984[0m
+[0;32mI (55578) LSM6DS3: num_fifo_samples = 1062[0m
+[0;32mI (55638) LSM6DS3: num_fifo_samples = 1134[0m
+[0;32mI (55698) LSM6DS3: num_fifo_samples = 1212[0m
+[0;32mI (55758) LSM6DS3: num_fifo_samples = 1284[0m
+[0;32mI (55818) LSM6DS3: num_fifo_samples = 1362[0m
+[0;32mI (55878) LSM6DS3: num_fifo_samples = 1440[0m
+[0;32mI (55938) LSM6DS3: num_fifo_samples = 1512[0m
+[0;32mI (55998) LSM6DS3: num_fifo_samples = 1590[0m
+[0;32mI (56058) LSM6DS3: num_fifo_samples = 1662[0m
+[0;32mI (56118) LSM6DS3: num_fifo_samples = 1740[0m
+[0;32mI (56178) LSM6DS3: num_fifo_samples = 1812[0m
+[0;32mI (56668) LSM6DS3: [0m
+[0;32mI (56668) LSM6DS3: gyro = -1.953125 -5.798340 -1.159668[0m
+[0;32mI (56668) LSM6DS3: accel = 1.007568 -0.005981 0.010742[0m
+[0;32mI (56668) LSM6DS3: num_fifo_samples = 1812[0m
+
+[0;32mI (56728) LSM6DS3: num_fifo_samples = 708[0m
+[0;32mI (56788) LSM6DS3: num_fifo_samples = 780[0m
+[0;32mI (56848) LSM6DS3: num_fifo_samples = 858[0m
+[0;32mI (56908) LSM6DS3: num_fifo_samples = 930[0m
+[0;32mI (56968) LSM6DS3: num_fifo_samples = 1008[0m
+[0;32mI (57028) LSM6DS3: num_fifo_samples = 1080[0m
+[0;32mI (57088) LSM6DS3: num_fifo_samples = 1158[0m
+[0;32mI (57148) LSM6DS3: num_fifo_samples = 1236[0m
+[0;32mI (57208) LSM6DS3: num_fifo_samples = 1308[0m
+[0;32mI (57268) LSM6DS3: num_fifo_samples = 1386[0m
+[0;32mI (57328) LSM6DS3: num_fifo_samples = 1458[0m
+[0;32mI (57388) LSM6DS3: num_fifo_samples = 1536[0m
+[0;32mI (57448) LSM6DS3: num_fifo_samples = 1608[0m
+[0;32mI (57508) LSM6DS3: num_fifo_samples = 1686[0m
+[0;32mI (57568) LSM6DS3: num_fifo_samples = 1758[0m
+[0;32mI (57628) LSM6DS3: num_fifo_samples = 1836[0m
+[0;32mI (58118) LSM6DS3: [0m
+[0;32mI (58118) LSM6DS3: gyro = -1.800537 -10.314941 -2.502441[0m
+[0;32mI (58118) LSM6DS3: accel = 1.022705 0.004761 0.018677[0m
+[0;32mI (58118) LSM6DS3: num_fifo_samples = 1836[0m
+
+[0;32mI (58178) LSM6DS3: num_fifo_samples = 726[0m
+[0;32mI (58238) LSM6DS3: num_fifo_samples = 804[0m
+[0;32mI (58298) LSM6DS3: num_fifo_samples = 876[0m
+[0;32mI (58358) LSM6DS3: num_fifo_samples = 954[0m
+[0;32mI (58418) LSM6DS3: num_fifo_samples = 1032[0m
+[0;32mI (58478) LSM6DS3: num_fifo_samples = 1104[0m
+[0;32mI (58538) LSM6DS3: num_fifo_samples = 1182[0m
+[0;32mI (58598) LSM6DS3: num_fifo_samples = 1254[0m
+[0;32mI (58658) LSM6DS3: num_fifo_samples = 1332[0m
+[0;32mI (58718) LSM6DS3: num_fifo_samples = 1404[0m
+[0;32mI (58778) LSM6DS3: num_fifo_samples = 1482[0m
+[0;32mI (58838) LSM6DS3: num_fifo_samples = 1554[0m
+[0;32mI (58898) LSM6DS3: num_fifo_samples = 1632[0m
+[0;32mI (58958) LSM6DS3: num_fifo_samples = 1710[0m
+[0;32mI (59018) LSM6DS3: num_fifo_samples = 1782[0m
+[0;32mI (59078) LSM6DS3: num_fifo_samples = 1860[0m
+[0;32mI (59568) LSM6DS3: [0m
+[0;32mI (59568) LSM6DS3: gyro = 1.892090 -6.072998 -0.885010[0m
+[0;32mI (59568) LSM6DS3: accel = 1.017944 0.000122 0.013794[0m
+[0;32mI (59568) LSM6DS3: num_fifo_samples = 1860[0m
+
+[0;32mI (59628) LSM6DS3: num_fifo_samples = 750[0m
+[0;32mI (59688) LSM6DS3: num_fifo_samples = 828[0m
+[0;32mI (59748) LSM6DS3: num_fifo_samples = 900[0m
+[0;32mI (59808) LSM6DS3: num_fifo_samples = 978[0m
+[0;32mI (59868) LSM6DS3: num_fifo_samples = 1050[0m
+[0;32mI (59928) LSM6DS3: num_fifo_samples = 1128[0m
+[0;32mI (59988) LSM6DS3: num_fifo_samples = 1200[0m
+[0;32mI (60048) LSM6DS3: num_fifo_samples = 1278[0m
+[0;32mI (60108) LSM6DS3: num_fifo_samples = 1350[0m
+[0;32mI (60168) LSM6DS3: num_fifo_samples = 1428[0m
+[0;32mI (60228) LSM6DS3: num_fifo_samples = 1506[0m
+[0;32mI (60288) LSM6DS3: num_fifo_samples = 1578[0m
+[0;32mI (60348) LSM6DS3: num_fifo_samples = 1656[0m
+[0;32mI (60408) LSM6DS3: num_fifo_samples = 1728[0m
+[0;32mI (60468) LSM6DS3: num_fifo_samples = 1806[0m
+[0;32mI (60958) LSM6DS3: [0m
+[0;32mI (60958) LSM6DS3: gyro = 1.312256 -6.774902 -1.464844[0m
+[0;32mI (60958) LSM6DS3: accel = 1.016235 -0.002930 0.028198[0m
+[0;32mI (60958) LSM6DS3: num_fifo_samples = 1806[0m
+
+[0;32mI (61018) LSM6DS3: num_fifo_samples = 696[0m
+[0;32mI (61078) LSM6DS3: num_fifo_samples = 774[0m
+[0;32mI (61138) LSM6DS3: num_fifo_samples = 846[0m
+[0;32mI (61198) LSM6DS3: num_fifo_samples = 924[0m
+[0;32mI (61258) LSM6DS3: num_fifo_samples = 996[0m
+[0;32mI (61318) LSM6DS3: num_fifo_samples = 1074[0m
+[0;32mI (61378) LSM6DS3: num_fifo_samples = 1146[0m
+[0;32mI (61438) LSM6DS3: num_fifo_samples = 1224[0m
+[0;32mI (61498) LSM6DS3: num_fifo_samples = 1302[0m
+[0;32mI (61558) LSM6DS3: num_fifo_samples = 1374[0m
+[0;32mI (61618) LSM6DS3: num_fifo_samples = 1452[0m
+[0;32mI (61678) LSM6DS3: num_fifo_samples = 1524[0m
+[0;32mI (61738) LSM6DS3: num_fifo_samples = 1602[0m
+[0;32mI (61798) LSM6DS3: num_fifo_samples = 1674[0m
+[0;32mI (61858) LSM6DS3: num_fifo_samples = 1752[0m
+[0;32mI (61918) LSM6DS3: num_fifo_samples = 1830[0m
+[0;32mI (62408) LSM6DS3: [0m
+[0;32mI (62408) LSM6DS3: gyro = 1.159668 -7.324219 -1.861572[0m
+[0;32mI (62408) LSM6DS3: accel = 1.019531 -0.001953 0.046387[0m
+[0;32mI (62408) LSM6DS3: num_fifo_samples = 1830[0m
+
+[0;32mI (62468) LSM6DS3: num_fifo_samples = 720[0m
+[0;32mI (62528) LSM6DS3: num_fifo_samples = 792[0m
+[0;32mI (62588) LSM6DS3: num_fifo_samples = 870[0m
+[0;32mI (62648) LSM6DS3: num_fifo_samples = 942[0m
+[0;32mI (62708) LSM6DS3: num_fifo_samples = 1020[0m
+[0;32mI (62768) LSM6DS3: num_fifo_samples = 1098[0m
+[0;32mI (62828) LSM6DS3: num_fifo_samples = 1170[0m
+[0;32mI (62888) LSM6DS3: num_fifo_samples = 1248[0m
+[0;32mI (62948) LSM6DS3: num_fifo_samples = 1320[0m
+[0;32mI (63008) LSM6DS3: num_fifo_samples = 1398[0m
+[0;32mI (63068) LSM6DS3: num_fifo_samples = 1470[0m
+[0;32mI (63128) LSM6DS3: num_fifo_samples = 1548[0m
+[0;32mI (63188) LSM6DS3: num_fifo_samples = 1626[0m
+[0;32mI (63248) LSM6DS3: num_fifo_samples = 1698[0m
+[0;32mI (63308) LSM6DS3: num_fifo_samples = 1776[0m
+[0;32mI (63368) LSM6DS3: num_fifo_samples = 1848[0m
+[0;32mI (63858) LSM6DS3: [0m
+[0;32mI (63858) LSM6DS3: gyro = -17.028809 13.092041 -7.385254[0m
+[0;32mI (63858) LSM6DS3: accel = -1.009644 0.015137 -0.101807[0m
+[0;32mI (63858) LSM6DS3: num_fifo_samples = 1848[0m
+
+[0;32mI (63918) LSM6DS3: num_fifo_samples = 738[0m
+[0;32mI (63978) LSM6DS3: num_fifo_samples = 816[0m
+[0;32mI (64038) LSM6DS3: num_fifo_samples = 894[0m
+[0;32mI (64098) LSM6DS3: num_fifo_samples = 966[0m
+[0;32mI (64158) LSM6DS3: num_fifo_samples = 1044[0m
+[0;32mI (64218) LSM6DS3: num_fifo_samples = 1116[0m
+[0;32mI (64278) LSM6DS3: num_fifo_samples = 1194[0m
+[0;32mI (64338) LSM6DS3: num_fifo_samples = 1266[0m
+[0;32mI (64398) LSM6DS3: num_fifo_samples = 1344[0m
+[0;32mI (64458) LSM6DS3: num_fifo_samples = 1422[0m
+[0;32mI (64518) LSM6DS3: num_fifo_samples = 1494[0m
+[0;32mI (64578) LSM6DS3: num_fifo_samples = 1572[0m
+[0;32mI (64638) LSM6DS3: num_fifo_samples = 1644[0m
+[0;32mI (64698) LSM6DS3: num_fifo_samples = 1722[0m
+[0;32mI (64758) LSM6DS3: num_fifo_samples = 1794[0m
+[0;32mI (64818) LSM6DS3: num_fifo_samples = 1872[0m
+[0;32mI (65308) LSM6DS3: [0m
+[0;32mI (65308) LSM6DS3: gyro = -2.777100 -5.401611 0.061035[0m
+[0;32mI (65308) LSM6DS3: accel = -0.996826 -0.015259 -0.169067[0m
+[0;32mI (65308) LSM6DS3: num_fifo_samples = 1872[0m
+
+[0;32mI (65368) LSM6DS3: num_fifo_samples = 762[0m
+[0;32mI (65428) LSM6DS3: num_fifo_samples = 840[0m
+[0;32mI (65488) LSM6DS3: num_fifo_samples = 912[0m
+[0;32mI (65548) LSM6DS3: num_fifo_samples = 990[0m
+[0;32mI (65608) LSM6DS3: num_fifo_samples = 1062[0m
+[0;32mI (65668) LSM6DS3: num_fifo_samples = 1140[0m
+[0;32mI (65728) LSM6DS3: num_fifo_samples = 1218[0m
+[0;32mI (65788) LSM6DS3: num_fifo_samples = 1290[0m
+[0;32mI (65848) LSM6DS3: num_fifo_samples = 1368[0m
+[0;32mI (65908) LSM6DS3: num_fifo_samples = 1440[0m
+[0;32mI (65968) LSM6DS3: num_fifo_samples = 1518[0m
+[0;32mI (66028) LSM6DS3: num_fifo_samples = 1590[0m
+[0;32mI (66088) LSM6DS3: num_fifo_samples = 1668[0m
+[0;32mI (66148) LSM6DS3: num_fifo_samples = 1746[0m
+[0;32mI (66208) LSM6DS3: num_fifo_samples = 1818[0m
+[0;32mI (66698) LSM6DS3: [0m
+[0;32mI (66698) LSM6DS3: gyro = 2.441406 -7.080078 -1.312256[0m
+[0;32mI (66698) LSM6DS3: accel = -0.971191 -0.016479 -0.133423[0m
+[0;32mI (66698) LSM6DS3: num_fifo_samples = 1818[0m
+
+[0;32mI (66758) LSM6DS3: num_fifo_samples = 708[0m
+[0;32mI (66818) LSM6DS3: num_fifo_samples = 786[0m
+[0;32mI (66878) LSM6DS3: num_fifo_samples = 858[0m
+[0;32mI (66938) LSM6DS3: num_fifo_samples = 936[0m
+[0;32mI (66998) LSM6DS3: num_fifo_samples = 1014[0m
+[0;32mI (67058) LSM6DS3: num_fifo_samples = 1086[0m
+[0;32mI (67118) LSM6DS3: num_fifo_samples = 1164[0m
+[0;32mI (67178) LSM6DS3: num_fifo_samples = 1236[0m
+[0;32mI (67238) LSM6DS3: num_fifo_samples = 1314[0m
+[0;32mI (67298) LSM6DS3: num_fifo_samples = 1386[0m
+[0;32mI (67358) LSM6DS3: num_fifo_samples = 1464[0m
+[0;32mI (67418) LSM6DS3: num_fifo_samples = 1542[0m
+[0;32mI (67478) LSM6DS3: num_fifo_samples = 1614[0m
+[0;32mI (67538) LSM6DS3: num_fifo_samples = 1692[0m
+[0;32mI (67598) LSM6DS3: num_fifo_samples = 1764[0m
+[0;32mI (67658) LSM6DS3: num_fifo_samples = 1842[0m
+[0;32mI (68148) LSM6DS3: [0m
+[0;32mI (68148) LSM6DS3: gyro = -9.094238 -4.516602 -4.119873[0m
+[0;32mI (68148) LSM6DS3: accel = -0.959839 -0.043457 -0.100342[0m
+[0;32mI (68148) LSM6DS3: num_fifo_samples = 1842[0m
+
+[0;32mI (68208) LSM6DS3: num_fifo_samples = 732[0m
+[0;32mI (68268) LSM6DS3: num_fifo_samples = 810[0m
+[0;32mI (68328) LSM6DS3: num_fifo_samples = 882[0m
+[0;32mI (68388) LSM6DS3: num_fifo_samples = 960[0m
+[0;32mI (68448) LSM6DS3: num_fifo_samples = 1032[0m
+[0;32mI (68508) LSM6DS3: num_fifo_samples = 1110[0m
+[0;32mI (68568) LSM6DS3: num_fifo_samples = 1182[0m
+[0;32mI (68628) LSM6DS3: num_fifo_samples = 1260[0m
+[0;32mI (68688) LSM6DS3: num_fifo_samples = 1338[0m
+[0;32mI (68748) LSM6DS3: num_fifo_samples = 1410[0m
+[0;32mI (68808) LSM6DS3: num_fifo_samples = 1488[0m
+[0;32mI (68868) LSM6DS3: num_fifo_samples = 1560[0m
+[0;32mI (68928) LSM6DS3: num_fifo_samples = 1638[0m
+[0;32mI (68988) LSM6DS3: num_fifo_samples = 1710[0m
+[0;32mI (69048) LSM6DS3: num_fifo_samples = 1788[0m
+[0;32mI (69108) LSM6DS3: num_fifo_samples = 1860[0m
+[0;32mI (69598) LSM6DS3: [0m
+[0;32mI (69598) LSM6DS3: gyro = 0.030518 -8.392334 -0.427246[0m
+[0;32mI (69598) LSM6DS3: accel = 0.083008 -1.023438 -0.047485[0m
+[0;32mI (69598) LSM6DS3: num_fifo_samples = 1866[0m
+
+[0;32mI (69658) LSM6DS3: num_fifo_samples = 756[0m
+[0;32mI (69718) LSM6DS3: num_fifo_samples = 828[0m
+[0;32mI (69778) LSM6DS3: num_fifo_samples = 906[0m
+[0;32mI (69838) LSM6DS3: num_fifo_samples = 978[0m
+[0;32mI (69898) LSM6DS3: num_fifo_samples = 1056[0m
+[0;32mI (69958) LSM6DS3: num_fifo_samples = 1134[0m
+[0;32mI (70018) LSM6DS3: num_fifo_samples = 1206[0m
+[0;32mI (70078) LSM6DS3: num_fifo_samples = 1284[0m
+[0;32mI (70138) LSM6DS3: num_fifo_samples = 1356[0m
+[0;32mI (70198) LSM6DS3: num_fifo_samples = 1434[0m
+[0;32mI (70258) LSM6DS3: num_fifo_samples = 1506[0m
+[0;32mI (70318) LSM6DS3: num_fifo_samples = 1584[0m
+[0;32mI (70378) LSM6DS3: num_fifo_samples = 1656[0m
+[0;32mI (70438) LSM6DS3: num_fifo_samples = 1734[0m
+[0;32mI (70498) LSM6DS3: num_fifo_samples = 1812[0m
+[0;32mI (70988) LSM6DS3: [0m
+[0;32mI (70988) LSM6DS3: gyro = -2.624512 -7.476807 -1.556396[0m
+[0;32mI (70988) LSM6DS3: accel = 0.089966 -0.987915 -0.029907[0m
+[0;32mI (70988) LSM6DS3: num_fifo_samples = 1812[0m
+
+[0;32mI (71048) LSM6DS3: num_fifo_samples = 702[0m
+[0;32mI (71108) LSM6DS3: num_fifo_samples = 774[0m
+[0;32mI (71168) LSM6DS3: num_fifo_samples = 852[0m
+[0;32mI (71228) LSM6DS3: num_fifo_samples = 930[0m
+[0;32mI (71288) LSM6DS3: num_fifo_samples = 1002[0m
+[0;32mI (71348) LSM6DS3: num_fifo_samples = 1080[0m
+[0;32mI (71408) LSM6DS3: num_fifo_samples = 1152[0m
+[0;32mI (71468) LSM6DS3: num_fifo_samples = 1230[0m
+[0;32mI (71528) LSM6DS3: num_fifo_samples = 1302[0m
+[0;32mI (71588) LSM6DS3: num_fifo_samples = 1380[0m
+[0;32mI (71648) LSM6DS3: num_fifo_samples = 1452[0m
+[0;32mI (71708) LSM6DS3: num_fifo_samples = 1530[0m
+[0;32mI (71768) LSM6DS3: num_fifo_samples = 1608[0m
+[0;32mI (71828) LSM6DS3: num_fifo_samples = 1680[0m
+[0;32mI (71888) LSM6DS3: num_fifo_samples = 1758[0m
+[0;32mI (71948) LSM6DS3: num_fifo_samples = 1830[0m
+[0;32mI (72438) LSM6DS3: [0m
+[0;32mI (72438) LSM6DS3: gyro = 1.129150 -6.134033 0.457764[0m
+[0;32mI (72438) LSM6DS3: accel = 0.055542 -0.998291 -0.049438[0m
+[0;32mI (72438) LSM6DS3: num_fifo_samples = 1830[0m
+
+[0;32mI (72498) LSM6DS3: num_fifo_samples = 726[0m
+[0;32mI (72558) LSM6DS3: num_fifo_samples = 798[0m
+[0;32mI (72618) LSM6DS3: num_fifo_samples = 876[0m
+[0;32mI (72678) LSM6DS3: num_fifo_samples = 948[0m
+[0;32mI (72738) LSM6DS3: num_fifo_samples = 1026[0m
+[0;32mI (72798) LSM6DS3: num_fifo_samples = 1098[0m
+[0;32mI (72858) LSM6DS3: num_fifo_samples = 1176[0m
+[0;32mI (72918) LSM6DS3: num_fifo_samples = 1248[0m
+[0;32mI (72978) LSM6DS3: num_fifo_samples = 1326[0m
+[0;32mI (73038) LSM6DS3: num_fifo_samples = 1404[0m
+[0;32mI (73098) LSM6DS3: num_fifo_samples = 1476[0m
+[0;32mI (73158) LSM6DS3: num_fifo_samples = 1554[0m
+[0;32mI (73218) LSM6DS3: num_fifo_samples = 1626[0m
+[0;32mI (73278) LSM6DS3: num_fifo_samples = 1704[0m
+[0;32mI (73338) LSM6DS3: num_fifo_samples = 1776[0m
+[0;32mI (73398) LSM6DS3: num_fifo_samples = 1854[0m
+[0;32mI (73888) LSM6DS3: [0m
+[0;32mI (73888) LSM6DS3: gyro = 136.901855 -40.679932 8.514404[0m
+[0;32mI (73888) LSM6DS3: accel = -0.104980 -1.131836 0.278687[0m
+[0;32mI (73888) LSM6DS3: num_fifo_samples = 1854[0m
+
+[0;32mI (73948) LSM6DS3: num_fifo_samples = 744[0m
+[0;32mI (74008) LSM6DS3: num_fifo_samples = 822[0m
+[0;32mI (74068) LSM6DS3: num_fifo_samples = 894[0m
+[0;32mI (74128) LSM6DS3: num_fifo_samples = 972[0m
+[0;32mI (74188) LSM6DS3: num_fifo_samples = 1044[0m
+[0;32mI (74248) LSM6DS3: num_fifo_samples = 1122[0m
+[0;32mI (74308) LSM6DS3: num_fifo_samples = 1200[0m
+[0;32mI (74368) LSM6DS3: num_fifo_samples = 1272[0m
+[0;32mI (74428) LSM6DS3: num_fifo_samples = 1350[0m
+[0;32mI (74488) LSM6DS3: num_fifo_samples = 1422[0m
+[0;32mI (74548) LSM6DS3: num_fifo_samples = 1500[0m
+[0;32mI (74608) LSM6DS3: num_fifo_samples = 1572[0m
+[0;32mI (74668) LSM6DS3: num_fifo_samples = 1650[0m
+[0;32mI (74728) LSM6DS3: num_fifo_samples = 1728[0m
+[0;32mI (74788) LSM6DS3: num_fifo_samples = 1800[0m
+[0;32mI (74848) LSM6DS3: num_fifo_samples = 1878[0m
+[0;32mI (75338) LSM6DS3: [0m
+[0;32mI (75338) LSM6DS3: gyro = 245.605469 -20.690918 76.843262[0m
+[0;32mI (75338) LSM6DS3: accel = 0.765381 -0.149170 -0.262451[0m
+[0;32mI (75338) LSM6DS3: num_fifo_samples = 1878[0m
+
+[0;32mI (75398) LSM6DS3: num_fifo_samples = 768[0m
+[0;32mI (75458) LSM6DS3: num_fifo_samples = 840[0m
+[0;32mI (75518) LSM6DS3: num_fifo_samples = 918[0m
+[0;32mI (75578) LSM6DS3: num_fifo_samples = 996[0m
+[0;32mI (75638) LSM6DS3: num_fifo_samples = 1068[0m
+[0;32mI (75698) LSM6DS3: num_fifo_samples = 1146[0m
+[0;32mI (75758) LSM6DS3: num_fifo_samples = 1218[0m
+[0;32mI (75818) LSM6DS3: num_fifo_samples = 1296[0m
+[0;32mI (75878) LSM6DS3: num_fifo_samples = 1368[0m
+[0;32mI (75938) LSM6DS3: num_fifo_samples = 1446[0m
+[0;32mI (75998) LSM6DS3: num_fifo_samples = 1524[0m
+[0;32mI (76058) LSM6DS3: num_fifo_samples = 1596[0m
+[0;32mI (76118) LSM6DS3: num_fifo_samples = 1674[0m
+[0;32mI (76178) LSM6DS3: num_fifo_samples = 1746[0m
+[0;32mI (76238) LSM6DS3: num_fifo_samples = 1824[0m
+[0;32mI (76728) LSM6DS3: [0m
+[0;32mI (76728) LSM6DS3: gyro = 132.598877 -48.583984 -347.503662[0m
+[0;32mI (76728) LSM6DS3: accel = 1.464478 0.275513 -0.288330[0m
+[0;32mI (76728) LSM6DS3: num_fifo_samples = 1824[0m
+
+[0;32mI (76788) LSM6DS3: num_fifo_samples = 714[0m
+[0;32mI (76848) LSM6DS3: num_fifo_samples = 792[0m
+[0;32mI (76908) LSM6DS3: num_fifo_samples = 864[0m
+[0;32mI (76968) LSM6DS3: num_fifo_samples = 942[0m
+[0;32mI (77028) LSM6DS3: num_fifo_samples = 1014[0m
+[0;32mI (77088) LSM6DS3: num_fifo_samples = 1092[0m
+[0;32mI (77148) LSM6DS3: num_fifo_samples = 1164[0m
+[0;32mI (77208) LSM6DS3: num_fifo_samples = 1242[0m
+[0;32mI (77268) LSM6DS3: num_fifo_samples = 1320[0m
+[0;32mI (77328) LSM6DS3: num_fifo_samples = 1392[0m
+[0;32mI (77388) LSM6DS3: num_fifo_samples = 1470[0m
+[0;32mI (77448) LSM6DS3: num_fifo_samples = 1542[0m
+[0;32mI (77508) LSM6DS3: num_fifo_samples = 1620[0m
+[0;32mI (77568) LSM6DS3: num_fifo_samples = 1692[0m
+[0;32mI (77628) LSM6DS3: num_fifo_samples = 1770[0m
+[0;32mI (77688) LSM6DS3: num_fifo_samples = 1848[0m
+[0;32mI (78178) LSM6DS3: [0m
+[0;32mI (78178) LSM6DS3: gyro = 111.480713 57.281494 -18.554688[0m
+[0;32mI (78178) LSM6DS3: accel = 0.477783 0.292969 0.662109[0m
+[0;32mI (78178) LSM6DS3: num_fifo_samples = 1848[0m
+
+[0;32mI (78238) LSM6DS3: num_fifo_samples = 738[0m
+[0;32mI (78298) LSM6DS3: num_fifo_samples = 810[0m
+[0;32mI (78358) LSM6DS3: num_fifo_samples = 888[0m
+[0;32mI (78418) LSM6DS3: num_fifo_samples = 960[0m
+[0;32mI (78478) LSM6DS3: num_fifo_samples = 1038[0m
+[0;32mI (78538) LSM6DS3: num_fifo_samples = 1116[0m
+[0;32mI (78598) LSM6DS3: num_fifo_samples = 1188[0m
+[0;32mI (78658) LSM6DS3: num_fifo_samples = 1266[0m
+[0;32mI (78718) LSM6DS3: num_fifo_samples = 1338[0m
+[0;32mI (78778) LSM6DS3: num_fifo_samples = 1416[0m
+[0;32mI (78838) LSM6DS3: num_fifo_samples = 1488[0m
+[0;32mI (78898) LSM6DS3: num_fifo_samples = 1566[0m
+[0;32mI (78958) LSM6DS3: num_fifo_samples = 1644[0m
+[0;32mI (79018) LSM6DS3: num_fifo_samples = 1716[0m
+[0;32mI (79078) LSM6DS3: num_fifo_samples = 1794[0m
+[0;32mI (79138) LSM6DS3: num_fifo_samples = 1866[0m
+[0;32mI (79628) LSM6DS3: [0m
+[0;32mI (79628) LSM6DS3: gyro = -2.593994 -8.697510 -1.983643[0m
+[0;32mI (79628) LSM6DS3: accel = 0.038696 1.000977 0.158813[0m
+[0;32mI (79628) LSM6DS3: num_fifo_samples = 1866[0m
+
+[0;32mI (79688) LSM6DS3: num_fifo_samples = 756[0m
+[0;32mI (79748) LSM6DS3: num_fifo_samples = 834[0m
+[0;32mI (79808) LSM6DS3: num_fifo_samples = 912[0m
+[0;32mI (79868) LSM6DS3: num_fifo_samples = 984[0m
+[0;32mI (79928) LSM6DS3: num_fifo_samples = 1062[0m
+[0;32mI (79988) LSM6DS3: num_fifo_samples = 1134[0m
+[0;32mI (80048) LSM6DS3: num_fifo_samples = 1212[0m
+[0;32mI (80108) LSM6DS3: num_fifo_samples = 1284[0m
+[0;32mI (80168) LSM6DS3: num_fifo_samples = 1362[0m
+[0;32mI (80228) LSM6DS3: num_fifo_samples = 1440[0m
+[0;32mI (80288) LSM6DS3: num_fifo_samples = 1512[0m
+[0;32mI (80348) LSM6DS3: num_fifo_samples = 1590[0m
+[0;32mI (80408) LSM6DS3: num_fifo_samples = 1662[0m
+[0;32mI (80468) LSM6DS3: num_fifo_samples = 1740[0m
+[0;32mI (80528) LSM6DS3: num_fifo_samples = 1812[0m
+[0;32mI (81018) LSM6DS3: [0m
+[0;32mI (81018) LSM6DS3: gyro = 0.793457 -5.767822 -1.922607[0m
+[0;32mI (81018) LSM6DS3: accel = 0.001831 1.002441 0.126831[0m
+[0;32mI (81018) LSM6DS3: num_fifo_samples = 1812[0m
+
+[0;32mI (81078) LSM6DS3: num_fifo_samples = 708[0m
+[0;32mI (81138) LSM6DS3: num_fifo_samples = 780[0m
+[0;32mI (81198) LSM6DS3: num_fifo_samples = 858[0m
+[0;32mI (81258) LSM6DS3: num_fifo_samples = 930[0m
+[0;32mI (81318) LSM6DS3: num_fifo_samples = 1008[0m
+[0;32mI (81378) LSM6DS3: num_fifo_samples = 1080[0m
+[0;32mI (81438) LSM6DS3: num_fifo_samples = 1158[0m
+[0;32mI (81498) LSM6DS3: num_fifo_samples = 1236[0m
+[0;32mI (81558) LSM6DS3: num_fifo_samples = 1308[0m
+[0;32mI (81618) LSM6DS3: num_fifo_samples = 1386[0m
+[0;32mI (81678) LSM6DS3: num_fifo_samples = 1458[0m
+[0;32mI (81738) LSM6DS3: num_fifo_samples = 1536[0m
+[0;32mI (81798) LSM6DS3: num_fifo_samples = 1608[0m
+[0;32mI (81858) LSM6DS3: num_fifo_samples = 1686[0m
+[0;32mI (81918) LSM6DS3: num_fifo_samples = 1764[0m
+[0;32mI (81978) LSM6DS3: num_fifo_samples = 1836[0m
+[0;32mI (82468) LSM6DS3: [0m
+[0;32mI (82468) LSM6DS3: gyro = -0.579834 -6.011963 0.885010[0m
+[0;32mI (82468) LSM6DS3: accel = 0.010620 0.993408 0.101074[0m
+[0;32mI (82468) LSM6DS3: num_fifo_samples = 1836[0m
+
+[0;32mI (82528) LSM6DS3: num_fifo_samples = 726[0m
+[0;32mI (82588) LSM6DS3: num_fifo_samples = 804[0m
+[0;32mI (82648) LSM6DS3: num_fifo_samples = 876[0m
+[0;32mI (82708) LSM6DS3: num_fifo_samples = 954[0m
+[0;32mI (82768) LSM6DS3: num_fifo_samples = 1032[0m
+[0;32mI (82828) LSM6DS3: num_fifo_samples = 1104[0m
+[0;32mI (82888) LSM6DS3: num_fifo_samples = 1182[0m
+[0;32mI (82948) LSM6DS3: num_fifo_samples = 1254[0m
+[0;32mI (83008) LSM6DS3: num_fifo_samples = 1332[0m
+[0;32mI (83068) LSM6DS3: num_fifo_samples = 1404[0m
+[0;32mI (83128) LSM6DS3: num_fifo_samples = 1482[0m
+[0;32mI (83188) LSM6DS3: num_fifo_samples = 1554[0m
+[0;32mI (83248) LSM6DS3: num_fifo_samples = 1632[0m
+[0;32mI (83308) LSM6DS3: num_fifo_samples = 1710[0m
+[0;32mI (83368) LSM6DS3: num_fifo_samples = 1782[0m
+[0;32mI (83428) LSM6DS3: num_fifo_samples = 1860[0m
+[0;32mI (83918) LSM6DS3: [0m
+[0;32mI (83918) LSM6DS3: gyro = -0.427246 -3.997803 -2.105713[0m
+[0;32mI (83918) LSM6DS3: accel = 0.004517 1.022949 0.106201[0m
+[0;32mI (83918) LSM6DS3: num_fifo_samples = 1860[0m
+
+[0;32mI (83978) LSM6DS3: num_fifo_samples = 750[0m
+[0;32mI (84038) LSM6DS3: num_fifo_samples = 828[0m
+[0;32mI (84098) LSM6DS3: num_fifo_samples = 900[0m
+[0;32mI (84158) LSM6DS3: num_fifo_samples = 978[0m
+[0;32mI (84218) LSM6DS3: num_fifo_samples = 1050[0m
+[0;32mI (84278) LSM6DS3: num_fifo_samples = 1128[0m
+[0;32mI (84338) LSM6DS3: num_fifo_samples = 1200[0m
+[0;32mI (84398) LSM6DS3: num_fifo_samples = 1278[0m
+[0;32mI (84458) LSM6DS3: num_fifo_samples = 1350[0m
+[0;32mI (84518) LSM6DS3: num_fifo_samples = 1428[0m
+[0;32mI (84578) LSM6DS3: num_fifo_samples = 1506[0m
+[0;32mI (84638) LSM6DS3: num_fifo_samples = 1578[0m
+[0;32mI (84698) LSM6DS3: num_fifo_samples = 1656[0m
+[0;32mI (84758) LSM6DS3: num_fifo_samples = 1728[0m
+[0;32mI (84818) LSM6DS3: num_fifo_samples = 1806[0m
+[0;32mI (85308) LSM6DS3: [0m
+[0;32mI (85308) LSM6DS3: gyro = 0.244141 -5.096436 -1.220703[0m
+[0;32mI (85308) LSM6DS3: accel = 0.000977 1.007446 0.076416[0m
+[0;32mI (85308) LSM6DS3: num_fifo_samples = 1806[0m
+
+[0;32mI (85368) LSM6DS3: num_fifo_samples = 696[0m
+[0;32mI (85428) LSM6DS3: num_fifo_samples = 774[0m
+[0;32mI (85488) LSM6DS3: num_fifo_samples = 846[0m
+[0;32mI (85548) LSM6DS3: num_fifo_samples = 924[0m
+[0;32mI (85608) LSM6DS3: num_fifo_samples = 996[0m
+[0;32mI (85668) LSM6DS3: num_fifo_samples = 1074[0m
+[0;32mI (85728) LSM6DS3: num_fifo_samples = 1146[0m
+[0;32mI (85788) LSM6DS3: num_fifo_samples = 1224[0m
+[0;32mI (85848) LSM6DS3: num_fifo_samples = 1302[0m
+[0;32mI (85908) LSM6DS3: num_fifo_samples = 1374[0m
+[0;32mI (85968) LSM6DS3: num_fifo_samples = 1452[0m
+[0;32mI (86028) LSM6DS3: num_fifo_samples = 1524[0m
+[0;32mI (86088) LSM6DS3: num_fifo_samples = 1602[0m
+[0;32mI (86148) LSM6DS3: num_fifo_samples = 1674[0m
+[0;32mI (86208) LSM6DS3: num_fifo_samples = 1752[0m
+[0;32mI (86268) LSM6DS3: num_fifo_samples = 1830[0m
+[0;32mI (86758) LSM6DS3: [0m
+[0;32mI (86758) LSM6DS3: gyro = 3.173828 5.950928 27.374268[0m
+[0;32mI (86758) LSM6DS3: accel = 0.253052 0.427856 0.920776[0m
+[0;32mI (86758) LSM6DS3: num_fifo_samples = 1830[0m
+
+[0;32mI (86818) LSM6DS3: num_fifo_samples = 720[0m
+[0;32mI (86878) LSM6DS3: num_fifo_samples = 792[0m
+[0;32mI (86938) LSM6DS3: num_fifo_samples = 870[0m
+[0;32mI (86998) LSM6DS3: num_fifo_samples = 942[0m
+[0;32mI (87058) LSM6DS3: num_fifo_samples = 1020[0m
+[0;32mI (87118) LSM6DS3: num_fifo_samples = 1098[0m
+[0;32mI (87178) LSM6DS3: num_fifo_samples = 1170[0m
+[0;32mI (87238) LSM6DS3: num_fifo_samples = 1248[0m
+[0;32mI (87298) LSM6DS3: num_fifo_samples = 1320[0m
+[0;32mI (87358) LSM6DS3: num_fifo_samples = 1398[0m
+[0;32mI (87418) LSM6DS3: num_fifo_samples = 1470[0m
+[0;32mI (87478) LSM6DS3: num_fifo_samples = 1548[0m
+[0;32mI (87538) LSM6DS3: num_fifo_samples = 1626[0m
+[0;32mI (87598) LSM6DS3: num_fifo_samples = 1698[0m
+[0;32mI (87658) LSM6DS3: num_fifo_samples = 1776[0m
+[0;32mI (87718) LSM6DS3: num_fifo_samples = 1848[0m
+[0;32mI (88208) LSM6DS3: [0m
+[0;32mI (88208) LSM6DS3: gyro = -3.448486 -24.078369 -80.810547[0m
+[0;32mI (88208) LSM6DS3: accel = 0.147583 0.053589 0.843262[0m
+[0;32mI (88208) LSM6DS3: num_fifo_samples = 1848[0m
+
+[0;32mI (88268) LSM6DS3: num_fifo_samples = 738[0m
+[0;32mI (88328) LSM6DS3: num_fifo_samples = 816[0m
+[0;32mI (88388) LSM6DS3: num_fifo_samples = 894[0m
+[0;32mI (88448) LSM6DS3: num_fifo_samples = 966[0m
+[0;32mI (88508) LSM6DS3: num_fifo_samples = 1044[0m
+[0;32mI (88568) LSM6DS3: num_fifo_samples = 1116[0m
+[0;32mI (88628) LSM6DS3: num_fifo_samples = 1194[0m
+[0;32mI (88688) LSM6DS3: num_fifo_samples = 1266[0m
+[0;32mI (88748) LSM6DS3: num_fifo_samples = 1344[0m
+[0;32mI (88808) LSM6DS3: num_fifo_samples = 1422[0m
+[0;32mI (88868) LSM6DS3: num_fifo_samples = 1494[0m
+[0;32mI (88928) LSM6DS3: num_fifo_samples = 1572[0m
+[0;32mI (88988) LSM6DS3: num_fifo_samples = 1644[0m
+[0;32mI (89048) LSM6DS3: num_fifo_samples = 1722[0m
+[0;32mI (89108) LSM6DS3: num_fifo_samples = 1794[0m
+[0;32mI (89168) LSM6DS3: num_fifo_samples = 1872[0m
+[0;32mI (89658) LSM6DS3: [0m
+[0;32mI (89658) LSM6DS3: gyro = -5.950928 4.394531 -23.376465[0m
+[0;32mI (89658) LSM6DS3: accel = -0.141357 -0.135376 1.054565[0m
+[0;32mI (89658) LSM6DS3: num_fifo_samples = 1872[0m
+
+[0;32mI (89718) LSM6DS3: num_fifo_samples = 762[0m
+[0;32mI (89778) LSM6DS3: num_fifo_samples = 840[0m
+[0;32mI (89838) LSM6DS3: num_fifo_samples = 912[0m
+[0;32mI (89898) LSM6DS3: num_fifo_samples = 990[0m
+[0;32mI (89958) LSM6DS3: num_fifo_samples = 1062[0m
+[0;32mI (90018) LSM6DS3: num_fifo_samples = 1140[0m
+[0;32mI (90078) LSM6DS3: num_fifo_samples = 1218[0m
+[0;32mI (90138) LSM6DS3: num_fifo_samples = 1290[0m
+[0;32mI (90198) LSM6DS3: num_fifo_samples = 1368[0m
+[0;32mI (90258) LSM6DS3: num_fifo_samples = 1440[0m
+[0;32mI (90318) LSM6DS3: num_fifo_samples = 1518[0m
+[0;32mI (90378) LSM6DS3: num_fifo_samples = 1590[0m
+[0;32mI (90438) LSM6DS3: num_fifo_samples = 1668[0m
+[0;32mI (90498) LSM6DS3: num_fifo_samples = 1746[0m
+[0;32mI (90558) LSM6DS3: num_fifo_samples = 1818[0m
+[0;32mI (91048) LSM6DS3: [0m
+[0;32mI (91048) LSM6DS3: gyro = 26.550293 -0.762939 3.112793[0m
+[0;32mI (91048) LSM6DS3: accel = 0.278198 -0.593018 0.704346[0m
+[0;32mI (91048) LSM6DS3: num_fifo_samples = 1818[0m
+
+[0;32mI (91108) LSM6DS3: num_fifo_samples = 708[0m
+[0;32mI (91168) LSM6DS3: num_fifo_samples = 786[0m
+[0;32mI (91228) LSM6DS3: num_fifo_samples = 858[0m
+[0;32mI (91288) LSM6DS3: num_fifo_samples = 936[0m
+[0;32mI (598) LSM6DS3: num_fifo_samples = 366[0m
+[0;32mI (658) LSM6DS3: num_fifo_samples = 444[0m
+[0;32mI (718) LSM6DS3: num_fifo_samples = 516[0m
+[0;32mI (778) LSM6DS3: num_fifo_samples = 594[0m
+[0;32mI (838) LSM6DS3: num_fifo_samples = 672[0m
+[0;32mI (898) LSM6DS3: num_fifo_samples = 744[0m
+[0;32mI (958) LSM6DS3: num_fifo_samples = 822[0m
+[0;32mI (1018) LSM6DS3: num_fifo_samples = 894[0m
+[0;32mI (1078) LSM6DS3: num_fifo_samples = 972[0m
+[0;32mI (1138) LSM6DS3: num_fifo_samples = 1044[0m
+[0;32mI (1198) LSM6DS3: num_fifo_samples = 1122[0m
+[0;32mI (1258) LSM6DS3: num_fifo_samples = 1200[0m
+[0;32mI (1318) LSM6DS3: num_fifo_samples = 1272[0m
+[0;32mI (1378) LSM6DS3: num_fifo_samples = 1350[0m
+[0;32mI (1438) LSM6DS3: num_fifo_samples = 1422[0m
+[0;32mI (1498) LSM6DS3: num_fifo_samples = 1500[0m
+[0;32mI (1558) LSM6DS3: num_fifo_samples = 1572[0m
+[0;32mI (1618) LSM6DS3: num_fifo_samples = 1650[0m
+[0;32mI (1678) LSM6DS3: num_fifo_samples = 1728[0m
+[0;32mI (1738) LSM6DS3: num_fifo_samples = 1800[0m
+[0;32mI (1798) LSM6DS3: num_fifo_samples = 1878[0m
+[0;32mI (2288) LSM6DS3: [0m
+[0;32mI (2288) LSM6DS3: gyro = 3.051758 -5.676270 -0.946045[0m
+[0;32mI (2288) LSM6DS3: accel = 0.210693 -0.139526 0.978516[0m
+[0;32mI (2288) LSM6DS3: num_fifo_samples = 1878[0m
+
+[0;32mI (2348) LSM6DS3: num_fifo_samples = 768[0m
+[0;32mI (2408) LSM6DS3: num_fifo_samples = 840[0m
+[0;32mI (2468) LSM6DS3: num_fifo_samples = 918[0m
+[0;32mI (2528) LSM6DS3: num_fifo_samples = 996[0m
+[0;32mI (2588) LSM6DS3: num_fifo_samples = 1068[0m
+[0;32mI (2648) LSM6DS3: num_fifo_samples = 1146[0m
+[0;32mI (2708) LSM6DS3: num_fifo_samples = 1218[0m
+[0;32mI (2768) LSM6DS3: num_fifo_samples = 1296[0m
+[0;32mI (2828) LSM6DS3: num_fifo_samples = 1368[0m
+[0;32mI (2888) LSM6DS3: num_fifo_samples = 1446[0m
+[0;32mI (2948) LSM6DS3: num_fifo_samples = 1524[0m
+[0;32mI (3008) LSM6DS3: num_fifo_samples = 1596[0m
+[0;32mI (3068) LSM6DS3: num_fifo_samples = 1674[0m
+[0;32mI (3128) LSM6DS3: num_fifo_samples = 1746[0m
+[0;32mI (3188) LSM6DS3: num_fifo_samples = 1824[0m
+[0;32mI (3678) LSM6DS3: [0m
+[0;32mI (3678) LSM6DS3: gyro = 0.762939 -5.554199 -1.007080[0m
+[0;32mI (3678) LSM6DS3: accel = 0.197754 -0.127441 0.982666[0m
+[0;32mI (3678) LSM6DS3: num_fifo_samples = 1824[0m
+
+[0;32mI (3738) LSM6DS3: num_fifo_samples = 714[0m
+[0;32mI (3798) LSM6DS3: num_fifo_samples = 792[0m
+[0;32mI (3858) LSM6DS3: num_fifo_samples = 864[0m
+[0;32mI (3918) LSM6DS3: num_fifo_samples = 942[0m
+[0;32mI (3978) LSM6DS3: num_fifo_samples = 1014[0m
+[0;32mI (4038) LSM6DS3: num_fifo_samples = 1092[0m
+[0;32mI (4098) LSM6DS3: num_fifo_samples = 1164[0m
+[0;32mI (4158) LSM6DS3: num_fifo_samples = 1242[0m
+[0;32mI (4218) LSM6DS3: num_fifo_samples = 1320[0m
+[0;32mI (4278) LSM6DS3: num_fifo_samples = 1392[0m
+[0;32mI (4338) LSM6DS3: num_fifo_samples = 1470[0m
+[0;32mI (4398) LSM6DS3: num_fifo_samples = 1542[0m
+[0;32mI (4458) LSM6DS3: num_fifo_samples = 1620[0m
+[0;32mI (4518) LSM6DS3: num_fifo_samples = 1692[0m
+[0;32mI (4578) LSM6DS3: num_fifo_samples = 1770[0m
+[0;32mI (4638) LSM6DS3: num_fifo_samples = 1842[0m
+[0;32mI (5128) LSM6DS3: [0m
+[0;32mI (5128) LSM6DS3: gyro = 0.732422 -5.584717 -1.007080[0m
+[0;32mI (5128) LSM6DS3: accel = 0.190796 -0.124512 0.983032[0m
+[0;32mI (5128) LSM6DS3: num_fifo_samples = 1848[0m
+
+[0;32mI (5188) LSM6DS3: num_fifo_samples = 738[0m
+[0;32mI (5248) LSM6DS3: num_fifo_samples = 810[0m
+[0;32mI (5308) LSM6DS3: num_fifo_samples = 888[0m
+[0;32mI (5368) LSM6DS3: num_fifo_samples = 960[0m
+[0;32mI (5428) LSM6DS3: num_fifo_samples = 1038[0m
+[0;32mI (5488) LSM6DS3: num_fifo_samples = 1116[0m
+[0;32mI (5548) LSM6DS3: num_fifo_samples = 1188[0m
+[0;32mI (5608) LSM6DS3: num_fifo_samples = 1266[0m
+[0;32mI (5668) LSM6DS3: num_fifo_samples = 1338[0m
+[0;32mI (5728) LSM6DS3: num_fifo_samples = 1416[0m
+[0;32mI (5788) LSM6DS3: num_fifo_samples = 1488[0m
+[0;32mI (5848) LSM6DS3: num_fifo_samples = 1566[0m
+[0;32mI (5908) LSM6DS3: num_fifo_samples = 1638[0m
+[0;32mI (5968) LSM6DS3: num_fifo_samples = 1716[0m
+[0;32mI (6028) LSM6DS3: num_fifo_samples = 1794[0m
+[0;32mI (6088) LSM6DS3: num_fifo_samples = 1866[0m
+[0;32mI (6578) LSM6DS3: [0m
+[0;32mI (6578) LSM6DS3: gyro = 0.915527 -5.432129 -1.068115[0m
+[0;32mI (6578) LSM6DS3: accel = 0.187988 -0.119873 0.987183[0m
+[0;32mI (6578) LSM6DS3: num_fifo_samples = 1866[0m
+
+[0;32mI (6638) LSM6DS3: num_fifo_samples = 756[0m
+[0;32mI (6698) LSM6DS3: num_fifo_samples = 834[0m
+[0;32mI (6758) LSM6DS3: num_fifo_samples = 912[0m
+[0;32mI (6818) LSM6DS3: num_fifo_samples = 984[0m
+[0;32mI (6878) LSM6DS3: num_fifo_samples = 1062[0m
+[0;32mI (6938) LSM6DS3: num_fifo_samples = 1134[0m
+[0;32mI (6998) LSM6DS3: num_fifo_samples = 1212[0m
+[0;32mI (7058) LSM6DS3: num_fifo_samples = 1284[0m
+[0;32mI (7118) LSM6DS3: num_fifo_samples = 1362[0m
+[0;32mI (7178) LSM6DS3: num_fifo_samples = 1434[0m
+[0;32mI (7238) LSM6DS3: num_fifo_samples = 1512[0m
+[0;32mI (7298) LSM6DS3: num_fifo_samples = 1590[0m
+[0;32mI (7358) LSM6DS3: num_fifo_samples = 1662[0m
+[0;32mI (7418) LSM6DS3: num_fifo_samples = 1740[0m
+[0;32mI (7478) LSM6DS3: num_fifo_samples = 1812[0m
+[0;32mI (7968) LSM6DS3: [0m
+[0;32mI (7968) LSM6DS3: gyro = 0.854492 -5.615234 -1.068115[0m
+[0;32mI (7968) LSM6DS3: accel = 0.183838 -0.115356 0.985352[0m
+[0;32mI (7968) LSM6DS3: num_fifo_samples = 1812[0m
+
+[0;32mI (8028) LSM6DS3: num_fifo_samples = 708[0m
+[0;32mI (8088) LSM6DS3: num_fifo_samples = 780[0m
+[0;32mI (8148) LSM6DS3: num_fifo_samples = 858[0m
+[0;32mI (8208) LSM6DS3: num_fifo_samples = 930[0m
+[0;32mI (8268) LSM6DS3: num_fifo_samples = 1008[0m
+[0;32mI (8328) LSM6DS3: num_fifo_samples = 1080[0m
+[0;32mI (8388) LSM6DS3: num_fifo_samples = 1158[0m
+[0;32mI (8448) LSM6DS3: num_fifo_samples = 1230[0m
+[0;32mI (8508) LSM6DS3: num_fifo_samples = 1308[0m
+[0;32mI (8568) LSM6DS3: num_fifo_samples = 1386[0m
+[0;32mI (8628) LSM6DS3: num_fifo_samples = 1458[0m
+[0;32mI (8688) LSM6DS3: num_fifo_samples = 1536[0m
+[0;32mI (8748) LSM6DS3: num_fifo_samples = 1608[0m
+[0;32mI (8808) LSM6DS3: num_fifo_samples = 1686[0m
+[0;32mI (8868) LSM6DS3: num_fifo_samples = 1758[0m
+[0;32mI (8928) LSM6DS3: num_fifo_samples = 1836[0m
+[0;32mI (9418) LSM6DS3: [0m
+[0;32mI (9418) LSM6DS3: gyro = 0.885010 -5.584717 -1.098633[0m
+[0;32mI (9418) LSM6DS3: accel = 0.177490 -0.113037 0.988281[0m
+[0;32mI (9418) LSM6DS3: num_fifo_samples = 1836[0m
+
+[0;32mI (9478) LSM6DS3: num_fifo_samples = 726[0m
+[0;32mI (9538) LSM6DS3: num_fifo_samples = 804[0m
+[0;32mI (9598) LSM6DS3: num_fifo_samples = 876[0m
+[0;32mI (9658) LSM6DS3: num_fifo_samples = 954[0m
+[0;32mI (9718) LSM6DS3: num_fifo_samples = 1026[0m
+[0;32mI (9778) LSM6DS3: num_fifo_samples = 1104[0m
+[0;32mI (9838) LSM6DS3: num_fifo_samples = 1182[0m
+[0;32mI (9898) LSM6DS3: num_fifo_samples = 1254[0m
+[0;32mI (9958) LSM6DS3: num_fifo_samples = 1332[0m
+[0;32mI (10018) LSM6DS3: num_fifo_samples = 1404[0m
+[0;32mI (10078) LSM6DS3: num_fifo_samples = 1482[0m
+[0;32mI (10138) LSM6DS3: num_fifo_samples = 1554[0m
+[0;32mI (10198) LSM6DS3: num_fifo_samples = 1632[0m
+[0;32mI (10258) LSM6DS3: num_fifo_samples = 1710[0m
+[0;32mI (10318) LSM6DS3: num_fifo_samples = 1782[0m
+[0;32mI (10378) LSM6DS3: num_fifo_samples = 1860[0m
+[0;32mI (10868) LSM6DS3: [0m
+[0;32mI (10868) LSM6DS3: gyro = 0.854492 -5.706787 -1.159668[0m
+[0;32mI (10868) LSM6DS3: accel = 0.179199 -0.110718 0.990112[0m
+[0;32mI (10868) LSM6DS3: num_fifo_samples = 1860[0m
+
+[0;32mI (10928) LSM6DS3: num_fifo_samples = 750[0m
+[0;32mI (10988) LSM6DS3: num_fifo_samples = 822[0m
+[0;32mI (11048) LSM6DS3: num_fifo_samples = 900[0m
+[0;32mI (11108) LSM6DS3: num_fifo_samples = 978[0m
+[0;32mI (11168) LSM6DS3: num_fifo_samples = 1050[0m
+[0;32mI (11228) LSM6DS3: num_fifo_samples = 1128[0m
+[0;32mI (11288) LSM6DS3: num_fifo_samples = 1200[0m
+[0;32mI (11348) LSM6DS3: num_fifo_samples = 1278[0m
+[0;32mI (11408) LSM6DS3: num_fifo_samples = 1350[0m
+[0;32mI (11468) LSM6DS3: num_fifo_samples = 1428[0m
+[0;32mI (11528) LSM6DS3: num_fifo_samples = 1506[0m
+[0;32mI (11588) LSM6DS3: num_fifo_samples = 1578[0m
+[0;32mI (11648) LSM6DS3: num_fifo_samples = 1656[0m
+[0;32mI (11708) LSM6DS3: num_fifo_samples = 1728[0m
+[0;32mI (11768) LSM6DS3: num_fifo_samples = 1806[0m
+[0;32mI (12258) LSM6DS3: [0m
+[0;32mI (12258) LSM6DS3: gyro = 0.976562 -5.828857 -1.037598[0m
+[0;32mI (12258) LSM6DS3: accel = 0.175537 -0.107910 0.988037[0m
+[0;32mI (12258) LSM6DS3: num_fifo_samples = 1806[0m
+
+[0;32mI (12318) LSM6DS3: num_fifo_samples = 696[0m
+[0;32mI (12378) LSM6DS3: num_fifo_samples = 774[0m
+[0;32mI (12438) LSM6DS3: num_fifo_samples = 846[0m
+[0;32mI (12498) LSM6DS3: num_fifo_samples = 924[0m
+[0;32mI (12558) LSM6DS3: num_fifo_samples = 996[0m
+[0;32mI (12618) LSM6DS3: num_fifo_samples = 1074[0m
+[0;32mI (12678) LSM6DS3: num_fifo_samples = 1146[0m
+[0;32mI (12738) LSM6DS3: num_fifo_samples = 1224[0m
+[0;32mI (12798) LSM6DS3: num_fifo_samples = 1302[0m
+[0;32mI (12858) LSM6DS3: num_fifo_samples = 1374[0m
+[0;32mI (12918) LSM6DS3: num_fifo_samples = 1452[0m
+[0;32mI (12978) LSM6DS3: num_fifo_samples = 1524[0m
+[0;32mI (13038) LSM6DS3: num_fifo_samples = 1602[0m
+[0;32mI (13098) LSM6DS3: num_fifo_samples = 1674[0m
+[0;32mI (13158) LSM6DS3: num_fifo_samples = 1752[0m
+[0;32mI (13218) LSM6DS3: num_fifo_samples = 1830[0m
+[0;32mI (13708) LSM6DS3: [0m
+[0;32mI (13708) LSM6DS3: gyro = 0.976562 -5.889893 -1.129150[0m
+[0;32mI (13708) LSM6DS3: accel = 0.172974 -0.108276 0.988647[0m
+[0;32mI (13708) LSM6DS3: num_fifo_samples = 1830[0m
+
+[0;32mI (13768) LSM6DS3: num_fifo_samples = 720[0m
+[0;32mI (13828) LSM6DS3: num_fifo_samples = 792[0m
+[0;32mI (13888) LSM6DS3: num_fifo_samples = 870[0m
+[0;32mI (13948) LSM6DS3: num_fifo_samples = 942[0m
+[0;32mI (14008) LSM6DS3: num_fifo_samples = 1020[0m
+[0;32mI (14068) LSM6DS3: num_fifo_samples = 1098[0m
+[0;32mI (14128) LSM6DS3: num_fifo_samples = 1170[0m
+[0;32mI (14188) LSM6DS3: num_fifo_samples = 1248[0m
+[0;32mI (14248) LSM6DS3: num_fifo_samples = 1320[0m
+[0;32mI (14308) LSM6DS3: num_fifo_samples = 1398[0m
+[0;32mI (14368) LSM6DS3: num_fifo_samples = 1470[0m
+[0;32mI (14428) LSM6DS3: num_fifo_samples = 1548[0m
+[0;32mI (14488) LSM6DS3: num_fifo_samples = 1626[0m
+[0;32mI (14548) LSM6DS3: num_fifo_samples = 1698[0m
+[0;32mI (14608) LSM6DS3: num_fifo_samples = 1776[0m
+[0;32mI (14668) LSM6DS3: num_fifo_samples = 1848[0m
+[0;32mI (15158) LSM6DS3: [0m
+[0;32mI (15158) LSM6DS3: gyro = 0.946045 -5.859375 -1.037598[0m
+[0;32mI (15158) LSM6DS3: accel = 0.172852 -0.107422 0.988159[0m
+[0;32mI (15158) LSM6DS3: num_fifo_samples = 1848[0m
+
+[0;32mI (15218) LSM6DS3: num_fifo_samples = 738[0m
+[0;32mI (15278) LSM6DS3: num_fifo_samples = 816[0m
+[0;32mI (15338) LSM6DS3: num_fifo_samples = 894[0m
+[0;32mI (15398) LSM6DS3: num_fifo_samples = 966[0m
+[0;32mI (15458) LSM6DS3: num_fifo_samples = 1044[0m
+[0;32mI (15518) LSM6DS3: num_fifo_samples = 1116[0m
+[0;32mI (15578) LSM6DS3: num_fifo_samples = 1194[0m
+[0;32mI (15638) LSM6DS3: num_fifo_samples = 1266[0m
+[0;32mI (15698) LSM6DS3: num_fifo_samples = 1344[0m
+[0;32mI (15758) LSM6DS3: num_fifo_samples = 1422[0m
+[0;32mI (15818) LSM6DS3: num_fifo_samples = 1494[0m
+[0;32mI (15878) LSM6DS3: num_fifo_samples = 1572[0m
+[0;32mI (15938) LSM6DS3: num_fifo_samples = 1644[0m
+[0;32mI (15998) LSM6DS3: num_fifo_samples = 1722[0m
+[0;32mI (16058) LSM6DS3: num_fifo_samples = 1794[0m
+[0;32mI (16118) LSM6DS3: num_fifo_samples = 1872[0m
+[0;32mI (16608) LSM6DS3: [0m
+[0;32mI (16608) LSM6DS3: gyro = 0.915527 -5.859375 -1.129150[0m
+[0;32mI (16608) LSM6DS3: accel = 0.170654 -0.105469 0.991333[0m
+[0;32mI (16608) LSM6DS3: num_fifo_samples = 1872[0m
+
+[0;32mI (16668) LSM6DS3: num_fifo_samples = 762[0m
+[0;32mI (16728) LSM6DS3: num_fifo_samples = 840[0m
+[0;32mI (16788) LSM6DS3: num_fifo_samples = 912[0m
+[0;32mI (16848) LSM6DS3: num_fifo_samples = 990[0m
+[0;32mI (16908) LSM6DS3: num_fifo_samples = 1062[0m
+[0;32mI (16968) LSM6DS3: num_fifo_samples = 1140[0m
+[0;32mI (17028) LSM6DS3: num_fifo_samples = 1218[0m
+[0;32mI (17088) LSM6DS3: num_fifo_samples = 1290[0m
+[0;32mI (17148) LSM6DS3: num_fifo_samples = 1368[0m
+[0;32mI (17208) LSM6DS3: num_fifo_samples = 1440[0m
+[0;32mI (17268) LSM6DS3: num_fifo_samples = 1518[0m
+[0;32mI (17328) LSM6DS3: num_fifo_samples = 1590[0m
+[0;32mI (17388) LSM6DS3: num_fifo_samples = 1668[0m
+[0;32mI (17448) LSM6DS3: num_fifo_samples = 1740[0m
+[0;32mI (17508) LSM6DS3: num_fifo_samples = 1818[0m
+[0;32mI (17998) LSM6DS3: [0m
+[0;32mI (17998) LSM6DS3: gyro = 0.915527 -5.950928 -1.190186[0m
+[0;32mI (17998) LSM6DS3: accel = 0.171387 -0.105347 0.991455[0m
+[0;32mI (17998) LSM6DS3: num_fifo_samples = 1818[0m
+
+[0;32mI (18058) LSM6DS3: num_fifo_samples = 708[0m
+[0;32mI (18118) LSM6DS3: num_fifo_samples = 786[0m
+[0;32mI (18178) LSM6DS3: num_fifo_samples = 858[0m
+[0;32mI (18238) LSM6DS3: num_fifo_samples = 936[0m
+[0;32mI (18298) LSM6DS3: num_fifo_samples = 1014[0m
+[0;32mI (18358) LSM6DS3: num_fifo_samples = 1086[0m
+[0;32mI (18418) LSM6DS3: num_fifo_samples = 1164[0m
+[0;32mI (18478) LSM6DS3: num_fifo_samples = 1236[0m
+[0;32mI (18538) LSM6DS3: num_fifo_samples = 1314[0m
+[0;32mI (18598) LSM6DS3: num_fifo_samples = 1386[0m
+[0;32mI (18658) LSM6DS3: num_fifo_samples = 1464[0m
+[0;32mI (18718) LSM6DS3: num_fifo_samples = 1536[0m
+[0;32mI (18778) LSM6DS3: num_fifo_samples = 1614[0m
+[0;32mI (18838) LSM6DS3: num_fifo_samples = 1692[0m
+[0;32mI (18898) LSM6DS3: num_fifo_samples = 1764[0m
+[0;32mI (18958) LSM6DS3: num_fifo_samples = 1842[0m
+[0;32mI (19448) LSM6DS3: [0m
+[0;32mI (19448) LSM6DS3: gyro = 0.946045 -5.981445 -1.129150[0m
+[0;32mI (19448) LSM6DS3: accel = 0.170532 -0.104492 0.989380[0m
+[0;32mI (19448) LSM6DS3: num_fifo_samples = 1842[0m
+
+[0;32mI (19508) LSM6DS3: num_fifo_samples = 732[0m
+[0;32mI (19568) LSM6DS3: num_fifo_samples = 810[0m
+[0;32mI (19628) LSM6DS3: num_fifo_samples = 882[0m
+[0;32mI (19688) LSM6DS3: num_fifo_samples = 960[0m
+[0;32mI (19748) LSM6DS3: num_fifo_samples = 1032[0m
+[0;32mI (19808) LSM6DS3: num_fifo_samples = 1110[0m
+[0;32mI (19868) LSM6DS3: num_fifo_samples = 1182[0m
+[0;32mI (19928) LSM6DS3: num_fifo_samples = 1260[0m
+[0;32mI (19988) LSM6DS3: num_fifo_samples = 1332[0m
+[0;32mI (20048) LSM6DS3: num_fifo_samples = 1410[0m
+[0;32mI (20108) LSM6DS3: num_fifo_samples = 1488[0m
+[0;32mI (20168) LSM6DS3: num_fifo_samples = 1560[0m
+[0;32mI (20228) LSM6DS3: num_fifo_samples = 1638[0m
+[0;32mI (20288) LSM6DS3: num_fifo_samples = 1710[0m
+[0;32mI (20348) LSM6DS3: num_fifo_samples = 1788[0m
+[0;32mI (20408) LSM6DS3: num_fifo_samples = 1860[0m
+[0;32mI (20898) LSM6DS3: [0m
+[0;32mI (20898) LSM6DS3: gyro = 1.098633 -5.981445 -1.220703[0m
+[0;32mI (20898) LSM6DS3: accel = 0.168945 -0.103760 0.990479[0m
+[0;32mI (20898) LSM6DS3: num_fifo_samples = 1866[0m
+
+[0;32mI (20958) LSM6DS3: num_fifo_samples = 756[0m
+[0;32mI (21018) LSM6DS3: num_fifo_samples = 828[0m
+[0;32mI (21078) LSM6DS3: num_fifo_samples = 906[0m
+[0;32mI (21138) LSM6DS3: num_fifo_samples = 978[0m
+[0;32mI (21198) LSM6DS3: num_fifo_samples = 1056[0m
+[0;32mI (21258) LSM6DS3: num_fifo_samples = 1128[0m
+[0;32mI (21318) LSM6DS3: num_fifo_samples = 1206[0m
+[0;32mI (21378) LSM6DS3: num_fifo_samples = 1284[0m
+[0;32mI (21438) LSM6DS3: num_fifo_samples = 1356[0m
+[0;32mI (21498) LSM6DS3: num_fifo_samples = 1434[0m
+[0;32mI (21558) LSM6DS3: num_fifo_samples = 1506[0m
+[0;32mI (21618) LSM6DS3: num_fifo_samples = 1584[0m
+[0;32mI (21678) LSM6DS3: num_fifo_samples = 1656[0m
+[0;32mI (21738) LSM6DS3: num_fifo_samples = 1734[0m
+[0;32mI (21798) LSM6DS3: num_fifo_samples = 1812[0m
+[0;32mI (22288) LSM6DS3: [0m
+[0;32mI (22288) LSM6DS3: gyro = 1.098633 -5.920410 -1.190186[0m
+[0;32mI (22288) LSM6DS3: accel = 0.169922 -0.102295 0.991943[0m
+[0;32mI (22288) LSM6DS3: num_fifo_samples = 1812[0m
+
+[0;32mI (22348) LSM6DS3: num_fifo_samples = 702[0m
+[0;32mI (22408) LSM6DS3: num_fifo_samples = 774[0m
+[0;32mI (22468) LSM6DS3: num_fifo_samples = 852[0m
+[0;32mI (22528) LSM6DS3: num_fifo_samples = 924[0m
+[0;32mI (22588) LSM6DS3: num_fifo_samples = 1002[0m
+[0;32mI (22648) LSM6DS3: num_fifo_samples = 1080[0m
+[0;32mI (22708) LSM6DS3: num_fifo_samples = 1152[0m
+[0;32mI (22768) LSM6DS3: num_fifo_samples = 1230[0m
+[0;32mI (22828) LSM6DS3: num_fifo_samples = 1302[0m
+[0;32mI (22888) LSM6DS3: num_fifo_samples = 1380[0m
+[0;32mI (22948) LSM6DS3: num_fifo_samples = 1452[0m
+[0;32mI (23008) LSM6DS3: num_fifo_samples = 1530[0m
+[0;32mI (23068) LSM6DS3: num_fifo_samples = 1608[0m
+[0;32mI (23128) LSM6DS3: num_fifo_samples = 1680[0m
+[0;32mI (23188) LSM6DS3: num_fifo_samples = 1758[0m
+[0;32mI (23248) LSM6DS3: num_fifo_samples = 1830[0m
+[0;32mI (23738) LSM6DS3: [0m
+[0;32mI (23738) LSM6DS3: gyro = 1.007080 -6.011963 -1.159668[0m
+[0;32mI (23738) LSM6DS3: accel = 0.167480 -0.101318 0.991455[0m
+[0;32mI (23738) LSM6DS3: num_fifo_samples = 1830[0m
+
+[0;32mI (23798) LSM6DS3: num_fifo_samples = 720[0m
+[0;32mI (23858) LSM6DS3: num_fifo_samples = 798[0m
+[0;32mI (23918) LSM6DS3: num_fifo_samples = 876[0m
+[0;32mI (23978) LSM6DS3: num_fifo_samples = 948[0m
+[0;32mI (24038) LSM6DS3: num_fifo_samples = 1026[0m
+[0;32mI (24098) LSM6DS3: num_fifo_samples = 1098[0m
+[0;32mI (24158) LSM6DS3: num_fifo_samples = 1176[0m
+[0;32mI (24218) LSM6DS3: num_fifo_samples = 1248[0m
+[0;32mI (24278) LSM6DS3: num_fifo_samples = 1326[0m
+[0;32mI (24338) LSM6DS3: num_fifo_samples = 1404[0m
+[0;32mI (24398) LSM6DS3: num_fifo_samples = 1476[0m
+[0;32mI (24458) LSM6DS3: num_fifo_samples = 1554[0m
+[0;32mI (24518) LSM6DS3: num_fifo_samples = 1626[0m
+[0;32mI (24578) LSM6DS3: num_fifo_samples = 1704[0m
+[0;32mI (24638) LSM6DS3: num_fifo_samples = 1776[0m
+[0;32mI (24698) LSM6DS3: num_fifo_samples = 1854[0m
+[0;32mI (25188) LSM6DS3: [0m
+[0;32mI (25188) LSM6DS3: gyro = 1.098633 -6.042480 -1.159668[0m
+[0;32mI (25188) LSM6DS3: accel = 0.165649 -0.102295 0.991089[0m
+[0;32mI (25188) LSM6DS3: num_fifo_samples = 1854[0m
+
+[0;32mI (25248) LSM6DS3: num_fifo_samples = 744[0m
+[0;32mI (25308) LSM6DS3: num_fifo_samples = 822[0m
+[0;32mI (25368) LSM6DS3: num_fifo_samples = 894[0m
+[0;32mI (25428) LSM6DS3: num_fifo_samples = 972[0m
+[0;32mI (25488) LSM6DS3: num_fifo_samples = 1044[0m
+[0;32mI (25548) LSM6DS3: num_fifo_samples = 1122[0m
+[0;32mI (25608) LSM6DS3: num_fifo_samples = 1200[0m
+[0;32mI (25668) LSM6DS3: num_fifo_samples = 1272[0m
+[0;32mI (25728) LSM6DS3: num_fifo_samples = 1350[0m
+[0;32mI (25788) LSM6DS3: num_fifo_samples = 1422[0m
+[0;32mI (25848) LSM6DS3: num_fifo_samples = 1500[0m
+[0;32mI (25908) LSM6DS3: num_fifo_samples = 1572[0m
+[0;32mI (25968) LSM6DS3: num_fifo_samples = 1650[0m
+[0;32mI (26028) LSM6DS3: num_fifo_samples = 1728[0m
+[0;32mI (26088) LSM6DS3: num_fifo_samples = 1800[0m
+[0;32mI (26148) LSM6DS3: num_fifo_samples = 1878[0m
+[0;32mI (26638) LSM6DS3: [0m
+[0;32mI (26638) LSM6DS3: gyro = 1.129150 -5.950928 -1.251221[0m
+[0;32mI (26638) LSM6DS3: accel = 0.164673 -0.099854 0.992798[0m
+[0;32mI (26638) LSM6DS3: num_fifo_samples = 1878[0m
+
+[0;32mI (26698) LSM6DS3: num_fifo_samples = 768[0m
+[0;32mI (26758) LSM6DS3: num_fifo_samples = 840[0m
+[0;32mI (26818) LSM6DS3: num_fifo_samples = 918[0m
+[0;32mI (26878) LSM6DS3: num_fifo_samples = 996[0m
+[0;32mI (26938) LSM6DS3: num_fifo_samples = 1068[0m
+[0;32mI (26998) LSM6DS3: num_fifo_samples = 1146[0m
+[0;32mI (27058) LSM6DS3: num_fifo_samples = 1218[0m
+[0;32mI (27118) LSM6DS3: num_fifo_samples = 1296[0m
+[0;32mI (27178) LSM6DS3: num_fifo_samples = 1368[0m
+[0;32mI (27238) LSM6DS3: num_fifo_samples = 1446[0m
+[0;32mI (27298) LSM6DS3: num_fifo_samples = 1524[0m
+[0;32mI (27358) LSM6DS3: num_fifo_samples = 1596[0m
+[0;32mI (27418) LSM6DS3: num_fifo_samples = 1674[0m
+[0;32mI (27478) LSM6DS3: num_fifo_samples = 1746[0m
+[0;32mI (27538) LSM6DS3: num_fifo_samples = 1824[0m
+[0;32mI (28028) LSM6DS3: [0m
+[0;32mI (28028) LSM6DS3: gyro = 1.037598 -5.920410 -1.098633[0m
+[0;32mI (28028) LSM6DS3: accel = 0.162354 -0.096558 0.991211[0m
+[0;32mI (28028) LSM6DS3: num_fifo_samples = 1824[0m
+
+[0;32mI (28088) LSM6DS3: num_fifo_samples = 714[0m
+[0;32mI (28148) LSM6DS3: num_fifo_samples = 792[0m
+[0;32mI (28208) LSM6DS3: num_fifo_samples = 864[0m
+[0;32mI (28268) LSM6DS3: num_fifo_samples = 942[0m
+[0;32mI (28328) LSM6DS3: num_fifo_samples = 1014[0m
+[0;32mI (28388) LSM6DS3: num_fifo_samples = 1092[0m
+[0;32mI (28448) LSM6DS3: num_fifo_samples = 1164[0m
+[0;32mI (28508) LSM6DS3: num_fifo_samples = 1242[0m
+[0;32mI (28568) LSM6DS3: num_fifo_samples = 1320[0m
+[0;32mI (28628) LSM6DS3: num_fifo_samples = 1392[0m
+[0;32mI (28688) LSM6DS3: num_fifo_samples = 1470[0m
+[0;32mI (28748) LSM6DS3: num_fifo_samples = 1542[0m
+[0;32mI (28808) LSM6DS3: num_fifo_samples = 1620[0m
+[0;32mI (28868) LSM6DS3: num_fifo_samples = 1692[0m
+[0;32mI (28928) LSM6DS3: num_fifo_samples = 1770[0m
+[0;32mI (28988) LSM6DS3: num_fifo_samples = 1842[0m
+[0;32mI (29478) LSM6DS3: [0m
+[0;32mI (29478) LSM6DS3: gyro = 1.190186 -6.042480 -1.190186[0m
+[0;32mI (29478) LSM6DS3: accel = 0.160278 -0.093506 0.992676[0m
+[0;32mI (29478) LSM6DS3: num_fifo_samples = 1848[0m
+
+[0;32mI (29538) LSM6DS3: num_fifo_samples = 738[0m
+[0;32mI (29598) LSM6DS3: num_fifo_samples = 810[0m
+[0;32mI (29658) LSM6DS3: num_fifo_samples = 888[0m
+[0;32mI (29718) LSM6DS3: num_fifo_samples = 960[0m
+[0;32mI (29778) LSM6DS3: num_fifo_samples = 1038[0m
+[0;32mI (29838) LSM6DS3: num_fifo_samples = 1116[0m
+[0;32mI (29898) LSM6DS3: num_fifo_samples = 1188[0m
+[0;32mI (29958) LSM6DS3: num_fifo_samples = 1266[0m
+[0;32mI (30018) LSM6DS3: num_fifo_samples = 1338[0m
+[0;32mI (30078) LSM6DS3: num_fifo_samples = 1416[0m
+[0;32mI (30138) LSM6DS3: num_fifo_samples = 1488[0m
+[0;32mI (30198) LSM6DS3: num_fifo_samples = 1566[0m
+[0;32mI (30258) LSM6DS3: num_fifo_samples = 1638[0m
+[0;32mI (30318) LSM6DS3: num_fifo_samples = 1716[0m
+[0;32mI (30378) LSM6DS3: num_fifo_samples = 1794[0m
+[0;32mI (30438) LSM6DS3: num_fifo_samples = 1866[0m
+[0;32mI (30928) LSM6DS3: [0m
+[0;32mI (30928) LSM6DS3: gyro = 1.098633 -6.042480 -1.220703[0m
+[0;32mI (30928) LSM6DS3: accel = 0.155640 -0.093872 0.988647[0m
+[0;32mI (30928) LSM6DS3: num_fifo_samples = 1866[0m
+
+[0;32mI (30988) LSM6DS3: num_fifo_samples = 756[0m
+[0;32mI (31048) LSM6DS3: num_fifo_samples = 834[0m
+[0;32mI (31108) LSM6DS3: num_fifo_samples = 912[0m
+[0;32mI (31168) LSM6DS3: num_fifo_samples = 984[0m
+[0;32mI (31228) LSM6DS3: num_fifo_samples = 1062[0m
+[0;32mI (31288) LSM6DS3: num_fifo_samples = 1134[0m
+[0;32mI (31348) LSM6DS3: num_fifo_samples = 1212[0m
+[0;32mI (31408) LSM6DS3: num_fifo_samples = 1284[0m
+[0;32mI (31468) LSM6DS3: num_fifo_samples = 1362[0m
+[0;32mI (31528) LSM6DS3: num_fifo_samples = 1434[0m
+[0;32mI (31588) LSM6DS3: num_fifo_samples = 1512[0m
+[0;32mI (31648) LSM6DS3: num_fifo_samples = 1590[0m
+[0;32mI (31708) LSM6DS3: num_fifo_samples = 1662[0m
+[0;32mI (31768) LSM6DS3: num_fifo_samples = 1740[0m
+[0;32mI (31828) LSM6DS3: num_fifo_samples = 1812[0m
+[0;32mI (32318) LSM6DS3: [0m
+[0;32mI (32318) LSM6DS3: gyro = 1.220703 -5.859375 -1.220703[0m
+[0;32mI (32318) LSM6DS3: accel = 0.155151 -0.093872 0.992432[0m
+[0;32mI (32318) LSM6DS3: num_fifo_samples = 1812[0m
+
+[0;32mI (32378) LSM6DS3: num_fifo_samples = 708[0m
+[0;32mI (32438) LSM6DS3: num_fifo_samples = 780[0m
+[0;32mI (32498) LSM6DS3: num_fifo_samples = 858[0m
+[0;32mI (32558) LSM6DS3: num_fifo_samples = 930[0m
+[0;32mI (32618) LSM6DS3: num_fifo_samples = 1008[0m
+[0;32mI (32678) LSM6DS3: num_fifo_samples = 1080[0m
+[0;32mI (32738) LSM6DS3: num_fifo_samples = 1158[0m
+[0;32mI (32798) LSM6DS3: num_fifo_samples = 1230[0m
+[0;32mI (32858) LSM6DS3: num_fifo_samples = 1308[0m
+[0;32mI (32918) LSM6DS3: num_fifo_samples = 1386[0m
+[0;32mI (32978) LSM6DS3: num_fifo_samples = 1458[0m
+[0;32mI (33038) LSM6DS3: num_fifo_samples = 1536[0m
+[0;32mI (33098) LSM6DS3: num_fifo_samples = 1608[0m
+[0;32mI (33158) LSM6DS3: num_fifo_samples = 1686[0m
+[0;32mI (33218) LSM6DS3: num_fifo_samples = 1758[0m
+[0;32mI (33278) LSM6DS3: num_fifo_samples = 1836[0m
+[0;32mI (33768) LSM6DS3: [0m
+[0;32mI (33768) LSM6DS3: gyro = 1.251221 -5.889893 -1.281738[0m
+[0;32mI (33768) LSM6DS3: accel = 0.154663 -0.092041 0.992310[0m
+[0;32mI (33768) LSM6DS3: num_fifo_samples = 1836[0m
+
+[0;32mI (33828) LSM6DS3: num_fifo_samples = 726[0m
+[0;32mI (33888) LSM6DS3: num_fifo_samples = 804[0m
+[0;32mI (33948) LSM6DS3: num_fifo_samples = 876[0m

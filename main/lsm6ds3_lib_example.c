@@ -19,7 +19,7 @@
 
 #include "lsm6ds3.h"
 
-#define NUM_FIFO_TIMESTAMPS 320
+#define NUM_FIFO_TIMESTAMPS 300
 
 static const char *TAG = "LSM6DS3_EXAMPLE";
 
@@ -130,24 +130,27 @@ void app_main(void)
     /* initialize the lsm6ds0 */
     lsm6ds3_init_all(dev_handle);
 
-    /* initialize LSM6DS3 FIFO */
+    /* enable FIFO */
     lsm6ds3_fifo_init(dev_handle);
 
     /* start recording data samples to the FIFO */
     lsm6ds3_fifo_reset_start(dev_handle);
 
+    lsm6ds3_set_fifo_operation_mode(dev_handle, LSM6DS3_FIFO_MODE_CONTINUOUS); // LSM6DS3_FIFO_MODE_CONTINUOUS
+
     while (1)
     {
         // /* read 6-axis data */
-        // lsm6ds3_read_raw_data(dev_handle, &lsm6ds3_data);
-        // ESP_LOGI(TAG, "temperature = %f\n", lsm6ds3_data.temp);
-        // ESP_LOGI(TAG, "gyro = %f %f %f\n", lsm6ds3_data.gyro[0], lsm6ds3_data.gyro[1], lsm6ds3_data.gyro[2]);
-        // ESP_LOGI(TAG, "accel = %f %f %f\n", lsm6ds3_data.accel[0], lsm6ds3_data.accel[1], lsm6ds3_data.accel[2]);
+        // lsm6ds3_read_raw_data(dev_handle, lsm6ds3_data);
+        // ESP_LOGI(TAG, "temperature = %f\n", lsm6ds3_data[0].temp);
+        // ESP_LOGI(TAG, "gyro = %f %f %f\n", lsm6ds3_data[0].gyro[0], lsm6ds3_data[0].gyro[1], lsm6ds3_data[0].gyro[2]);
+        // ESP_LOGI(TAG, "accel = %f %f %f\n", lsm6ds3_data[0].accel[0], lsm6ds3_data[0].accel[1], lsm6ds3_data[0].accel[2]);
 
         /* read data from the FIFO */
         lsm6ds3_fifo_read(dev_handle, lsm6ds3_data, NUM_FIFO_TIMESTAMPS);
-
-        // vTaskDelay(500 / portTICK_PERIOD_MS);
+        // lsm6ds3_fifo_get_num_samples(dev_handle);
+        // lsm6ds3_read_fifo_status2_reg(dev_handle);
+        vTaskDelay(120 / portTICK_PERIOD_MS);
     }
 
     /* deinitialize i2c bus */

@@ -1,14 +1,20 @@
 #include "lsm6ds3.h"
 
-static uint8_t data[6];
+static uint8_t data[12];
+float gyro_fs_cf, accel_fs_cf;
 
 /**
  * @brief Read a sequence of bytes from a LSM6DS3 sensor registers
+ *
+ * @param adev_handle i2c handle of LSM6DS3
+ * @param reg_addr memory register address
+ * @param data pointer to destination
+ * @param len number of bytes to read
  */
-static esp_err_t lsm6ds3_register_read(i2c_master_dev_handle_t dev_handle,
-                                       uint8_t reg_addr,
-                                       uint8_t *data,
-                                       size_t len)
+esp_err_t lsm6ds3_register_read(i2c_master_dev_handle_t dev_handle,
+                                uint8_t reg_addr,
+                                uint8_t *data,
+                                size_t len)
 {
     /* transmit one byte (the register address on the LSM6DS3) and receive multiple bytes back from the LSM6DS3. */
     return i2c_master_transmit_receive(dev_handle, &reg_addr, 1, data, len, I2C_MASTER_TIMEOUT_MS);
@@ -16,10 +22,14 @@ static esp_err_t lsm6ds3_register_read(i2c_master_dev_handle_t dev_handle,
 
 /**
  * @brief Write a byte to a LSM6DS3 sensor register
+ *
+ * @param adev_handle i2c handle of LSM6DS3
+ * @param reg_addr memory register address
+ * @param data pointer to source
  */
-static esp_err_t lsm6ds3_register_write_byte(i2c_master_dev_handle_t dev_handle,
-                                             uint8_t reg_addr,
-                                             uint8_t data)
+esp_err_t lsm6ds3_register_write_byte(i2c_master_dev_handle_t dev_handle,
+                                      uint8_t reg_addr,
+                                      uint8_t data)
 {
     /* write the register address first, then the data to write to the LSM6DS3. */
     uint8_t write_buf[2] = {reg_addr, data};
@@ -32,28 +42,13 @@ static esp_err_t lsm6ds3_register_write_byte(i2c_master_dev_handle_t dev_handle,
 void lsm6ds3_init_accel(i2c_master_dev_handle_t dev_handle)
 {
     /* set accelerometer power to normal power */
-    // uint8_t test_reg = 0xA5;
-    // read_modify_write(4, 0, 16, &test_reg);
-    // ESP_LOGI(LSM6DS3_TAG, "test_reg = %X", test_reg);
+    lsm6ds3_set_accel_power(dev_handle, LSM6DS3_XL_HM_MODE_HP);
 
-    ESP_ERROR_CHECK(lsm6ds3_register_read(dev_handle, LSM6DS3_CTRL1_XL_REG_ADDR, data, 1));
-    ESP_LOGI(LSM6DS3_TAG, "CTRL1_XL = %X", data[0]);
-    /* set accelerometer FS
-    FS_XL = 0b10 for +-4G FS */
-    read_modify_write(CTRL1_XL_FS_XL1, CTRL1_XL_FS_XL0, CTRL1_XL_FS_4G, &data[0]);
+    /* set accelerometer FS */
+    lsm6ds3_set_accel_fs(dev_handle, LSM6DS3_XL_FS_4G);
 
-    /* set accelerometer ODR
-    ODR_XL = 0b0100 for 104 Hz ODR */
-    read_modify_write(CTRL1_XL_ODR_XL3, CTRL1_XL_ODR_XL0, CTRL1_XL_ODR_208HZ, &data[0]);
-
-    /* LPF1_BW_SEL and BW0_XL are 0 */
-
-    /* write LSM6DS3_CTRL1_XL_REG_ADDR
-    0b01001000 = 0x48*/
-    ESP_LOGI(LSM6DS3_TAG, "CTRL1_XL = %X", data[0]);
-    ESP_ERROR_CHECK(lsm6ds3_register_write_byte(dev_handle, LSM6DS3_CTRL1_XL_REG_ADDR, data[0]));
-    ESP_ERROR_CHECK(lsm6ds3_register_read(dev_handle, LSM6DS3_CTRL1_XL_REG_ADDR, data, 1));
-    ESP_LOGI(LSM6DS3_TAG, "CTRL1_XL = %X", data[0]);
+    /* set accelerometer ODR */
+    lsm6ds3_set_accel_odr(dev_handle, LSM6DS3_XL_ODR_208HZ);
 }
 
 /**
@@ -61,25 +56,15 @@ void lsm6ds3_init_accel(i2c_master_dev_handle_t dev_handle)
  */
 void lsm6ds3_init_gyro(i2c_master_dev_handle_t dev_handle)
 {
-    ESP_ERROR_CHECK(lsm6ds3_register_read(dev_handle, LSM6DS3_CTRL2_G_REG_ADDR, data, 1));
-    ESP_LOGI(LSM6DS3_TAG, "CTRL1_G = %X", data[0]);
-
     /* set gyroscope power to normal power */
-    /* set gyroscope FS
-    FS_G = 0b01 for +-500 dps */
-    read_modify_write(CTRL2_G_FS_G1, CTRL2_G_FS_G0, CTRL2_G_FS_1000DPS, &data[0]);
+    lsm6ds3_set_gyro_power(dev_handle, LSM6DS3_G_HM_MODE_HP);
+
+    /* set gyroscope FS */
+    lsm6ds3_set_gyro_fs(dev_handle, LSM6DS3_G_FS_1000DPS);
 
     /* set gyroscope ODR
     ODR_G = 0b0100 for 104 Hz ODR*/
-    read_modify_write(CTRL2_G_ODR_G3, CTRL2_G_ODR_G0, CTRL2_G_ODR_208HZ, &data[0]);
-
-    /* FS_125 is 0 */
-    /* write LSM6DS3_CTRL2_G_REG_ADDR
-    0b01000100 = 0x44 */
-    ESP_LOGI(LSM6DS3_TAG, "CTRL2_G = %X", data[0]);
-    ESP_ERROR_CHECK(lsm6ds3_register_write_byte(dev_handle, LSM6DS3_CTRL2_G_REG_ADDR, data[0]));
-    ESP_ERROR_CHECK(lsm6ds3_register_read(dev_handle, LSM6DS3_CTRL2_G_REG_ADDR, data, 1));
-    ESP_LOGI(LSM6DS3_TAG, "CTRL2_G = %X", data[0]);
+    lsm6ds3_set_gyro_odr(dev_handle, LSM6DS3_G_ODR_208HZ);
 }
 
 /**
@@ -87,6 +72,9 @@ void lsm6ds3_init_gyro(i2c_master_dev_handle_t dev_handle)
  */
 void lsm6ds3_init_all(i2c_master_dev_handle_t dev_handle)
 {
+    /* reset lsm6ds3 */
+    lsm6ds3_reset(dev_handle);
+
     /* read the WHO_AM_I register fromthe LSM6DS3
     WHO_AM_I must be 0x69 */
     ESP_ERROR_CHECK(lsm6ds3_register_read(dev_handle, LSM6DS3_WHO_AM_I_REG_ADDR, data, 1));
@@ -98,9 +86,199 @@ void lsm6ds3_init_all(i2c_master_dev_handle_t dev_handle)
     lsm6ds3_init_gyro(dev_handle);
 
     /* enable block data update (BDU) */
-    ESP_ERROR_CHECK(lsm6ds3_register_read(dev_handle, LSM6DS3_CTRL3_C_REG_ADDR, data, 1));
-    read_modify_write(CTRL3_C_BDU, CTRL3_C_BDU, 1, data);
-    ESP_ERROR_CHECK(lsm6ds3_register_write_byte(dev_handle, LSM6DS3_CTRL3_C_REG_ADDR, data[0]));
+    lsm6ds3_enable_bdu(dev_handle);
+}
+
+/**
+ * @brief reset LSM6DS3
+ */
+void lsm6ds3_reset(i2c_master_dev_handle_t dev_handle)
+{
+    ESP_ERROR_CHECK(lsm6ds3_register_write_byte(dev_handle,
+                                                LSM6DS3_CTRL3_C_REG_ADDR,
+                                                LSM6DS3_CTRL3_C_SW_RESET));
+}
+
+/**
+ * @brief configure LSM6DS3 accelerometer power mode
+ */
+void lsm6ds3_set_accel_power(i2c_master_dev_handle_t dev_handle, lsm6ds3_xl_hm xl_hm)
+{
+    /* read */
+    ESP_ERROR_CHECK(lsm6ds3_register_read(dev_handle, LSM6DS3_CTRL6_C_REG_ADDR, data, 1));
+    /* modify */
+    read_modify_write(CTRL6_C_XL_HM_MODE, CTRL6_C_XL_HM_MODE, xl_hm, &data[0]);
+    /* write */
+    ESP_ERROR_CHECK(lsm6ds3_register_write_byte(dev_handle, LSM6DS3_CTRL6_C_REG_ADDR, data[0]));
+}
+
+/**
+ * @brief configure LSM6DS3 accelerometer full scale (FS)
+ *
+ * @param
+ */
+void lsm6ds3_set_accel_fs(i2c_master_dev_handle_t dev_handle, lsm6ds3_xl_fs xl_fs)
+{
+    switch (xl_fs)
+    {
+    case LSM6DS3_XL_FS_2G:
+        accel_fs_cf = 2;
+        break;
+    case LSM6DS3_XL_FS_4G:
+        accel_fs_cf = 4;
+        break;
+    case LSM6DS3_XL_FS_8G:
+        accel_fs_cf = 8;
+        break;
+    case LSM6DS3_XL_FS_16G:
+        accel_fs_cf = 16;
+        break;
+    default:
+        accel_fs_cf = 1;
+    }
+    /* read */
+    ESP_ERROR_CHECK(lsm6ds3_register_read(dev_handle, LSM6DS3_CTRL1_XL_REG_ADDR, data, 1));
+    /* modify */
+    read_modify_write(CTRL1_XL_FS_XL1, CTRL1_XL_FS_XL0, xl_fs, &data[0]);
+    /* write */
+    ESP_ERROR_CHECK(lsm6ds3_register_write_byte(dev_handle, LSM6DS3_CTRL1_XL_REG_ADDR, data[0]));
+}
+
+/**
+ * @brief configure LSM6DS3 accelerometer output data rate (ODR)
+ *
+ * @param
+ */
+void lsm6ds3_set_accel_odr(i2c_master_dev_handle_t dev_handle, lsm6ds3_xl_odr xl_odr)
+{
+    /* read */
+    ESP_ERROR_CHECK(lsm6ds3_register_read(dev_handle, LSM6DS3_CTRL1_XL_REG_ADDR, data, 1));
+    /* modify */
+    read_modify_write(CTRL1_XL_ODR_XL3, CTRL1_XL_ODR_XL0, xl_odr, &data[0]);
+    /* write */
+    ESP_ERROR_CHECK(lsm6ds3_register_write_byte(dev_handle, LSM6DS3_CTRL1_XL_REG_ADDR, data[0]));
+}
+
+/**
+ * @brief configure LSM6DS3 gyroscope power mode
+ */
+void lsm6ds3_set_gyro_power(i2c_master_dev_handle_t dev_handle, lsm6ds3_g_hm g_hm)
+{
+    /* read */
+    ESP_ERROR_CHECK(lsm6ds3_register_read(dev_handle, LSM6DS3_CTRL7_G_REG_ADDR, data, 1));
+    /* modify */
+    read_modify_write(CTRL7_G_G_HM_MODE, CTRL7_G_G_HM_MODE, g_hm, &data[0]);
+    /* write */
+    ESP_ERROR_CHECK(lsm6ds3_register_write_byte(dev_handle, LSM6DS3_CTRL7_G_REG_ADDR, data[0]));
+}
+
+/**
+ * @brief configure LSM6DS3 gyroscope full scale (FS)
+ *
+ * @param
+ */
+void lsm6ds3_set_gyro_fs(i2c_master_dev_handle_t dev_handle, lsm6ds3_g_fs g_fs)
+{
+    switch (g_fs)
+    {
+    case LSM6DS3_G_FS_245DPS:
+        gyro_fs_cf = 245;
+        break;
+    case LSM6DS3_G_FS_500DPS:
+        gyro_fs_cf = 500;
+        break;
+    case LSM6DS3_G_FS_1000DPS:
+        gyro_fs_cf = 1000;
+        break;
+    case LSM6DS3_G_FS_2000DPS:
+        gyro_fs_cf = 2000;
+        break;
+    default:
+        gyro_fs_cf = 1;
+    }
+    /* read */
+    ESP_ERROR_CHECK(lsm6ds3_register_read(dev_handle, LSM6DS3_CTRL2_G_REG_ADDR, data, 1));
+    /* modify */
+    read_modify_write(CTRL2_G_FS_G1, CTRL2_G_FS_G0, g_fs, &data[0]);
+    /* write */
+    ESP_ERROR_CHECK(lsm6ds3_register_write_byte(dev_handle, LSM6DS3_CTRL2_G_REG_ADDR, data[0]));
+}
+
+/**
+ * @brief configure LSM6DS3 gyroscope output data rate (ODR)
+ */
+void lsm6ds3_set_gyro_odr(i2c_master_dev_handle_t dev_handle, lsm6ds3_g_odr g_odr)
+{
+    /* read */
+    ESP_ERROR_CHECK(lsm6ds3_register_read(dev_handle, LSM6DS3_CTRL2_G_REG_ADDR, data, 1));
+    /* modify */
+    read_modify_write(CTRL2_G_ODR_G3, CTRL2_G_ODR_G0, g_odr, &data[0]);
+    /* write */
+    ESP_ERROR_CHECK(lsm6ds3_register_write_byte(dev_handle, LSM6DS3_CTRL2_G_REG_ADDR, data[0]));
+}
+
+/**
+ * @brief configure LSM6DS3 FIFO threshold value
+ */
+void lsm6ds3_set_fifo_thresh(i2c_master_dev_handle_t dev_handle, uint16_t fifo_thresh)
+{
+    /* read */
+    ESP_ERROR_CHECK(lsm6ds3_register_read(dev_handle, LSM6DS3_FIFO_CTRL1_REG_ADDR, &data[0], 1));
+    ESP_ERROR_CHECK(lsm6ds3_register_read(dev_handle, LSM6DS3_FIFO_CTRL2_REG_ADDR, &data[1], 1));
+    /* modify */
+    read_modify_write(FIFO_CTRL1_FTH_7, FIFO_CTRL1_FTH_0, fifo_thresh & 0xFF, &data[0]);
+    read_modify_write(FIFO_CTRL2_FTH_10, FIFO_CTRL2_FTH_8, (fifo_thresh >> 8) & 0x7, &data[1]);
+    /* write */
+    ESP_ERROR_CHECK(lsm6ds3_register_write_byte(dev_handle, LSM6DS3_FIFO_CTRL1_REG_ADDR, data[0]));
+    ESP_ERROR_CHECK(lsm6ds3_register_write_byte(dev_handle, LSM6DS3_FIFO_CTRL2_REG_ADDR, data[1]));
+}
+
+/**
+ * @brief configure LSM6DS3 FIFO data included
+ *
+ * @param include_acc include accelerometer data
+ * @param include_gyro include gyroscope data
+ * @param include_temp include temperature data
+ */
+void lsm6ds3_configure_fifo_data(i2c_master_dev_handle_t dev_handle,
+                                 uint8_t include_accel,
+                                 uint8_t include_gyro,
+                                 uint8_t include_temp)
+{
+}
+
+/**
+ * @brief lsm6ds3 reset FIFO contents
+ */
+void lsm6ds3_reset_fifo(i2c_master_dev_handle_t dev_handle)
+{
+    lsm6ds3_set_fifo_operation_mode(dev_handle, LSM6DS3_FIFO_MODE_BYPASS);
+}
+
+/**
+ * @brief configure LSM6DS3 output data rate (ODR)
+ */
+void lsm6ds3_set_fifo_odr(i2c_master_dev_handle_t dev_handle, lsm6ds3_fifo_odr fifo_odr)
+{
+    /* read */
+    ESP_ERROR_CHECK(lsm6ds3_register_read(dev_handle, LSM6DS3_FIFO_CTRL5_REG_ADDR, data, 1));
+    /* modify */
+    read_modify_write(FIFO_CTRL5_ODR_3, FIFO_CTRL5_ODR_0, fifo_odr, &data[0]);
+    /* write */
+    ESP_ERROR_CHECK(lsm6ds3_register_write_byte(dev_handle, LSM6DS3_FIFO_CTRL5_REG_ADDR, data[0]));
+}
+
+/**
+ * @brief configure LSM6DS3 FIFO operation mode
+ */
+void lsm6ds3_set_fifo_operation_mode(i2c_master_dev_handle_t dev_handle, lsm6ds3_fifo_mode fifo_mode)
+{
+    /* read */
+    ESP_ERROR_CHECK(lsm6ds3_register_read(dev_handle, LSM6DS3_FIFO_CTRL5_REG_ADDR, data, 1));
+    /* modify */
+    read_modify_write(FIFO_CTRL5_MODE_2, FIFO_CTRL5_MODE_0, fifo_mode, data);
+    /* write */
+    ESP_ERROR_CHECK(lsm6ds3_register_write_byte(dev_handle, LSM6DS3_FIFO_CTRL5_REG_ADDR, data[0]));
 }
 
 /**
@@ -158,9 +336,9 @@ void lsm6ds3_read_gyroscope(i2c_master_dev_handle_t dev_handle, float g[3])
     g_raw[0] = (data[1] << 8) | data[0];
     g_raw[1] = (data[3] << 8) | data[2];
     g_raw[2] = (data[5] << 8) | data[4];
-    g[0] = g_raw[0] / 32768.0 * 1000;
-    g[1] = g_raw[1] / 32768.0 * 1000;
-    g[2] = g_raw[2] / 32768.0 * 1000;
+    g[0] = g_raw[0] / 32768.0 * gyro_fs_cf;
+    g[1] = g_raw[1] / 32768.0 * gyro_fs_cf;
+    g[2] = g_raw[2] / 32768.0 * gyro_fs_cf;
 }
 
 /**
@@ -176,9 +354,9 @@ void lsm6ds3_read_accelerometer(i2c_master_dev_handle_t dev_handle, float a[3])
     a_raw[0] = (data[1] << 8) | data[0];
     a_raw[1] = (data[3] << 8) | data[2];
     a_raw[2] = (data[5] << 8) | data[4];
-    a[0] = a_raw[0] / 32768.0 * 4.0;
-    a[1] = a_raw[1] / 32768.0 * 4.0;
-    a[2] = a_raw[2] / 32768.0 * 4.0;
+    a[0] = a_raw[0] / 32768.0 * accel_fs_cf;
+    a[1] = a_raw[1] / 32768.0 * accel_fs_cf;
+    a[2] = a_raw[2] / 32768.0 * accel_fs_cf;
 }
 
 /**
@@ -205,26 +383,28 @@ void lsm6ds3_read_raw_data(i2c_master_dev_handle_t dev_handle, lsm6ds3_data_t *d
 }
 
 /**
- * @brief set up the FIFO of the LSM6DS3
+ * @brief LSM6DS3 enable block data update
  */
-void lsm6ds3_fifo_init(i2c_master_dev_handle_t dev_handle)
+void lsm6ds3_enable_bdu(i2c_master_dev_handle_t dev_handle)
 {
     /* enable block data update (BDU) */
     ESP_ERROR_CHECK(lsm6ds3_register_read(dev_handle, LSM6DS3_CTRL3_C_REG_ADDR, data, 1));
     read_modify_write(CTRL3_C_BDU, CTRL3_C_BDU, 1, data);
     ESP_ERROR_CHECK(lsm6ds3_register_write_byte(dev_handle, LSM6DS3_CTRL3_C_REG_ADDR, data[0]));
+}
 
+/**
+ * @brief set up the FIFO of the LSM6DS3
+ */
+void lsm6ds3_fifo_init(i2c_master_dev_handle_t dev_handle)
+{
     /* set FIFO threshold */
-    data[0] = 0;
-    data[1] = 0;
-    uint16_t fifo_threshold = 1000;
-    read_modify_write(FIFO_CTRL1_FTH_7, FIFO_CTRL1_FTH_0, fifo_threshold & 0xFF, &data[0]);
-    //
-    read_modify_write(FIFO_CTRL2_FTH_10, FIFO_CTRL2_FTH_8, (fifo_threshold >> 8) & 0x7, &data[1]);
+    uint16_t fifo_threshold = 200;
+    lsm6ds3_set_fifo_thresh(dev_handle, fifo_threshold);
 
     /* include temperature in FIFO */
+    ESP_ERROR_CHECK(lsm6ds3_register_read(dev_handle, LSM6DS3_FIFO_CTRL2_REG_ADDR, &data[1], 1));
     read_modify_write(FIFO_CTRL2_TEMP_EN, FIFO_CTRL2_TEMP_EN, 0x1, &data[1]);
-    ESP_ERROR_CHECK(lsm6ds3_register_write_byte(dev_handle, LSM6DS3_FIFO_CTRL1_REG_ADDR, data[0]));
     ESP_ERROR_CHECK(lsm6ds3_register_write_byte(dev_handle, LSM6DS3_FIFO_CTRL2_REG_ADDR, data[1]));
 
     // ESP_ERROR_CHECK(lsm6ds3_register_read(dev_handle, LSM6DS3_FIFO_CTRL1_REG_ADDR, data, 2));
@@ -244,31 +424,15 @@ void lsm6ds3_fifo_init(i2c_master_dev_handle_t dev_handle)
     ESP_ERROR_CHECK(lsm6ds3_register_write_byte(dev_handle, LSM6DS3_FIFO_CTRL3_REG_ADDR, data[0]));
 
     /* disable 3rd FIFO data set and enable 4th FIFO data set (for temperature) */
-    data[0] = 0;
+    // data[0] = 0;
     // read_modify_write(FIFO_CTRL4_STOP_ON_FTH, FIFO_CTRL4_STOP_ON_FTH, 0x1, &data[0]);
     // read_modify_write(FIFO_CTRL4_DEC_DS4_FIFO2, FIFO_CTRL4_DEC_DS4_FIFO0, 0x1, &data[0]);
     // read_modify_write(FIFO_CTRL4_DEC_DS3_FIFO2, FIFO_CTRL4_DEC_DS3_FIFO0, 0x1, &data[0]);
 
-    ESP_ERROR_CHECK(lsm6ds3_register_write_byte(dev_handle, LSM6DS3_FIFO_CTRL4_REG_ADDR, data[0]));
+    // ESP_ERROR_CHECK(lsm6ds3_register_write_byte(dev_handle, LSM6DS3_FIFO_CTRL4_REG_ADDR, data[0]));
 
-    /* Set FIFO ODR and FIFO mode
-    FIFO ODR = 0b0100 for 104 Hz */
-    data[0] = 0;
-    read_modify_write(FIFO_CTRL5_ODR_3, FIFO_CTRL5_ODR_0, FIFO_CTRL5_ODR_FIFO_208HZ, &data[0]);
-    ESP_ERROR_CHECK(lsm6ds3_register_write_byte(dev_handle, LSM6DS3_FIFO_CTRL5_REG_ADDR, data[0]));
-}
-
-/**
- * @brief disable FIFO of the LSM6DS3
- */
-void lsm6ds3_fifo_stop(i2c_master_dev_handle_t dev_handle)
-{
-    /* reset FIFO by setting it to bypass mode
-    FIFO mode = 0b000 for bypass mode */
-    data[0] = 0;
-    ESP_ERROR_CHECK(lsm6ds3_register_read(dev_handle, LSM6DS3_FIFO_CTRL5_REG_ADDR, &data[0], 1));
-    read_modify_write(FIFO_CTRL5_MODE_2, FIFO_CTRL5_MODE_0, FIFO_CTRL5_MODE_BYPASS, &data[0]);
-    ESP_ERROR_CHECK(lsm6ds3_register_write_byte(dev_handle, LSM6DS3_FIFO_CTRL5_REG_ADDR, data[0]));
+    /* Set FIFO ODR */
+    lsm6ds3_set_fifo_odr(dev_handle, LSM6DS3_FIFO_ODR_208HZ);
 }
 
 /**
@@ -283,15 +447,75 @@ void lsm6ds3_fifo_reset_start(i2c_master_dev_handle_t dev_handle)
     // ESP_LOGI(LSM6DS3_TAG, "FIFO_CTRL2_REG_ADDR = %X", data[1]);
 
     /* reset FIFO */
-    lsm6ds3_fifo_stop(dev_handle);
+    lsm6ds3_reset_fifo(dev_handle);
 
     /* start FIFO in FIFO mode
     FIFO mode = 0b001 for FIFO mode*/
-    ESP_ERROR_CHECK(lsm6ds3_register_read(dev_handle, LSM6DS3_FIFO_CTRL5_REG_ADDR, &data[0], 1));
-    read_modify_write(FIFO_CTRL5_MODE_2, FIFO_CTRL5_MODE_0, FIFO_CTRL5_MODE_FIFO, &data[0]);
-    ESP_ERROR_CHECK(lsm6ds3_register_write_byte(dev_handle, LSM6DS3_FIFO_CTRL5_REG_ADDR, data[0]));
+    lsm6ds3_set_fifo_operation_mode(dev_handle, LSM6DS3_FIFO_MODE_FIFO);
     // ESP_ERROR_CHECK(lsm6ds3_register_read(dev_handle, LSM6DS3_FIFO_CTRL5_REG_ADDR, &data[0], 1));
     // ESP_LOGI(LSM6DS3_TAG, "FIFO_CTRL5_REG_ADDR = %X", data[0]);
+}
+
+/**
+ * @brief get number of samples in the LSM6DS3 FIFO buffer
+ */
+uint16_t lsm6ds3_fifo_get_num_samples(i2c_master_dev_handle_t dev_handle)
+{
+    uint16_t num_fifo_samples;
+    /* get number of FIFO samples */
+    ESP_ERROR_CHECK(lsm6ds3_register_read(dev_handle, LSM6DS3_FIFO_STATUS1_REG_ADDR, data, 1));
+    ESP_ERROR_CHECK(lsm6ds3_register_read(dev_handle, LSM6DS3_FIFO_STATUS2_REG_ADDR, &data[1], 1));
+    num_fifo_samples = ((data[1] & 0x0F) << 8 | data[0]);
+
+    return num_fifo_samples;
+}
+
+/**
+ * @brief read the LSM6DS3 FIFO pattern register
+ */
+uint16_t lsm6ds3_fifo_get_pattern(i2c_master_dev_handle_t dev_handle)
+{
+    uint8_t temp[2];
+    uint16_t data;
+    ESP_ERROR_CHECK(lsm6ds3_register_read(dev_handle, LSM6DS3_FIFO_STATUS3_REG_ADDR, temp, 2));
+    data = ((temp[1] & 0x3) << 8 | temp[0]);
+    ESP_LOGI(LSM6DS3_TAG, "fifo_pattern = %X", data);
+    return data;
+}
+
+/**
+ * @brief read one word from the LSM6DS3 FIFO buffer
+ */
+uint16_t lsm6ds3_fifo_read_word_from_fifo(i2c_master_dev_handle_t dev_handle)
+{
+    uint8_t temp[2];
+    uint16_t data;
+    ESP_ERROR_CHECK(lsm6ds3_register_read(dev_handle, LSM6DS3_FIFO_DATA_OUT_L_REG_ADDR, temp, 2));
+    data = ((temp[1] << 8) | temp[0]);
+    ESP_LOGI(LSM6DS3_TAG, "fifo_data = %X", data);
+    return data;
+}
+
+/**
+ * @brief LSM6DS3 read and interpret FIFO STATUS 2 register
+ */
+void lsm6ds3_read_fifo_status2_reg(i2c_master_dev_handle_t dev_handle)
+{
+    uint8_t temp;
+    uint8_t waterm = 0;
+    uint8_t overrun = 0;
+    uint8_t full_smart = 0;
+    uint8_t empty = 0;
+    ESP_ERROR_CHECK(lsm6ds3_register_read(dev_handle, LSM6DS3_FIFO_STATUS2_REG_ADDR, &temp, 1));
+    if (temp & FIFO_STATUS2_WATERM)
+        waterm = 1;
+    if (temp & FIFO_STATUS2_OVER_RUN)
+        overrun = 1;
+    if (temp & FIFO_STATUS2_FIFO_FULL_SMART)
+        full_smart = 1;
+    if (temp & FIFO_STATUS2_FIFO_EMPTY)
+        empty = 1;
+    ESP_LOGI(LSM6DS3_TAG, "FIFO watermark = %d, overrun = %d, full_smart = %d, empty = %d", waterm, overrun, full_smart, empty);
 }
 
 /**
@@ -303,7 +527,7 @@ void lsm6ds3_fifo_reset_start(i2c_master_dev_handle_t dev_handle)
 void lsm6ds3_fifo_read(i2c_master_dev_handle_t dev_handle, lsm6ds3_data_t *lsm6ds3_fifo_buffer, uint16_t num_timestamps)
 {
     uint16_t num_fifo_samples;
-    uint16_t fifo_pattern, fifo_data;
+    uint16_t fifo_pattern;
 
     /**
      * The accelerometer and gyroscope both log at 104 Hz.
@@ -323,79 +547,72 @@ void lsm6ds3_fifo_read(i2c_master_dev_handle_t dev_handle, lsm6ds3_data_t *lsm6d
 
     // do
     // {
-    //     /* get number of FIFO samples */
-    //     ESP_ERROR_CHECK(lsm6ds3_register_read(dev_handle, LSM6DS3_FIFO_STATUS1_REG_ADDR, data, 2));
-    //     // ESP_ERROR_CHECK(lsm6ds3_register_read(dev_handle, LSM6DS3_FIFO_STATUS2_REG_ADDR, &data[1], 1));
-    //     num_fifo_samples = ((data[1] & 0x7) << 8 | data[0]);
-    //     ESP_LOGI(LSM6DS3_TAG, "num_fifo_samples = %d", num_fifo_samples);
+    // num_fifo_samples = lsm6ds3_fifo_get_num_samples(dev_handle);
     // } while (num_fifo_samples < 40);
 
     // // grab 40 samples from the FIFO and print out the FIFO pattern
     // while (num_fifo_samples > 0)
     // {
     //     /* get FIFO pattern */
-    //     ESP_ERROR_CHECK(lsm6ds3_register_read(dev_handle, LSM6DS3_FIFO_STATUS3_REG_ADDR, data, 2));
-    //     // ESP_ERROR_CHECK(lsm6ds3_register_read(dev_handle, LSM6DS3_FIFO_STATUS4_REG_ADDR, &data[1], 1));
-    //     fifo_pattern = ((data[1] & 0x3) << 8 | data[0]);
-    //     ESP_LOGI(LSM6DS3_TAG, "fifo_pattern = %X", fifo_pattern);
+    //     lsm6ds3_fifo_get_pattern(dev_handle);
 
     //     /* read 16 bits from FIFO data out H and L */
-    //     ESP_ERROR_CHECK(lsm6ds3_register_read(dev_handle, LSM6DS3_FIFO_DATA_OUT_L_REG_ADDR, data, 2));
-    //     // ESP_ERROR_CHECK(lsm6ds3_register_read(dev_handle, LSM6DS3_FIFO_DATA_OUT_H_REG_ADDR, &data[1], 1));
-    //     fifo_data = ((data[1] << 8) | data[0]);
-    //     ESP_LOGI(LSM6DS3_TAG, "fifo_data = %X", fifo_data);
+    //     uint16_t fifo_data = lsm6ds3_fifo_read_word_from_fifo(dev_handle);
 
     //     num_fifo_samples--;
     // }
 
-    ESP_ERROR_CHECK(lsm6ds3_register_read(dev_handle, LSM6DS3_FIFO_STATUS1_REG_ADDR, data, 2));
-    num_fifo_samples = (((data[1] & 0x7) << 8) | data[0]);
-    // ESP_LOGI(LSM6DS3_TAG, "num_fifo_samples = %d", num_fifo_samples);
+    num_fifo_samples = lsm6ds3_fifo_get_num_samples(dev_handle);
 
     if (num_fifo_samples > num_timestamps * 6)
     {
-        ESP_ERROR_CHECK(lsm6ds3_register_read(dev_handle, LSM6DS3_FIFO_STATUS1_REG_ADDR, data, 2));
-        num_fifo_samples = (((data[1] & 0x7) << 8) | data[0]);
-
         for (int i = 0; i < num_timestamps; i++)
         {
-            ESP_ERROR_CHECK(lsm6ds3_register_read(dev_handle, LSM6DS3_FIFO_DATA_OUT_L_REG_ADDR, data, 2));
-            lsm6ds3_fifo_buffer[i].gyro[0] = ((int16_t)(data[1] << 8) | data[0]) / 32768.0 * 1000;
-            ESP_ERROR_CHECK(lsm6ds3_register_read(dev_handle, LSM6DS3_FIFO_DATA_OUT_L_REG_ADDR, data, 2));
-            lsm6ds3_fifo_buffer[i].gyro[1] = ((int16_t)(data[1] << 8) | data[0]) / 32768.0 * 1000;
-            ESP_ERROR_CHECK(lsm6ds3_register_read(dev_handle, LSM6DS3_FIFO_DATA_OUT_L_REG_ADDR, data, 2));
-            lsm6ds3_fifo_buffer[i].gyro[2] = ((int16_t)(data[1] << 8) | data[0]) / 32768.0 * 1000;
-            ESP_ERROR_CHECK(lsm6ds3_register_read(dev_handle, LSM6DS3_FIFO_DATA_OUT_L_REG_ADDR, data, 2));
-            lsm6ds3_fifo_buffer[i].accel[0] = ((int16_t)(data[1] << 8) | data[0]) / 32768.0 * 4.0;
-            ESP_ERROR_CHECK(lsm6ds3_register_read(dev_handle, LSM6DS3_FIFO_DATA_OUT_L_REG_ADDR, data, 2));
-            lsm6ds3_fifo_buffer[i].accel[1] = ((int16_t)(data[1] << 8) | data[0]) / 32768.0 * 4.0;
-            ESP_ERROR_CHECK(lsm6ds3_register_read(dev_handle, LSM6DS3_FIFO_DATA_OUT_L_REG_ADDR, data, 2));
-            lsm6ds3_fifo_buffer[i].accel[2] = ((int16_t)(data[1] << 8) | data[0]) / 32768.0 * 4.0;
+            // ESP_ERROR_CHECK(lsm6ds3_register_read(dev_handle, LSM6DS3_FIFO_DATA_OUT_L_REG_ADDR, data, 2));
+            // lsm6ds3_fifo_buffer[i].gyro[0] = ((int16_t)(data[1] << 8) | data[0]) / 32768.0 * gyro_fs_cf;
+            // ESP_ERROR_CHECK(lsm6ds3_register_read(dev_handle, LSM6DS3_FIFO_DATA_OUT_L_REG_ADDR, data, 2));
+            // lsm6ds3_fifo_buffer[i].gyro[1] = ((int16_t)(data[1] << 8) | data[0]) / 32768.0 * gyro_fs_cf;
+            // ESP_ERROR_CHECK(lsm6ds3_register_read(dev_handle, LSM6DS3_FIFO_DATA_OUT_L_REG_ADDR, data, 2));
+            // lsm6ds3_fifo_buffer[i].gyro[2] = ((int16_t)(data[1] << 8) | data[0]) / 32768.0 * gyro_fs_cf;
+
+            // ESP_ERROR_CHECK(lsm6ds3_register_read(dev_handle, LSM6DS3_FIFO_DATA_OUT_L_REG_ADDR, data, 2));
+            // lsm6ds3_fifo_buffer[i].accel[0] = ((int16_t)(data[1] << 8) | data[0]) / 32768.0 * accel_fs_cf;
+            // ESP_ERROR_CHECK(lsm6ds3_register_read(dev_handle, LSM6DS3_FIFO_DATA_OUT_L_REG_ADDR, data, 2));
+            // lsm6ds3_fifo_buffer[i].accel[1] = ((int16_t)(data[1] << 8) | data[0]) / 32768.0 * accel_fs_cf;
+            // ESP_ERROR_CHECK(lsm6ds3_register_read(dev_handle, LSM6DS3_FIFO_DATA_OUT_L_REG_ADDR, data, 2));
+            // lsm6ds3_fifo_buffer[i].accel[2] = ((int16_t)(data[1] << 8) | data[0]) / 32768.0 * accel_fs_cf;
+
+            ESP_ERROR_CHECK(lsm6ds3_register_read(dev_handle, LSM6DS3_FIFO_DATA_OUT_L_REG_ADDR, data, 12));
+            lsm6ds3_fifo_buffer[i].gyro[0] = ((int16_t)(data[1] << 8) | data[0]) / 32768.0 * gyro_fs_cf;
+            lsm6ds3_fifo_buffer[i].gyro[1] = ((int16_t)(data[3] << 8) | data[2]) / 32768.0 * gyro_fs_cf;
+            lsm6ds3_fifo_buffer[i].gyro[2] = ((int16_t)(data[5] << 8) | data[4]) / 32768.0 * gyro_fs_cf;
+            lsm6ds3_fifo_buffer[i].accel[0] = ((int16_t)(data[7] << 8) | data[6]) / 32768.0 * accel_fs_cf;
+            lsm6ds3_fifo_buffer[i].accel[1] = ((int16_t)(data[9] << 8) | data[8]) / 32768.0 * accel_fs_cf;
+            lsm6ds3_fifo_buffer[i].accel[2] = ((int16_t)(data[11] << 8) | data[10]) / 32768.0 * accel_fs_cf;
 
             // vTaskDelay(10 / portTICK_PERIOD_MS);
             // ESP_LOGI(LSM6DS3_TAG, "fifo_data %d = %X", i, fifo_data);
         }
 
         // ESP_LOGI(LSM6DS3_TAG, "temperature = %f\n", lsm6ds3_data.temp);
-        ESP_LOGI(LSM6DS3_TAG, "gyro = %f %f %f\n", lsm6ds3_fifo_buffer[num_timestamps - 1].gyro[0], lsm6ds3_fifo_buffer[num_timestamps - 1].gyro[1], lsm6ds3_fifo_buffer[num_timestamps - 1].gyro[2]);
-        ESP_LOGI(LSM6DS3_TAG, "accel = %f %f %f\n", lsm6ds3_fifo_buffer[num_timestamps - 1].accel[0], lsm6ds3_fifo_buffer[num_timestamps - 1].accel[1], lsm6ds3_fifo_buffer[num_timestamps - 1].accel[2]);
-        ESP_LOGI(LSM6DS3_TAG, "num_fifo_samples = %d", num_fifo_samples);
+        ESP_LOGI(LSM6DS3_TAG, "");
+        ESP_LOGI(LSM6DS3_TAG, "gyro = %f %f %f", lsm6ds3_fifo_buffer[num_timestamps - 1].gyro[0], lsm6ds3_fifo_buffer[num_timestamps - 1].gyro[1], lsm6ds3_fifo_buffer[num_timestamps - 1].gyro[2]);
+        ESP_LOGI(LSM6DS3_TAG, "accel = %f %f %f", lsm6ds3_fifo_buffer[num_timestamps - 1].accel[0], lsm6ds3_fifo_buffer[num_timestamps - 1].accel[1], lsm6ds3_fifo_buffer[num_timestamps - 1].accel[2]);
     }
 
-    // /* check FIFO overrun */
-    // read_bit(data[1], FIFO_STATUS2_OVER_RUN);
-
-    // /* check FIFO full */
-    // read_bit(data[1], FIFO_STATUS2_FIFO_FULL_SMART);
-
-    // /* check if FIFO is empty */
-    // read_bit(data[1], FIFO_STATUS2_FIFO_EMPTY);
+    num_fifo_samples = lsm6ds3_fifo_get_num_samples(dev_handle);
+    ESP_LOGI(LSM6DS3_TAG, "num_fifo_samples = %d", num_fifo_samples);
+    lsm6ds3_read_fifo_status2_reg(dev_handle);
 }
 
-/* read-modify-write
-1. First read the register,
-2. Modify the register
-3. write the register */
+/**
+ * @brief read an 8-bit register, modify the bit field in the register, then write back to the register.
+ *
+ * @param bit_start starting bit of bit field in the register
+ * @param bit_end ending bit of bit field in the register. bit_end must be equal or lower than bit_start.
+ * @param field_value value to write to the register bit field
+ * @param reg pointer to the register
+ */
 void read_modify_write(uint8_t bit_start,
                        uint8_t bit_end,
                        uint8_t field_value,

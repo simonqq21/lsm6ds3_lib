@@ -1,0 +1,137 @@
+Command: ninja all
+[1/10] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/lsm6ds3.c.obj
+FAILED: esp-idf/main/CMakeFiles/__idf_main.dir/lsm6ds3.c.obj 
+/home/simonque/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc -DESP_PLATFORM -DIDF_VER=\"v6.1-dev-2310-g44e2fa6d9c5-dirt\" -DSOC_MMU_PAGE_SIZE=CONFIG_MMU_PAGE_SIZE -DSOC_XTAL_FREQ_MHZ=CONFIG_XTAL_FREQ -D_GLIBCXX_HAVE_POSIX_SEMAPHORE -D_GLIBCXX_USE_POSIX_SEMAPHORE -D_GNU_SOURCE -D_POSIX_READER_WRITER_LOCKS -I/home/simonque/Documents/code/esp-idf-projects/components_testing/lsm6ds3_lib/build/config -I/home/simonque/Documents/code/esp-idf-projects/components_testing/lsm6ds3_lib/main -I/home/simonque/Documents/code/esp-idf/components/esp_libc/platform_include -I/home/simonque/Documents/code/esp-idf/components/freertos/config/include -I/home/simonque/Documents/code/esp-idf/components/freertos/config/include/freertos -I/home/simonque/Documents/code/esp-idf/components/freertos/config/xtensa/include -I/home/simonque/Documents/code/esp-idf/components/freertos/FreeRTOS-Kernel/include -I/home/simonque/Documents/code/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/include -I/home/simonque/Documents/code/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos -I/home/simonque/Documents/code/esp-idf/components/freertos/esp_additions/include -I/home/simonque/Documents/code/esp-idf/components/esp_hw_support/include -I/home/simonque/Documents/code/esp-idf/components/esp_hw_support/include/soc -I/home/simonque/Documents/code/esp-idf/components/esp_hw_support/ldo/include -I/home/simonque/Documents/code/esp-idf/components/esp_hw_support/debug_probe/include -I/home/simonque/Documents/code/esp-idf/components/esp_hw_support/etm/include -I/home/simonque/Documents/code/esp-idf/components/esp_hw_support/mspi/mspi_timing_tuning/include -I/home/simonque/Documents/code/esp-idf/components/esp_hw_support/mspi/mspi_timing_tuning/tuning_scheme_impl/include -I/home/simonque/Documents/code/esp-idf/components/esp_hw_support/mspi/mspi_intr/include -I/home/simonque/Documents/code/esp-idf/components/esp_hw_support/power_supply/include -I/home/simonque/Documents/code/esp-idf/components/esp_hw_support/modem/include -I/home/simonque/Documents/code/esp-idf/components/esp_hw_support/port/esp32/. -I/home/simonque/Documents/code/esp-idf/components/esp_hw_support/port/esp32/include -I/home/simonque/Documents/code/esp-idf/components/heap/include -I/home/simonque/Documents/code/esp-idf/components/heap/tlsf -I/home/simonque/Documents/code/esp-idf/components/log/include -I/home/simonque/Documents/code/esp-idf/components/soc/include -I/home/simonque/Documents/code/esp-idf/components/soc/esp32 -I/home/simonque/Documents/code/esp-idf/components/soc/esp32/include -I/home/simonque/Documents/code/esp-idf/components/soc/esp32/register -I/home/simonque/Documents/code/esp-idf/components/hal/platform_port/include -I/home/simonque/Documents/code/esp-idf/components/hal/esp32/include -I/home/simonque/Documents/code/esp-idf/components/hal/include -I/home/simonque/Documents/code/esp-idf/components/esp_rom/include -I/home/simonque/Documents/code/esp-idf/components/esp_rom/esp32/include -I/home/simonque/Documents/code/esp-idf/components/esp_rom/esp32/include/esp32 -I/home/simonque/Documents/code/esp-idf/components/esp_rom/esp32 -I/home/simonque/Documents/code/esp-idf/components/esp_common/include -I/home/simonque/Documents/code/esp-idf/components/esp_system/include -I/home/simonque/Documents/code/esp-idf/components/esp_system/port/soc -I/home/simonque/Documents/code/esp-idf/components/esp_system/port/include/private -I/home/simonque/Documents/code/esp-idf/components/esp_stdio/include -I/home/simonque/Documents/code/esp-idf/components/xtensa/esp32/include -I/home/simonque/Documents/code/esp-idf/components/xtensa/include -I/home/simonque/Documents/code/esp-idf/components/xtensa/deprecated_include -I/home/simonque/Documents/code/esp-idf/components/esp_hal_gpio/include -I/home/simonque/Documents/code/esp-idf/components/esp_hal_gpio/esp32/include -I/home/simonque/Documents/code/esp-idf/components/esp_hal_usb/include -I/home/simonque/Documents/code/esp-idf/components/esp_hal_pmu/include -I/home/simonque/Documents/code/esp-idf/components/esp_hal_pmu/esp32/include -I/home/simonque/Documents/code/esp-idf/components/esp_hal_ana_conv/include -I/home/simonque/Documents/code/esp-idf/components/esp_hal_ana_conv/esp32/include -I/home/simonque/Documents/code/esp-idf/components/esp_hal_dma/include -I/home/simonque/Documents/code/esp-idf/components/esp_hal_i2s/include -I/home/simonque/Documents/code/esp-idf/components/esp_hal_i2s/esp32/include -I/home/simonque/Documents/code/esp-idf/components/esp_driver_i2c/include -I/home/simonque/Documents/code/esp-idf/components/esp_hal_i2c/esp32/include -I/home/simonque/Documents/code/esp-idf/components/esp_hal_i2c/include @"/home/simonque/Documents/code/esp-idf-projects/components_testing/lsm6ds3_lib/build/toolchain/cflags" -fdiagnostics-color=always -ffunction-sections -fdata-sections -Wall -Werror -Wno-error=unused-function -Wno-error=unused-variable -Wno-error=unused-but-set-variable -Wno-error=deprecated-declarations -Wextra -Wno-error=extra -Wno-unused-parameter -Wno-sign-compare -Wno-enum-conversion -gdwarf-4 -ggdb -Og -fno-shrink-wrap -fmacro-prefix-map=/home/simonque/Documents/code/esp-idf-projects/components_testing/lsm6ds3_lib=. -fmacro-prefix-map=/home/simonque/Documents/code/esp-idf=/IDF -fstrict-volatile-bitfields -fno-jump-tables -fno-tree-switch-conversion -std=gnu23 -Wno-old-style-declaration -fzero-init-padding-bits=all -fno-malloc-dce -MD -MT esp-idf/main/CMakeFiles/__idf_main.dir/lsm6ds3.c.obj -MF esp-idf/main/CMakeFiles/__idf_main.dir/lsm6ds3.c.obj.d -o esp-idf/main/CMakeFiles/__idf_main.dir/lsm6ds3.c.obj -c /home/simonque/Documents/code/esp-idf-projects/components_testing/lsm6ds3_lib/main/lsm6ds3.c
+/home/simonque/Documents/code/esp-idf-projects/components_testing/lsm6ds3_lib/main/lsm6ds3.c: In function 'lsm6ds3_enable_bdu':
+/home/simonque/Documents/code/esp-idf-projects/components_testing/lsm6ds3_lib/main/lsm6ds3.c:3:16: error: storage class specified for parameter 'data'
+    3 | static uint8_t data[6];
+      |                ^~~~
+/home/simonque/Documents/code/esp-idf-projects/components_testing/lsm6ds3_lib/main/lsm6ds3.c:18:1: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+   18 | {
+      | ^
+/home/simonque/Documents/code/esp-idf-projects/components_testing/lsm6ds3_lib/main/lsm6ds3.c:33:1: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+   33 | {
+      | ^
+/home/simonque/Documents/code/esp-idf-projects/components_testing/lsm6ds3_lib/main/lsm6ds3.c:43:1: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+   43 | {
+      | ^
+/home/simonque/Documents/code/esp-idf-projects/components_testing/lsm6ds3_lib/main/lsm6ds3.c:58:1: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+   58 | {
+      | ^
+/home/simonque/Documents/code/esp-idf-projects/components_testing/lsm6ds3_lib/main/lsm6ds3.c:74:1: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+   74 | {
+      | ^
+/home/simonque/Documents/code/esp-idf-projects/components_testing/lsm6ds3_lib/main/lsm6ds3.c:99:1: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+   99 | {
+      | ^
+/home/simonque/Documents/code/esp-idf-projects/components_testing/lsm6ds3_lib/main/lsm6ds3.c:109:1: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+  109 | {
+      | ^
+/home/simonque/Documents/code/esp-idf-projects/components_testing/lsm6ds3_lib/main/lsm6ds3.c:124:1: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+  124 | {
+      | ^
+/home/simonque/Documents/code/esp-idf-projects/components_testing/lsm6ds3_lib/main/lsm6ds3.c:156:1: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+  156 | {
+      | ^
+/home/simonque/Documents/code/esp-idf-projects/components_testing/lsm6ds3_lib/main/lsm6ds3.c:169:1: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+  169 | {
+      | ^
+/home/simonque/Documents/code/esp-idf-projects/components_testing/lsm6ds3_lib/main/lsm6ds3.c:184:1: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+  184 | {
+      | ^
+/home/simonque/Documents/code/esp-idf-projects/components_testing/lsm6ds3_lib/main/lsm6ds3.c:214:1: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+  214 | {
+      | ^
+/home/simonque/Documents/code/esp-idf-projects/components_testing/lsm6ds3_lib/main/lsm6ds3.c:227:1: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+  227 | {
+      | ^
+/home/simonque/Documents/code/esp-idf-projects/components_testing/lsm6ds3_lib/main/lsm6ds3.c:250:1: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+  250 | {
+      | ^
+/home/simonque/Documents/code/esp-idf-projects/components_testing/lsm6ds3_lib/main/lsm6ds3.c:257:1: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+  257 | {
+      | ^
+/home/simonque/Documents/code/esp-idf-projects/components_testing/lsm6ds3_lib/main/lsm6ds3.c:265:1: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+  265 | {
+      | ^
+/home/simonque/Documents/code/esp-idf-projects/components_testing/lsm6ds3_lib/main/lsm6ds3.c:278:1: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+  278 | {
+      | ^
+/home/simonque/Documents/code/esp-idf-projects/components_testing/lsm6ds3_lib/main/lsm6ds3.c:291:1: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+  291 | {
+      | ^
+/home/simonque/Documents/code/esp-idf-projects/components_testing/lsm6ds3_lib/main/lsm6ds3.c:300:1: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+  300 | {
+      | ^
+/home/simonque/Documents/code/esp-idf-projects/components_testing/lsm6ds3_lib/main/lsm6ds3.c:309:1: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+  309 | {
+      | ^
+/home/simonque/Documents/code/esp-idf-projects/components_testing/lsm6ds3_lib/main/lsm6ds3.c:318:1: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+  318 | {
+      | ^
+/home/simonque/Documents/code/esp-idf-projects/components_testing/lsm6ds3_lib/main/lsm6ds3.c:333:1: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+  333 | {
+      | ^
+/home/simonque/Documents/code/esp-idf-projects/components_testing/lsm6ds3_lib/main/lsm6ds3.c:351:1: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+  351 | {
+      | ^
+/home/simonque/Documents/code/esp-idf-projects/components_testing/lsm6ds3_lib/main/lsm6ds3.c:369:1: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+  369 | {
+      | ^
+/home/simonque/Documents/code/esp-idf-projects/components_testing/lsm6ds3_lib/main/lsm6ds3.c:392:1: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+  392 | {
+      | ^
+/home/simonque/Documents/code/esp-idf-projects/components_testing/lsm6ds3_lib/main/lsm6ds3.c:403:1: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+  403 | {
+      | ^
+/home/simonque/Documents/code/esp-idf-projects/components_testing/lsm6ds3_lib/main/lsm6ds3.c:447:1: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+  447 | {
+      | ^
+/home/simonque/Documents/code/esp-idf-projects/components_testing/lsm6ds3_lib/main/lsm6ds3.c:460:1: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+  460 | {
+      | ^
+/home/simonque/Documents/code/esp-idf-projects/components_testing/lsm6ds3_lib/main/lsm6ds3.c:486:1: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+  486 | {
+      | ^
+/home/simonque/Documents/code/esp-idf-projects/components_testing/lsm6ds3_lib/main/lsm6ds3.c:589:1: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+  589 | {
+      | ^
+/home/simonque/Documents/code/esp-idf-projects/components_testing/lsm6ds3_lib/main/lsm6ds3.c:604:1: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+  604 | {
+      | ^
+/home/simonque/Documents/code/esp-idf-projects/components_testing/lsm6ds3_lib/main/lsm6ds3.c:609:1: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+  609 | {
+      | ^
+In file included from /home/simonque/Documents/code/esp-idf-projects/components_testing/lsm6ds3_lib/main/lsm6ds3.c:1:
+/home/simonque/Documents/code/esp-idf-projects/components_testing/lsm6ds3_lib/main/lsm6ds3.h:343:6: error: old-style parameter declarations in prototyped function definition
+  343 | void lsm6ds3_enable_bdu(i2c_master_dev_handle_t dev_handle)
+      |      ^~~~~~~~~~~~~~~~~~
+/home/simonque/Documents/code/esp-idf-projects/components_testing/lsm6ds3_lib/main/lsm6ds3.c:613: error: expected '{' at end of input
+[2/10] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/lsm6ds3_lib_example.c.obj
+FAILED: esp-idf/main/CMakeFiles/__idf_main.dir/lsm6ds3_lib_example.c.obj 
+/home/simonque/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc -DESP_PLATFORM -DIDF_VER=\"v6.1-dev-2310-g44e2fa6d9c5-dirt\" -DSOC_MMU_PAGE_SIZE=CONFIG_MMU_PAGE_SIZE -DSOC_XTAL_FREQ_MHZ=CONFIG_XTAL_FREQ -D_GLIBCXX_HAVE_POSIX_SEMAPHORE -D_GLIBCXX_USE_POSIX_SEMAPHORE -D_GNU_SOURCE -D_POSIX_READER_WRITER_LOCKS -I/home/simonque/Documents/code/esp-idf-projects/components_testing/lsm6ds3_lib/build/config -I/home/simonque/Documents/code/esp-idf-projects/components_testing/lsm6ds3_lib/main -I/home/simonque/Documents/code/esp-idf/components/esp_libc/platform_include -I/home/simonque/Documents/code/esp-idf/components/freertos/config/include -I/home/simonque/Documents/code/esp-idf/components/freertos/config/include/freertos -I/home/simonque/Documents/code/esp-idf/components/freertos/config/xtensa/include -I/home/simonque/Documents/code/esp-idf/components/freertos/FreeRTOS-Kernel/include -I/home/simonque/Documents/code/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/include -I/home/simonque/Documents/code/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos -I/home/simonque/Documents/code/esp-idf/components/freertos/esp_additions/include -I/home/simonque/Documents/code/esp-idf/components/esp_hw_support/include -I/home/simonque/Documents/code/esp-idf/components/esp_hw_support/include/soc -I/home/simonque/Documents/code/esp-idf/components/esp_hw_support/ldo/include -I/home/simonque/Documents/code/esp-idf/components/esp_hw_support/debug_probe/include -I/home/simonque/Documents/code/esp-idf/components/esp_hw_support/etm/include -I/home/simonque/Documents/code/esp-idf/components/esp_hw_support/mspi/mspi_timing_tuning/include -I/home/simonque/Documents/code/esp-idf/components/esp_hw_support/mspi/mspi_timing_tuning/tuning_scheme_impl/include -I/home/simonque/Documents/code/esp-idf/components/esp_hw_support/mspi/mspi_intr/include -I/home/simonque/Documents/code/esp-idf/components/esp_hw_support/power_supply/include -I/home/simonque/Documents/code/esp-idf/components/esp_hw_support/modem/include -I/home/simonque/Documents/code/esp-idf/components/esp_hw_support/port/esp32/. -I/home/simonque/Documents/code/esp-idf/components/esp_hw_support/port/esp32/include -I/home/simonque/Documents/code/esp-idf/components/heap/include -I/home/simonque/Documents/code/esp-idf/components/heap/tlsf -I/home/simonque/Documents/code/esp-idf/components/log/include -I/home/simonque/Documents/code/esp-idf/components/soc/include -I/home/simonque/Documents/code/esp-idf/components/soc/esp32 -I/home/simonque/Documents/code/esp-idf/components/soc/esp32/include -I/home/simonque/Documents/code/esp-idf/components/soc/esp32/register -I/home/simonque/Documents/code/esp-idf/components/hal/platform_port/include -I/home/simonque/Documents/code/esp-idf/components/hal/esp32/include -I/home/simonque/Documents/code/esp-idf/components/hal/include -I/home/simonque/Documents/code/esp-idf/components/esp_rom/include -I/home/simonque/Documents/code/esp-idf/components/esp_rom/esp32/include -I/home/simonque/Documents/code/esp-idf/components/esp_rom/esp32/include/esp32 -I/home/simonque/Documents/code/esp-idf/components/esp_rom/esp32 -I/home/simonque/Documents/code/esp-idf/components/esp_common/include -I/home/simonque/Documents/code/esp-idf/components/esp_system/include -I/home/simonque/Documents/code/esp-idf/components/esp_system/port/soc -I/home/simonque/Documents/code/esp-idf/components/esp_system/port/include/private -I/home/simonque/Documents/code/esp-idf/components/esp_stdio/include -I/home/simonque/Documents/code/esp-idf/components/xtensa/esp32/include -I/home/simonque/Documents/code/esp-idf/components/xtensa/include -I/home/simonque/Documents/code/esp-idf/components/xtensa/deprecated_include -I/home/simonque/Documents/code/esp-idf/components/esp_hal_gpio/include -I/home/simonque/Documents/code/esp-idf/components/esp_hal_gpio/esp32/include -I/home/simonque/Documents/code/esp-idf/components/esp_hal_usb/include -I/home/simonque/Documents/code/esp-idf/components/esp_hal_pmu/include -I/home/simonque/Documents/code/esp-idf/components/esp_hal_pmu/esp32/include -I/home/simonque/Documents/code/esp-idf/components/esp_hal_ana_conv/include -I/home/simonque/Documents/code/esp-idf/components/esp_hal_ana_conv/esp32/include -I/home/simonque/Documents/code/esp-idf/components/esp_hal_dma/include -I/home/simonque/Documents/code/esp-idf/components/esp_hal_i2s/include -I/home/simonque/Documents/code/esp-idf/components/esp_hal_i2s/esp32/include -I/home/simonque/Documents/code/esp-idf/components/esp_driver_i2c/include -I/home/simonque/Documents/code/esp-idf/components/esp_hal_i2c/esp32/include -I/home/simonque/Documents/code/esp-idf/components/esp_hal_i2c/include @"/home/simonque/Documents/code/esp-idf-projects/components_testing/lsm6ds3_lib/build/toolchain/cflags" -fdiagnostics-color=always -ffunction-sections -fdata-sections -Wall -Werror -Wno-error=unused-function -Wno-error=unused-variable -Wno-error=unused-but-set-variable -Wno-error=deprecated-declarations -Wextra -Wno-error=extra -Wno-unused-parameter -Wno-sign-compare -Wno-enum-conversion -gdwarf-4 -ggdb -Og -fno-shrink-wrap -fmacro-prefix-map=/home/simonque/Documents/code/esp-idf-projects/components_testing/lsm6ds3_lib=. -fmacro-prefix-map=/home/simonque/Documents/code/esp-idf=/IDF -fstrict-volatile-bitfields -fno-jump-tables -fno-tree-switch-conversion -std=gnu23 -Wno-old-style-declaration -fzero-init-padding-bits=all -fno-malloc-dce -MD -MT esp-idf/main/CMakeFiles/__idf_main.dir/lsm6ds3_lib_example.c.obj -MF esp-idf/main/CMakeFiles/__idf_main.dir/lsm6ds3_lib_example.c.obj.d -o esp-idf/main/CMakeFiles/__idf_main.dir/lsm6ds3_lib_example.c.obj -c /home/simonque/Documents/code/esp-idf-projects/components_testing/lsm6ds3_lib/main/lsm6ds3_lib_example.c
+/home/simonque/Documents/code/esp-idf-projects/components_testing/lsm6ds3_lib/main/lsm6ds3_lib_example.c: In function 'lsm6ds3_enable_bdu':
+/home/simonque/Documents/code/esp-idf-projects/components_testing/lsm6ds3_lib/main/lsm6ds3_lib_example.c:24:20: error: storage class specified for parameter 'TAG'
+   24 | static const char *TAG = "LSM6DS3_EXAMPLE";
+      |                    ^~~
+/home/simonque/Documents/code/esp-idf-projects/components_testing/lsm6ds3_lib/main/lsm6ds3_lib_example.c:24:1: error: parameter 'TAG' is initialized
+   24 | static const char *TAG = "LSM6DS3_EXAMPLE";
+      | ^~~~~~
+/home/simonque/Documents/code/esp-idf-projects/components_testing/lsm6ds3_lib/main/lsm6ds3_lib_example.c:26:23: error: storage class specified for parameter 'lsm6ds3_data'
+   26 | static lsm6ds3_data_t lsm6ds3_data[NUM_FIFO_TIMESTAMPS];
+      |                       ^~~~~~~~~~~~
+/home/simonque/Documents/code/esp-idf-projects/components_testing/lsm6ds3_lib/main/lsm6ds3_lib_example.c:103:1: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+  103 | {
+      | ^
+/home/simonque/Documents/code/esp-idf-projects/components_testing/lsm6ds3_lib/main/lsm6ds3_lib_example.c:123:1: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+  123 | {
+      | ^
+In file included from /home/simonque/Documents/code/esp-idf-projects/components_testing/lsm6ds3_lib/main/lsm6ds3_lib_example.c:20:
+/home/simonque/Documents/code/esp-idf-projects/components_testing/lsm6ds3_lib/main/lsm6ds3.h:343:6: error: old-style parameter declarations in prototyped function definition
+  343 | void lsm6ds3_enable_bdu(i2c_master_dev_handle_t dev_handle)
+      |      ^~~~~~~~~~~~~~~~~~
+/home/simonque/Documents/code/esp-idf-projects/components_testing/lsm6ds3_lib/main/lsm6ds3_lib_example.c:157: error: expected '{' at end of input
+[3/10] Performing build step for 'bootloader'
+[1/1] cd /home/simonque/Documents/code/esp-idf-projects/components_testing/lsm6ds3_lib/build/bootloader && /home/simonque/.espressif/python_env/idf6.1_py3.12_env/bin/python /home/simonque/Documents/code/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x1000 /home/simonque/Documents/code/esp-idf-projects/components_testing/lsm6ds3_lib/build/bootloader/bootloader.bin
+Bootloader binary size 0x6610 bytes. 0x9f0 bytes (9%) free.
+ninja: build stopped: subcommand failed.

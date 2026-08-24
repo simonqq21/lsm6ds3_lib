@@ -87,6 +87,9 @@
 #define LSM6DS3_MD1_CFG_REG_ADDR 0x5E
 #define LSM6DS3_MD2_CFG_REG_ADDR 0x5F
 
+/* LSM6DS3 reset bit */
+#define LSM6DS3_CTRL3_C_SW_RESET 0x1
+
 /**
  * CTRL1_XL bits
  */
@@ -99,14 +102,37 @@
 #define CTRL1_XL_LPF1_BW_SEL (1)
 #define CTRL1_XL_BW0_XL (0)
 
-/* accelerometer sampling rates */
-#define CTRL1_XL_FS_2G 0x0
-#define CTRL1_XL_FS_16G 0x1
-#define CTRL1_XL_FS_4G 0x2
-#define CTRL1_XL_FS_8G 0x3
+/* accelerometer power modes */
+typedef enum
+{
+    LSM6DS3_XL_HM_MODE_HP = 0,
+    LSM6DS3_XL_HM_MODE_LP = 1,
+} lsm6ds3_xl_hm;
 
-#define CTRL1_XL_ODR_104HZ 0x4
-#define CTRL1_XL_ODR_208HZ 0x5
+/* accelerometer full scale ranges */
+typedef enum
+{
+    LSM6DS3_XL_FS_2G = 0x0,
+    LSM6DS3_XL_FS_16G = 0x1,
+    LSM6DS3_XL_FS_4G = 0x2,
+    LSM6DS3_XL_FS_8G = 0x3,
+} lsm6ds3_xl_fs;
+
+/* accelerometer output data rates (with XL_HM_MODE = 0) */
+typedef enum
+{
+    LSM6DS3_XL_ODR_OFF = 0x0,
+    LSM6DS3_XL_ODR_12_5HZ = 0x1,
+    LSM6DS3_XL_ODR_26HZ = 0x2,
+    LSM6DS3_XL_ODR_52HZ = 0x3,
+    LSM6DS3_XL_ODR_104HZ = 0x4,
+    LSM6DS3_XL_ODR_208HZ = 0x5,
+    LSM6DS3_XL_ODR_416HZ = 0x6,
+    LSM6DS3_XL_ODR_833HZ = 0x7,
+    LSM6DS3_XL_ODR_1166HZ = 0x8,
+    LSM6DS3_XL_ODR_3333HZ = 0x9,
+    LSM6DS3_XL_ODR_6666HZ = 0xA,
+} lsm6ds3_xl_odr;
 
 /**
  * CTRL2_G bits
@@ -119,14 +145,40 @@
 #define CTRL2_G_FS_G0 (2)
 #define CTRL2_G_FS_125 (1)
 
-/* gyroscope sampling rates */
-#define CTRL2_G_FS_245DPS 0x0
-#define CTRL2_G_FS_500DPS 0x1
-#define CTRL2_G_FS_2000DPS 0x3
-#define CTRL2_G_FS_1000DPS 0x2
+#define CTRL6_C_XL_HM_MODE (4)
+#define CTRL7_G_G_HM_MODE (7)
 
-#define CTRL2_G_ODR_104HZ 0x4
-#define CTRL2_G_ODR_208HZ 0x5
+/* gyroscope power modes */
+typedef enum
+{
+    LSM6DS3_G_HM_MODE_HP = 0,
+    LSM6DS3_G_HM_MODE_LP = 1,
+} lsm6ds3_g_hm;
+
+/* gyroscope full scale ranges */
+typedef enum
+{
+    LSM6DS3_G_FS_245DPS = 0x0,
+    LSM6DS3_G_FS_500DPS = 0x1,
+    LSM6DS3_G_FS_2000DPS = 0x3,
+    LSM6DS3_G_FS_1000DPS = 0x2,
+} lsm6ds3_g_fs;
+
+/* gyroscope output data rates (with G_HM_MODE = 0) */
+typedef enum
+{
+    LSM6DS3_G_ODR_OFF = 0x0,
+    LSM6DS3_G_ODR_12_5HZ = 0x1,
+    LSM6DS3_G_ODR_26HZ = 0x2,
+    LSM6DS3_G_ODR_52HZ = 0x3,
+    LSM6DS3_G_ODR_104HZ = 0x4,
+    LSM6DS3_G_ODR_208HZ = 0x5,
+    LSM6DS3_G_ODR_416HZ = 0x6,
+    LSM6DS3_G_ODR_833HZ = 0x7,
+    LSM6DS3_G_ODR_1666HZ = 0x8,
+    LSM6DS3_G_ODR_3333HZ = 0x9,
+    LSM6DS3_G_ODR_6666HZ = 0xA,
+} lsm6ds3_g_odr;
 
 /**
  * CTRL3_C bits
@@ -136,10 +188,6 @@
 #define CTRL3_C_H_LACTIVE (5)
 #define CTRL3_C_PP_OD (4)
 #define CTRL3_C_IF_INC (3)
-// #define CTRL3_C_
-// #define CTRL3_C_
-// #define CTRL3_C_
-// #define CTRL3_C_
 
 /**
  * CTRL4_C bits
@@ -207,12 +255,26 @@
 #define FIFO_CTRL5_MODE_2 (2)
 #define FIFO_CTRL5_MODE_0 (0)
 
-#define FIFO_CTRL5_ODR_FIFO_104HZ 0x4
-#define FIFO_CTRL5_ODR_FIFO_208HZ 0x5
+typedef enum
+{
+    LSM6DS3_FIFO_ODR_OFF = 0x0,
+    LSM6DS3_FIFO_ODR_12_5HZ = 0x1,
+    LSM6DS3_FIFO_ODR_26HZ = 0x2,
+    LSM6DS3_FIFO_ODR_52HZ = 0x3,
+    LSM6DS3_FIFO_ODR_104HZ = 0x4,
+    LSM6DS3_FIFO_ODR_208HZ = 0x5,
+    LSM6DS3_FIFO_ODR_416HZ = 0x6,
+    LSM6DS3_FIFO_ODR_833 = 0x7,
+} lsm6ds3_fifo_odr;
 
-#define FIFO_CTRL5_MODE_BYPASS 0x0
-#define FIFO_CTRL5_MODE_FIFO 0x1
-#define FIFO_CTRL5_MODE_CONTINUOUS 0x6
+typedef enum
+{
+    LSM6DS3_FIFO_MODE_BYPASS = 0x0,
+    LSM6DS3_FIFO_MODE_FIFO = 0x1,
+    LSM6DS3_FIFO_CONTINUOUS_THEN_FIFO = 0x3,
+    LSM6DS3_FIFO_BYPASS_CONTINUOUS = 0x4,
+    LSM6DS3_FIFO_MODE_CONTINUOUS = 0x6,
+} lsm6ds3_fifo_mode;
 
 /**
  * FIFO_STATUS1 bits
@@ -256,10 +318,39 @@ typedef struct
     float accel[3];
 
 } lsm6ds3_data_t;
+esp_err_t lsm6ds3_register_read(i2c_master_dev_handle_t dev_handle,
+                                uint8_t reg_addr,
+                                uint8_t *data,
+                                size_t len);
+esp_err_t lsm6ds3_register_write_byte(i2c_master_dev_handle_t dev_handle,
+                                      uint8_t reg_addr,
+                                      uint8_t data);
 
 void lsm6ds3_init_accel(i2c_master_dev_handle_t dev_handle);
 void lsm6ds3_init_gyro(i2c_master_dev_handle_t dev_handle);
 void lsm6ds3_init_all(i2c_master_dev_handle_t dev_handle);
+
+void lsm6ds3_reset(i2c_master_dev_handle_t dev_handle);
+
+void lsm6ds3_set_accel_power(i2c_master_dev_handle_t dev_handle, lsm6ds3_xl_hm xl_hm);
+void lsm6ds3_set_accel_fs(i2c_master_dev_handle_t dev_handle, lsm6ds3_xl_fs xl_fs);
+void lsm6ds3_set_accel_odr(i2c_master_dev_handle_t dev_handle, lsm6ds3_xl_odr xl_odr);
+
+void lsm6ds3_set_gyro_power(i2c_master_dev_handle_t dev_handle, lsm6ds3_g_hm g_hm);
+void lsm6ds3_set_gyro_fs(i2c_master_dev_handle_t dev_handle, lsm6ds3_g_fs g_fs);
+void lsm6ds3_set_gyro_odr(i2c_master_dev_handle_t dev_handle, lsm6ds3_g_odr g_odr);
+
+void lsm6ds3_enable_bdu(i2c_master_dev_handle_t dev_handle);
+
+void lsm6ds3_set_fifo_thresh(i2c_master_dev_handle_t dev_handle, uint16_t fifo_thresh);
+void lsm6ds3_reset_fifo(i2c_master_dev_handle_t dev_handle);
+void lsm6ds3_set_fifo_odr(i2c_master_dev_handle_t dev_handle, lsm6ds3_fifo_odr fifo_odr);
+void lsm6ds3_set_fifo_operation_mode(i2c_master_dev_handle_t dev_handle, lsm6ds3_fifo_mode fifo_mode);
+
+uint16_t lsm6ds3_fifo_get_num_samples(i2c_master_dev_handle_t dev_handle);
+uint16_t lsm6ds3_fifo_get_pattern(i2c_master_dev_handle_t dev_handle);
+uint16_t lsm6ds3_fifo_read_word_from_fifo(i2c_master_dev_handle_t dev_handle);
+void lsm6ds3_read_fifo_status2_reg(i2c_master_dev_handle_t dev_handle);
 
 uint8_t lsm6ds3_check_temp_data_available(i2c_master_dev_handle_t dev_handle);
 uint8_t lsm6ds3_check_gyro_data_available(i2c_master_dev_handle_t dev_handle);
